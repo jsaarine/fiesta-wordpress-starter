@@ -5,11 +5,11 @@ Fiesta is simple starter theme for WordPress
 ## Features
 
 * Sass compilation and minification with Gulp
-* Babel compilation, concatenation and minification with Gulp
-* Basic styling for WordPress blocks
+* Babel compilation, JavaScript concatenation, minification and source maps with Gulp
+* Basic styles for WordPress blocks that also show in Gutenberg
 
 ## Usage
 
 1. Extract into your theme folder
-1. Run npm install
-1. Run gulp to start watch
+1. Run `npm install`
+1. Run `gulp` to start watch
