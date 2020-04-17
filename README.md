@@ -1,6 +1,6 @@
 # fiesta-wordpress-starter
 
-Fiesta is simple starter theme for WordPress
+Fiesta is a simple starter theme for WordPress
 
 ## Features
 
