@@ -1,0 +1,264 @@
+
+// Grid
+
+@mixin container($width: $default-container, $padding: false) {
+	max-width: $width;
+	margin-left: auto;
+	margin-right: auto;
+
+	@if($padding) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		box-sizing: content-box;
+	}
+}
+
+@mixin row() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin column($value, $props: null) {
+	$gutter: gutter-to-pct($default-gutter);
+	$block: false;
+	$css: true;
+	$ratio: ratio-value($value);
+	$calc: false;
+
+	@if($props) {
+		// Add css properties (internal)
+		@if(map-has-key($props, css)) {
+			$css: map-get($props, css);
+		}
+		
+		// Gutter
+		@if(map-has-key($props, gutter)) {
+			$gutter: gutter-to-pct(map-get($props, gutter));
+		}
+
+		// Blocks
+		@if(map-has-key($props, blocks)) {
+			$block: true;
+
+			@include block-props($value, $gutter, $props);
+		}
+
+		@if(map-has-key($props, calc)) {
+			$calc: map-get($props, calc);
+		}
+
+		// Offset
+		@if(map-has-key($props, offset)) {
+			@include offset(map-get($props, offset), (gutter: $gutter));
+		}
+
+		// Push
+		@if(map-has-key($props, push)) {
+			@include push(map-get($props, push), (gutter: $gutter));
+		}
+
+		// Pull
+		@if(map-has-key($props, pull)) {
+			@include pull(map-get($props, pull), (gutter: $gutter));
+		}
+	}
+
+	@include column-props($ratio, $gutter, $css, $block, $calc);
+}
+
+@mixin column-props($ratio, $gutter, $css, $block, $calc) {
+	@if($css) {
+		float: left;
+
+		@if($block == false) {
+			@include last();
+		}
+	}
+
+	$width: null;
+
+	@if($calc) {
+		$width: column-width-calc($ratio, $gutter)
+	}
+	@else {
+		$width: column-width($ratio, $gutter)
+	}
+
+	margin-right: $gutter;
+	width: $width;
+}
+
+@mixin last() {
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+@mixin block($value, $props: null) {
+	$new-map: null;
+
+	@if($props) {
+		$new-map: map-merge($props, (blocks: $value, css: true));
+	}
+	@else {
+		$new-map: (blocks: $value);
+	}
+	
+	@include column($default-columns / $value, $new-map);
+}
+
+@mixin block-props($value, $gutter, $props) {
+	$start: 1;
+
+	@if(map-has-key($props, start)) {
+		$start: map-get($props, start);
+	}
+
+	$n: $default-columns / $value + ($start - 1);
+
+	&:nth-of-type(n) {
+		clear: none;
+		margin-right: $gutter;
+	}
+
+	&:nth-of-type(#{$n}n+#{$start}) {
+		clear: both;
+	}
+
+	&:nth-of-type(#{$n}n) {
+		margin-right: 0;
+	}
+}
+
+@mixin unblock() {
+	&:nth-of-type(n) {
+		clear: none;
+	}
+}
+
+// Offsets
+
+@mixin offset($value, $props: null) {
+	$gutter: $default-gutter;
+
+	@if($props) {
+		@if(map-has-key($props, gutter)) {
+			$gutter: gutter-to-pct(map-get($props, gutter));
+		}
+	}
+
+	margin-left: column-ratio2($value, gutter-to-pct($gutter));
+}
+
+// Order
+
+@mixin push($value, $props: null) {
+	$gutter: $default-gutter;
+
+	@if($props) {
+		@if(map-has-key($props, gutter)) {
+			$gutter: gutter-to-pct(map-get($props, gutter));
+		}
+	}
+
+	position: relative;
+	left: column-ratio2($value, gutter-to-pct($gutter));
+}
+
+@mixin pull($value, $props: null) {
+	$gutter: $default-gutter;
+
+	@if($props) {
+		@if(map-has-key($props, gutter)) {
+			$gutter: gutter-to-pct(map-get($props, gutter));
+		}
+	}
+
+	position: relative;
+	right: column-ratio2($value, gutter-to-pct($gutter));
+}
+
+// Media queries
+
+@mixin min($value) {
+	@media screen and (min-width: $value) {
+		@content;
+	}
+}
+
+@mixin max($value) {
+	@media screen and (max-width: $value) {
+		@content;	
+	}
+}
+
+@mixin min-max($min, $max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+// Visibility
+	
+@mixin hide($value) {
+	@include min($value) {
+		display: none !important;
+	}
+}
+
+@mixin show($value, $display: block) {
+	@media screen {
+		display: none;
+	}
+
+	@include min($value) {
+		display: $display !important;
+	}
+}
+
+// Misc
+
+@mixin variable($value) {
+	font-family: "#{$value}";
+}
+
+// Container
+
+.container {
+	@include container($default-container);
+}
+
+// Grid
+
+.row {
+	@include row();
+}
+
+// Breakpoints
+
+meta.breakpoints-small-max {
+	@include variable($small-max);
+}
+
+meta.breakpoints-medium {
+	@include variable($medium);
+}
+
+meta.breakpoints-medium-max {
+	@include variable($medium-max);
+}
+
+meta.breakpoints-large {
+	@include variable($large);
+}
+
+meta.breakpoints-large-max {
+	@include variable($large-max);
+}
+
+meta.breakpoints-xlarge {
+	@include variable($xlarge);
+}

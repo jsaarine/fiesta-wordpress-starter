@@ -1,0 +1,52 @@
+// Hero
+
+.c-hero {
+	margin-bottom: em(50px);
+	position: relative;
+	text-align: center;
+	background: #8681bd;
+	// padding-top: $header-height-small;
+	// transition: padding-top .2s ease-out;
+	// padding: em(150px) 0;
+	height: em(400px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include min($large) {
+		// padding-top: $header-height;
+	}
+
+	// & > .inner {
+	// 	position: relative;
+	// 	height: em(400px);
+
+	// 	@include min($medium) {
+	// 		padding-bottom: 40%;
+	// 	}
+	// }
+
+	// .content {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	color: #fff;
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	padding: 0 1em;
+	// }
+
+	h1 {
+		font-size: em(60px);
+		color: #fff;
+		margin-bottom: 0;
+
+		@include min($medium) {
+			font-size: em(70px);
+		}
+	}
+}

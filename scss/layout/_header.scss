@@ -1,0 +1,119 @@
+// Header
+
+.c-header {
+	height: $header-height-small;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transition: height .2s ease-out, transform .3s ease-out, background .2s ease-out, box-shadow .2s ease-out;
+	margin-bottom: 3em;
+	background: #fff;
+
+	@include min($large) {
+		height: $header-height;
+	}
+
+	// Logo
+	.logo {
+		position: absolute;
+		top: .9em;
+		left: 1.5em;
+		transition: top .2s ease-out;
+
+		@include min($large) {
+			top: 2em;
+		}
+
+		svg {
+			transition: width .2s ease-out, height .2s ease-out;
+			width: em(80px);
+			height: em(23px);
+
+			@include min($medium) {
+				width: em(120px);
+				height: em(34px);
+			}
+		}
+	}
+
+	// Hidden (header is hidden when scrolling down)
+	&.m-hidden {
+		@media screen and (max-height: em(400px)) {
+			transform: translateY(-$header-height);	
+		}
+	}
+
+	// Small (header is visible but smaller when scrolling)
+	&.m-small {
+		background: #fff;
+		box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+		@include min($large) {
+			height: $header-height-small;
+
+			.logo {
+				top: 1.1em;
+
+				svg {
+					width: em(80px);
+					height: em(23px);
+				}
+			}
+
+			.c-navigation {
+				& > ul {
+					top: .4em;
+				}
+			}	
+		}
+	}
+
+	// Nav close
+	.nav-close {
+		@include max($medium-max) {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,.3);
+			opacity: 0;
+			visibility: hidden;
+			transition: visibility 0s .25s, left 0s .25s, opacity .25s linear;
+		}
+	}
+
+	// Skip link
+	.skip-link {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		text-align: center;
+
+		a {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			border: none;
+			background: #fff;
+			padding: 1em;
+			display: inline-block;
+
+			&:focus {
+				position: static;
+				width: auto;
+				height: auto;
+				margin: 0;
+				overflow: visible;
+				clip: auto;
+			}
+		}
+	}
+}

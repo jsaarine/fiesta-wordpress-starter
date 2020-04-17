@@ -1,0 +1,75 @@
+// Body
+
+body {
+	padding-top: $header-height-small;
+
+	// @include min($large) {
+	// 	padding-top: $header-height;
+	// }
+}
+
+// Container
+
+.container {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	box-sizing: content-box;
+
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// Focus
+
+/*
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+
+.js-focus-visible .focus-visible {
+	// Default focus ring outline here
+}*/
+
+html:not(.m-focus-visible) {
+	button {
+		&:focus {
+			// Remove outline from buttons when not using keyboard
+			outline: 0;
+		}
+	}
+}
+
+html.m-focus-visible {
+	a, button {
+		&:focus {
+			// Default focus ring color to override browser default. 
+			// outline: 3px solid #5B9DD9;
+		}	
+	}
+}
+
+// Cookie consent
+
+.cookie-consent {
+	background: #fff !important;
+	box-shadow: 0 0 15px rgba(0,0,0,.2);
+	padding: 1em 0 !important;
+
+	button {
+		background: #8681bd !important;
+	}
+}
+
+// Screen reader only
+
+.sr-only {
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}

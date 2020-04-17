@@ -1,0 +1,213 @@
+// Main nav
+
+.c-navigation {
+	@include max($medium-max) {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	& > ul {
+		position: absolute;
+		top: 1.75em;
+		right: 3em;
+		transition: top .2s ease-out;
+
+		// Mobile
+		@include max($medium-max) {
+			position: fixed;
+			top: 0;
+			right: auto;
+			bottom: auto;
+			z-index: 1;
+			background: #fff;
+			width: 100%;
+			height: 100%;
+			// max-width: em(320px);
+			padding-top: em(120px);
+			padding-bottom: em(40px);
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			visibility: hidden;
+			transform: translateX(100%);
+			text-align: center;
+		}
+	}
+
+	li {
+		position: relative;
+
+		@include min($large) {
+			display: inline-block;
+			margin-bottom: 0;
+			padding-left: 1.7em;
+		}
+
+		// Parent (has child pages)
+		&.m-parent {
+			& > ul {
+				display: none;
+				padding: em(30px) 0;
+
+				&.m-visible {
+					@include max($medium-max) {
+						display: block;	
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: 1em 0;
+		color: $c-dark;
+
+		@include max($medium-max) {
+			font-size: em(20px);
+		}
+	}
+
+	// Nav button
+	.nav-button {
+		position: fixed;
+		top: em(10px);
+		right: 1.5em;
+		cursor: pointer;
+		text-align: center;
+		border: none;
+		background: none;
+		width: rem(44px);
+		height: rem(44px);
+		z-index: 2;
+		transition: top .2s ease-out;
+
+		// &:focus {
+		// 	outline: 0;
+		// }
+
+		@include min($large) {
+			top: em(25px);
+		}
+
+		@include hide($large);
+
+		.lines {
+			display: inline-block;
+			position: absolute;
+			right: 50%;
+			transform: translate(50%, -50%);
+		}
+
+		.line {
+			display: block;
+			position: relative;
+			top: 0;
+			width: 26px;
+			height: 2px;
+			margin-bottom: 5px;
+			background-color: #000;
+			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
+
+			&:nth-of-type(3) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Toggle button
+	.toggle {
+		position: absolute;
+		right: 1em;
+		top: 0;
+		width: rem(44px);
+		height: rem(44px);
+		line-height: rem(44px);
+		text-align: center;
+		cursor: pointer;
+		font-size: em(20px);
+		background: none;
+		border: none;
+
+		@include hide($large);
+
+		span:nth-of-type(2) {
+			display: none;
+		}
+
+		&.m-active {
+			span:nth-of-type(1) {
+				display: none;
+			}
+
+			span:nth-of-type(2) {
+				display: block;
+			}
+		}
+	}
+}
+
+// Nav open
+
+html.m-nav-open {
+	overflow: hidden;
+
+	.c-navigation {
+		& > ul {
+			transform: none;
+			visibility: visible;
+		}
+
+		.nav-button {
+			.line {
+				width: rem(26px);
+				background-color: $c-dark;
+
+				&:nth-of-type(1) {
+					top: 7px;
+					transform: rotate(45deg);
+				}
+				
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+				
+				&:nth-of-type(3) {
+					top: -7px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	.c-header {
+		.nav-close {
+			left: 0;
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .25s linear;
+		}
+
+		.nav-button {
+			.line {
+				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
+			}
+		}
+	}
+}
+
+// Transition
+html.m-nav-open-transition {
+	.c-navigation {
+		& > ul {
+			transition: opacity .25s linear, transform .25s ease-in, visibility 0s .25s;
+		}
+	}
+
+	&.m-nav-open {
+		.c-navigation {
+			& > ul {
+				transition: opacity .25s linear, transform .25s ease-in;
+			}
+		}		
+	}
+}

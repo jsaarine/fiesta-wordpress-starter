@@ -1,0 +1,69 @@
+.g-article {
+	// Default list styling
+	ul, ol {
+		list-style: none;
+		padding-left: 1em;
+		margin: 1em 0;
+
+		li {
+			position: relative;
+			padding-left: 1.5em;
+			margin-bottom: .5em;
+			line-height: 1.6;
+			font-size: em(18px);
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		ul, ol {
+			padding-left: 0;
+		}
+	}
+
+	ul {
+		ul, ol {
+			list-style: none;
+			margin-top: 1em;
+		}
+
+		li {
+			position: relative;
+
+			&:before {
+				top: .5em;
+				left: 0;
+				width: 8px;
+				height: 8px;
+				background: #786ea6;
+				border-radius: 999px;
+			}
+		}
+	}
+
+	ol {
+		list-style: none;
+
+		ol {
+			counter-reset: counter;
+		}
+
+		li {
+			counter-increment: counter;
+		}
+
+		li:before {
+			content: counter(counter)".";
+		}
+	}
+
+	// Links
+	a {
+		text-decoration: underline;
+		color: #786ea6;
+	}
+}

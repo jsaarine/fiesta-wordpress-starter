@@ -1,0 +1,28 @@
+// Filter
+
+.c-filter {
+	margin-bottom: 1em;
+	display: flex;
+
+	button {
+		border: 1px solid purple;
+		background: none;
+		padding: 1em;
+		color: purple;
+
+		&.m-active {
+			background: purple;
+			color: #fff;
+		}
+	}
+}
+
+// Target
+
+.c-filter-items {
+	& > div {
+		&.m-hidden {
+			display: none;
+		}
+	}
+}

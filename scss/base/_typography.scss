@@ -1,0 +1,65 @@
+// Typography
+
+body {
+	font-family: $f-regular;
+	color: $c-dark;
+}
+
+h1 {
+	font-weight: 400;
+	font-size: em(58px);
+	line-height: 1;
+	margin: 0 0 .5em 0;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: em(32px);
+	line-height: 1;
+	margin: 0 0 .5em 0;
+}
+
+h3 {
+	font-weight: 400;
+	font-size: em(20px);
+	line-height: 1;
+	margin: 0 0 .5em 0;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: em(16px);
+	line-height: 1;
+	margin: 0 0 .5em 0;
+}
+
+p {
+	font-size: em(18px);
+	line-height: 1.6;
+	margin: 1.5em 0;
+
+	&.ingress {
+		font-size: em(20px);
+		font-weight: 700;
+	}
+}
+
+a {
+	color: #786ea6;
+	
+	&:link {
+		text-decoration: none;
+	}
+	
+	&:visited {
+		text-decoration: none;
+	}
+	
+	&:hover {
+		text-decoration: underline;
+	}
+	
+	&:active {
+		text-decoration: none;
+	}
+}

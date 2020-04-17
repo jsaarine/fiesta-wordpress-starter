@@ -1,0 +1,16 @@
+// Footer
+
+.c-footer {
+	padding: em(70px) 0;
+	text-align: center;
+	border-top: 1px solid #ddd;
+
+	p {
+		margin: 0;
+
+		strong {
+			display: inline-block;
+			margin-bottom: 1em;
+		}
+	}
+}

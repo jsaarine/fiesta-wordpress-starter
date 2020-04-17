@@ -1,0 +1,74 @@
+// Mixins
+
+@mixin video-embed($ratio: 56.25%) {
+	position: relative;
+	padding-bottom: $ratio;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@mixin grid-row() {
+	@supports(display: grid) {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+@mixin grid-column() {
+	@supports(display: grid) {
+		width: 100% !important;
+		margin-right: 0 !important;
+	}
+}
+
+@mixin object-fit() {
+	object-fit: cover;
+	min-width: 100%;
+	min-height: 100%; 
+	width: auto;
+	height: auto;
+	max-width: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	@supports(object-fit: cover) {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@mixin button() {
+	display: inline-block;
+	font-size: rem(18px);
+	padding: .7em 2em;
+	text-transform: uppercase;
+	background: #786ea6;
+	text-decoration: none;
+	margin-bottom: 0;
+	color: #fff;
+	border-radius: 30px;
+
+	&:hover {
+		background: $c-dark;
+		opacity: 1;
+		text-decoration: none;
+	}
+}
+
+@mixin caption {
+	margin-top: 2em;
+	line-height: 1.4;
+	text-align: center;
+	font-size: em(16px);
+	color: $c-dark;
+}

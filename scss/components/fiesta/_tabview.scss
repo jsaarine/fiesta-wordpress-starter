@@ -1,0 +1,56 @@
+// Tab view
+
+.c-tab-view {
+	margin-top: 2em;
+
+	// Tab nav
+	& > .tab-nav {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+
+		& > li {
+			display: inline-block;
+			cursor: pointer;
+			color: #fff;
+
+			&:not(:first-of-type) {
+				a {
+					border-left: none;
+				}
+			}
+
+			a {
+				color: #fff;
+				padding: .5em 2em;
+				display: block;
+				border: 1px solid $c-dark;
+				background-color: purple;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&.m-active {
+					background-color: #fff;
+					border-bottom-color: #fff;
+					color: $c-dark;
+				}
+			}
+		}
+	}
+
+	// Tab content
+	& > .tab-content {
+		display: none;
+		padding: 2em;
+		border: 1px solid $c-dark;
+		margin-top: -1px;
+
+		&.m-active {
+			display: block;
+		}
+	}
+}
+
