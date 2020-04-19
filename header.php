@@ -1,22 +1,9 @@
-<?php
-/**
- * Header file for the Twenty Twenty WordPress default theme.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
-
-?><!DOCTYPE html>
-
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-		<link rel="profile" href="https://gmpg.org/xfn/11">
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
 		<?php wp_head(); ?>
 		<script>
@@ -42,10 +29,10 @@
 					</span>
 				</button>
 				<?php wp_nav_menu([
-	            'menu'=>'main',
-	            'container'=>'',
-	            'container_class'=>'',
-	            'menu_class'=>''
-	        ])?>
+					'menu'=>'main',
+					'container'=>'',
+					'container_class'=>'',
+					'menu_class'=>''
+				])?>
 			</nav>
 		</header>
