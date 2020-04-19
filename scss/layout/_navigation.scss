@@ -43,16 +43,28 @@
 		}
 
 		// Parent (has child pages)
-		&.m-parent {
+		&.menu-item-has-children {
 			& > ul {
 				display: none;
-				padding: em(30px) 0;
+				padding: em(20px) 0;
+				background: #eee;
 
 				&.m-visible {
 					@include max($medium-max) {
 						display: block;	
 					}
 				}
+
+				a {
+					font-size: em(16px);
+				}
+			}
+		}
+
+		&.current_page_item {
+			a {
+				color: #786ea6;
+				// border-bottom: 1px solid #786ea6;
 			}
 		}
 	}
@@ -61,9 +73,11 @@
 		display: block;
 		padding: 1em 0;
 		color: $c-dark;
+		text-transform: uppercase;
 
 		@include max($medium-max) {
 			font-size: em(20px);
+			padding: 1em 0;
 		}
 	}
 
@@ -71,7 +85,7 @@
 	.nav-button {
 		position: fixed;
 		top: em(10px);
-		right: 1.5em;
+		right: 1.2em;
 		cursor: pointer;
 		text-align: center;
 		border: none;
@@ -80,10 +94,6 @@
 		height: rem(44px);
 		z-index: 2;
 		transition: top .2s ease-out;
-
-		// &:focus {
-		// 	outline: 0;
-		// }
 
 		@include min($large) {
 			top: em(25px);
@@ -118,15 +128,17 @@
 	.toggle {
 		position: absolute;
 		right: 1em;
-		top: 0;
+		top: .3em;
 		width: rem(44px);
 		height: rem(44px);
 		line-height: rem(44px);
 		text-align: center;
 		cursor: pointer;
-		font-size: em(20px);
+		font-size: em(26px);
 		background: none;
 		border: none;
+		// background: #786ea6;
+		// color: #fff;
 
 		@include hide($large);
 
@@ -199,14 +211,14 @@ html.m-nav-open {
 html.m-nav-open-transition {
 	.c-navigation {
 		& > ul {
-			transition: opacity .25s linear, transform .25s ease-in, visibility 0s .25s;
+			transition: opacity .25s linear, transform .25s ease-out, visibility 0s .25s;
 		}
 	}
 
 	&.m-nav-open {
 		.c-navigation {
 			& > ul {
-				transition: opacity .25s linear, transform .25s ease-in;
+				transition: opacity .25s linear, transform .25s ease-out;
 			}
 		}		
 	}
