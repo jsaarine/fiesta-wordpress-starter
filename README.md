@@ -1,15 +1,16 @@
 # fiesta-wordpress-starter
 
-Fiesta is a simple starter theme for WordPress
+Fiesta is a simole, modern, Gutenberg-friendly WordPress starter theme
 
 ## Features
 
 * Sass compilation and minification with Gulp
 * Babel compilation, JavaScript concatenation, minification and source maps with Gulp
-* Basic styles for WordPress blocks that also show in Gutenberg
+* Basic styles for WordPress blocks
+* Gutenberg editor shares styles with the front-end
 
 ## Usage
 
 1. Extract into your theme folder
-1. Run `npm install`
-1. Run `gulp` to start watch
+2. Run `npm install`
+3. Run `gulp` to start watch
