@@ -1,13 +1,12 @@
 <?php get_header()?>
 
 <main id="main-content">
+	<?php while(have_posts()) : the_post(); ?>
+
 	<article class="c-article-view">
 		<h1 class="container"><?= the_title() ?></h1>
+
 		<?php
-
-		while ( have_posts() ) :
-			the_post();
-
 			$blocks = parse_blocks(get_post()->post_content);
 
 			foreach($blocks as $block) {
@@ -18,11 +17,10 @@
 					
 					echo apply_filters('the_content', $content);
 			} ?>
-
-		<?php
-		endwhile;
-		?>
+		
 	</article>
+
+	<?php endwhile; ?>
 </main>
 
 <?php get_footer()?>
