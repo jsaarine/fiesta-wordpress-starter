@@ -26,8 +26,6 @@
 		@include container(em(800px));
 	}
 
-	// & + div:not()
-
 	[class*="wp-block"] {
 		margin-bottom: 0 !important;
 	}

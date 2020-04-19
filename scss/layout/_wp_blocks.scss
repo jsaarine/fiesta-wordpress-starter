@@ -96,57 +96,14 @@ h2, h3 {
 	h2 {
 		margin-top: 1em;
 	}
-
-	// Two
-	/*&.two {
-		& > .wp-block-column {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-			&:last-child {
-				@include min($medium) {
-					padding-right: 15%;
-				}
-			}
-		}
-
-		// Reverse
-		&.reverse {
-			& > .wp-block-column {
-				&:first-child {
-					@include min($medium) {
-						order: 2;
-					}
-				}
-
-				&:last-child {
-					@include min($medium) {
-						order: 1;
-						margin-left: 0;
-						padding-right: 0;
-						padding-left: 15%;
-					}
-				}	
-
-				&:not(:last-child) {
-					@include min($medium) {
-						margin-left: 4%;
-					}
-				}
-			}
-		}
-	}*/
 }
 
 // Embed
 .wp-block-embed {
-	@include container($container);
+	@include container($container, true);
 
 	.wp-block-embed__wrapper {
 		margin-bottom: 0;
-
-		// @include video-embed();
 	}
 
 	figcaption {

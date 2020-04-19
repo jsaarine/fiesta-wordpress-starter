@@ -6,7 +6,7 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
 	transition: height .2s ease-out, transform .3s ease-out, background .2s ease-out, box-shadow .2s ease-out;
 	margin-bottom: 3em;
 	background: #fff;
@@ -18,12 +18,13 @@
 	// Logo
 	.logo {
 		position: absolute;
-		top: .9em;
+		top: 1.2em;
 		left: 1.5em;
 		transition: top .2s ease-out;
 
 		@include min($large) {
 			top: 2em;
+			left: 3em;
 		}
 
 		svg {
@@ -31,7 +32,7 @@
 			width: em(80px);
 			height: em(23px);
 
-			@include min($medium) {
+			@include min($large) {
 				width: em(120px);
 				height: em(34px);
 			}
