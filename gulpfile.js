@@ -39,27 +39,6 @@ gulp.task('babel', () => {
         .pipe(gulp.dest('./js'));	
 });
 
-/*gulp.task('concat', () => {
-    return gulp.src([
-    	'./js/vendor/polyfills.js',
-    	'./js/vendor/isMobile.min.js',
-        './js/vendor/cookieconsent.js',
-    	'./js/fiesta/Core.js',
-    	'./js/fiesta/Component.js',
-        './js/Header.js',
-        './js/Navigation.js',
-    	'./js/App.js',
-    ])
-        .pipe(concat("./script.js"))
-        .pipe(gulp.dest('./js'));
-});
-
-gulp.task('minify', () => {
-    return gulp.src('./js/script.js')
-        .pipe(minify())
-        .pipe(gulp.dest('./js'));
-});*/
-
 gulp.task('browser-sync', function() {
     
 });
