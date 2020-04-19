@@ -1,6 +1,6 @@
 # fiesta-wordpress-starter
 
-Fiesta is a simole, modern, Gutenberg-friendly WordPress starter theme
+Fiesta is a simple, modern, Gutenberg-friendly WordPress starter theme
 
 ## Features
 
