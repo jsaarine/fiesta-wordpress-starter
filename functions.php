@@ -6,7 +6,7 @@ function theme_setup() {
 	add_theme_support('editor-styles');
 
 	// Enqueue editor styles.
-	add_editor_style('style-editor.css');
+	add_editor_style('dist/css/style-editor.css');
 
 	// Let WordPress manage the title tag
 	add_theme_support('title-tag');
@@ -40,9 +40,9 @@ add_action('after_setup_theme', 'theme_setup');
 
 /* Styles */
 function theme_register_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+	$theme_version = wp_get_theme()->get('Version');
 
-	wp_enqueue_style('twentytwenty-style', get_stylesheet_uri(), array(), $theme_version);
+	wp_enqueue_style('twentytwenty-style', get_stylesheet_directory_uri().'/dist/css/style.css', array(), $theme_version);
 }
 
 add_action('wp_enqueue_scripts', 'theme_register_styles');
@@ -149,6 +149,7 @@ function posts_allowed_block_types($allowed_block_types, $post) {
 					'core-embed/vimeo',
 					'core-embed/issuu',
 					'core-embed/slideshare',
+					'fiesta/test-block',
 				);
 	endswitch;  
 }
