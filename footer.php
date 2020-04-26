@@ -3,14 +3,14 @@
 	<?php dynamic_sidebar('footer'); ?>
 </footer>
 
-<script src="<?= get_stylesheet_directory_uri() ?>/js/script.js"></script>
+<script src="<?= get_stylesheet_directory_uri() ?>/dist/js/script.js"></script>
 <script>
 	app.ready(function() {
 		cookieConsent({
 			text: "This website uses cookies.",
-			linkText: "Read more",
+			linkText: "Read more about cookies",
 			linkUrl: "<?= get_privacy_policy_url() ?>",
-			buttonText: "I understand"
+			buttonText: "I accept"
 		});
 	});
  </script>
