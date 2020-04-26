@@ -158,7 +158,7 @@ h2, h3 {
 .wp-block-group {
 	text-align: center;
 
-	@include container($container);
+	@include container($container, true);
 
 	p, ul, ol, h2, h3 {
 		@include container($container);
@@ -202,10 +202,24 @@ h2, h3 {
 	}
 }
 
+// Gallery
+.wp-block-gallery {
+	ul {
+		width: 100%;
+	}
+}
+
 // Separator
 .wp-block-separator {
 	background: #ccc;
 	border: none;
 	height: 2px;
 	width: em(150px);
+}
+
+// Test block
+.wp-block-fiesta-test-block {
+	text-align: center;
+	
+	@include container($container, true);
 }

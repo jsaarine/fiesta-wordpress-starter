@@ -1,0 +1,20 @@
+@media print {
+	@page {
+ 		margin: 2cm 1.5cm;
+	}
+
+	.container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	body {
+		font-family: serif !important;
+		font-size: 75%;
+	}
+
+	h1, h2, h3, h4, p {
+		font-family: serif !important;
+		color: #000;
+	}
+}

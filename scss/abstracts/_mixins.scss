@@ -57,6 +57,7 @@
 	margin-bottom: 0;
 	color: #fff;
 	border-radius: 30px;
+	line-height: 1.1;
 
 	&:hover {
 		background: $c-dark;
@@ -66,7 +67,7 @@
 }
 
 @mixin caption {
-	margin-top: 2em;
+	margin-top: 1.5em;
 	line-height: 1.4;
 	text-align: center;
 	font-size: em(16px);

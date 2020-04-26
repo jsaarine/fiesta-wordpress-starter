@@ -1,6 +1,6 @@
 /*!
 Theme Name: Fiesta
-Version: 1.0
+Version: 1.0.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 Text Domain: fiesta
@@ -19,6 +19,7 @@ Text Domain: fiesta
 @import "base/base";
 @import "base/helpers";
 @import "base/typography";
+@import "base/print";
 
 // Layout
 @import "layout/header";
@@ -28,8 +29,6 @@ Text Domain: fiesta
 @import "layout/wp_blocks";
 
 // Components
-@import "components/fiesta/checkbox";
-@import "components/fiesta/overlay";
 @import "components/article_view";
 @import "components/button";
 @import "components/hero";
@@ -39,6 +38,3 @@ Text Domain: fiesta
 // Themes
 
 // Vendor
-
-// Misc
-// @import "print";

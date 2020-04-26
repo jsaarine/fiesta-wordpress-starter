@@ -21,7 +21,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0 1em;
-		background: rgba(134,129,189,.85);
+		background: rgba(134,129,189,.9);
 		z-index: 1;
 	}
 
@@ -36,7 +36,7 @@
 	h1 {
 		font-size: em(38px);
 		color: #fff;
-		margin-bottom: 0;
+		margin-bottom: .3em;
 
 		@include min($large) {
 			font-size: em(70px);

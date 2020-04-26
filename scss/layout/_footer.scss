@@ -13,4 +13,10 @@
 			margin-bottom: 1em;
 		}
 	}
+
+	a {
+		color: $c-dark;
+		text-decoration: underline;
+		font-size: em(14px);
+	}
 }
