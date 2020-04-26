@@ -13,30 +13,28 @@ gulp.task('sass', () => {
     return gulp.src(['./scss/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([ autoprefixer(), cssnano()]))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./dist/css'))
         // .pipe(browserSync.stream());
 });
 
 gulp.task('babel', () => {
-    // return gulp.src(['./js-src/**/*.js', ], {base: './js-src/'})
+    // return gulp.src(['./js/**/*.js', ], {base: './js/'})
     return gulp.src([
-        './js-src/vendor/polyfills.js',
-        './js-src/vendor/isMobile.min.js',
-        './js-src/vendor/cookieconsent.js',
-        './js-src/fiesta/Core.js',
-        './js-src/fiesta/Component.js',
-        './js-src/Header.js',
-        './js-src/Navigation.js',
-        './js-src/App.js',
+        './js/vendor/polyfills.js',
+        './js/vendor/cookieconsent.js',
+        './js/fiesta/Core.js',
+        './js/Header.js',
+        './js/Navigation.js',
+        './js/App.js',
     ])
         .pipe(sourcemaps.init())
         .pipe(babel({
-            ignore: ['./js-src/vendor']
+            ignore: ['./js/vendor']
         }))
         .pipe(concat("./script.js"))
         .pipe(minify())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./js'));	
+        .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('browser-sync', function() {
@@ -49,7 +47,7 @@ gulp.task('watch', () => {
  //    });
 
     gulp.watch('./scss/**/*.scss', gulp.series('sass'));
-    gulp.watch('./js-src/**/*.js', gulp.series(['babel']));
+    gulp.watch('./js/**/*.js', gulp.series(['babel']));
 });
 
 gulp.task('default', gulp.series(['sass', 'babel', 'watch']));
