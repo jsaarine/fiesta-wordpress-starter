@@ -5,6 +5,7 @@ get_header();
 
 <main id="main-content">
 	<?php get_template_part('template-parts/hero'); ?>
+
 	<div class="container" style="max-width: 800px; margin-bottom: 100px;">
 
 		<?php
@@ -22,8 +23,6 @@ get_header();
 		?>
 	</div>
 </main>
-
-<?php //get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php
 get_footer();
