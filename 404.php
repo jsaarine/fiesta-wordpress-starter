@@ -1,7 +1,7 @@
 <?php get_header()?>
 
 <main id="main-content">
-	<div class="c-article-view g-article">
+	<div class="c-article-view">
 		<h1>Page not found</h1>
 		<?php
 

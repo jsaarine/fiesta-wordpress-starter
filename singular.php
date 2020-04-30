@@ -12,7 +12,7 @@
 			foreach($blocks as $block) {
 				$content = render_block($block);
 					if(is_text_block($block['blockName'])) {
-						$content = '<div class="text-block container g-article">'.$content.'</div>';
+						$content = '<div class="text-block container">'.$content.'</div>';
 					}
 					
 					echo apply_filters('the_content', $content);
