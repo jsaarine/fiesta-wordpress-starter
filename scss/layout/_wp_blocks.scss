@@ -1,13 +1,77 @@
 // Headings
+.wp-block[data-type="core/heading"], .text-block {
+	h2, h3 {
+		color: #786ea6;
+		margin-top: 2em;
+		line-height: 1.2;
+	}
+}
 
-h2, h3 {
-	color: #786ea6;
-	margin-top: 2em;
-	line-height: 1.2;
+// Lists
+.wp-block[data-type="core/list"], .text-block {
+	ul, ol {
+		list-style: none;
+		padding-left: 1em;
+		margin: 1em 0;
+
+		li {
+			position: relative;
+			padding-left: 1.5em;
+			margin-bottom: .5em;
+			line-height: 1.6;
+			font-size: em(18px);
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		ul, ol {
+			padding-left: 0;
+		}
+	}
+
+	ul {
+		ul, ol {
+			list-style: none;
+			margin-top: 1em;
+		}
+
+		li {
+			position: relative;
+
+			&:before {
+				top: .5em;
+				left: 0;
+				width: 8px;
+				height: 8px;
+				background: #786ea6;
+				border-radius: 999px;
+			}
+		}
+	}
+
+	ol {
+		list-style: none;
+
+		ol {
+			counter-reset: counter;
+		}
+
+		li {
+			counter-increment: counter;
+		}
+
+		li:before {
+			content: counter(counter)".";
+		}
+	}
 }
 
 // Blocks
-
 [class*="wp-block"] {
 	margin-bottom: em(50px);
 

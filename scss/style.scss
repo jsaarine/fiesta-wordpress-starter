@@ -1,11 +1,3 @@
-/*!
-Theme Name: Fiesta
-Version: 1.0.0
-License: MIT
-License URI: https://opensource.org/licenses/MIT
-Text Domain: fiesta
-*/
-
 // Core
 @import "core/functions";
 @import "core/settings";
@@ -25,7 +17,6 @@ Text Domain: fiesta
 @import "layout/header";
 @import "layout/footer";
 @import "layout/navigation";
-@import "layout/article";
 @import "layout/wp_blocks";
 
 // Components

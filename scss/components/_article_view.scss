@@ -3,15 +3,6 @@
 .c-article-view {
 	margin-bottom: em(100px);
 	padding-top: em(50px);
-	// max-width: em(800px);
-
-	// [class*="wp-block"] {
-	// 	margin-bottom: em(50px);
-
-	// 	@include min($medium) {
-	// 		margin-bottom: em(70px);
-	// 	}
-	// }
 
 	h1 {
 		font-size: em(42px);
@@ -39,6 +30,10 @@
 			@include min($medium) {
 				margin-top: em(70px);
 			}
+		}
+
+		a:link, a:visited, a:hover, a:active {
+			text-decoration: underline;
 		}
 	}
 }
