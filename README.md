@@ -14,3 +14,20 @@ Fiesta is a simple, modern, Gutenberg-friendly WordPress starter theme
 1. Extract into your theme folder
 2. Run `npm install`
 3. Run `gulp` to start watch
+
+## Structure
+
+* `dist`: Compiled css and js files
+* `js`: JavaScript source files
+  * `App.js`: JavaScript entry point
+  * `Header.js`: Header component
+  * `Navigation.js`: Navigation component
+  * `fiesta`: Fiesta component library
+  * `vendor`: Vendor files
+* `scss`: Sass sources files
+  * `core`: Fiesta css grid
+  * `abstracts`: Mixins and variables
+  * `base`: Base styles
+  * `components`: Components (e.g. button). Component classes have `c-`prefix
+  * `layout`: Layout components (e.g. footer). Layout classes have `c-`prefix
+* `template-parts`: WordPress template partials (e.g. hero)
