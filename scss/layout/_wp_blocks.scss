@@ -1,7 +1,7 @@
 // Headings
 .wp-block[data-type="core/heading"], .text-block {
 	h2, h3 {
-		color: #786ea6;
+		color: $c-theme;
 		margin-top: 2em;
 		line-height: 1.2;
 	}
@@ -48,7 +48,7 @@
 				left: 0;
 				width: 8px;
 				height: 8px;
-				background: #786ea6;
+				background: $c-theme;
 				border-radius: 999px;
 			}
 		}
@@ -108,7 +108,7 @@
 	border: none;
 
 	p {
-		color: #786ea6;
+		color: $c-theme;
 		font-size: em(24px);
 
 		@include container(rem(550px));
@@ -187,7 +187,7 @@
 	}
 
 	tr:first-child {
-		background: #786ea6;
+		background: $c-theme;
 		color: #fff;
 	}
 
