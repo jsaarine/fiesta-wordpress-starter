@@ -15,11 +15,17 @@
 		height: $header-height;
 	}
 
+	& > .inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
 	// Logo
 	.logo {
-		position: absolute;
-		top: 1.2em;
-		left: 1.5em;
+		margin-left: 3em;
 		transition: top .2s ease-out;
 
 		@include min($large) {
@@ -55,19 +61,11 @@
 			height: $header-height-small;
 
 			.logo {
-				top: 1.1em;
-
 				svg {
 					width: em(80px);
 					height: em(23px);
 				}
 			}
-
-			.c-navigation {
-				& > ul {
-					top: .4em;
-				}
-			}	
 		}
 	}
 

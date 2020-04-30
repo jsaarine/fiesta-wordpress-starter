@@ -7,9 +7,8 @@
 	}
 
 	& > ul {
-		position: absolute;
-		top: 1.75em;
-		right: 3em;
+		margin-right: 3em;
+		text-align: right;
 		transition: top .2s ease-out;
 
 		// Mobile
@@ -22,9 +21,9 @@
 			background: #fff;
 			width: 100%;
 			height: 100%;
-			// max-width: em(320px);
 			padding-top: em(120px);
 			padding-bottom: em(40px);
+			margin-right: 0;
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
 			visibility: hidden;
@@ -137,8 +136,6 @@
 		font-size: em(26px);
 		background: none;
 		border: none;
-		// background: #786ea6;
-		// color: #fff;
 
 		@include hide($large);
 
