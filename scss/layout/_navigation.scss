@@ -37,7 +37,7 @@
 		@include min($large) {
 			display: inline-block;
 			margin-bottom: 0;
-			padding-left: 1.7em;
+			padding: 0 1em;
 		}
 
 		// Parent (has child pages)
@@ -45,7 +45,7 @@
 			& > ul {
 				display: none;
 				padding: 0;
-				background: #786ea6;
+				background: $c-theme;
 
 				@include max($medium-max) {
 					display: block;	
@@ -54,23 +54,41 @@
 					transition: height .25s ease-out;
 				}
 
-				&.m-visible {
-					@include max($medium-max) {
-						display: block;	
-					}
-				}
-
 				a {
 					font-size: em(16px);
 					color: #fff;
+				}
+			}
+
+			&:hover {
+				@include min($large) {
+					& > ul {
+						display: block;
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						text-align: center;
+						border-radius: 5px;
+						box-shadow: 0 0 15px rgba(0,0,0,.2);
+
+						li {
+							display: block;
+							padding-left: 0;
+							padding-right: 0;
+							white-space: nowrap;
+						}
+
+						a {
+							padding: 1em 2em;
+						}
+					}					
 				}
 			}
 		}
 
 		&.current_page_item {
 			a {
-				color: #786ea6;
-				// border-bottom: 1px solid #786ea6;
+				color: $c-theme;
 			}
 		}
 	}

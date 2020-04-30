@@ -20,6 +20,7 @@ class Navigation {
 			}
 		});
 
+		// Close
 		this.closeButton.addEventListener("click", e => {
 			this.close();
 		});
@@ -42,25 +43,7 @@ class Navigation {
 			document.documentElement.classList.remove("m-nav-open-transition");
 		});
 
-		// Adds toggle buttons (+/-)
-		this.setupToggleNavigation();
-	}
-
-	open() {
-		document.documentElement.classList.add("m-nav-open");
-		document.documentElement.classList.add("m-nav-open-transition");
-		this.el.scrollTo(0,0);
-		// this.el.querySelector("nav").focus();
-		this.toggleButton.setAttribute("aria-expanded", true);
-	}
-
-	close() {
-		document.documentElement.classList.remove("m-nav-open");
-		document.documentElement.classList.add("m-nav-open-transition");
-		this.toggleButton.setAttribute("aria-expanded", false);
-	}
-
-	setupToggleNavigation() {
+		// Second level
 		this.el.querySelectorAll(".menu-item-has-children").forEach(i => {
 			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="toggle"><span>+</span><span>-</span></button>');
 			
@@ -84,6 +67,20 @@ class Navigation {
 				});
 			}
 		});
+	}
+
+	open() {
+		document.documentElement.classList.add("m-nav-open");
+		document.documentElement.classList.add("m-nav-open-transition");
+		this.el.scrollTo(0,0);
+		// this.el.querySelector("nav").focus();
+		this.toggleButton.setAttribute("aria-expanded", true);
+	}
+
+	close() {
+		document.documentElement.classList.remove("m-nav-open");
+		document.documentElement.classList.add("m-nav-open-transition");
+		this.toggleButton.setAttribute("aria-expanded", false);
 	}
 
 	toggle(item, button) {
