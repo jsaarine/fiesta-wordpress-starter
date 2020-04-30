@@ -7,9 +7,7 @@
 	}
 
 	& > ul {
-		margin-right: 3em;
 		text-align: right;
-		transition: top .2s ease-out;
 
 		// Mobile
 		@include max($medium-max) {
@@ -217,14 +215,14 @@ html.m-nav-open {
 html.m-nav-open-transition {
 	.c-navigation {
 		& > ul {
-			transition: opacity .25s linear, transform .25s ease-out, visibility 0s .25s;
+			transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
 		}
 	}
 
 	&.m-nav-open {
 		.c-navigation {
 			& > ul {
-				transition: opacity .25s linear, transform .25s ease-out;
+				transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1);
 			}
 		}		
 	}

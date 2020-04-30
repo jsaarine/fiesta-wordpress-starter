@@ -10,8 +10,11 @@
 	transition: height .2s ease-out, transform .3s ease-out, background .2s ease-out, box-shadow .2s ease-out;
 	margin-bottom: 3em;
 	background: #fff;
+	padding-left: 1.5em;
 
 	@include min($large) {
+		padding-left: 3em;
+		padding-right: 3em;
 		height: $header-height;
 	}
 
@@ -25,7 +28,7 @@
 
 	// Logo
 	.logo {
-		margin-left: 3em;
+		// margin-left: 3em;
 		transition: top .2s ease-out;
 
 		@include min($large) {
@@ -80,7 +83,7 @@
 			background: rgba(0,0,0,.5);
 			opacity: 0;
 			visibility: hidden;
-			transition: visibility 0s .25s, left 0s .25s, opacity .25s linear;
+			transition: visibility 0s .5s, left 0s .5s, opacity .5s linear;
 		}
 	}
 
