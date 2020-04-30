@@ -87,7 +87,8 @@ class Navigation {
 	}
 
 	toggle(item, button) {
-		item.querySelector("ul").classList.toggle("m-visible");
+		Core.slideToggle(item.querySelector("ul"));
+		// item.querySelector("ul").classList.toggle("m-visible");
 		button.classList.toggle("m-active");
 
 		// Close children

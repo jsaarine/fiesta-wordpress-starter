@@ -20,6 +20,7 @@
 			z-index: 1;
 			background: #fff;
 			width: 100%;
+			max-width: 90%;
 			height: 100%;
 			padding-top: em(120px);
 			padding-bottom: em(40px);
@@ -45,8 +46,15 @@
 		&.menu-item-has-children {
 			& > ul {
 				display: none;
-				padding: em(20px) 0;
-				background: #eee;
+				padding: 0;
+				background: #786ea6;
+
+				@include max($medium-max) {
+					display: block;	
+					height: 0;
+					overflow: hidden;
+					transition: height .25s ease-out;
+				}
 
 				&.m-visible {
 					@include max($medium-max) {
@@ -56,6 +64,7 @@
 
 				a {
 					font-size: em(16px);
+					color: #fff;
 				}
 			}
 		}
