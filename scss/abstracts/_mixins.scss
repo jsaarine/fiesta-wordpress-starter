@@ -53,11 +53,13 @@
 	padding: .7em 2em;
 	text-transform: uppercase;
 	background: $c-theme;
+	border: none;
 	text-decoration: none;
 	margin-bottom: 0;
 	color: #fff;
 	border-radius: 30px;
 	line-height: 1.1;
+	cursor: pointer;
 
 	&:hover {
 		background: $c-dark;

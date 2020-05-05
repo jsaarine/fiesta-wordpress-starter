@@ -71,6 +71,19 @@
 						border-radius: 5px;
 						box-shadow: 0 0 15px rgba(0,0,0,.2);
 
+						&:before {
+							content: "";
+							width: 0; 
+							height: 0; 
+							border-left: 6px solid transparent;
+							border-right: 6px solid transparent;
+  							border-bottom: 6px solid $c-theme;
+  							position: absolute;
+  							left: 50%;
+  							top: -6px;
+  							margin-left: -3px;
+						}
+
 						li {
 							display: block;
 							padding-left: 0;

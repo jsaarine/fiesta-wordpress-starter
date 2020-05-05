@@ -1,5 +1,5 @@
 // Headings
-.wp-block[data-type="core/heading"], .text-block {
+[class*="wp-block"], .text-block {
 	h2, h3 {
 		color: $c-theme;
 		margin-top: 2em;
@@ -90,7 +90,7 @@
 
 // Image
 .wp-block-image {	
-	@include container($container);
+	@include container($container-wide);
 
 	img {
 		width: 100%;
@@ -282,7 +282,7 @@
 }
 
 // Test block
-.wp-block-fiesta-test-block {
+.wp-block-fiesta-sample-block, .wp-block-fiesta-sample-block2 {
 	text-align: center;
 	
 	@include container($container, true);
