@@ -3,7 +3,6 @@
 	<?php dynamic_sidebar('footer'); ?>
 </footer>
 
-<script src="<?= get_stylesheet_directory_uri() ?>/dist/js/script.js"></script>
 <script>
 	app.ready(function() {
 		cookieConsent({

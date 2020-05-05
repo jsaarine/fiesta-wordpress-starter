@@ -2,7 +2,7 @@
 
 /* Theme setup */
 
-function theme_setup() {
+add_action('after_setup_theme', function() {
 	add_theme_support('editor-styles');
 
 	// Enqueue editor styles.
@@ -33,42 +33,35 @@ function theme_setup() {
 
 	// Make embeds responsive
 	add_theme_support('responsive-embeds');
-}
-
-add_action('after_setup_theme', 'theme_setup');
+});
 
 
 /* Styles */
-function theme_register_styles() {
+add_action('wp_enqueue_scripts', function() {
 	$theme_version = wp_get_theme()->get('Version');
 
-	wp_enqueue_style('twentytwenty-style', get_stylesheet_directory_uri().'/dist/css/style.css', array(), $theme_version);
-}
-
-add_action('wp_enqueue_scripts', 'theme_register_styles');
+	wp_enqueue_style('fiesta-style', get_stylesheet_directory_uri().'/dist/css/style.css', array(), $theme_version);
+	wp_enqueue_script('fiesta-script', get_stylesheet_directory_uri().'/dist/js/script.js', array(), $theme_version, true);
+});
 
 
 /* Menus */
-function theme_menus() {
-
+add_action('init', function() {
 	$locations = array(
 		'primary'  => __('Desktop Horizontal Menu', 'twentytwenty'),
 	);
 
-	register_nav_menus( $locations );
-}
-
-add_action('init', 'theme_menus');
+	register_nav_menus($locations);
+});
 
 
 /* Reset */
 
 // Remove WP embed
-function my_deregister_scripts(){
+add_action('wp_footer', function() {
 	wp_deregister_script('wp-embed');
-}
+});
 
-add_action('wp_footer', 'my_deregister_scripts');
 
 // Remove Emoji
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -76,28 +69,6 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 // Remove generator
 remove_action('wp_head', 'wp_generator');
-
-
-/* Post types */
-
-/*function create_custom_posttypes() {
-	register_post_type('services',
-		array(
-				'labels' => array(
-						'name' => __('Services'),
-						'singular_name' => __('Services')
-				),
-				'public' => true,
-				'has_archive' => true,
-				'rewrite' => array('slug' => 'services'),
-				'show_in_rest' => true,
-				'supports' => array('title', 'editor'),
-				'has_archive' => false
-		)
-	);
-}
-
-add_action('init', 'create_custom_posttypes');*/
 
 
 /* Misc */
@@ -119,7 +90,7 @@ function is_text_block($name) {
 
 /* Allowed Block types */
 
-function posts_allowed_block_types($allowed_block_types, $post) {
+add_filter('allowed_block_types', function($allowed_block_types, $post) {
 	switch($post->post_type):
 			default:
 				return array(
@@ -149,17 +120,16 @@ function posts_allowed_block_types($allowed_block_types, $post) {
 					'core-embed/vimeo',
 					'core-embed/issuu',
 					'core-embed/slideshare',
-					'fiesta/test-block',
+					'fiesta/sample-block',
+					'fiesta/sample-block2',
 				);
 	endswitch;  
-}
-
-add_filter('allowed_block_types', 'posts_allowed_block_types', 10, 2);
+}, 10, 2);
 
 
 /* Widgets */
 
-function theme_register_widgets() {
+add_action('widgets_init', function() {
 	register_sidebar( array(
 		'name' => __('Footer', 'footer'),
 		'id' => 'footer-widget',
@@ -168,6 +138,4 @@ function theme_register_widgets() {
 	   'before_title' => '<p><strong>',
 	   'after_title' => '</strong></p>',
 	));
-}
-
-add_action('widgets_init', 'theme_register_widgets');
+});
