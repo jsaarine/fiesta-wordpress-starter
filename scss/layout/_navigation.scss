@@ -46,12 +46,16 @@
 				display: none;
 				padding: 0;
 				background: $c-theme;
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
 				text-align: center;
-				border-radius: 5px;
 				box-shadow: 0 0 15px rgba(0,0,0,.2);
+				position: relative;
+
+				@include min($medium) {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);	
+					border-radius: 5px;
+				}
 
 				&:before {
 					content: "";
@@ -64,6 +68,8 @@
 					left: 50%;
 					top: -7px;
 					margin-left: -4px;
+
+					@include show($medium);
 				}
 
 				@include max($small-max) {
@@ -174,6 +180,13 @@
 		font-size: em(26px);
 		background: none;
 		border: none;
+
+		@include min($medium) {
+			width: rem(10px);
+			height: rem(10px);
+			right: 0;
+			top: 0;
+		}
 
 		@include hide($medium);
 
