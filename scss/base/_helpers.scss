@@ -15,22 +15,41 @@ body {
 	padding-right: 1.5rem;
 	box-sizing: content-box;
 
+	@include container(em(1200px));
+
 	.container {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
-// Focus
+// Breakpoints
 
-/*
-.js-focus-visible :focus:not(.focus-visible) {
-	outline: none;
+meta.breakpoints-small-max {
+	@include variable($small-max);
 }
 
-.js-focus-visible .focus-visible {
-	// Default focus ring outline here
-}*/
+meta.breakpoints-medium {
+	@include variable($medium);
+}
+
+meta.breakpoints-medium-max {
+	@include variable($medium-max);
+}
+
+meta.breakpoints-large {
+	@include variable($large);
+}
+
+meta.breakpoints-large-max {
+	@include variable($large-max);
+}
+
+meta.breakpoints-xlarge {
+	@include variable($xlarge);
+}
+
+// Focus
 
 html:not(.m-focus-visible) {
 	button {
@@ -38,15 +57,6 @@ html:not(.m-focus-visible) {
 			// Remove outline from buttons when not using keyboard
 			outline: 0;
 		}
-	}
-}
-
-html.m-focus-visible {
-	a, button {
-		&:focus {
-			// Default focus ring color to override browser default. 
-			// outline: 3px solid #5B9DD9;
-		}	
 	}
 }
 

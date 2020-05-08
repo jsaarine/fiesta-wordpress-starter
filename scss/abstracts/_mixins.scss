@@ -1,4 +1,60 @@
-// Mixins
+// Container
+
+@mixin container($width: $default-container, $padding: false) {
+	max-width: $width;
+	margin-left: auto;
+	margin-right: auto;
+
+	@if($padding) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		box-sizing: content-box;
+	}
+}
+
+// Media queries
+
+@mixin min($value) {
+	@media screen and (min-width: $value) {
+		@content;
+	}
+}
+
+@mixin max($value) {
+	@media screen and (max-width: $value) {
+		@content;	
+	}
+}
+
+@mixin min-max($min, $max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+// Visibility
+	
+@mixin hide($value) {
+	@include min($value) {
+		display: none !important;
+	}
+}
+
+@mixin show($value, $display: block) {
+	@media screen {
+		display: none;
+	}
+
+	@include min($value) {
+		display: $display !important;
+	}
+}
+
+// Variable
+
+@mixin variable($value) {
+	font-family: "#{$value}";
+}
 
 @mixin video-embed($ratio: 56.25%) {
 	position: relative;
@@ -14,20 +70,20 @@
 	}
 }
 
-@mixin grid-row() {
-	@supports(display: grid) {
-		&:after {
-			display: none;
-		}
-	}
-}
+// @mixin grid-row() {
+// 	@supports(display: grid) {
+// 		&:after {
+// 			display: none;
+// 		}
+// 	}
+// }
 
-@mixin grid-column() {
-	@supports(display: grid) {
-		width: 100% !important;
-		margin-right: 0 !important;
-	}
-}
+// @mixin grid-column() {
+// 	@supports(display: grid) {
+// 		width: 100% !important;
+// 		margin-right: 0 !important;
+// 	}
+// }
 
 @mixin object-fit() {
 	object-fit: cover;
@@ -57,7 +113,7 @@
 	text-decoration: none;
 	margin-bottom: 0;
 	color: #fff;
-	border-radius: 30px;
+	border-radius: 3px;
 	line-height: 1.1;
 	cursor: pointer;
 

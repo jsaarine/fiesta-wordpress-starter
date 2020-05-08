@@ -1,0 +1,9 @@
+// Converts pixels to em
+@function em($value, $base: 16px) {
+	@return ($value / $base) * 1em;
+}
+
+// Converts pixels to rem
+@function rem($value, $base: 16px) {
+	@return ($value / $base) * 1rem;
+}

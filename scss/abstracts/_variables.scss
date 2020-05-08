@@ -1,5 +1,16 @@
+// Screen size breakpoints (for min-width queries)
+$medium: em(640px);
+$large: em(980px);
+$xlarge: em(1200px);
+$xxlarge: em(1920px);
+
+// Screen size breakpoints (for max-width queries).
+$small-max: $medium - em(1px);
+$medium-max: $large - em(1px);
+$large-max: $xlarge - em(1px);
+
 // Fonts
-$f-regular: "Ubuntu", sans-serif;
+$f-regular: "Source Sans Pro", sans-serif;
 
 // Colors
 $c-dark: #222;

@@ -1,9 +1,10 @@
 // Core
-@import "core/functions";
-@import "core/settings";
-@import "core/grid";
+// @import "core/functions";
+// @import "core/settings";
+// @import "core/grid";
 
 // Abstracts
+@import "abstracts/functions";
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
