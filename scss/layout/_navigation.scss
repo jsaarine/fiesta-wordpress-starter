@@ -1,7 +1,7 @@
 // Main nav
 
 .c-navigation {
-	@include max($medium-max) {
+	@include max($small-max) {
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -10,7 +10,7 @@
 		text-align: right;
 
 		// Mobile
-		@include max($medium-max) {
+		@include max($small-max) {
 			position: fixed;
 			top: 0;
 			right: auto;
@@ -34,7 +34,7 @@
 	li {
 		position: relative;
 
-		@include min($large) {
+		@include min($medium) {
 			display: inline-block;
 			margin-bottom: 0;
 			padding: 0 1em;
@@ -46,12 +46,42 @@
 				display: none;
 				padding: 0;
 				background: $c-theme;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				border-radius: 5px;
+				box-shadow: 0 0 15px rgba(0,0,0,.2);
 
-				@include max($medium-max) {
+				&:before {
+					content: "";
+					width: 0; 
+					height: 0; 
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-bottom: 8px solid $c-theme;
+					position: absolute;
+					left: 50%;
+					top: -7px;
+					margin-left: -4px;
+				}
+
+				@include max($small-max) {
 					display: block;	
 					height: 0;
 					overflow: hidden;
 					transition: height .25s ease-out;
+				}
+
+				li {
+					display: block;
+					padding-left: 0;
+					padding-right: 0;
+					white-space: nowrap;
+				}
+
+				a {
+					padding: 1em 2em;
 				}
 
 				a {
@@ -60,41 +90,11 @@
 				}
 			}
 
-			&:hover {
-				@include min($large) {
+			&:hover, &.hover {
+				@include min($medium) {
 					& > ul {
 						display: block;
-						position: absolute;
-						left: 50%;
-						transform: translateX(-50%);
-						text-align: center;
-						border-radius: 5px;
-						box-shadow: 0 0 15px rgba(0,0,0,.2);
-
-						&:before {
-							content: "";
-							width: 0; 
-							height: 0; 
-							border-left: 6px solid transparent;
-							border-right: 6px solid transparent;
-  							border-bottom: 6px solid $c-theme;
-  							position: absolute;
-  							left: 50%;
-  							top: -6px;
-  							margin-left: -3px;
-						}
-
-						li {
-							display: block;
-							padding-left: 0;
-							padding-right: 0;
-							white-space: nowrap;
-						}
-
-						a {
-							padding: 1em 2em;
-						}
-					}					
+					}
 				}
 			}
 		}
@@ -112,7 +112,7 @@
 		color: $c-dark;
 		text-transform: uppercase;
 
-		@include max($medium-max) {
+		@include max($small-max) {
 			font-size: em(20px);
 			padding: 1em 0;
 		}
@@ -132,11 +132,11 @@
 		z-index: 2;
 		transition: top .2s ease-out;
 
-		@include min($large) {
+		@include min($medium) {
 			top: em(25px);
 		}
 
-		@include hide($large);
+		@include hide($medium);
 
 		.lines {
 			display: inline-block;
@@ -175,7 +175,7 @@
 		background: none;
 		border: none;
 
-		@include hide($large);
+		@include hide($medium);
 
 		span:nth-of-type(2) {
 			display: none;

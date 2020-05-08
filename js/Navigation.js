@@ -11,6 +11,8 @@ class Navigation {
 	}
 
 	build() {
+		let touched = false;
+
 		this.toggleButton.addEventListener("click", e => {
 			if(!document.documentElement.classList.contains("m-nav-open")) {
 				this.open();
@@ -66,6 +68,26 @@ class Navigation {
 					this.toggle(i, e.currentTarget);
 				});
 			}
+
+			// Touch support for hover menu
+			i.querySelector("a").addEventListener("touchstart", e => {
+				if(!touched) {
+					e.preventDefault();
+				}
+				
+				i.classList.toggle("hover");
+				touched = true;
+			});
+
+			document.addEventListener("click", e => {
+				if(!this.el.contains(e.target)) {
+					this.el.querySelectorAll(".menu-item-has-children").forEach(item => {
+						item.classList.remove("hover");
+					});	
+
+					touched = false;
+				}
+			});
 		});
 	}
 
@@ -85,7 +107,6 @@ class Navigation {
 
 	toggle(item, button) {
 		Core.slideToggle(item.querySelector("ul"));
-		// item.querySelector("ul").classList.toggle("m-visible");
 		button.classList.toggle("m-active");
 
 		// Close children
