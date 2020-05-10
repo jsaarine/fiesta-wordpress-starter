@@ -7,7 +7,7 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
-	transition: height .2s ease-out, transform .3s ease-out, background .2s ease-out, box-shadow .2s ease-out;
+	transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
 	margin-bottom: 3em;
 	background: #fff;
 	padding-left: 1.5em;
@@ -50,26 +50,23 @@
 
 	// Hidden (header is hidden when scrolling down)
 	&.m-hidden {
-		@media screen and (max-height: em(400px)) {
-			transform: translateY(-$header-height);	
-		}
+		transform: translateY(-$header-height);	
 	}
 
 	// Small (header is visible but smaller when scrolling)
 	&.m-small {
-		background: #fff;
 		box-shadow: 0 0 10px rgba(0,0,0,.2);
 
-		@include min($large) {
-			height: $header-height-small;
+		// @include min($large) {
+		// 	height: $header-height-small;
 
-			.logo {
-				svg {
-					width: em(80px);
-					height: em(23px);
-				}
-			}
-		}
+		// 	.logo {
+		// 		svg {
+		// 			width: em(80px);
+		// 			height: em(23px);
+		// 		}
+		// 	}
+		// }
 	}
 
 	// Nav close
