@@ -12,9 +12,12 @@ add_action('after_setup_theme', function() {
 	add_theme_support('title-tag');
 
 	// Disable custom colors
-	// add_theme_support('disable-custom-colors');
+	add_theme_support('disable-custom-colors');
+	add_theme_support('editor-color-palette', []);
 
-	// add_theme_support('editor-color-palette', []);
+	// Disable custom gradients
+	add_theme_support('disable-custom-gradients');
+	add_theme_support('editor-gradient-presets', []);
 
 	// Disable custom colors
 	add_theme_support('disable-custom-font-sizes');
