@@ -4,7 +4,11 @@ get_header();
 ?>
 
 <main id="main-content">
+	<?php while (have_posts()) : the_post(); ?>
+
 	<?php get_template_part('template-parts/hero'); ?>
+
+	<?php endwhile; ?>
 
 	<div class="container" style="max-width: 800px; margin-bottom: 100px;">
 
