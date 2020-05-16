@@ -1,7 +1,7 @@
 // Main nav
 
 .c-navigation {
-	@include max($small-max) {
+	@include max($mobile-nav-max) {
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -10,13 +10,13 @@
 		text-align: right;
 
 		// Mobile
-		@include max($small-max) {
+		@include max($mobile-nav-max) {
 			position: fixed;
 			top: 0;
 			right: auto;
 			bottom: auto;
 			z-index: 1;
-			background: #fff;
+			background: $c-theme;
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
@@ -34,7 +34,7 @@
 	li {
 		position: relative;
 
-		@include min($medium) {
+		@include min($desktop-nav) {
 			display: inline-block;
 			margin-bottom: 0;
 			padding: 0 1em;
@@ -45,16 +45,18 @@
 			& > ul {
 				display: none;
 				padding: 0;
-				background: $c-theme;
+				background: #fff;
 				text-align: center;
-				box-shadow: 0 0 15px rgba(0,0,0,.2);
 				position: relative;
 
-				@include min($medium) {
+				@include min($desktop-nav) {
 					position: absolute;
 					left: 50%;
-					transform: translateX(-50%);	
+					transform: translateX(-50%);
 					border-radius: 5px;
+					height: auto !important;
+					box-shadow: 0 0 15px rgba(0,0,0,.2);
+					background: #fff;
 				}
 
 				&:before {
@@ -63,16 +65,16 @@
 					height: 0; 
 					border-left: 8px solid transparent;
 					border-right: 8px solid transparent;
-					border-bottom: 8px solid $c-theme;
+					border-bottom: 8px solid #fff;
 					position: absolute;
 					left: 50%;
 					top: -7px;
 					margin-left: -4px;
 
-					@include show($medium);
+					@include show($desktop-nav);
 				}
 
-				@include max($small-max) {
+				@include max($mobile-nav-max) {
 					display: block;	
 					height: 0;
 					overflow: hidden;
@@ -92,12 +94,12 @@
 
 				a {
 					font-size: em(16px);
-					color: #fff;
+					color: $c-theme;
 				}
 			}
 
 			&:hover, &.hover {
-				@include min($medium) {
+				@include min($desktop-nav) {
 					& > ul {
 						display: block;
 					}
@@ -106,8 +108,19 @@
 		}
 
 		&.current_page_item {
-			a {
-				color: $c-theme;
+			& > a > span {
+				position: relative;
+
+				&:after {
+					content: "";
+					display: block;
+					width: 100%;
+					border-bottom: 2px solid #fff;
+					position: absolute;
+					left: 0;
+					top: 1.5em;
+				}
+				
 			}
 		}
 	}
@@ -115,12 +128,17 @@
 	a {
 		display: block;
 		padding: 1em 0;
-		color: $c-dark;
+		color: #fff;
 		text-transform: uppercase;
 
-		@include max($small-max) {
+		&:hover {
+			text-decoration: none;
+		}
+
+		@include max($mobile-nav-max) {
 			font-size: em(20px);
 			padding: 1em 0;
+			// color: $c-dark;
 		}
 	}
 
@@ -138,11 +156,11 @@
 		z-index: 2;
 		transition: top .2s ease-out;
 
-		@include min($medium) {
+		@include min($desktop-nav) {
 			top: em(25px);
 		}
 
-		@include hide($medium);
+		@include hide($desktop-nav);
 
 		.lines {
 			display: inline-block;
@@ -158,7 +176,7 @@
 			width: 26px;
 			height: 2px;
 			margin-bottom: 5px;
-			background-color: #000;
+			background-color: #fff;
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
 
 			&:nth-of-type(3) {
@@ -180,15 +198,16 @@
 		font-size: em(26px);
 		background: none;
 		border: none;
+		color: #fff;
 
-		@include min($medium) {
+		@include min($desktop-nav) {
 			width: rem(10px);
 			height: rem(10px);
 			right: 0;
 			top: 0;
 		}
 
-		@include hide($medium);
+		@include hide($desktop-nav);
 
 		span:nth-of-type(2) {
 			display: none;
@@ -220,7 +239,6 @@ html.m-nav-open {
 		.nav-button {
 			.line {
 				width: rem(26px);
-				background-color: $c-dark;
 
 				&:nth-of-type(1) {
 					top: 7px;

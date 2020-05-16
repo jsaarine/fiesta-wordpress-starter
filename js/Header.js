@@ -4,7 +4,7 @@ class Header {
 		this.el = el;
 		this.oldScroll = 0;
 		this.firstLoad = true;
-		this.threshold = 40;
+		this.threshold = 0;
 
 		window.addEventListener("scroll", e => {
 			this.update();
@@ -25,7 +25,7 @@ class Header {
 		}
 
 		// Hidden (header is hidden when scrolling down)
-		if(Math.abs(top - this.oldScroll) > 40) {
+		if(Math.abs(top - this.oldScroll) > 0) {
 			if(this.oldScroll > top) {
 				this.el.classList.remove("m-hidden");
 			}
