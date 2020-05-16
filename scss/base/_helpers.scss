@@ -1,13 +1,3 @@
-// Body
-
-body {
-	padding-top: $header-height-small;
-
-	@include min($large) {
-		padding-top: $header-height;
-	}
-}
-
 // Container
 
 .container {
