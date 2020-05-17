@@ -75,7 +75,7 @@
 				}
 
 				@include max($mobile-nav-max) {
-					display: block;	
+					display: block;
 					height: 0;
 					overflow: hidden;
 					transition: height .25s ease-out;
@@ -98,7 +98,7 @@
 				}
 			}
 
-			&:hover, &.hover {
+			&:hover, &.hover, &:focus-within {
 				@include min($desktop-nav) {
 					& > ul {
 						display: block;
@@ -144,17 +144,14 @@
 
 	// Nav button
 	.nav-button {
-		position: fixed;
-		top: em(10px);
-		right: 1.2em;
 		cursor: pointer;
-		text-align: center;
 		border: none;
 		background: none;
 		width: rem(44px);
 		height: rem(44px);
 		z-index: 2;
 		transition: top .2s ease-out;
+		margin-right: 1em;
 
 		@include min($desktop-nav) {
 			top: em(25px);
@@ -162,19 +159,12 @@
 
 		@include hide($desktop-nav);
 
-		.lines {
-			display: inline-block;
-			position: absolute;
-			right: 50%;
-			transform: translate(50%, -50%);
-		}
-
 		.line {
 			display: block;
 			position: relative;
 			top: 0;
-			width: 26px;
-			height: 2px;
+			width: 30px;
+			height: 3px;
 			margin-bottom: 5px;
 			background-color: #fff;
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
@@ -235,26 +225,6 @@ html.m-nav-open {
 			transform: none;
 			visibility: visible;
 		}
-
-		.nav-button {
-			.line {
-				width: rem(26px);
-
-				&:nth-of-type(1) {
-					top: 7px;
-					transform: rotate(45deg);
-				}
-				
-				&:nth-of-type(2) {
-					opacity: 0;
-				}
-				
-				&:nth-of-type(3) {
-					top: -7px;
-					transform: rotate(-45deg);
-				}
-			}
-		}
 	}
 
 	.c-header {
@@ -267,7 +237,23 @@ html.m-nav-open {
 
 		.nav-button {
 			.line {
+				width: rem(26px);
+				background: #fff !important;
 				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
+
+				&:nth-of-type(1) {
+					top: 8px;
+					transform: rotate(45deg);
+				}
+				
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+				
+				&:nth-of-type(3) {
+					top: -8px;
+					transform: rotate(-45deg);
+				}
 			}
 		}
 	}

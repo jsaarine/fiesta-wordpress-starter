@@ -23,11 +23,9 @@
 				<div class="nav-close" id="nav-close"></div>
 				<nav class="c-navigation" id="navigation">
 					<button class="nav-button" id="nav-button" aria-expanded="false" aria-haspopup="true" aria-controls="navigation">
-						<span class="lines">
-							<span class="line"></span>
-							<span class="line"></span>
-							<span class="line"></span>
-						</span>
+						<span class="line"></span>
+						<span class="line"></span>
+						<span class="line"></span>
 					</button>
 					<?php wp_nav_menu([
 						'menu'=>'main',

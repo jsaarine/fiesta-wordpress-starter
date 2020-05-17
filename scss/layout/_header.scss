@@ -69,15 +69,17 @@
 		}
 
 		.c-navigation {
-			a {
-				color: $c-dark;
+			@include min($desktop-nav) {
+				a {
+					color: $c-dark;
 
-				& > span {
-					&:after {
-						border-bottom-color: $c-dark;
-					}	
+					& > span {
+						&:after {
+							border-bottom-color: $c-dark;
+						}	
+					}
+					
 				}
-				
 			}
 
 			.nav-button {
