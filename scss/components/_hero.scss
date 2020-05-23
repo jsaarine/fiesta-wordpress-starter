@@ -5,11 +5,10 @@
 	position: relative;
 	text-align: center;
 	background: $c-theme;
-	padding-bottom: 120%;
 
 	@include min($medium) {
-		padding-bottom: 40%;
-		min-height: em(500px);
+		// padding-bottom: 0%;
+		height: em(400px);
 	}
 
 	@include min($large) {
@@ -27,7 +26,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 0 1em;
+		padding: 0 1.5em;
 		background: rgba(120,110,166,.9);
 		z-index: 1;
 	}
@@ -69,5 +68,16 @@
 	a {
 		color: #fff;
 		text-decoration: underline;
+	}
+
+	// Large
+	&.m-large {
+		padding-bottom: 120%;
+
+		@include min($medium) {
+			padding-bottom: 40%;
+			height: auto;
+			min-height: em(500px);
+		}
 	}
 }
