@@ -5,7 +5,7 @@
 	padding-right: 1.5rem;
 	box-sizing: content-box;
 
-	@include container(em(1200px));
+	@include container($default-container);
 
 	.container {
 		padding-left: 0;
@@ -57,8 +57,12 @@ html:not(.m-focus-visible) {
 	box-shadow: 0 0 15px rgba(0,0,0,.2);
 	padding: 1em 0 !important;
 
-	button {
+	.button {
 		background: $c-theme !important;
+	}
+
+	.decline {
+		color: $c-theme !important;	
 	}
 }
 
