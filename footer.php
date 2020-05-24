@@ -6,10 +6,14 @@
 <script>
 	app.ready(function() {
 		cookieConsent({
-			text: "This website uses cookies.",
-			linkText: "Read more about cookies",
+			text: "<?= __('This website uses cookies.') ?>",
+			linkText: "<?= __('Read more about cookies') ?>",
 			linkUrl: "<?= get_privacy_policy_url() ?>",
-			buttonText: "I accept"
+			consentText: "<?= __('I accept') ?>",
+			declineText: "<?= __('I do not accept') ?>",
+			scripts: [
+				`console.log("Script added");`
+			]
 		});
 	});
  </script>

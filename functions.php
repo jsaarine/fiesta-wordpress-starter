@@ -50,11 +50,9 @@ add_action('wp_enqueue_scripts', function() {
 
 /* Menus */
 add_action('init', function() {
-	$locations = array(
-		'primary'  => __('Desktop Horizontal Menu', 'twentytwenty'),
-	);
-
-	register_nav_menus($locations);
+	register_nav_menus(array(
+		'primary'  => __('Main Menu'),
+	));
 });
 
 
@@ -124,7 +122,6 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 					'core-embed/issuu',
 					'core-embed/slideshare',
 					'fiesta/sample-block',
-					'fiesta/sample-block2',
 				);
 	endswitch;  
 }, 10, 2);
@@ -142,3 +139,26 @@ add_action('widgets_init', function() {
 	   'after_title' => '</strong></p>',
 	));
 });
+
+
+/* Localization */
+
+if(function_exists('pll_register_string')) {
+	// Polylang translations here
+}
+
+function t__($string, $domain = null) {
+	if(function_exists('pll__')) {
+		return pll__($string);
+	}
+
+	return __($string, $domain);
+}
+
+function t_e($string, $domain = null) {
+	if(function_exists('pll_e')) {
+		return pll_e($string);
+	}
+
+	return _e($string, $domain);
+}
