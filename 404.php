@@ -1,21 +1,13 @@
 <?php get_header()?>
 
 <main id="main-content">
+	<?php get_template_part('template-parts/hero'); ?>
 	<div class="c-article-view">
-		<h1>Page not found</h1>
-		<?php
+		<?php while(have_posts()) : the_post(); ?>
 
-		/* Start the Loop */
-		while ( have_posts() ) :
-			the_post();
-
-			?>
-			
 			<?php the_content() ?>
 
-		<?php
-		endwhile; // End of the loop.
-		?>
+		<?php endwhile; ?>
 	</div>
 </main>
 
