@@ -1,18 +1,6 @@
 
 // Grid
 
-@mixin container($width: $default-container, $padding: false) {
-	max-width: $width;
-	margin-left: auto;
-	margin-right: auto;
-
-	@if($padding) {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
-		box-sizing: content-box;
-	}
-}
-
 @mixin row() {
 	&:after {
 		content: "";
@@ -181,84 +169,8 @@
 	right: column-ratio2($value, gutter-to-pct($gutter));
 }
 
-// Media queries
-
-@mixin min($value) {
-	@media screen and (min-width: $value) {
-		@content;
-	}
-}
-
-@mixin max($value) {
-	@media screen and (max-width: $value) {
-		@content;	
-	}
-}
-
-@mixin min-max($min, $max) {
-	@media screen and (min-width: $min) and (max-width: $max) {
-		@content;
-	}
-}
-
-// Visibility
-	
-@mixin hide($value) {
-	@include min($value) {
-		display: none !important;
-	}
-}
-
-@mixin show($value, $display: block) {
-	@media screen {
-		display: none;
-	}
-
-	@include min($value) {
-		display: $display !important;
-	}
-}
-
-// Misc
-
-@mixin variable($value) {
-	font-family: "#{$value}";
-}
-
-// Container
-
-.container {
-	@include container($default-container);
-}
-
 // Grid
 
 .row {
 	@include row();
-}
-
-// Breakpoints
-
-meta.breakpoints-small-max {
-	@include variable($small-max);
-}
-
-meta.breakpoints-medium {
-	@include variable($medium);
-}
-
-meta.breakpoints-medium-max {
-	@include variable($medium-max);
-}
-
-meta.breakpoints-large {
-	@include variable($large);
-}
-
-meta.breakpoints-large-max {
-	@include variable($large-max);
-}
-
-meta.breakpoints-xlarge {
-	@include variable($xlarge);
 }

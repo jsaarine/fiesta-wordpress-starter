@@ -1,3 +1,8 @@
+// Grid
+$default-container: rem(800px);
+$default-gutter: 0;
+$default-columns: 12;
+
 // Screen size breakpoints (for min-width queries)
 $medium: em(640px);
 $large: em(980px);
