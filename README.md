@@ -1,6 +1,6 @@
 # fiesta-wordpress-starter
 
-Fiesta is a simple, modern, Gutenberg-friendly WordPress starter theme
+Fiesta is a lightweight, modern, Gutenberg-friendly WordPress starter theme
 
 ## Features
 
@@ -25,7 +25,6 @@ Fiesta is a simple, modern, Gutenberg-friendly WordPress starter theme
   * `fiesta`: Fiesta component library
   * `vendor`: Vendor files
 * `scss`: Sass sources files
-  * `core`: Fiesta css grid
   * `abstracts`: Mixins and variables
   * `base`: Base styles
   * `components`: Components (e.g. button). Component classes have `c-`prefix
