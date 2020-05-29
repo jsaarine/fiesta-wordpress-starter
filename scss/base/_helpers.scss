@@ -50,22 +50,6 @@ html:not(.m-focus-visible) {
 	}
 }
 
-// Cookie consent
-
-.cookie-consent {
-	background: #fff !important;
-	box-shadow: 0 0 15px rgba(0,0,0,.2);
-	padding: 1em 0 !important;
-
-	.button {
-		background: $c-theme !important;
-	}
-
-	.decline {
-		color: $c-theme !important;	
-	}
-}
-
 // Screen reader only
 
 .sr-only {

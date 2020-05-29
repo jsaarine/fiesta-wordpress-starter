@@ -21,8 +21,10 @@ gulp.task('babel', () => {
     // return gulp.src(['./js/**/*.js', ], {base: './js/'})
     return gulp.src([
         './js/vendor/polyfills.js',
-        './js/vendor/cookieconsent.js',
         './js/fiesta/Core.js',
+        './js/fiesta/Component.js',
+        './js/fiesta/CookieConsent.js',
+        './js/fiesta/Overlay.js',
         './js/Header.js',
         './js/Navigation.js',
         './js/App.js',
