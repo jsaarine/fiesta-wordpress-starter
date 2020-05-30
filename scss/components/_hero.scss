@@ -7,7 +7,6 @@
 	background: $c-theme;
 
 	@include min($medium) {
-		// padding-bottom: 0%;
 		height: em(400px);
 	}
 
@@ -43,7 +42,7 @@
 	}	
 
 	h1 {
-		font-size: em(38px);
+		font-size: em(46px);
 		color: #fff;
 		margin: 0;
 
@@ -57,7 +56,7 @@
 	}
 
 	p {
-		font-size: em(18px);
+		font-size: em(20px);
 		margin: 1.2em 0 0 0;
 
 		@include min($large) {

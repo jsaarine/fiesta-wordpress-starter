@@ -95,6 +95,12 @@
 				a {
 					font-size: em(16px);
 					color: $c-theme;
+
+					& > span {
+						&:after {
+							border-color: $c-theme;
+						}
+					}
 				}
 			}
 
@@ -112,15 +118,8 @@
 				position: relative;
 
 				&:after {
-					content: "";
-					display: block;
 					width: 100%;
-					border-bottom: 2px solid #fff;
-					position: absolute;
-					left: 0;
-					top: 1.5em;
 				}
-				
 			}
 		}
 	}
@@ -130,15 +129,31 @@
 		padding: 1em 0;
 		color: #fff;
 		text-transform: uppercase;
+		transition: opacity .2s linear;
 
 		&:hover {
 			text-decoration: none;
+			opacity: .7;
 		}
 
 		@include max($mobile-nav-max) {
 			font-size: em(20px);
 			padding: 1em 0;
-			// color: $c-dark;
+		}
+
+		& > span {
+			position: relative;
+
+			&:after {
+				content: "";
+				display: block;
+				width: 0;
+				border-bottom: 2px solid #fff;
+				position: absolute;
+				left: 0;
+				top: 1.5em;
+				transition: width .2s ease-out;
+			}
 		}
 	}
 
