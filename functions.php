@@ -110,6 +110,7 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 					'core/group',
 					'core/gallery',
 					'core/media-text',
+					'core/cover',
 					'core/embed',
 					'core-embed/twitter',
 					'core-embed/youtube',

@@ -135,19 +135,6 @@
 		margin-top: 0;
 		margin-bottom: 0 !important;
 
-		// @include min($medium) {
-		// 	flex-basis: calc(50% - 2%);
-		// 	flex-grow: 0;
-		// }
-
-		// &:not(:first-child) {
-		// 	margin-top: 0;
-
-		// 	@include min($medium) {
-		// 		margin-left: 4%;
-		// 	}
-		// }
-
 		@include max($medium-max) {
 			margin-left: 0;
 		}
@@ -270,6 +257,20 @@
 .wp-block-gallery {
 	ul {
 		width: 100%;
+	}
+}
+
+// Cover
+.wp-block-cover {
+	@include container($container-full);
+
+	&__inner-container {
+		margin-bottom: 0;
+	}
+
+	p {
+		font-size: em(48px);
+		line-height: 1.4;
 	}
 }
 
