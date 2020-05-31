@@ -5,6 +5,7 @@
 	position: relative;
 	text-align: center;
 	background: $c-theme;
+	height: em(300px);
 
 	@include min($medium) {
 		height: em(400px);
@@ -46,6 +47,8 @@
 		color: #fff;
 		margin: 0;
 
+		@include container(rem(1000px));
+
 		@include min($large) {
 			font-size: em(60px);
 		}
@@ -71,7 +74,7 @@
 
 	// Large
 	&.m-large {
-		padding-bottom: 120%;
+		height: em(450px);
 
 		@include min($medium) {
 			padding-bottom: 40%;
