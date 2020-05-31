@@ -12,7 +12,7 @@
 	ul, ol {
 		list-style: none;
 		padding-left: 1em;
-		margin: 1em 0;
+		margin: 2em 0;
 
 		li {
 			position: relative;
@@ -73,10 +73,12 @@
 
 // Blocks
 [class*="wp-block"] {
-	margin-bottom: em(50px);
+	margin-top: rem(50px);
+	margin-bottom: rem(50px);
 
 	@include min($medium) {
-		margin-bottom: em(70px);
+		margin-top: rem(70px);
+		margin-bottom: rem(70px);
 	}
 
 	&.alignwide {
@@ -109,9 +111,10 @@
 
 	p {
 		color: $c-theme;
-		font-size: em(24px);
+		font-size: em(32px);
+		margin: 1em 0;
 
-		@include container(rem(550px));
+		@include container(rem(650px));
 	}
 
 	cite, .wp-block-quote__citation {
@@ -192,6 +195,8 @@
 
 // Buttons
 .wp-block-buttons {
+	margin: 0;
+
 	[class*=wp-block-button] {
 		margin: 0 !important;
 	}
@@ -220,8 +225,12 @@
 .wp-block-file {
 	@include container($container, true);
 
+	a {
+		color: $c-dark;
+	}
+
 	.wp-block-file__button {
-		margin-left: 1.5em;
+		margin: 0 0 0 1.5em;
 
 		@include button();
 
@@ -264,13 +273,15 @@
 .wp-block-cover {
 	@include container($container-full);
 
-	&__inner-container {
+	.wp-block-cover__inner-container {
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 
 	p {
 		font-size: em(48px);
 		line-height: 1.4;
+		margin: 0;
 	}
 }
 
