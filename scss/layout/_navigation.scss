@@ -1,7 +1,7 @@
 // Main nav
 
 .c-navigation {
-	@include max($mobile-nav-max) {
+	@media (max-width: $mobile-nav-max) {
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -10,7 +10,7 @@
 		text-align: right;
 
 		// Mobile
-		@include max($mobile-nav-max) {
+		@media (max-width: $mobile-nav-max) {
 			position: fixed;
 			top: 0;
 			right: auto;
@@ -34,7 +34,7 @@
 	li {
 		position: relative;
 
-		@include min($desktop-nav) {
+		@media (min-width: $desktop-nav) {
 			display: inline-block;
 			margin-bottom: 0;
 			padding: 0 1em;
@@ -49,7 +49,7 @@
 				text-align: center;
 				position: relative;
 
-				@include min($desktop-nav) {
+				@media (min-width: $desktop-nav) {
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
@@ -74,7 +74,7 @@
 					@include show($desktop-nav);
 				}
 
-				@include max($mobile-nav-max) {
+				@media (max-width: $mobile-nav-max) {
 					display: block;
 					height: 0;
 					overflow: hidden;
@@ -105,7 +105,7 @@
 			}
 
 			&:hover, &.hover {
-				@include min($desktop-nav) {
+				@media (min-width: $desktop-nav) {
 					& > ul {
 						display: block;
 					}
@@ -113,7 +113,7 @@
 			}
 
 			&:focus-within {
-				@include min($desktop-nav) {
+				@media (min-width: $desktop-nav) {
 					& > ul {
 						display: block;
 					}
@@ -144,7 +144,7 @@
 			opacity: .7;
 		}
 
-		@include max($mobile-nav-max) {
+		@media (max-width: $mobile-nav-max) {
 			font-size: em(20px);
 			padding: 1em 0;
 		}
@@ -176,7 +176,7 @@
 		transition: top .2s ease-out;
 		margin-right: 1em;
 
-		@include min($desktop-nav) {
+		@media (min-width: $desktop-nav) {
 			top: em(25px);
 		}
 
@@ -213,7 +213,7 @@
 		border: none;
 		color: #fff;
 
-		@include min($desktop-nav) {
+		@media (min-width: $desktop-nav) {
 			width: rem(10px);
 			height: rem(10px);
 			right: 0;

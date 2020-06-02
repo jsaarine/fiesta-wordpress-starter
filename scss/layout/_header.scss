@@ -10,7 +10,7 @@
 	transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
 	padding-left: 1.5em;
 
-	@include min($desktop-nav) {
+	@media (min-width: $desktop-nav) {
 		padding-left: 3em;
 		padding-right: 3em;
 		height: var(--header-height);
@@ -29,7 +29,7 @@
 		// margin-left: 3em;
 		transition: top .2s ease-out;
 
-		@include min($desktop-nav) {
+		@media (min-width: $desktop-nav) {
 			top: 2em;
 			left: 3em;
 		}
@@ -39,7 +39,7 @@
 			width: em(80px);
 			height: em(23px);
 
-			@include min($desktop-nav) {
+			@media (min-width: $desktop-nav) {
 				width: em(120px);
 				height: em(34px);
 			}
@@ -69,7 +69,7 @@
 		}
 
 		.c-navigation {
-			@include min($desktop-nav) {
+			@media (min-width: $desktop-nav) {
 				a {
 					color: var(--c-dark);
 
@@ -78,7 +78,6 @@
 							border-bottom-color: var(--c-dark);
 						}	
 					}
-					
 				}
 			}
 
@@ -92,7 +91,7 @@
 
 	// Nav close
 	.nav-close {
-		@include max($mobile-nav-max) {
+		@media (max-width: $mobile-nav-max) {
 			position: fixed;
 			top: 0;
 			left: -100%;

@@ -19,7 +19,7 @@
 	justify-content: flex-start;
 	-webkit-overflow-scrolling: touch;
 
-	@supports(display: flex) {
+	@supports (display: flex) {
 		display: flex;
 	}
 
@@ -27,7 +27,7 @@
 		outline: none;
 	}
 
-	@include min($medium) {
+	@media (min-width: $medium) {
 		padding: 4em 2em;
 	}
 

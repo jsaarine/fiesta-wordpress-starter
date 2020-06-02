@@ -7,11 +7,11 @@
 	background: var(--c-theme);
 	height: em(300px);
 
-	@include min($medium) {
+	@media (min-width: $medium) {
 		height: em(400px);
 	}
 
-	@include min($large) {
+	@media (min-width: $large) {
 		margin-bottom: em(100px);
 	}
 
@@ -49,11 +49,11 @@
 
 		@include container(rem(1000px));
 
-		@include min($large) {
+		@media (min-width: $large) {
 			font-size: em(60px);
 		}
 
-		@include min($xlarge) {
+		@media (min-width: $xlarge) {
 			font-size: em(90px);
 		}
 	}
@@ -62,7 +62,7 @@
 		font-size: em(20px);
 		margin: 1.2em 0 0 0;
 
-		@include min($large) {
+		@media (min-width: $large) {
 			font-size: em(26px);
 		}
 	}
@@ -76,7 +76,7 @@
 	&.m-large {
 		height: em(450px);
 
-		@include min($medium) {
+		@media (min-width: $medium) {
 			padding-bottom: 40%;
 			height: auto;
 			min-height: em(500px);
