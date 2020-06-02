@@ -4,7 +4,8 @@ Fiesta is a lightweight, modern, Gutenberg-friendly WordPress starter theme
 
 ## Features
 
-* Sass compilation and minification with Gulp
+* Sass compilation with Gulp
+* Custom properties support with PostCSS
 * Babel compilation, JavaScript concatenation, minification and source maps with Gulp
 * Basic styles for WordPress blocks
 * Gutenberg editor shares styles with the front-end
