@@ -5,20 +5,21 @@ const minify = require('gulp-minify');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
+const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-// const browserSync = require('browser-sync').create();
 
 gulp.task('sass', () => {
     return gulp.src(['./scss/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([ autoprefixer(), cssnano()]))
+        .pipe(postcss([
+            autoprefixer(),
+            postcssPresetEnv()
+        ]))
         .pipe(gulp.dest('./dist/css'))
-        // .pipe(browserSync.stream());
 });
 
 gulp.task('babel', () => {
-    // return gulp.src(['./js/**/*.js', ], {base: './js/'})
     return gulp.src([
         './js/vendor/polyfills.js',
         './js/fiesta/Core.js',
@@ -44,10 +45,6 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', () => {
-	// browserSync.init({
- //        proxy: "testing.local"
- //    });
-
     gulp.watch('./scss/**/*.scss', gulp.series('sass'));
     gulp.watch('./js/**/*.js', gulp.series(['babel']));
 });
