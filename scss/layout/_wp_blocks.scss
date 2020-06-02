@@ -1,7 +1,7 @@
 // Headings
 [class*="wp-block"], .text-block {
 	h2, h3 {
-		color: $c-theme;
+		color: var(--c-theme);
 		margin-top: 2em;
 		line-height: 1.2;
 	}
@@ -48,7 +48,7 @@
 				left: 0;
 				width: 8px;
 				height: 8px;
-				background: $c-theme;
+				background: var(--c-theme);
 				border-radius: 999px;
 			}
 		}
@@ -82,17 +82,17 @@
 	}
 
 	&.alignwide {
-		max-width: $container-wide;
+		max-width: var(--container-wide);
 	}
 
 	&.alignfull {
-		max-width: $container-full;
+		max-width: var(--container-full);
 	}
 }
 
 // Image
 .wp-block-image {	
-	@include container($container-wide);
+	@include container(var(--container-wide));
 
 	img {
 		width: 100%;
@@ -110,7 +110,7 @@
 	border: none;
 
 	p {
-		color: $c-theme;
+		color: var(--c-theme);
 		font-size: em(32px);
 		margin: 1em 0;
 
@@ -121,13 +121,13 @@
 		font-style: normal;
 		text-transform: uppercase;
 		font-size: rem(20px);
-		color: $c-dark;
+		color: var(--c-dark);
 	}
 }
 
 // Columns
 .wp-block-columns {
-	@include container($container-wide, true);
+	@include container(var(--container-wide), true);
 
 	@include max($medium-max) {
 		display: block !important;
@@ -154,7 +154,7 @@
 
 // Embed
 .wp-block-embed {
-	@include container($container, true);
+	@include container(var(--container), true);
 
 	.wp-block-embed__wrapper {
 		margin-bottom: 0;
@@ -169,7 +169,7 @@
 .wp-block-table {
 	overflow-y: hidden;
 
-	@include container($container, true);
+	@include container(var(--container), true);
 
 	table {
 		width: 100%;
@@ -177,7 +177,7 @@
 	}
 
 	tr:first-child {
-		background: $c-theme;
+		background: var(--c-theme);
 		color: #fff;
 	}
 
@@ -214,19 +214,19 @@
 .wp-block-group {
 	text-align: center;
 
-	@include container($container, true);
+	@include container(var(--container), true);
 
 	p, ul, ol, h2, h3 {
-		@include container($container);
+		@include container(var(--container));
 	}
 }
 
 // File
 .wp-block-file {
-	@include container($container, true);
+	@include container(var(--container), true);
 
 	a {
-		color: $c-dark;
+		color: var(--c-dark);
 	}
 
 	.wp-block-file__button {
@@ -243,7 +243,7 @@
 
 // Media text
 .wp-block-media-text {
-	@include container($container-wide);
+	@include container(var(--container-wide));
 
 	@include max($medium-max) {
 		display: block;
@@ -271,7 +271,7 @@
 
 // Cover
 .wp-block-cover {
-	@include container($container-full);
+	@include container(var(--container-full));
 
 	.wp-block-cover__inner-container {
 		margin-top: 0;
@@ -297,5 +297,5 @@
 .wp-block-fiesta-sample-block, .wp-block-fiesta-sample-block2 {
 	text-align: center;
 	
-	@include container($container, true);
+	@include container(var(--container), true);
 }

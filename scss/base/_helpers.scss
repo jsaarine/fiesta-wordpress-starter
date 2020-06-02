@@ -5,7 +5,7 @@
 	padding-right: 1.5rem;
 	box-sizing: content-box;
 
-	@include container($default-container);
+	@include container(var(--default-container));
 
 	.container {
 		padding-left: 0;

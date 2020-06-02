@@ -4,7 +4,7 @@
 	margin-bottom: em(50px);
 	position: relative;
 	text-align: center;
-	background: $c-theme;
+	background: var(--c-theme);
 	height: em(300px);
 
 	@include min($medium) {

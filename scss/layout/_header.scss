@@ -1,7 +1,7 @@
 // Header
 
 .c-header {
-	height: $header-height-small;
+	height: var(--header-height-small);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -13,7 +13,7 @@
 	@include min($desktop-nav) {
 		padding-left: 3em;
 		padding-right: 3em;
-		height: $header-height;
+		height: var(--header-height);
 	}
 
 	& > .inner {
@@ -55,7 +55,7 @@
 	&.m-small {
 		box-shadow: 0 0 10px rgba(0,0,0,.2);
 		background: #fff;
-		height: $header-height-small;
+		height: var(--header-height-small);
 
 		.logo {
 			svg {
@@ -63,7 +63,7 @@
 				height: em(23px);
 
 				& > path {
-					fill: $c-dark;
+					fill: var(--c-dark);
 				}
 			}
 		}
@@ -71,11 +71,11 @@
 		.c-navigation {
 			@include min($desktop-nav) {
 				a {
-					color: $c-dark;
+					color: var(--c-dark);
 
 					& > span {
 						&:after {
-							border-bottom-color: $c-dark;
+							border-bottom-color: var(--c-dark);
 						}	
 					}
 					
@@ -84,7 +84,7 @@
 
 			.nav-button {
 				.line {
-					background: $c-dark;
+					background: var(--c-dark);
 				}
 			}
 		}

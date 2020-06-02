@@ -19,7 +19,7 @@
 	&[data-type="core/paragraph"], &[data-type="core/heading"], &[data-type="core/list"] {
 		margin: 1.5em 0;
 
-		@include container($container);
+		@include container(var(--container));
 	}
 
 	[class*="wp-block"]:not(.wp-block-paragraph) {
@@ -29,7 +29,7 @@
 
 	&[data-align="wide"] {
 		[class*="wp-block"] {
-			max-width: $container-wide;
+			max-width: var(--container-wide);
 		}
 	}
 
@@ -38,16 +38,16 @@
 		margin-right: 0;
 
 		[class*="wp-block"] {
-			max-width: $container-full;
+			max-width: var(--container-full);
 		}
 	}
 }
 
 .editor-post-title__block {
-	max-width: $container;
+	max-width: var(--container);
 
 	.editor-post-title__input {
-		font-family: $f-regular;
+		font-family: var(--f-regular);
 		font-weight: 400;
 		font-size: em(58px);
 		text-align: center;

@@ -9,12 +9,15 @@
 	}
 
 	body {
-		font-family: serif !important;
 		font-size: 75%;
+		color: #000;
 	}
 
 	h1, h2, h3, h4, p {
-		font-family: serif !important;
 		color: #000;
+	}
+
+	.c-header, .c-footer {
+		display: none;
 	}
 }

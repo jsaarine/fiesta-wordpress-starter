@@ -42,7 +42,7 @@
 				padding: 1.2em 0;
 				padding-right: em(25px);
 				text-align: left;
-				color: $c-dark;
+				color: var(--c-dark);
 
 				&:hover {
 					text-decoration: none;
@@ -60,7 +60,7 @@
 					height: 0; 
 					border-left: 10px solid transparent;
 					border-right: 10px solid transparent;
-					border-top: 10px solid $c-dark;
+					border-top: 10px solid var(--c-dark);
 				}
 			}
 		}

@@ -51,7 +51,7 @@
 		padding: 1em 1.5em;
 		border: none;
 		white-space: nowrap;
-		background: $c-theme;
+		background: var(--c-theme);
 		color: #fff;
 		font-size: em(14px);
 		width: 100%;
@@ -64,7 +64,7 @@
 		border: none;
 		padding: 0;
 		text-decoration: underline;
-		color: $c-theme;	
+		color: var(--c-theme);	
 	}
 
 	// Overlay
@@ -90,10 +90,6 @@
 			display: block;
 			margin: 1em 0;
 			font-size: em(16px);
-		}
-
-		input[type="checkbox"] {
-			
 		}
 	}
 }

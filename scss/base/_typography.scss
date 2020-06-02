@@ -1,8 +1,8 @@
 // Typography
 
 body {
-	font-family: $f-regular;
-	color: $c-dark;
+	font-family: var(--f-regular);
+	color: var(--c-dark);
 }
 
 h1 {
@@ -45,7 +45,7 @@ p {
 }
 
 a {
-	color: $c-theme;
+	color: var(--c-theme);
 	
 	&:link {
 		text-decoration: none;

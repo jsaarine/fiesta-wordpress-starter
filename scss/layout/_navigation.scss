@@ -16,7 +16,7 @@
 			right: auto;
 			bottom: auto;
 			z-index: 1;
-			background: $c-theme;
+			background: var(--c-theme);
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
@@ -94,17 +94,25 @@
 
 				a {
 					font-size: em(16px);
-					color: $c-theme;
+					color: var(--c-theme);
 
 					& > span {
 						&:after {
-							border-color: $c-theme;
+							border-color: var(--c-theme);
 						}
 					}
 				}
 			}
 
-			&:hover, &.hover, &:focus-within {
+			&:hover, &.hover {
+				@include min($desktop-nav) {
+					& > ul {
+						display: block;
+					}
+				}
+			}
+
+			&:focus-within {
 				@include min($desktop-nav) {
 					& > ul {
 						display: block;
