@@ -27,7 +27,7 @@
 				]
 			},
 			// Add settings to show cookie settings dialog
-			/*settings: {
+			settings: {
 				title: "<?= __('Cookie settings') ?>",
 				text: "<?= __('Choose which types of cookies you would like to accept.') ?>",
 				button: "<?= __('Save settings') ?>",
@@ -36,7 +36,7 @@
 					analytics: "<?= __('Analytics') ?>",
 					marketing: "<?= __('Marketing') ?>"
 				}
-			},*/
+			}
 		});
 	});
  </script>
