@@ -71,12 +71,14 @@ class Navigation {
 
 			// Touch support for hover menu
 			i.querySelector("a").addEventListener("touchstart", e => {
-				if(!touched) {
-					e.preventDefault();
+				if(!document.documentElement.classList.contains("m-nav-open")) {
+					if(!touched) {
+						e.preventDefault();
+					}
+					
+					i.classList.toggle("hover");
+					touched = true;
 				}
-				
-				i.classList.toggle("hover");
-				touched = true;
 			});
 
 			document.addEventListener("click", e => {
