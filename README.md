@@ -1,14 +1,18 @@
 # fiesta-wordpress-starter
 
-Fiesta is a lightweight, modern, Gutenberg-friendly WordPress starter theme
+Fiesta is a lightweight, modern, Gutenberg-friendly WordPress starter theme for lightning-fast development.
+
+Also see: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress container plugin for dynamic blocks.
 
 ## Features
 
 * Sass compilation with Gulp
-* Custom properties support with PostCSS
+* Modern CSS support with PostCSS
 * Babel compilation, JavaScript concatenation, minification and source maps with Gulp
-* Basic styles for WordPress blocks
+* Starting theme for native WordPress blocks
 * Gutenberg editor shares styles with the front-end
+* Responsive multi-level navigation 
+* Fiesta front-end accessible component library
 
 ## Usage
 
