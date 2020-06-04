@@ -25,14 +25,6 @@ class Overlay extends Component {
 	}
 
 	build() {
-		// const background = document.createElement("div");
-		// background.classList.add("overlay-background");
-		// this.el.appendChild(background);
-
-		// background.addEventListener("click", (e) => {
-		// 	this.close(true);
-		// });
-
 		this.el.addEventListener("click", (e) => {
 			if(e.target == e.currentTarget) {
 				this.close(true);	
@@ -46,7 +38,7 @@ class Overlay extends Component {
 		});
 
 		this.buttons.forEach(i => {
-			i.setAttribute("data-controls", this.el.getAttribute("id"));
+			i.setAttribute("aria-controls", this.el.getAttribute("id"));
 			i.addEventListener("click", (e) => {
 				e.preventDefault();
 
