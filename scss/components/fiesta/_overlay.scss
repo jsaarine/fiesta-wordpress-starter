@@ -99,6 +99,37 @@
 			}
 		}
 	}
+
+	// Cookie overlay
+	&.m-cookie {
+		& > .inner {
+			width: 100%;
+			max-width: em(600px);
+			border-radius: 3px;
+		}
+
+		h2 {
+			margin-bottom: 1em;
+		}
+
+		.select {
+			margin: 2em 0;
+		}
+
+		p {
+			font-size: em(16px);
+		}
+
+		label {
+			display: block;
+			margin: 1em 0;
+			font-size: em(16px);
+		}
+
+		.c-button {
+			width: 100%;
+		}
+	}
 }
 
 html.m-overlay-open {
