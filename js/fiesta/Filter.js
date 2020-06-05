@@ -95,14 +95,6 @@ class Filter extends Component {
 
 			// Show filtered items
 			filters.forEach(filter => {
-				// this.items.querySelectorAll("[data-filter-item").forEach(item => {
-				// 	const ids = item.getAttribute("data-id").split(",");
-				// 	ids.forEach(id => {
-				// 		if(filter == id) {
-				// 			item.classList.remove("m-hidden")
-				// 		}
-				// 	});
-				// });
 				this.items.querySelectorAll("[data-filter-item][data-id~='" + filter + "']").forEach(item => {
 					item.classList.remove("m-hidden");
 				});

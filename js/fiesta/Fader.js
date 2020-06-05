@@ -51,35 +51,6 @@ class Fader {
 		});
 	}
 
-	/*
-
-	update2(scroll) {
-		this.assets.forEach(i => {
-			if(i.scroll && !scroll) return;
-
-			const el = i.el;
-			const top = el.getBoundingClientRect().top;
-			
-			if(top + i.offset < this.windowHeight) {
-				el.classList.add("fade-in");
-
-				if(!this.settings.repeat) {
-					const index = this.assets.indexOf(i);
-					this.assets.splice(index, 1);
-				}
-			}
-			else {
-				if(this.settings.repeat) {
-					el.classList.remove("fade-in");
-				}
-			}
-		});
-
-		if(this.assets.length == 0) {
-			this.destroy();
-		}
-	}*/
-
 	update(el) {
 		el.classList.add("fade-in");
 	}

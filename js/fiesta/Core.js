@@ -19,10 +19,6 @@ Core.$$ = function(selector, container) {
 	return typeof selector === "string"? (container || document).querySelectorAll(selector) : selector || null;
 }
 
-/*Core.array = function(selector, container) {
-	return [].slice.call(Core.$$(selector, container));
-}*/
-
 /*Core.$$ = function(selector, container) {
 	return [].slice.call((container || document).querySelectorAll(selector));
 	// return [].slice.call((container === undefined ? document : container).querySelectorAll(selector));
@@ -156,60 +152,6 @@ Core.animate = function(el, duration, props) {
 			complete.call();
 		}
 	}
-}
-
-Core.fetch = function(url, props) {
-	if(!url) {
-		return false;
-	}
-
-	var data = props.data || "";
-	var cb = props.callback || function() {};
-	var ecb = props.errorCallback || function() {};
-	var method = props.method || "GET";
-	var headers = props.headers || {};
-	var dataType = props.dataType || "text";
-
-	var xhr = new XMLHttpRequest();
-
-	if(!xhr) {
-		return false;
-	}
-
-	xhr.onreadystatechange = function() {
-		if(xhr.readyState === XMLHttpRequest.DONE)
-			if(xhr.status === 200) {
-				var response = xhr.responseText;
-
-				if(dataType == "json") {
-					try {
-						cb(JSON.parse(response));
-					}
-					catch(err) {
-						console.error(err);
-					}
-				}
-				else {
-					cb(response);
-				}
-			} else {
-				ecb(xhr.status, xhr.responseText);
-			}
-	};
-
-	xhr.open(method, url);
-	
-	if(!headers["Content-Type"]) {
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	}
-
-	for(var property in headers) {
-		if(headers.hasOwnProperty(property)) {
-			xhr.setRequestHeader(property, headers[property]);
-		}
-	}
-
-	xhr.send(data);
 }
 
 Core.slideToggle = function(el) {
