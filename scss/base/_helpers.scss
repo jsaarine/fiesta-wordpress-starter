@@ -41,12 +41,18 @@ meta.breakpoints-xlarge {
 
 // Focus
 
-html:not(.m-focus-visible) {
+html:not(.focus-visible) {
 	button {
 		&:focus {
 			// Remove outline from buttons when not using keyboard
 			outline: 0;
 		}
+	}
+}
+
+html.focus-visible {
+	:focus {
+		outline: 3px solid var(--c-focus);
 	}
 }
 
