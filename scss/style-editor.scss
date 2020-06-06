@@ -22,11 +22,6 @@
 		@include container(var(--container));
 	}
 
-	[class*="wp-block"]:not(.wp-block-paragraph) {
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-	}
-
 	&[data-align="wide"] {
 		[class*="wp-block"] {
 			max-width: var(--container-wide);
