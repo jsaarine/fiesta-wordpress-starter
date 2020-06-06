@@ -52,7 +52,7 @@ class Overlay extends Component {
 			let key = e.which || e.keyCode;
 
 			if(key == 27) {
-				if(this.el.classList.contains("m-active")) {
+				if(this.el.classList.contains("active")) {
 					this.close(true, true);
 				}
 			}
@@ -74,8 +74,8 @@ class Overlay extends Component {
 			window.addEventListener("popstate", this.backHandler);	
 		}
 
-		document.documentElement.classList.add("m-overlay-open");
-		this.el.classList.add("m-active");
+		document.documentElement.classList.add("overlay-open");
+		this.el.classList.add("active");
 		this.el.scrollTop = 0;
 		this.el.setAttribute("aria-hidden", false);
 		this.el.focus();
@@ -109,8 +109,8 @@ class Overlay extends Component {
 			window.removeEventListener("popstate", this.backHandler);
 		}
 
-		document.documentElement.classList.remove("m-overlay-open");
-		this.el.classList.remove("m-active");
+		document.documentElement.classList.remove("overlay-open");
+		this.el.classList.remove("active");
 		this.el.setAttribute("aria-hidden", true);
 		this.el.blur();
 

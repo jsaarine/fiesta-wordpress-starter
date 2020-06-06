@@ -10,7 +10,7 @@
 		padding: 1em;
 		color: purple;
 
-		&.m-active {
+		&.active {
 			background: purple;
 			color: #fff;
 		}
@@ -21,7 +21,7 @@
 
 .c-filter-items {
 	& > div {
-		&.m-hidden {
+		&.hidden {
 			display: none;
 		}
 	}

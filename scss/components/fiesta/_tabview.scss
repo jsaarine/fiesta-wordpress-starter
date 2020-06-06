@@ -32,7 +32,7 @@
 					text-decoration: none;
 				}
 
-				&.m-active {
+				&.active {
 					background-color: #fff;
 					border-bottom-color: #fff;
 					color: var(--c-dark);
@@ -48,7 +48,7 @@
 		border: 1px solid var(--c-dark);
 		margin-top: -1px;
 
-		&.m-active {
+		&.active {
 			display: block;
 		}
 	}

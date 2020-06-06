@@ -45,7 +45,7 @@ var cookieConsent;
 			n.overlayElement = document.createElement("div");
 
 			n.overlayElement.innerHTML = `
-			<div class="c-overlay m-cookie" id="cookie-overlay" data-overlay aria-hidden="true" aria-labelledby="cookie-overlay-title" role="dialog" tabindex="-1">
+			<div class="c-overlay cookie" id="cookie-overlay" data-overlay aria-hidden="true" aria-labelledby="cookie-overlay-title" role="dialog" tabindex="-1">
 				<div class="inner">
 					<button class="overlay-close" aria-label="Close"></button>
 					<h2 id="cookie-overlay-title">${settings.title}</h2>

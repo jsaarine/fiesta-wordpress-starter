@@ -38,17 +38,17 @@ class JumpNavigation {
 	update(target) {
 		// Hide all buttons
 		this.el.querySelectorAll("button").forEach(item2 => {
-			item2.classList.remove("m-active");
+			item2.classList.remove("active");
 		});
 
 		if(target != null) {
 			// var activeItem = this.el.querySelector("button[data-id='" + target.getAttribute("data-id") + "']");
 			var activeItem = this.el.children[Core.index(target)].querySelector("button");
-			activeItem.classList.add("m-active");
+			activeItem.classList.add("active");
 		}
 		else {
 			this.el.querySelectorAll("button").forEach(item => {
-				item.classList.remove("m-active");
+				item.classList.remove("active");
 		 	});
 		}
 	}

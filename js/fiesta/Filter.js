@@ -27,30 +27,30 @@ class Filter extends Component {
 
 				// All
 				if(id == "all") {
-					i.classList.add("m-active");
+					i.classList.add("active");
 
 					// Remove all
 					this.el.querySelectorAll("button").forEach(j => {
 						if(i != j) {
-							j.classList.remove("m-active");
+							j.classList.remove("active");
 						}
 					});
 				}
 				// Any other filter
 				else {
-					i.classList.toggle("m-active");
+					i.classList.toggle("active");
 
 					if(this.settings.selectMultiple) {
 						// Hide all button
 						if(this.all) {
-							this.all.classList.remove("m-active");
+							this.all.classList.remove("active");
 						}
 					}
 					else {
 						// Hide all except current
 						this.el.querySelectorAll("button").forEach(j => {
 							if(i != j) {
-								j.classList.remove("m-active");
+								j.classList.remove("active");
 							}
 						});		
 					}
@@ -69,7 +69,7 @@ class Filter extends Component {
 
 		// Update active filters
 		this.el.querySelectorAll("button:not([data-id='all'])").forEach(i => {
-			if(i.classList.contains("m-active")) {
+			if(i.classList.contains("active")) {
 				filters.push(i.getAttribute("data-id"));
 			}
 		});
@@ -79,24 +79,24 @@ class Filter extends Component {
 			// Filters applied, hide all items
 			if(filters.length > 0) {
 				this.items.querySelectorAll("[data-filter-item]").forEach(i => {
-					i.classList.add("m-hidden");
+					i.classList.add("hidden");
 				});
 			}
 			// No filters applied, show all items
 			else {
 				this.items.querySelectorAll("[data-filter-item]").forEach(i => {
-					i.classList.remove("m-hidden");
+					i.classList.remove("hidden");
 				});
 
 				if(this.all) {
-					this.all.classList.add("m-active");
+					this.all.classList.add("active");
 				}
 			}
 
 			// Show filtered items
 			filters.forEach(filter => {
 				this.items.querySelectorAll("[data-filter-item][data-id~='" + filter + "']").forEach(item => {
-					item.classList.remove("m-hidden");
+					item.classList.remove("hidden");
 				});
 				
 			});

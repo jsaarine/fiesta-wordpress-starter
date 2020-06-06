@@ -30,7 +30,7 @@ class Form extends Component {
 				// Loop through validation errors
 				errors.forEach(i => {
 					// console.log(i, i.element.closest("label"));
-					i.element.closest(".field").classList.add("m-error");
+					i.element.closest(".field").classList.add("error");
 				});
 
 				// If errors, scroll to and focus first error
@@ -173,8 +173,8 @@ class Form extends Component {
 			// Loop through errors
 			data.errors.forEach(i => {
 				const el = this.el.querySelector("[name='" + i + "']");
-				el.classList.add("m-error");
-				el.closest("label").classList.add("m-error");
+				el.classList.add("error");
+				el.closest("label").classList.add("error");
 
 				errors.push(el);
 			});
@@ -222,23 +222,23 @@ class Form extends Component {
 	validateField(i) {
 		if(this.submitted) {
 			if(!this.validator.validateField(i)) {
-				i.closest(".field").classList.add("m-error");
+				i.closest(".field").classList.add("error");
 			}
 			else {
-				i.closest(".field").classList.remove("m-error");
+				i.closest(".field").classList.remove("error");
 			}
 		}
 	}
 
 	startLoader() {
 		this.sending = true;
-		this.el.classList.add("m-sending");
-		this.button.querySelector(".c-loader").classList.add("m-active");
+		this.el.classList.add("sending");
+		this.button.querySelector(".c-loader").classList.add("active");
 	}
 
 	stopLoader() {
 		this.sending = false;
-		this.el.classList.remove("m-sending");
-		this.button.querySelector(".c-loader").classList.remove("m-active");
+		this.el.classList.remove("sending");
+		this.button.querySelector(".c-loader").classList.remove("active");
 	}
 }

@@ -80,24 +80,24 @@ class TabView extends Component {
 	select(el) {
 		// Clear all
 		this.nav.querySelectorAll("li > a").forEach(i => {
-			i.classList.remove("m-active");
+			i.classList.remove("active");
 			i.setAttribute("aria-selected", false);
 		});
 
 		this.el.querySelectorAll(".tab-content").forEach(i => {
-			i.classList.remove("m-active");
+			i.classList.remove("active");
 			i.setAttribute("aria-hidden", true);
 		});
 
 		// Select current nav item
-		el.classList.add("m-active");
+		el.classList.add("active");
 		el.setAttribute("aria-selected", true);
 
 		// Select current content
 		const id = el.getAttribute("href").split("#")[1];
 
 		const content = this.el.querySelector(".tab-content[id='" + id + "-content']");
-		content.classList.add("m-active");
+		content.classList.add("active");
 		content.setAttribute("aria-hidden", false);
 
 		// Set hash

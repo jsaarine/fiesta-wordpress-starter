@@ -24,7 +24,7 @@ class Accordion extends Component {
 			const el = this.el.querySelector("[data-accordion-item] > .title a[href='#" + hash + "'");
 
 			if(el) {
-				el.closest("[data-accordion-item]").classList.add("m-active");
+				el.closest("[data-accordion-item]").classList.add("active");
 				el.setAttribute("aria-expanded", true);
 
 				const pos = el.getBoundingClientRect().top + Core.scrollTop();
@@ -58,9 +58,9 @@ class Accordion extends Component {
 			i.querySelector(".title a").addEventListener("click", e => {
 				e.preventDefault();
 
-				i.classList.toggle("m-active");
+				i.classList.toggle("active");
 
-				if(i.classList.contains("m-active")) {
+				if(i.classList.contains("active")) {
 					content.setAttribute("aria-hidden", false);
 				}
 				else {
@@ -68,23 +68,23 @@ class Accordion extends Component {
 				}
 
 				// Core.slideToggle(i.closest("[data-accordion-item]").lastElementChild);
-				i.closest("[data-accordion-item]").lastElementChild.classList.toggle("m-active");
+				i.closest("[data-accordion-item]").lastElementChild.classList.toggle("active");
 
 				// Set ARIA
-				button.setAttribute("aria-expanded", i.closest("li").classList.contains("m-active"));
+				button.setAttribute("aria-expanded", i.closest("li").classList.contains("active"));
 
 				// Close others
 				if(this.settings.hash) {
 					this.el.querySelectorAll("[data-accordion-item]").forEach(j => {
 						if(i != j) {
-							j.classList.remove("m-active");
+							j.classList.remove("active");
 							j.querySelector("a").setAttribute("aria-expanded", false);
 						}
 					});	
 				}
 
 				// Scroll to
-				if(this.settings.hash && i.classList.contains("m-active")) {
+				if(this.settings.hash && i.classList.contains("active")) {
 					const pos = i.getBoundingClientRect().top + Core.scrollTop();
 					window.scroll({top: pos, behavior: "smooth"});
 				}
@@ -93,7 +93,7 @@ class Accordion extends Component {
 
 				if(this.settings.hash && hash) {
 					// Hash
-					if(i.classList.contains("m-active")) {
+					if(i.classList.contains("active")) {
 						window.location.hash = hash;
 					}
 					else {

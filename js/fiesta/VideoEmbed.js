@@ -36,7 +36,7 @@ class VideoEmbed extends Component {
 
 			if(play) {
 				play.addEventListener("click", e => {
-					this.el.classList.add("m-active");
+					this.el.classList.add("active");
 
 					iframe.src += "&autoplay=1";
 				});		

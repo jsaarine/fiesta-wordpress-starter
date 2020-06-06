@@ -31,7 +31,7 @@
 			font-size: em(14px);
 		}
 
-		&.m-error {
+		&.error {
 			input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]), textarea, select {
 				border-color: red;
 			}

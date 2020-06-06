@@ -34,12 +34,12 @@ class App {
 			var key = e.which || e.keyCode;
 
 			if(key === 9) {
-				document.documentElement.classList.add('m-focus-visible');
+				document.documentElement.classList.add("focus-visible");
 			}
 		});
 
 		document.body.addEventListener("click", e => {
-			document.documentElement.classList.remove('m-focus-visible');
+			document.documentElement.classList.remove("focus-visible");
 		});
 
 		// Header

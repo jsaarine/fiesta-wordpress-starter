@@ -240,7 +240,7 @@
 
 // Nav open
 
-html.m-nav-open {
+html.nav-open {
 	overflow: hidden;
 
 	.c-navigation {
@@ -283,14 +283,14 @@ html.m-nav-open {
 }
 
 // Transition
-html.m-nav-open-transition {
+html.nav-open-transition {
 	.c-navigation {
 		& > ul {
 			transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
 		}
 	}
 
-	&.m-nav-open {
+	&.nav-open {
 		.c-navigation {
 			& > ul {
 				transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1);

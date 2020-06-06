@@ -147,7 +147,7 @@ class Carousel extends Component {
 		});
 
 		if(this.dots) {
-			this.el.querySelector(".carousel-dots > button:nth-child(" + (num) + ")").classList.add("m-active");
+			this.el.querySelector(".carousel-dots > button:nth-child(" + (num) + ")").classList.add("active");
 		}
 
 		// Clear interval

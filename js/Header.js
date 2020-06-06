@@ -18,20 +18,20 @@ class Header {
 
 		// Small (header is visible but smaller when scrolling)
 		if(top > this.threshold) {
-			this.el.classList.add("m-small");
+			this.el.classList.add("small");
 		}
 		else {
-			this.el.classList.remove("m-small");
+			this.el.classList.remove("small");
 		}
 
 		// Hidden (header is hidden when scrolling down)
 		if(Math.abs(top - this.oldScroll) > 0) {
 			if(this.oldScroll > top) {
-				this.el.classList.remove("m-hidden");
+				this.el.classList.remove("hidden");
 			}
 			else {
 				if(top > this.threshold && !this.firstLoad) {
-					this.el.classList.add("m-hidden");
+					this.el.classList.add("hidden");
 				}
 			}
 

@@ -84,14 +84,14 @@
 	}
 
 	// Poster
-	&.m-poster {
+	&.poster {
 		iframe {
 			display: none;
 		}
 	}
 
 	// Active
-	&.m-active {
+	&.active {
 		iframe {
 			display: block;
 			// opacity: 1;

@@ -106,18 +106,18 @@ class Scroller extends Component {
 		const scrollWidth = this.target.scrollWidth;
 
 		if(this.target.scrollLeft == 0) {
-			this.el.classList.remove("m-left");
+			this.el.classList.remove("left");
 		}
 		else {
-			this.el.classList.add("m-left");
+			this.el.classList.add("left");
 		}
 		
 		if(this.target.scrollLeft >= scrollWidth - width) {
-			this.el.classList.remove("m-right");
+			this.el.classList.remove("right");
 		}
 		else {
 			if(scrollWidth - width > 0) {
-				this.el.classList.add("m-right");	
+				this.el.classList.add("right");	
 			}
 		}
 	}
