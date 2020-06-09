@@ -47,6 +47,13 @@ add_action('wp_enqueue_scripts', function() {
 	wp_enqueue_script('fiesta-script', get_stylesheet_directory_uri().'/dist/js/script.js', array(), $theme_version, true);
 });
 
+add_action('enqueue_block_editor_assets', function() {
+	$theme_version = wp_get_theme()->get('Version');
+
+	// editor scripts
+	wp_enqueue_script('fiesta-editor-script', get_stylesheet_directory_uri() . '/js/editor.js', array(), $theme_version, true);
+});
+
 
 /* Menus */
 add_action('init', function() {

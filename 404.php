@@ -2,7 +2,7 @@
 
 <main id="main-content">
 	<?php get_template_part('template-parts/hero'); ?>
-	<div class="c-article-view">
+	<div class="c-blocks">
 		<?php while(have_posts()) : the_post(); ?>
 
 			<?php the_content() ?>

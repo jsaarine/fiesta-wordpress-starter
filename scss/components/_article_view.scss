@@ -1,34 +1,34 @@
 // Article view
 
-.c-article-view {
+.c-blocks {
 	margin-bottom: em(100px);
 
-	h1 {
-		font-size: em(42px);
-		font-weight: 400;
-		margin-bottom: 1.2em;
-		text-align: center;
-		line-height: 1.4;
+	// h1 {
+	// 	font-size: em(42px);
+	// 	font-weight: 400;
+	// 	margin-bottom: 1.2em;
+	// 	text-align: center;
+	// 	line-height: 1.4;
 
-		@media (min-width: $medium) {
-			font-size: em(58px);
-		}
-	}
+	// 	@media (min-width: $medium) {
+	// 		font-size: em(58px);
+	// 	}
+	// }
 
 	p:empty {
 		display: none;
 	}
 
 	.text-block {
-		max-width: em(800px);
+		max-width: var(--container);
 
-		& + [class*="wp-block"] {
-			margin-top: em(50px);
+		// & + [class*="wp-block"] {
+		// 	margin-top: em(50px);
 
-			@media (min-width: $medium) {
-				margin-top: em(70px);
-			}
-		}
+		// 	@media (min-width: $medium) {
+		// 		margin-top: em(70px);
+		// 	}
+		// }
 
 		a:link, a:visited, a:hover, a:active {
 			text-decoration: underline;
