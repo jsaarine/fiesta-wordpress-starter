@@ -108,7 +108,8 @@ class Navigation {
 	}
 
 	toggle(item, button) {
-		Core.slideToggle(item.querySelector("ul"));
+		// Core.slideToggle(item.querySelector("ul"));
+		item.querySelector("ul").classList.toggle("active");
 		button.classList.toggle("active");
 
 		// Close children

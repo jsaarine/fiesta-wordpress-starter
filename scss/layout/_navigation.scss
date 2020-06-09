@@ -44,7 +44,7 @@
 		&.menu-item-has-children {
 			& > ul {
 				display: none;
-				padding: 0;
+				padding: .7em 0;
 				background: #fff;
 				text-align: center;
 				position: relative;
@@ -74,13 +74,6 @@
 					@include show($desktop-nav);
 				}
 
-				@media (max-width: $mobile-nav-max) {
-					display: block;
-					height: 0;
-					overflow: hidden;
-					transition: height .25s ease-out;
-				}
-
 				li {
 					display: block;
 					padding-left: 0;
@@ -95,11 +88,19 @@
 				a {
 					font-size: em(16px);
 					color: var(--c-theme);
+					text-transform: none;
 
 					& > span {
 						&:after {
 							border-color: var(--c-theme);
 						}
+					}
+				}
+
+				// Active
+				&.active {
+					@media (max-width: $mobile-nav-max) {
+						display: block;
 					}
 				}
 			}
@@ -156,10 +157,10 @@
 				content: "";
 				display: block;
 				width: 0;
-				border-bottom: 2px solid #fff;
+				border-bottom: 1px solid #fff;
 				position: absolute;
 				left: 0;
-				top: 1.5em;
+				top: 1.4em;
 				transition: width .2s ease-out;
 			}
 		}
@@ -226,7 +227,7 @@
 			display: none;
 		}
 
-		&.m-active {
+		&.active {
 			span:nth-of-type(1) {
 				display: none;
 			}
