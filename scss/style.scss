@@ -17,8 +17,8 @@
 @import "layout/navigation";
 
 // Components
-@import "components/fiesta/cookie_consent";
-@import "components/fiesta/overlay";
+@import "../lib/scss/cookie_consent";
+@import "../lib/scss/overlay";
 @import "components/button";
 @import "components/hero";
 

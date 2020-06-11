@@ -22,10 +22,10 @@ gulp.task('sass', () => {
 gulp.task('babel', () => {
     return gulp.src([
         './js/vendor/polyfills.js',
-        './js/fiesta/Core.js',
-        './js/fiesta/Component.js',
-        './js/fiesta/CookieConsent.js',
-        './js/fiesta/Overlay.js',
+        './lib/js/Core.js',
+        './lib/js/Component.js',
+        './lib/js/CookieConsent.js',
+        './lib/js/Overlay.js',
         './js/Header.js',
         './js/Navigation.js',
         './js/App.js',
@@ -38,10 +38,6 @@ gulp.task('babel', () => {
         .pipe(minify())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist/js'));
-});
-
-gulp.task('browser-sync', function() {
-    
 });
 
 gulp.task('watch', () => {
