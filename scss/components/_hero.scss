@@ -47,7 +47,7 @@
 		color: #fff;
 		margin: 0;
 
-		@include container(rem(1000px));
+		@include container(rem(800px));
 
 		@media (min-width: $large) {
 			font-size: em(60px);
@@ -61,6 +61,8 @@
 	p {
 		font-size: em(20px);
 		margin: 1.2em 0 0 0;
+
+		@include container(rem(800px));
 
 		@media (min-width: $large) {
 			font-size: em(26px);

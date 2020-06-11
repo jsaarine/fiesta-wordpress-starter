@@ -1,6 +1,6 @@
 <div class="c-hero <?= get_query_var('hero_classes') ?>">
 	<div class="content">
-		<h1><?= is_404() ? 'Page not found' : the_title() ?></h1>
+		<h1><?= is_404() ? __('Page not found') : the_title() ?></h1>
 		<?php if(is_front_page()) : ?>
 		<p><?= get_post_meta(get_the_ID(), "description", true) ?></p>
 		<p><a href="https://github.com/jsaarine/fiesta-wordpress-starter">GitHub</a> v1.0.0</p>
