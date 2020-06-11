@@ -12,7 +12,7 @@ Also see: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
 * Starting theme for native WordPress blocks
 * Gutenberg editor shares styles with the front-end
 * Responsive multi-level navigation 
-* Fiesta front-end accessible component library
+* Front-end accessible component library
 
 ## Usage
 
@@ -27,8 +27,8 @@ Also see: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
   * `App.js`: JavaScript entry point
   * `Header.js`: Header component
   * `Navigation.js`: Navigation component
-  * `fiesta`: Fiesta component library
   * `vendor`: Vendor files
+* `lib`: Front end component library (JavaScript and Sass)
 * `scss`: Sass sources files
   * `abstracts`: Mixins and variables
   * `base`: Base styles
