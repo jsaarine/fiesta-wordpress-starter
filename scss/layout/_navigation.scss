@@ -16,7 +16,7 @@
 			right: auto;
 			bottom: auto;
 			z-index: 1;
-			background: var(--c-theme);
+			background: #fff;
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
@@ -42,12 +42,17 @@
 
 		// Parent (has child pages)
 		&.menu-item-has-children {
+			@media (min-width: $desktop-nav) {
+				padding-right: 2em;
+			}
+
 			& > ul {
 				display: none;
 				padding: .7em 0;
 				background: #fff;
 				text-align: center;
 				position: relative;
+				background: #eee;
 
 				@media (min-width: $desktop-nav) {
 					position: absolute;
@@ -79,15 +84,13 @@
 					padding-left: 0;
 					padding-right: 0;
 					white-space: nowrap;
+					position: relative;
 				}
 
 				a {
+					// font-size: em(16px);
+					color: var(--c-dark);
 					padding: 1em 2em;
-				}
-
-				a {
-					font-size: em(16px);
-					color: var(--c-theme);
 					text-transform: none;
 
 					& > span {
@@ -97,11 +100,53 @@
 					}
 				}
 
+				ul {
+					@media (min-width: $desktop-nav) {
+						left: 100%;
+						top: 0;
+						transform: none;						
+					}
+
+					&:before {
+						display: none !important;
+					}
+				}
+
+				.subnav-button {
+					svg {
+						@media (min-width: $desktop-nav) {
+							transform: rotate(-90deg);
+						}
+					}
+
+					path {
+						fill: var(--c-dark);
+					}
+				}
+
 				// Active
 				&.active {
 					@media (max-width: $mobile-nav-max) {
 						display: block;
 					}
+				}
+
+				// Right
+				&.right {
+					left: auto;
+					right: 0;
+					transform: none;
+
+					&:before {
+						left: auto;
+						right: 3em;
+					}
+				}
+
+				// Right
+				&.left {
+					left: 0;
+					transform: none;
 				}
 			}
 
@@ -113,15 +158,18 @@
 				}
 			}
 
-			&:focus-within {
-				@media (min-width: $desktop-nav) {
-					& > ul {
-						display: block;
+			&.hover {
+				& > .subnav-button {
+					svg {
+						@media (max-width: $mobile-nav-max) {
+							transform: rotate(180deg);
+						}
 					}
 				}
 			}
 		}
 
+		// Current page
 		&.current_page_item {
 			& > a > span {
 				position: relative;
@@ -136,9 +184,13 @@
 	a {
 		display: block;
 		padding: 1em 0;
-		color: #fff;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		transition: opacity .2s linear;
+		color: var(--c-dark);
+
+		@media (min-width: $desktop-nav) {
+			color: #fff;
+		}
 
 		&:hover {
 			text-decoration: none;
@@ -199,41 +251,40 @@
 		}
 	}
 
-	// Toggle button
-	.toggle {
+	// Sub nav toggle button
+	.subnav-button {
 		position: absolute;
-		right: 1em;
+		right: .5em;
 		top: .3em;
 		width: rem(44px);
 		height: rem(44px);
-		line-height: rem(44px);
 		text-align: center;
 		cursor: pointer;
 		font-size: em(26px);
 		background: none;
 		border: none;
-		color: #fff;
+		// color: #fff;
+		padding: 0;
 
 		@media (min-width: $desktop-nav) {
-			width: rem(10px);
-			height: rem(10px);
-			right: 0;
-			top: 0;
+			width: rem(22px);
+			height: rem(22px);
+			right: .2em;
+			top: 50%;
+			margin-top: rem(-11px);
 		}
 
-		@include hide($desktop-nav);
+		svg {
+			display: block;
+			margin: 0 auto;
+			transition: transform .2s ease-out;
 
-		span:nth-of-type(2) {
-			display: none;
-		}
+			path {
+				fill: var(--c-dark);
 
-		&.active {
-			span:nth-of-type(1) {
-				display: none;
-			}
-
-			span:nth-of-type(2) {
-				display: block;
+				@media (min-width: $medium) {
+					fill: #fff;
+				}
 			}
 		}
 	}
@@ -262,7 +313,7 @@ html.nav-open {
 		.nav-button {
 			.line {
 				width: rem(26px);
-				background: #fff !important;
+				background: var(--c-theme) !important;
 				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
 				&:nth-of-type(1) {

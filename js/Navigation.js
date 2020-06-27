@@ -47,25 +47,27 @@ class Navigation {
 
 		// Second level
 		this.el.querySelectorAll(".menu-item-has-children").forEach(i => {
-			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="toggle"><span>+</span><span>-</span></button>');
+			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="subnav-button" aria-label="Open sub-menu"><svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"><path d="M6.748 6.748a1.052 1.052 0 01-1.496 0L.31 1.808A1.059 1.059 0 011.722.24L1.8.31 6 4.505 10.193.31a1.059 1.059 0 011.567 1.411l-.07.078" fill="#000" fill-rule="nonzero"/></svg></button>');
+
+			const subnavButton = i.querySelector(".subnav-button");
 			
 			// Open active menu
 			if(i.classList.contains("current_page_item") && this.showActiveMenu) {
 				// i.querySelector("ul").classList.add("visible");
-				i.querySelector(".toggle").classList.add("active");
+				subnavButton.classList.add("active");
 			}
 
 			// Parent is link?
 			if(this.parentIsLink) {
-				i.querySelector(".toggle").addEventListener("click", e => {
+				subnavButton.addEventListener("click", e => {
 					e.preventDefault();
-					this.toggle(i, e.currentTarget);
+					this.toggleChildren(i, e.currentTarget);
 				});
 			}
 			else {
 				i.addEventListener("click", e => {
 					e.preventDefault();
-					this.toggle(i, e.currentTarget);
+					this.toggleChildren(i, e.currentTarget);
 				});
 			}
 
@@ -75,22 +77,49 @@ class Navigation {
 					if(!touched) {
 						e.preventDefault();
 					}
-					
+
 					i.classList.toggle("hover");
 					touched = true;
 				}
+
+				this.checkSubNavPosition(i);
 			});
 
 			document.addEventListener("click", e => {
 				if(!this.el.contains(e.target)) {
 					this.el.querySelectorAll(".menu-item-has-children").forEach(item => {
 						item.classList.remove("hover");
-					});	
+					});
 
 					touched = false;
 				}
 			});
+
+			i.addEventListener("mouseenter", e => {
+				this.checkSubNavPosition(i);
+			});
+
+			i.addEventListener("mouseleave", e => {
+				const ul = i.querySelector("ul");
+
+				ul.classList.remove("left");
+				ul.classList.remove("right");
+			});
 		});
+	}
+
+	checkSubNavPosition(el) {
+		const ul = el.querySelector("ul");
+		const pos = ul.getBoundingClientRect().left;
+		const margin = 10;
+
+		if(pos + ul.offsetWidth > window.innerWidth - margin) {
+			ul.classList.add("right");
+		}
+
+		if(pos < margin) {
+			ul.classList.add("left");
+		}
 	}
 
 	open() {
@@ -107,15 +136,16 @@ class Navigation {
 		this.toggleButton.setAttribute("aria-expanded", false);
 	}
 
-	toggle(item, button) {
+	toggleChildren(item, button) {
 		// Core.slideToggle(item.querySelector("ul"));
+		item.classList.toggle("hover");
 		item.querySelector("ul").classList.toggle("active");
 		button.classList.toggle("active");
 
 		// Close children
 		item.querySelectorAll(".menu-item-has-children").forEach(function(j) {
-			// j.querySelector("ul").classList.remove("visible");
-			j.querySelector(".toggle").classList.remove("active");
+			j.querySelector("ul").classList.remove("active");
+			j.querySelector(".subnav-button").classList.remove("active");
 		});
 	}
 }
