@@ -41,8 +41,8 @@ gulp.task('babel', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch('./scss/**/*.scss', gulp.series('sass'));
-    gulp.watch('./js/**/*.js', gulp.series(['babel']));
+    gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss'], gulp.series('sass'));
+    gulp.watch(['./js/**/*.js', './lib/js/**/*.js'], gulp.series(['babel']));
 });
 
 gulp.task('default', gulp.series(['sass', 'babel', 'watch']));
