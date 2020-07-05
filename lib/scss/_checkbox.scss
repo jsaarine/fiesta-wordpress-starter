@@ -8,13 +8,13 @@
 	margin-right: .5em;
 	display: inline-block;
 
-	span {
+	& > span {
 		display: inline-block;
 		vertical-align: middle;
 		user-select: none;
 		padding-left: $size + $padding;
 
-		&:before {
+		& > span {
 			content: "";
 			display: inline-block;
 			width: $size;
@@ -22,18 +22,25 @@
 			line-height: $size;
 			background: #fff;
 			margin-right: $padding;
-			border: 1px solid #ccc;
-			border-radius: 0px;
+			border: 1px solid var(--c-theme);
+			border-radius: 2px;
 			vertical-align: middle;
 			position: absolute;
 			left: 0;
-			top: 0;
+			top: em(-1px);
 		}
 	}
 
-	input:checked + span:before {
-		content: url("../images/bullet.svg");
+	input:checked + span > span:before {
+		content: "";
 		text-align: center;
+		display: block;
+		transform: rotate(45deg) scale(.6) translateY(-3px) translateX(-1px);
+		width: 14px;
+		height: 24px;
+		border-bottom: 7px solid var(--c-theme);
+		border-right: 7px solid var(--c-theme);
+		margin: 0 auto;
 	}
 
 	input:focus + span:before {
@@ -45,6 +52,12 @@
 		position: absolute;
 		width: 1em;
 		height: 1em;
+
+		&[disabled] {
+			 & + span > span {
+			 	opacity: .3;
+			 }
+		}
 	}
 }
 

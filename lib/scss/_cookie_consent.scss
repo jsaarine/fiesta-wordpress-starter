@@ -30,13 +30,9 @@
 	} 
 
 	p {
-		margin: 0 0 1em 0;
-		font-size: 0.875em;
+		margin: 0;
+		font-size: em(15px);
 		line-height: 1.4;
-
-		@media (min-width: 641px) {
-			margin-bottom: 0;
-		}
 	}
 
 	a {
@@ -49,7 +45,7 @@
 	}
 
 	.decline {
-		font-size: .875em;
+		font-size: em(15px);
 		background: none;
 		border: none;
 		padding: 0;
