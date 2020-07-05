@@ -12,13 +12,11 @@
 
 // Layout
 @import "layout/header";
-@import "layout/blocks";
 @import "layout/footer";
 @import "layout/navigation";
+@import "layout/blocks";
 
 // Components
-@import "../lib/scss/cookie_consent";
-@import "../lib/scss/overlay";
 @import "components/button";
 @import "components/hero";
 

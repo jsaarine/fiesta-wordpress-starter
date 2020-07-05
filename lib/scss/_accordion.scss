@@ -6,7 +6,7 @@
 	list-style: none;
 
 	& > li {
-		border-top: 1px solid #000;
+		border-top: 1px solid #bbb;
 
 		&.active {
 			.title {
@@ -24,7 +24,7 @@
 		}
 
 		&:last-of-type {
-			border-bottom: 1px solid #000;
+			border-bottom: 1px solid #bbb;
 		}
 
 		// Title
@@ -39,10 +39,10 @@
 				width: 100%;
 				background: none;
 				border: none;
-				padding: 1.2em 0;
+				padding: 1em em(25px) 1em .5em;
 				padding-right: em(25px);
 				text-align: left;
-				color: var(--c-dark);
+				color: var(--c-theme);
 
 				&:hover {
 					text-decoration: none;
@@ -60,14 +60,14 @@
 					height: 0; 
 					border-left: 10px solid transparent;
 					border-right: 10px solid transparent;
-					border-top: 10px solid var(--c-dark);
+					border-top: 10px solid var(--c-theme);
 				}
 			}
 		}
 
 		// Content
 		& > div {
-			padding: 0 .25em;
+			padding: 0 .5em;
 			display: none;
 			// visibility: hidden;
 			// height: 0;

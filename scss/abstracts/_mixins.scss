@@ -81,6 +81,7 @@
 	border-radius: 3px;
 	line-height: 1.1;
 	cursor: pointer;
+	transition: background .3s linear;
 
 	&:hover {
 		background: var(--c-dark);
