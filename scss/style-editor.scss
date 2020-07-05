@@ -26,6 +26,11 @@
 .block-editor-block-list__layout {
 	padding-left: 14px;
 	padding-right: 14px;
+
+	.block-editor-block-list__layout {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .wp-block {

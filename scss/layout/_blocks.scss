@@ -113,7 +113,7 @@
 
 // Image
 .wp-block-image {
-	padding: 0;
+	// padding: 0;
 
 	img {
 		width: 100%;
@@ -238,9 +238,6 @@
 
 // Group
 .wp-block-group {
-	background: #eee;
-	padding-top: em(50px);
-	padding-bottom: em(50px);
 	text-align: center;
 
 	p, ul, ol, h2, h3 {
@@ -253,6 +250,9 @@
 
 	.wp-block-group__inner-container {
 		margin: 0;
+		background: #eee;
+		padding-top: em(50px);
+		padding-bottom: em(50px);
 
 		& > :first-child {
 			margin-top: 0;
