@@ -30,16 +30,19 @@ class App {
 
 	start() {
 		// Focus visible
+		document.documentElement.classList.add("focus-visible");
+
 		document.body.addEventListener("keyup", e => {
 			var key = e.which || e.keyCode;
 
 			if(key === 9) {
-				document.documentElement.classList.add("focus-visible");
-			}
-		});
+				const activeElement = document.activeElement;
 
-		document.body.addEventListener("click", e => {
-			document.documentElement.classList.remove("focus-visible");
+				if(!activeElement.classList.contains("focus-visible")) {
+					activeElement.classList.add("focus-visible");
+					activeElement.addEventListener("blur", this.onBlur);	
+				}
+			}
 		});
 
 		// Header
@@ -47,6 +50,10 @@ class App {
 
 		// Navigation
 		new Navigation(document.querySelector("#navigation"));
+	}
+
+	onBlur(e) {
+		e.target.classList.remove("focus-visible");
 	}
 }
 
