@@ -102,8 +102,10 @@ class Navigation {
 			i.addEventListener("mouseleave", e => {
 				const ul = i.querySelector("ul");
 
+				i.classList.remove("hover");
 				ul.classList.remove("left");
 				ul.classList.remove("right");
+				ul.classList.remove("active");
 			});
 		});
 	}
