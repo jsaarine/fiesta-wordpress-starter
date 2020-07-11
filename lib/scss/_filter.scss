@@ -5,13 +5,14 @@
 	display: flex;
 
 	button {
-		border: 1px solid purple;
+		border: 1px solid var(--c-theme);
 		background: none;
 		padding: 1em;
-		color: purple;
+		margin: 0;
+		color: var(--c-theme);
 
 		&.active {
-			background: purple;
+			background: var(--c-theme);
 			color: #fff;
 		}
 	}
