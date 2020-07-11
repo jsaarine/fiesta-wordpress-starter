@@ -30,6 +30,7 @@ gulp.task('babel', () => {
     ])
         .pipe(sourcemaps.init())
         .pipe(babel({
+            presets: ["@babel/preset-env"],
             ignore: ['./js/vendor']
         }))
         .pipe(concat("./script.js"))
