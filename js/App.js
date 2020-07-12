@@ -29,7 +29,17 @@ class App {
 	}
 
 	start() {
-		// Focus visible
+		// Add focus ring to buttons only when keyboard-focused
+		this.focusVisible();
+
+		// Header
+		new Header(document.querySelector("#header"));
+
+		// Navigation
+		new Navigation(document.querySelector("#navigation"));
+	}
+
+	focusVisible() {
 		document.documentElement.classList.add("focus-visible");
 
 		document.body.addEventListener("keyup", e => {
@@ -44,12 +54,6 @@ class App {
 				}
 			}
 		});
-
-		// Header
-		new Header(document.querySelector("#header"));
-
-		// Navigation
-		new Navigation(document.querySelector("#navigation"));
 	}
 
 	onBlur(e) {
