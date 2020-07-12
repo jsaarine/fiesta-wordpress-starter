@@ -48,7 +48,6 @@
 
 			& > ul {
 				display: none;
-				padding: .7em 0;
 				background: #fff;
 				text-align: center;
 				position: relative;
@@ -88,7 +87,7 @@
 				}
 
 				a {
-					// font-size: em(16px);
+					font-size: em(16px);
 					color: var(--c-dark);
 					padding: 1em 2em;
 					text-transform: none;
@@ -209,11 +208,15 @@
 				content: "";
 				display: block;
 				width: 0;
-				border-bottom: 1px solid #fff;
+				border-bottom: 1px solid var(--c-dark);
 				position: absolute;
 				left: 0;
 				top: 1.4em;
 				transition: width .2s ease-out;
+
+				@media (min-width: $desktop-nav) {
+					border-color: #fff;
+				}
 			}
 		}
 	}
