@@ -241,7 +241,7 @@
 	text-align: center;
 
 	p, ul, ol, h2, h3 {
-		@include container(var(--container));
+		@include container(var(--container), true);
 	}
 
 	h2 {
@@ -379,7 +379,7 @@
 	h2, p {
 		color: #fff;
 
-		@include container(var(--container));
+		@include container(var(--container), true);
 	}
 
 	.wp-block-button__link {

@@ -26,13 +26,7 @@
 
 	// Logo
 	.logo {
-		// margin-left: 3em;
 		transition: top .2s ease-out;
-
-		@media (min-width: $desktop-nav) {
-			top: 2em;
-			left: 3em;
-		}
 
 		svg {
 			transition: width .2s ease-out, height .2s ease-out;
