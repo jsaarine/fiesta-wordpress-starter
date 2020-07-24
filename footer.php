@@ -1,6 +1,8 @@
 
 <footer class="c-footer">
-	<?php dynamic_sidebar('footer'); ?>
+	<div class="container">
+		<?php dynamic_sidebar('footer'); ?>
+	</div>
 </footer>
 
 <?php wp_footer(); ?>
