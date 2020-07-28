@@ -1,3 +1,13 @@
+wp.domReady(function() {
+	// Remove editor styles
+	wp.blocks.unregisterBlockStyle('core/quote', 'large');
+	wp.blocks.unregisterBlockStyle('core/separator', 'dots');
+	wp.blocks.unregisterBlockStyle('core/separator', 'wide');
+	wp.blocks.unregisterBlockStyle('core/table', 'stripes');
+	wp.blocks.unregisterBlockStyle('core/social-links', 'pill-shape');
+});
+
+// Filter block alignment options
 wp.hooks.addFilter(
 	'blocks.registerBlockType',
 	'fiesta/filters',
