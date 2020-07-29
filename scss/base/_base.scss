@@ -66,9 +66,12 @@ sup {
 	top: -0.5em;
 }
 
-nav ul {
+ul, ol {
 	margin: 0;
 	padding: 0;
+}
+
+nav ul {
 	list-style: none;
 }
 
