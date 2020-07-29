@@ -28,12 +28,12 @@
 						<span class="line"></span>
 					</button>
 					<?php wp_nav_menu([
-						'menu'=>'main',
-						'container'=>'',
-						'container_class'=>'',
-						'menu_class'=>'',
-						'link_before'    => '<span>',
-  						'link_after'     => '</span>'
+						'menu' => 'main',
+						'container' => '',
+						'container_class' => '',
+						'menu_class' => '',
+						'link_before' => '<span>',
+  						'link_after' => '</span>'
 					])?>
 				</nav>
 			</div>

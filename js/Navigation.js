@@ -58,12 +58,10 @@ class Navigation {
 
 			// Touch support for hover menu
 			i.addEventListener("touchstart", e => {
-				if(!this.isMobileNavOpen()) {
-					if(this.touched && !i.classList.contains("hover")) {
-						this.clearSubNav();
-					}
+				e.stopPropagation();
 
-					if(!this.touched) {
+				if(!this.isMobileNavOpen()) {
+					if(!this.touched || !i.classList.contains("hover")) {
 						e.preventDefault();
 					}
 
