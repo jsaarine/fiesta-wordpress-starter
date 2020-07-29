@@ -27,6 +27,9 @@ add_action('after_setup_theme', function() {
 
 	// Enable featured image
 	add_theme_support('post-thumbnails');
+	
+	// Add hero image max size
+	add_image_size('hero', 2500, 1042);
 
 	// Add html5 support
 	add_theme_support('html5', array('search-form', 'gallery', 'caption', 'script', 'style'));
@@ -40,6 +43,7 @@ add_action('after_setup_theme', function() {
 
 
 /* Styles */
+
 add_action('wp_enqueue_scripts', function() {
 	$theme_version = wp_get_theme()->get('Version');
 
@@ -51,7 +55,7 @@ add_action('enqueue_block_editor_assets', function() {
 	$theme_version = wp_get_theme()->get('Version');
 
 	// editor scripts
-	wp_enqueue_script('fiesta-editor-script', get_stylesheet_directory_uri() . '/js/editor.js', array(), $theme_version, true);
+	wp_enqueue_script('fiesta-editor-script', get_stylesheet_directory_uri() . '/js/editor/editor.js', array(), $theme_version, true);
 });
 
 
@@ -78,59 +82,54 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 // Remove generator
 remove_action('wp_head', 'wp_generator');
 
-
-/* Misc */
-
-function is_text_block($name) {
-	$blocks = array(
-		'core/paragraph',
-		'core/heading',
-		'core/list',
-	);
-
-	if(in_array($name, $blocks)) {
-		return true;
-	}
-
-	return false;
-}
+// Disable theme auto update
+add_filter('theme_auto_update_setting_template', function($template) {
+	$text = __('Auto-updates are not available for this theme.');
+ 
+	return "<# if ( [ 'my-theme', 'fiesta' ].includes( data.id ) ) { #>
+		<p>$text</p>
+		<# } else { #>
+		$template
+		<# } #>";
+});
 
 
 /* Allowed Block types */
 
 add_filter('allowed_block_types', function($allowed_block_types, $post) {
 	switch($post->post_type):
-			default:
-				return array(
-					'core/paragraph',
-					'core/image',
-					'core/heading',
-					'core/list',
-					'core/quote',
-					'core/file',
-					'core/table',
-					'core/shortcode',
-					'core/columns',
-					'core/separator',
-					'core/button',
-					'core/buttons',
-					'core/group',
-					'core/gallery',
-					'core/media-text',
-					'core/cover',
-					'core/embed',
-					'core-embed/twitter',
-					'core-embed/youtube',
-					'core-embed/facebook',
-					'core-embed/instagram',
-					'core-embed/soundcloud',
-					'core-embed/spotify',
-					'core-embed/flickr',
-					'core-embed/vimeo',
-					'core-embed/issuu',
-					'core-embed/slideshare',
-					'fiesta/sample-block',
-				);
+		default:
+			return array(
+				'core/paragraph',
+				'core/image',
+				'core/heading',
+				'core/list',
+				'core/quote',
+				'core/file',
+				'core/table',
+				'core/shortcode',
+				'core/columns',
+				'core/separator',
+				'core/button',
+				'core/buttons',
+				'core/group',
+				'core/gallery',
+				'core/media-text',
+				'core/cover',
+				'core/social-links',
+				'core/embed',
+				'core-embed/facebook',
+				'core-embed/flickr',
+				'core-embed/instagram',
+				'core-embed/issuu',
+				'core-embed/soundcloud',
+				'core-embed/spotify',
+				'core-embed/twitter',
+				'core-embed/vimeo',
+				'core-embed/youtube',
+				'core-embed/slideshare',
+				'fiesta/sample-block',
+			);
 	endswitch;  
 }, 10, 2);
 
