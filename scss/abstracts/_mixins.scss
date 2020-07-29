@@ -6,10 +6,14 @@
 	margin-right: auto;
 
 	@if($padding) {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
-		box-sizing: content-box;
+		@include container-padding();
 	}
+}
+
+@mixin container-padding() {
+	box-sizing: content-box;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
 }
 
 // Visibility
@@ -30,7 +34,47 @@
 	}
 }
 
-// Variable
+// Blocks
+
+@mixin block-margin() {
+	margin-top: rem(65px);
+	margin-bottom: rem(65px);
+}
+
+@mixin button() {
+	display: inline-block;
+	font-size: rem(18px);
+	padding: .7em 2em;
+	text-transform: uppercase;
+	background: var(--c-theme);
+	border: 1px solid var(--c-theme);
+	text-decoration: none;
+	margin-bottom: 0;
+	color: #fff;
+	border-radius: 3px;
+	line-height: 1.1;
+	cursor: pointer;
+	transition: background .2s linear, color .2s linear;
+
+	&:hover {
+		background: #fff;
+		color: var(--c-theme);
+		// opacity: 1;
+		text-decoration: none;
+	}
+}
+
+@mixin caption {
+	width: 100%;
+	margin-top: 1.5rem;
+	line-height: 1.4;
+	text-align: center;
+	font-size: 1rem;
+	color: var(--c-dark);
+	opacity: .7;
+}
+
+// Misc
 
 @mixin variable($value) {
 	font-family: "#{$value}";
@@ -66,35 +110,4 @@
 		width: 100%;
 		height: 100%;
 	}
-}
-
-@mixin button() {
-	display: inline-block;
-	font-size: rem(18px);
-	padding: .7em 2em;
-	text-transform: uppercase;
-	background: var(--c-theme);
-	border: none;
-	text-decoration: none;
-	margin-bottom: 0;
-	color: #fff;
-	border-radius: 3px;
-	line-height: 1.1;
-	cursor: pointer;
-	transition: background .3s linear;
-
-	&:hover {
-		background: var(--c-dark);
-		opacity: 1;
-		text-decoration: none;
-	}
-}
-
-@mixin caption {
-	margin-top: 1.5em;
-	line-height: 1.4;
-	text-align: center;
-	font-size: em(16px);
-	color: var(--c-dark);
-	opacity: .7;
 }

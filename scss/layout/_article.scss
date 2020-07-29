@@ -1,0 +1,17 @@
+.c-article {
+	margin-bottom: rem(50px);
+
+	& > * {
+		@include container(var(--container), true);
+	}
+
+	.alignwide {
+		max-width: var(--container-wide);
+	}
+
+	.alignfull {
+		max-width: none;
+	}
+
+	@import "../layout/blocks";
+}

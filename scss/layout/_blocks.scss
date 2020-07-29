@@ -1,126 +1,49 @@
-.c-blocks {
-	margin-bottom: em(100px);
+// Common
+h2, h3, h4 {
+	color: var(--c-theme);
+	margin-top: 2em;
+	margin-bottom: .5em;
+	line-height: 1.2;
+}
 
-	& > * {
-		&:not(.alignfull) {
-			@include container(var(--container), true);
-		}
-	}
-
-	p:empty {
-		display: none;
+p, li {
+	a:link, a:visited, a:hover, a:active {
+		text-decoration: underline;
 	}
 }
 
-// Headings
-.c-blocks, .wp-block {
-	h2, h3 {
-		color: var(--c-theme);
-		margin-top: 2em;
-		line-height: 1.2;
-	}
+ul, ol {
+	line-height: 1.6;
+	font-size: rem(19px);
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 
-	p, li {
-		a:link, a:visited, a:hover, a:active {
-			text-decoration: underline;
-		}	
-	}
-}
+	li {
+		margin-left: 2rem;
+		padding-left: .5rem;
 
-// Lists
- .c-blocks, .wp-block {
-	ul, ol {
-		list-style: none;
-		padding-left: 1em;
-		margin-top: 2em;
-		margin-bottom: 2em;
-
-		li {
-			position: relative;
-			padding-left: 1.5em;
-			margin-bottom: .5em;
-			line-height: 1.6;
-			font-size: em(19px);
-
-			&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-		}
-
-		ul, ol {
-			padding-left: 0;
-		}
-	}
-
-	ul {
-		ul, ol {
-			list-style: none;
-			margin-top: 1em;
-		}
-
-		li {
-			position: relative;
-
-			&:before {
-				top: .5em;
-				left: 0;
-				width: 8px;
-				height: 8px;
-				background: var(--c-theme);
-				border-radius: 999px;
-			}
-		}
-	}
-
-	ol {
-		list-style: none;
-
-		ol {
-			counter-reset: counter;
-		}
-
-		li {
-			counter-increment: counter;
-		}
-
-		li:before {
-			content: counter(counter)".";
+		&::marker {
+			color: var(--c-theme);
 		}
 	}
 }
 
-// Blocks
-[class*="wp-block-"] {
-	margin-top: rem(50px);
-	margin-bottom: rem(50px);
+code {
+	background: #eee;
+}
 
-	@media (min-width: $medium) {
-		margin-top: rem(70px);
-		margin-bottom: rem(70px);
-	}
-
-	&.alignwide {
-		max-width: var(--container-wide);
-	}
-
-	&.alignfull {
-		max-width: var(--container-full);
-	}
+figcaption {
+	@include caption();
 }
 
 // Image
 .wp-block-image {
-	// padding: 0;
+	padding: 0;
+
+	@include block-margin();
 
 	img {
 		width: 100%;
-	}
-
-	figcaption {
-		@include caption();
 	}
 }
 
@@ -129,46 +52,42 @@
 	text-align: center;
 	border: none;
 
-	[class*="wp-block"] {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
+	@include block-margin();
+	
 	p {
 		color: var(--c-theme);
-		font-size: em(24px);
+		font-size: rem(30px);
 		margin: 1em 0;
 
 		@include container(rem(650px));
-
-		@media (min-width: $medium) {
-			font-size: em(32px);
-		}
 	}
 
 	cite, .wp-block-quote__citation {
 		font-style: normal;
-		font-size: rem(20px);
+		font-size: 1rem;
 		color: var(--c-dark);
+		opacity: .7;
 	}
 }
 
 // Columns
 .wp-block-columns {
-	@media (max-width: $medium-max) {
-		display: block !important;
-	}
+	@include block-margin();
 
 	.wp-block-column {
-		min-width: 0;
-		margin-top: 0;
-		
-
 		@media (max-width: $medium-max) {
-			margin-left: 0;
+			flex-basis: 100% !important;
+
+			&:not(:last-of-type) {
+				margin-bottom: 3em;
+			}
 		}
 
-		@media (min-width: $large) {
+		& > :first-child {
+			margin-top: 0;
+		}
+
+		& > :last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -176,39 +95,52 @@
 
 // Embed
 .wp-block-embed {
-	.wp-block-embed__wrapper {
-		margin: 0;
-	}
+	@include block-margin();
 
-	figcaption {
-		@include caption();
+	&.wp-block-embed-youtube, &.wp-block-embed-vimeo {
+		padding: 0;
 	}
 }
 
 // Table
 .wp-block-table {
 	overflow-y: hidden;
+	font-size: 1rem;
+	padding: 0;
+
+	@include container-padding();
+
+	@include block-margin();
 
 	table {
 		width: 100%;
 		border-collapse: collapse;
 	}
 
-	tr:first-child {
-		background: var(--c-theme);
-		color: #fff;
+	thead {
+		border-bottom: none;
 	}
 
-	td {
+	tfoot {
+		border-top: none;
+
+		td {
+			border-top: 1px solid var(--c-dark);
+		}
+	}
+
+	th {
+		text-align: left;
+		background: var(--c-theme);
+		color: #fff;
+		font-weight: 400;
+	}
+
+	td, th {
 		padding: 1em;
 		border: none;
 		border-bottom: 1px solid #eee;
 	}	
-
-	figcaption {
-		@include caption();
-	}
-	
 }
 
 // Buttons
@@ -216,43 +148,49 @@
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 
-	[class*=wp-block] {
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-	}
-
 	.wp-block-button {
-		&:last-child {
-			margin-right: 0;
+		&.is-style-outline {
+			.wp-block-button__link {
+				background: #fff;
+				color: var(--c-theme);
+
+				&:hover {
+					background: var(--c-theme);
+					color: #fff;
+				}
+			}
 		}
 	}
 
 	.wp-block-button__link {
 		@include button();
 	}
-
-	.block-editor-inner-blocks {
-		padding: 0;
-	}
 }
 
 // Group
 .wp-block-group {
-	text-align: center;
+	padding: 0;
 
-	p, ul, ol, h2, h3 {
-		@include container(var(--container), true);
-	}
-
-	h2 {
-		margin-top: 0;
-	}
+	@include block-margin();
 
 	.wp-block-group__inner-container {
-		margin: 0;
 		background: #eee;
-		padding-top: em(50px);
-		padding-bottom: em(50px);
+		padding-top: rem(50px);
+		padding-bottom: rem(50px);
+
+		@include container-padding();
+
+		& > * {
+			@include container(var(--container));
+		}
+
+		.alignwide {
+			max-width: var(--container-wide);
+		}
+
+		.alignfull {
+			max-width: none;
+		}
 
 		& > :first-child {
 			margin-top: 0;
@@ -266,26 +204,17 @@
 
 // File
 .wp-block-file {
+	font-size: 1rem;
+
+	@include block-margin();
+
+	@include container-padding();
+
 	a {
 		color: var(--c-dark);
-
-		&:first-of-type {
-			margin-right: 1.5em;
-		}
-	}
-
-	[class*="wp-block"] {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
-	.wp-block-file__button-richtext-wrapper {
-		margin-left: 1.5em;
 	}
 
 	.wp-block-file__button {
-		margin: 0;
-
 		@include button();
 
 		@media (max-width: $small-max) {
@@ -298,13 +227,13 @@
 .wp-block-media-text {
 	padding: 0;
 
+	@include block-margin();
+
 	@media (max-width: $medium-max) {
 		display: block;
 	}
 
 	.wp-block-media-text__content {
-		margin: 0;
-
 		& > :first-child {
 			margin-top: 0;
 		}
@@ -325,61 +254,78 @@
 	h2 {
 		margin-top: 0;
 	}
-
-	p.has-large-font-size {
-		font-size: em(19px);
-	}
 }
 
 // Gallery
 .wp-block-gallery {
+	padding: 0;
+
+	@include block-margin();
+
 	ul {
 		width: 100%;
 		margin: 0;
-		padding: 0;
 
 		li {
-			padding: 0;
-			margin: 0;
-
-			&:before {
-				display: none;
-			}
+			padding-left: 0;
+			margin-left: 0;
 		}
 	}
 }
 
 // Cover
 .wp-block-cover {
-	.wp-block-cover__inner-container {
-		margin: 0;
-	}
+	padding: 0;
+
+	@include block-margin();
 
 	p {
-		font-size: em(48px);
+		font-size: rem(48px);
 		line-height: 1.4;
-		margin: 0;
 	}
 }
 
 // Separator
 .wp-block-separator {
-	background: var(--c-theme);
 	border: none;
-	height: 2px;
-	width: em(250px);
+	background: var(--c-theme);
+	height: 1px;
+	max-width: rem(200px) !important;
+	padding: 0;
+
+	@include block-margin();
+}
+
+// Social links
+.wp-block-social-links {
+	li {
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	&:not(.is-style-logos-only) {
+		.wp-social-link {
+			background: var(--c-theme);
+		}
+	}
 }
 
 // Sample custom block
 .wp-block-fiesta-sample-block {
 	text-align: center;
 	background: var(--c-theme);
-	padding: em(50px) 0;
+	padding: rem(50px) 0;
+
+	@include block-margin();
 
 	h2, p {
 		color: #fff;
 
 		@include container(var(--container), true);
+	}
+
+	h2 {
+		margin-top: 0;
 	}
 
 	.wp-block-button__link {
@@ -389,10 +335,6 @@
 		&:hover {
 			color: #fff;
 		}
-	}
-
-	h2 {
-		margin-top: 0;
 	}
 
 	& > :first-child {

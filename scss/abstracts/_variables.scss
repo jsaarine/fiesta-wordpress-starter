@@ -14,7 +14,7 @@
 	--default-container: #{rem(1200px)};
 	--container: #{rem(800px)};
 	--container-wide: #{rem(1100px)};
-	--container-full: 100%;
+	--container-padding: 1.5rem;
 }
 
 // Screen size breakpoints (for min-width queries)
