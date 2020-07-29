@@ -5,7 +5,7 @@
 
 	<?php get_template_part('template-parts/hero'); ?>
 
-	<article class="c-blocks">
+	<article class="c-article">
 		<?php the_content() ?>
 	</article>
 
