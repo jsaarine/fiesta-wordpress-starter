@@ -6,5 +6,5 @@
 		<p><a href="https://github.com/jsaarine/fiesta-wordpress-starter">GitHub</a> v1.0.0</p>
 		<?php endif; ?>
 	</div>
-	<?= the_post_thumbnail() ?>
+	<?= the_post_thumbnail('hero', array('loading' => false)) ?>
 </div>
