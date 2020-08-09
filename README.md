@@ -11,14 +11,15 @@ See also: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
 * Babel compilation, JavaScript concatenation, minification and source maps with Gulp
 * Gutenberg editor shares styles with the front-end
 * Responsive multi-level navigation 
-* Front-end accessible component library
+* Front-end component library
 
 ## Usage
 
-1. Extract into your theme folder
-2. Run `npm install`
-3. Run `gulp` to start watch
-4. Run `gulp build` to build for production
+1. Extract the starter package into your theme folder (e.g. themes/mytheme)
+2. Run `npm install --global gulp-cli` to install the Gulp CLI globally
+3. Run `npm install` to install dependencies
+4. Run `gulp` to start watch
+5. Run `gulp build` to build for production
 
 ## Structure
 
