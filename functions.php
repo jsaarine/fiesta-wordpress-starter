@@ -39,6 +39,9 @@ add_action('after_setup_theme', function() {
 
 	// Make embeds responsive
 	add_theme_support('responsive-embeds');
+
+	// Remove default block patterns
+	remove_theme_support('core-block-patterns');
 });
 
 
@@ -55,7 +58,7 @@ add_action('enqueue_block_editor_assets', function() {
 	$theme_version = wp_get_theme()->get('Version');
 
 	// editor scripts
-	wp_enqueue_script('fiesta-editor-script', get_stylesheet_directory_uri() . '/js/editor/editor.js', array(), $theme_version, true);
+	wp_enqueue_script('fiesta-editor-script', get_stylesheet_directory_uri() . '/js/editor/editor.js', array('wp-blocks', 'wp-dom'), $theme_version, true);
 });
 
 
