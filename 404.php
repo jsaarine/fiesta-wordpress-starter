@@ -1,13 +1,10 @@
 <?php get_header()?>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 	<?php get_template_part('template-parts/hero'); ?>
-	<div class="c-blocks">
-		<?php while(have_posts()) : the_post(); ?>
 
-			<?php the_content() ?>
-
-		<?php endwhile; ?>
+	<div class="c-article">
+		
 	</div>
 </main>
 
