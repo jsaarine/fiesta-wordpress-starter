@@ -29,7 +29,7 @@ class App {
 	}
 
 	start() {
-		// Add focus ring to buttons only when keyboard-focused
+		// Add focus outline only when keyboard-focused
 		this.focusVisible();
 
 		// Header
@@ -42,6 +42,10 @@ class App {
 	focusVisible() {
 		document.documentElement.classList.add("focus-visible");
 
+		const onBlur = e => {
+			e.target.classList.remove("focus-visible");
+		}
+
 		document.body.addEventListener("keyup", e => {
 			var key = e.which || e.keyCode;
 
@@ -50,14 +54,10 @@ class App {
 
 				if(!activeElement.classList.contains("focus-visible")) {
 					activeElement.classList.add("focus-visible");
-					activeElement.addEventListener("blur", this.onBlur);	
+					activeElement.addEventListener("blur", onBlur);	
 				}
 			}
 		});
-	}
-
-	onBlur(e) {
-		e.target.classList.remove("focus-visible");
 	}
 }
 
