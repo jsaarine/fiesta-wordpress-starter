@@ -128,7 +128,7 @@ class Navigation {
 	open() {
 		document.documentElement.classList.add("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
-		this.el.scrollTo(0,0);
+		this.el.querySelector("ul").scrollTop = 0;
 		// this.el.querySelector("nav").focus();
 		this.toggleButton.setAttribute("aria-expanded", true);
 	}
