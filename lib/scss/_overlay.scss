@@ -53,7 +53,7 @@
 		border: none;
 		transition: opacity .2s linear;
 
-		&:before, &:after {
+		&::before, &::after {
 			content: "";
 			width: 30px;
 			height: 1px;
@@ -63,11 +63,11 @@
 			left: em(6px);
 		}
 
-		&:before {
+		&::before {
 			transform: rotate(45deg);
 		}
 
-		&:after {
+		&::after {
 			transform: rotate(-45deg);
 		}
 
@@ -98,7 +98,7 @@
 		.overlay-close {
 			top: em(-52px);
 
-			&:before, &:after {
+			&::before, &::after {
 				background: #fff;
 			}
 		}

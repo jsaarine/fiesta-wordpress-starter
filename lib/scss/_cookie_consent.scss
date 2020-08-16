@@ -1,15 +1,15 @@
 .c-cookie-consent {
 	position: fixed;
-	bottom: 1em;
-	right: 1em;
-	width: em(400px);
-	max-width: calc(100% - 2em);
+	bottom: .5em;
+	right: .5em;
+	width: em(480px);
+	max-width: calc(100% - 1em);
 	background: #fff;
 	z-index: 10;
-	padding: 1.5em;
+	padding: 2em;
 	display: none;
-	box-shadow: 0 0 15px rgba(0,0,0,.2);
-	border-radius: 3px;
+	box-shadow: 0 0 20px rgba(0,0,0,.3);
+	border-radius: 5px;
 
 	@media (min-width: $medium) {
 		bottom: 2em;
@@ -24,14 +24,14 @@
 		max-width: 1200px;
 		margin: 0 auto;
 
-		@media (max-width: 640px) {
+		@media (max-width: $small-max) {
 			flex-direction: column;
 		}
 	} 
 
 	p {
 		margin: 0;
-		font-size: em(15px);
+		font-size: em(16px);
 		line-height: 1.4;
 	}
 
@@ -40,12 +40,12 @@
 	}
 
 	.c-button {
-		margin: 1.3em 0;
+		margin: 1.5em 0;
 		width: 100%;
 	}
 
 	.decline {
-		font-size: em(15px);
+		font-size: em(16px);
 		background: none;
 		border: none;
 		padding: 0;

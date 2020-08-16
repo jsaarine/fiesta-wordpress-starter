@@ -44,7 +44,7 @@
 			vertical-align: middle;
 			background: rgba(0,0,0,.75);
 
-			&:before {
+			&::before {
 				content: "";
 				width: 0; 
 				height: 0; 

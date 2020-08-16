@@ -31,7 +31,7 @@
 		}
 	}
 
-	input:checked + span > span:before {
+	input:checked + span > span::before {
 		content: "";
 		text-align: center;
 		display: block;

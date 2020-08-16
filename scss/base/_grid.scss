@@ -6,7 +6,7 @@ $default-columns: 12;
 // Grid
 
 @mixin row() {
-	&:after {
+	&::after {
 		content: "";
 		display: table;
 		clear: both;

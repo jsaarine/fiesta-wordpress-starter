@@ -13,8 +13,7 @@
 		@media (max-width: $mobile-nav-max) {
 			position: fixed;
 			top: 0;
-			right: auto;
-			bottom: auto;
+			right: 0;
 			z-index: 1;
 			background: #fff;
 			width: 100%;
@@ -60,7 +59,7 @@
 					text-align: center;
 				}
 
-				&:before {
+				&::before {
 					content: "";
 					width: 0; 
 					height: 0; 
@@ -95,7 +94,7 @@
 					}
 
 					& > span {
-						&:after {
+						&::after {
 							border-color: var(--c-theme);
 						}
 					}
@@ -109,7 +108,7 @@
 						transform: none;						
 					}
 
-					&:before {
+					&::before {
 						display: none !important;
 					}
 
@@ -158,7 +157,7 @@
 					right: 0;
 					transform: none;
 
-					&:before {
+					&::before {
 						left: auto;
 						right: 3em;
 					}
@@ -195,7 +194,7 @@
 			& > a > span {
 				position: relative;
 
-				&:after {
+				&::after {
 					width: 100%;
 				}
 			}
@@ -226,7 +225,7 @@
 		& > span {
 			position: relative;
 
-			&:after {
+			&::after {
 				content: "";
 				display: block;
 				width: 0;
@@ -308,7 +307,7 @@
 			path {
 				fill: var(--c-dark);
 
-				@media (min-width: $medium) {
+				@media (min-width: $desktop-nav) {
 					fill: #fff;
 				}
 			}

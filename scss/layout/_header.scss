@@ -27,6 +27,7 @@
 	// Logo
 	.logo {
 		transition: top .2s ease-out;
+		color: #fff;
 
 		svg {
 			transition: width .2s ease-out, height .2s ease-out;
@@ -52,6 +53,8 @@
 		height: var(--header-height-small);
 
 		.logo {
+			color: var(--c-dark);
+
 			svg {
 				width: em(80px);
 				height: em(23px);
@@ -68,7 +71,7 @@
 					color: var(--c-dark);
 
 					& > span {
-						&:after {
+						&::after {
 							border-bottom-color: var(--c-dark);
 						}	
 					}
@@ -122,7 +125,7 @@
 			clip: rect(0,0,0,0);
 			border: none;
 			background: #fff;
-			padding: 1em;
+			padding: 1em 3em;
 			display: inline-block;
 
 			&:focus {
