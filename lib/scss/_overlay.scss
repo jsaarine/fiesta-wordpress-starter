@@ -12,7 +12,7 @@
 	visibility: hidden;
 	transition: opacity .15s ease-out, visibility 0s .15s ease-out, left 0s .15s ease-out;
 	max-height: 100%;
-	overflow: auto;
+	overflow-y: auto;
 	display: block;
 	align-items: center;
 	flex-direction: column;
@@ -37,10 +37,6 @@
 		position: relative;
 		margin: auto auto;
 		max-width: em(750px);
-
-		@media (max-width: $small-max) {
-			height: 100%;
-		}
 	}
 
 	.overlay-close {
@@ -101,32 +97,6 @@
 			&::before, &::after {
 				background: #fff;
 			}
-		}
-	}
-
-	// Cookie overlay
-	&.cookie {
-		& > .inner {
-			width: 100%;
-			max-width: em(600px);
-			border-radius: 3px;
-		}
-
-		h2 {
-			margin-bottom: 1em;
-		}
-
-		.select {
-			margin: 2em 0;
-		}
-
-		label {
-			display: block;
-			margin: 1.2em 0;
-		}
-
-		.c-button {
-			width: 100%;
 		}
 	}
 }
