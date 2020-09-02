@@ -55,9 +55,9 @@
 		height: 1em;
 
 		&[disabled] {
-			 & + span > span {
-			 	opacity: .3;
-			 }
+			& + span > span {
+				opacity: .5;
+			}
 		}
 	}
 }

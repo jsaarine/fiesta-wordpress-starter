@@ -43,7 +43,7 @@
 
 @mixin button() {
 	display: inline-block;
-	font-size: rem(18px);
+	font-size: rem(16px);
 	padding: .7em 2em;
 	text-transform: uppercase;
 	background: var(--c-theme);
