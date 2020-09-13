@@ -7,14 +7,14 @@ get_header();
 	<?php while (have_posts()) : the_post(); ?>
 
 	<?php
-		set_query_var('hero_classes', 'large');
-		get_template_part('template-parts/hero');
+		get_template_part('template-parts/hero', null, array(
+			'hero_classes' => 'large'
+		));
 	?>
 
 	<?php endwhile; ?>
 
 	<div class="container" style="max-width: 800px; margin-bottom: 100px;">
-
 		<?php
 		$posts = new WP_Query(array(
 			'post_type' => 'post'

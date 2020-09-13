@@ -1,4 +1,4 @@
-<div class="c-hero <?= get_query_var('hero_classes') ?>">
+<div class="c-hero <?= $args['hero_classes'] ?>">
 	<div class="content">
 		<div>
 			<h1><?= is_404() ? __('Page not found') : the_title() ?></h1>
