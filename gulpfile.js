@@ -6,14 +6,12 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
-const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
 gulp.task('sass', () => {
     return gulp.src(['./scss/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([
-            autoprefixer(),
             postcssPresetEnv()
         ]))
         .pipe(gulp.dest('./dist/css'));
