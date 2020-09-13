@@ -204,7 +204,6 @@
 	a {
 		display: block;
 		padding: 1em 0;
-		// text-transform: uppercase;
 		transition: opacity .2s linear;
 		color: var(--c-dark);
 
@@ -288,7 +287,6 @@
 		font-size: em(26px);
 		background: none;
 		border: none;
-		// color: #fff;
 		padding: 0;
 
 		@media (min-width: $desktop-nav) {
