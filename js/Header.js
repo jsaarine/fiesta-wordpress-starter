@@ -6,6 +6,13 @@ class Header {
 		this.firstLoad = true;
 		this.threshold = 0;
 
+		this.build();
+	}
+
+	/*
+	 * Build the header
+	 */
+	build() {
 		window.addEventListener("scroll", e => {
 			this.update();
 		});
@@ -13,6 +20,9 @@ class Header {
 		this.update();
 	}
 
+	/**
+	 * Update the header based on scroll position
+	 */
 	update() {
 		const top = Core.scrollTop();
 

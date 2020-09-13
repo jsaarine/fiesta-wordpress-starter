@@ -3,9 +3,11 @@ class App {
 	constructor(queue) {
 		this.isReady = false;
 		this.readyQueue = queue;
-		this.mobile = false;
 	}
 
+	/**
+	 * Initialize app when DOM ready
+	 */
 	init() {
 		Core.ready(() => {
 			this.isReady = true;
@@ -14,6 +16,9 @@ class App {
 		});
 	}
 
+	/**
+	 * Add function to the ready queue
+	 */
 	ready(fn) {
 		if(this.isReady) {
 			fn();
@@ -22,14 +27,20 @@ class App {
 		}
 	}
 
+	/**
+	 * Process the ready queue
+	 */
 	processQueue() {
 		while(this.readyQueue.length) {
 			this.readyQueue.shift()();
 		}
 	}
 
+	/**
+	 * App entry point
+	 */
 	start() {
-		// Add focus outline only when keyboard-focused
+		// Focus visible
 		this.focusVisible();
 
 		// Header
@@ -39,12 +50,15 @@ class App {
 		new Navigation(document.querySelector("#navigation"));
 	}
 
+	/**
+	 * Add focus outline to buttons only when keyboard-focused
+	 */
 	focusVisible() {
 		document.documentElement.classList.add("focus-visible");
 
 		const onBlur = e => {
 			e.target.classList.remove("focus-visible");
-		}
+		};
 
 		document.body.addEventListener("keyup", e => {
 			var key = e.which || e.keyCode;

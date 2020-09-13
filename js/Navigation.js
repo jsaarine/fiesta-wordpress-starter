@@ -10,6 +10,9 @@ class Navigation {
 		this.build();
 	}
 
+	/**
+	 * Build the navigation
+	 */
 	build() {
 		this.toggleButton.addEventListener("click", e => {
 			if(!this.isMobileNavOpen()) {
@@ -36,11 +39,15 @@ class Navigation {
 
 		// Remove transition when animation complete
 		this.el.addEventListener("transitionend", e => {
-			document.documentElement.classList.remove("nav-open-transition");
+			if(e.target == this.el.querySelector("ul") && e.propertyName == "transform") {
+				document.documentElement.classList.remove("nav-open-transition");
+			}
 		});
 
 		this.el.addEventListener("webkitTransitionEnd", e => {
-			document.documentElement.classList.remove("nav-open-transition");
+			if(e.target == this.el.querySelector("ul") && e.propertyName == "transform") {
+				document.documentElement.classList.remove("nav-open-transition");
+			}
 		});
 
 		// Second level
@@ -99,10 +106,16 @@ class Navigation {
 		});
 	}
 
+	/**
+	 * Check if mobile nav is open
+	 */
 	isMobileNavOpen() {
 		return document.documentElement.classList.contains("nav-open");
 	}
 
+	/**
+	 * Hide the floating sub nav
+	 */
 	clearSubNav() {
 		this.el.querySelectorAll(".menu-item-has-children").forEach(item => {
 			item.classList.remove("hover");
@@ -111,6 +124,9 @@ class Navigation {
 		this.touched = false;
 	}
 
+	/**
+	 * Check if the sub nav is out of bounds
+	 */
 	checkSubNavPosition(el) {
 		const ul = el.querySelector("ul");
 		const pos = ul.getBoundingClientRect().left;
@@ -125,6 +141,9 @@ class Navigation {
 		}
 	}
 
+	/**
+	 * Open the mobile nav
+	 */
 	open() {
 		document.documentElement.classList.add("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
@@ -133,12 +152,18 @@ class Navigation {
 		this.toggleButton.setAttribute("aria-expanded", true);
 	}
 
+	/**
+	 * Close the mobile nav
+	 */
 	close() {
 		document.documentElement.classList.remove("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
 		this.toggleButton.setAttribute("aria-expanded", false);
 	}
 
+	/**
+	 * Toggle the sub nav
+	 */ 
 	toggleChildren(item, button) {
 		// Core.slideToggle(item.querySelector("ul"));
 		item.classList.toggle("hover");
