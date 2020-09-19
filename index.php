@@ -19,7 +19,7 @@ get_header();
 		$posts = new WP_Query(array(
 			'post_type' => 'post'
 		));
-		
+
 		while($posts->have_posts()) : $posts->the_post(); ?>
 
 			<h2 style="margin-bottom: 1em;"><?= get_the_title() ?></h2>

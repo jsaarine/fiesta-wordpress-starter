@@ -6,7 +6,7 @@ class Navigation {
 		this.toggleButton = document.querySelector("#nav-button");
 		this.closeButton = document.querySelector("#nav-close");
 		this.touched = false;
-		
+
 		this.build();
 	}
 
@@ -163,7 +163,7 @@ class Navigation {
 
 	/**
 	 * Toggle the sub nav
-	 */ 
+	 */
 	toggleChildren(item, button) {
 		// Core.slideToggle(item.querySelector("ul"));
 		item.classList.toggle("hover");

@@ -43,7 +43,7 @@
 
 	// Hidden (header is hidden when scrolling down)
 	&.hidden {
-		// transform: translateY(-$header-height);	
+		// transform: translateY(-$header-height);
 	}
 
 	// Small (header is visible but smaller when scrolling)
@@ -73,7 +73,7 @@
 					& > span {
 						&::after {
 							border-bottom-color: var(--c-dark);
-						}	
+						}
 					}
 				}
 			}

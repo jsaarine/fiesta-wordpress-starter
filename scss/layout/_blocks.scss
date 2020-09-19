@@ -53,7 +53,7 @@ figcaption {
 	border: none;
 
 	@include block-margin();
-	
+
 	p {
 		color: var(--c-theme);
 		font-size: rem(30px);
@@ -140,7 +140,7 @@ figcaption {
 		padding: 1em;
 		border: none;
 		border-bottom: 1px solid #eee;
-	}	
+	}
 }
 
 // Buttons

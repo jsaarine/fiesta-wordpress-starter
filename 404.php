@@ -4,7 +4,7 @@
 	<?php get_template_part('template-parts/hero'); ?>
 
 	<div class="c-article">
-		
+
 	</div>
 </main>
 

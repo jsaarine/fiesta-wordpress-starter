@@ -17,7 +17,7 @@
 }
 
 // Visibility
-	
+
 @mixin hide($value) {
 	@media (min-width: $value) {
 		display: none !important;
@@ -96,7 +96,7 @@
 @mixin object-fit() {
 	object-fit: cover;
 	min-width: 100%;
-	min-height: 100%; 
+	min-height: 100%;
 	width: auto;
 	height: auto;
 	max-width: none;

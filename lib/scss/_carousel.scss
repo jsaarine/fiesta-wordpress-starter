@@ -26,7 +26,7 @@
 		img, video {
 			display: block;
 			width: 100%;
-		}	
+		}
 	}
 
 	.carousel-dots {
@@ -83,7 +83,7 @@
 				&::before {
 					width: 14px;
 					height: 2px;
-					
+
 					@include min($medium) {
 						width: 20px;
 						height: 2px;
@@ -101,7 +101,7 @@
 					}
 				}
 			}
-			
+
 		}
 	}
 
@@ -111,7 +111,7 @@
 		span {
 			position: relative;
 			left: em(-4px);
-			transform: rotate(135deg);	
+			transform: rotate(135deg);
 		}
 	}
 
@@ -121,7 +121,7 @@
 		span {
 			position: relative;
 			left: em(4px);
-			transform: rotate(-45deg);	
+			transform: rotate(-45deg);
 		}
 	}
 }

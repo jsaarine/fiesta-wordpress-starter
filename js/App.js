@@ -68,7 +68,7 @@ class App {
 
 				if(!activeElement.classList.contains("focus-visible")) {
 					activeElement.classList.add("focus-visible");
-					activeElement.addEventListener("blur", onBlur);	
+					activeElement.addEventListener("blur", onBlur);
 				}
 			}
 		});

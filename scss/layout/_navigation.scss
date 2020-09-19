@@ -61,8 +61,8 @@
 
 				&::before {
 					content: "";
-					width: 0; 
-					height: 0; 
+					width: 0;
+					height: 0;
 					border-left: 8px solid transparent;
 					border-right: 8px solid transparent;
 					border-bottom: 8px solid #fff;
@@ -105,7 +105,7 @@
 					@media (min-width: $desktop-nav) {
 						left: 100%;
 						top: 0;
-						transform: none;						
+						transform: none;
 					}
 
 					&::before {
@@ -343,11 +343,11 @@ html.nav-open {
 					top: 8px;
 					transform: rotate(45deg);
 				}
-				
+
 				&:nth-of-type(2) {
 					opacity: 0;
 				}
-				
+
 				&:nth-of-type(3) {
 					top: -8px;
 					transform: rotate(-45deg);
@@ -370,6 +370,6 @@ html.nav-open-transition {
 			& > ul {
 				transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1);
 			}
-		}		
+		}
 	}
 }

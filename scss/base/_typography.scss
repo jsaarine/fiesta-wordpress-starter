@@ -41,19 +41,19 @@ p {
 
 a {
 	color: var(--c-theme);
-	
+
 	&:link {
 		text-decoration: none;
 	}
-	
+
 	&:visited {
 		text-decoration: none;
 	}
-	
+
 	&:hover {
 		text-decoration: underline;
 	}
-	
+
 	&:active {
 		text-decoration: none;
 	}

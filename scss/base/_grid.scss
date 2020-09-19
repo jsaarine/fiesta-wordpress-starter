@@ -25,7 +25,7 @@ $default-columns: 12;
 		@if(map-has-key($props, css)) {
 			$css: map-get($props, css);
 		}
-		
+
 		// Gutter
 		@if(map-has-key($props, gutter)) {
 			$gutter: gutter-to-pct(map-get($props, gutter));
@@ -98,7 +98,7 @@ $default-columns: 12;
 	@else {
 		$new-map: (blocks: $value);
 	}
-	
+
 	@include column($default-columns / $value, $new-map);
 }
 

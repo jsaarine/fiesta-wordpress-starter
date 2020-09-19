@@ -28,7 +28,7 @@ add_action('after_setup_theme', function() {
 
 	// Enable featured image
 	add_theme_support('post-thumbnails');
-	
+
 	// Add hero image max size
 	add_image_size('hero', 2500, 1042);
 
@@ -54,6 +54,7 @@ add_action('wp_enqueue_scripts', function() {
 
 	wp_enqueue_style('fiesta-style', get_stylesheet_directory_uri().'/dist/css/style.css', array(), $theme_version);
 	wp_enqueue_script('fiesta-script', get_stylesheet_directory_uri().'/dist/js/script.js', array(), $theme_version, true);
+	wp_localize_script('fiesta-script', 'fiesta', array('themefolder' => get_stylesheet_directory_uri()));
 });
 
 // Editor
@@ -98,7 +99,7 @@ remove_action('wp_head', 'wp_generator');
 // Disable theme auto update
 add_filter('theme_auto_update_setting_template', function($template) {
 	$text = __('Auto-updates are not available for this theme.');
- 
+
 	return "<# if ( [ 'my-theme', 'fiesta' ].includes( data.id ) ) { #>
 		<p>$text</p>
 		<# } else { #>
@@ -183,7 +184,7 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 				'core-embed/slideshare',
 				'fiesta/sample-block',
 			);
-	endswitch;  
+	endswitch;
 }, 10, 2);
 
 
@@ -214,9 +215,9 @@ add_action('widgets_init', function() {
 		'name' => __('Footer', 'footer'),
 		'id' => 'footer-widget',
 		'before_widget' => '',
-	   'after_widget' => '',
-	   'before_title' => '<p><strong>',
-	   'after_title' => '</strong></p>',
+		'after_widget' => '',
+		'before_title' => '<p><strong>',
+		'after_title' => '</strong></p>',
 	));
 });
 
