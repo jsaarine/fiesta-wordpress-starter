@@ -18,8 +18,9 @@ See also: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
 1. Extract the starter package into your theme folder (e.g. themes/mytheme)
 2. Run `npm install --global gulp-cli` to install the Gulp CLI globally
 3. Run `npm install` to install dependencies
-4. Run `gulp` to start watch
-5. Run `gulp build` to build for production
+4. Set your development url in `gulpfile.js`
+5. Run `gulp` to start watch
+6. Run `gulp build` to build for production
 
 ## Structure
 
