@@ -47,6 +47,9 @@ gulp.task('watch', () => {
 		],
 		proxy: devUrl,
 		open: false,
+		snippetOptions: {
+			blacklist: ['/wp-admin/**']
+		},
 	});
 
 	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss'], gulp.series('sass'));
