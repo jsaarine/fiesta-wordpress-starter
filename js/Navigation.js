@@ -39,18 +39,12 @@ class Navigation {
 
 		// Remove transition when animation complete
 		this.el.addEventListener("transitionend", e => {
-			if(e.target == this.el.querySelector("ul") && e.propertyName == "transform") {
+			if(e.target == this.el.querySelector("div") && e.propertyName == "transform") {
 				document.documentElement.classList.remove("nav-open-transition");
 			}
 		});
 
-		this.el.addEventListener("webkitTransitionEnd", e => {
-			if(e.target == this.el.querySelector("ul") && e.propertyName == "transform") {
-				document.documentElement.classList.remove("nav-open-transition");
-			}
-		});
-
-		// Second level
+		// Add events to parent items
 		this.el.querySelectorAll(".menu-item-has-children").forEach(i => {
 			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="subnav-button" aria-label="Open sub-menu"><svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"><path d="M6.748 6.748a1.052 1.052 0 01-1.496 0L.31 1.808A1.059 1.059 0 011.722.24L1.8.31 6 4.505 10.193.31a1.059 1.059 0 011.567 1.411l-.07.078" fill="#000" fill-rule="nonzero"/></svg></button>');
 
@@ -60,12 +54,21 @@ class Navigation {
 			subnavButton.addEventListener("click", e => {
 				e.stopPropagation();
 				this.toggleChildren(i, e.currentTarget);
-				this.touched = true;
+
+				if(!this.isMobileNavOpen()) {
+					this.touched = true;
+				}
 			});
+
+			subnavButton.setAttribute("aria-expanded", false);
 
 			// Touch support for hover menu
 			i.addEventListener("touchstart", e => {
 				e.stopPropagation();
+
+				if(!i.closest(".hover")) {
+					this.clearSubNav();
+				}
 
 				if(!this.isMobileNavOpen()) {
 					if(!this.touched || !i.classList.contains("hover")) {
@@ -102,6 +105,15 @@ class Navigation {
 		document.addEventListener("touchstart", e => {
 			if(!this.el.contains(e.target)) {
 				this.clearSubNav();
+			}
+		});
+
+		// Remove nav-open class on resize
+		window.addEventListener("resize", e => {
+			if(document.documentElement.classList.contains("nav-open")) {
+				if(!window.matchMedia("(min-width: " + Core.getVariable("desktop-nav") + ")").matches) {
+					document.documentElement.classList.remove("nav-open");
+				}
 			}
 		});
 	}
@@ -147,7 +159,7 @@ class Navigation {
 	open() {
 		document.documentElement.classList.add("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
-		this.el.querySelector("ul").scrollTop = 0;
+		this.el.querySelector("div").scrollTop = 0;
 		// this.el.querySelector("nav").focus();
 		this.toggleButton.setAttribute("aria-expanded", true);
 	}
@@ -165,15 +177,23 @@ class Navigation {
 	 * Toggle the sub nav
 	 */
 	toggleChildren(item, button) {
-		// Core.slideToggle(item.querySelector("ul"));
-		item.classList.toggle("hover");
-		item.querySelector("ul").classList.toggle("active");
-		button.classList.toggle("active");
-
-		// Close children
-		item.querySelectorAll(".menu-item-has-children").forEach(function(j) {
-			j.querySelector("ul").classList.remove("active");
-			j.querySelector(".subnav-button").classList.remove("active");
+		// Toggle with animation
+		Core.slideToggle(item.querySelector("ul"), () => {
+			if(item.querySelector("ul").style.visibility == "hidden") {
+				// item.classList.remove("hover");
+				button.classList.remove("active");
+			}
+			else {
+				// item.classList.add("hover");
+				button.classList.add("active");
+			}
 		});
+
+		// Toggle without animation
+		// item.querySelector("ul").classList.toggle("active");
+
+		// item.classList.toggle("hover");
+		button.classList.toggle("active");
+		button.setAttribute("aria-expanded", button.classList.contains("active"));
 	}
 }

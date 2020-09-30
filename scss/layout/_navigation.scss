@@ -6,7 +6,7 @@
 		justify-content: flex-end;
 	}
 
-	& > ul {
+	& > div {
 		text-align: right;
 
 		// Mobile
@@ -19,13 +19,14 @@
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
-			padding: em(120px) 0 em(40px) 2em;
+			padding: em(120px) 0 0 0;
 			margin-right: 0;
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
 			visibility: hidden;
 			transform: translateX(100%);
-			text-align: left;
+			text-align: center;
+			margin-bottom: 2em;
 		}
 	}
 
@@ -46,17 +47,24 @@
 
 			// Second level
 			& > ul {
-				display: none;
 				position: relative;
+				height: 0px;
+				transition: height .2s ease-out;
+				overflow: hidden;
+				visibility: hidden;
+				background: #f2f2f3;
 
 				@media (min-width: $desktop-nav) {
+					display: none;
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
 					height: auto !important;
+					visibility: visible !important;
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
 					background: #fff;
 					text-align: center;
+					overflow: visible;
 				}
 
 				&::before {
@@ -112,23 +120,21 @@
 						display: none !important;
 					}
 
-					a {
-						@media (max-width: $mobile-nav-max) {
-							padding-left: 4em;
+					// Right
+					&.right {
+						@media (min-width: $desktop-nav) {
+							left: auto;
+							right: 100%;
+							transform: none;
 						}
 					}
 
 					// Right
-					&.right {
-						left: auto;
-						right: 100%;
-						transform: none;
-					}
-
-					// Right
 					&.left {
-						left: 100%;
-						transform: none;
+						@media (min-width: $desktop-nav) {
+							left: 100%;
+							transform: none;
+						}
 					}
 				}
 
@@ -148,25 +154,32 @@
 				&.active {
 					@media (max-width: $mobile-nav-max) {
 						display: block;
+						visibility: visible;
+						height: auto;
 					}
 				}
 
 				// Right
 				&.right {
-					left: auto;
-					right: 0;
-					transform: none;
-
-					&::before {
+					@media (min-width: $desktop-nav) {
 						left: auto;
-						right: 3em;
+						right: 0;
+						transform: none;
+
+						&::before {
+							left: auto;
+							right: 3em;
+							border: 1px solid red;
+						}
 					}
 				}
 
-				// Right
+				// Left
 				&.left {
-					left: 0;
-					transform: none;
+					@media (min-width: $desktop-nav) {
+						left: 0;
+						transform: none;
+					}
 				}
 			}
 
@@ -174,16 +187,7 @@
 				@media (min-width: $desktop-nav) {
 					& > ul {
 						display: block;
-					}
-				}
-			}
-
-			&.hover {
-				& > .subnav-button {
-					svg {
-						@media (max-width: $mobile-nav-max) {
-							transform: rotate(180deg);
-						}
+						visibility: visible;
 					}
 				}
 			}
@@ -310,6 +314,14 @@
 				}
 			}
 		}
+
+		&.active {
+			svg {
+				@media (max-width: $mobile-nav-max) {
+					transform: rotate(180deg);
+				}
+			}
+		}
 	}
 }
 
@@ -319,7 +331,7 @@ html.nav-open {
 	overflow: hidden;
 
 	.c-navigation {
-		& > ul {
+		& > div {
 			transform: none;
 			visibility: visible;
 		}
@@ -358,18 +370,25 @@ html.nav-open {
 }
 
 // Transition
+
 html.nav-open-transition {
 	.c-navigation {
-		& > ul {
+		& > div {
 			transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
 		}
 	}
 
 	&.nav-open {
 		.c-navigation {
-			& > ul {
+			& > div {
 				transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1);
 			}
 		}
 	}
+}
+
+// Breakpoints
+
+meta.breakpoints-desktop-nav {
+	@include variable($desktop-nav);
 }
