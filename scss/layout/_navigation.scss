@@ -92,7 +92,7 @@
 
 				a {
 					font-size: em(16px);
-					color: var(--c-dark);
+					color: var(--dark);
 					padding: 1em 2em;
 					text-transform: none;
 
@@ -103,7 +103,7 @@
 
 					& > span {
 						&::after {
-							border-color: var(--c-theme);
+							border-color: var(--theme);
 						}
 					}
 				}
@@ -146,7 +146,7 @@
 					}
 
 					path {
-						fill: var(--c-dark);
+						fill: var(--dark);
 					}
 				}
 
@@ -209,7 +209,7 @@
 		display: block;
 		padding: 1em 0;
 		transition: opacity .2s linear;
-		color: var(--c-dark);
+		color: var(--dark);
 
 		@media (min-width: $desktop-nav) {
 			color: #fff;
@@ -232,7 +232,7 @@
 				content: "";
 				display: block;
 				width: 0;
-				border-bottom: 1px solid var(--c-dark);
+				border-bottom: 1px solid var(--dark);
 				position: absolute;
 				left: 0;
 				top: 1.4em;
@@ -307,7 +307,7 @@
 			transition: transform .2s ease-out;
 
 			path {
-				fill: var(--c-dark);
+				fill: var(--dark);
 
 				@media (min-width: $desktop-nav) {
 					fill: #fff;
@@ -348,7 +348,7 @@ html.nav-open {
 		.nav-button {
 			.line {
 				width: rem(26px);
-				background: var(--c-theme) !important;
+				background: var(--theme) !important;
 				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
 				&:nth-of-type(1) {

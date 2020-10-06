@@ -50,7 +50,7 @@
 
 		&.decline {
 			background: #fff;
-			color: var(--c-theme);
+			color: var(--theme);
 		}
 	}
 
@@ -61,7 +61,7 @@
 		border: none;
 		padding: 0;
 		text-decoration: underline;
-		color: var(--c-theme);
+		color: var(--theme);
 	}
 
 	// Overlay
@@ -96,7 +96,7 @@
 				opacity: 0;
 
 				&:checked + span {
-					background: var(--c-theme);
+					background: var(--theme);
 
 					&::before {
 						background: #fff;
@@ -130,7 +130,7 @@
 				padding: 2px;
 				vertical-align: middle;
 				margin-right: .7em;
-				border: 2px solid var(--c-theme);
+				border: 2px solid var(--theme);
 				transition: background .2s ease-out;
 
 				&::before {
@@ -142,7 +142,7 @@
 					left: em(3px);
 					top: em(2px);
 					transition: left .2s ease-out, background .2s ease-out, border .2s ease-out;
-					border: 2px solid var(--c-theme);
+					border: 2px solid var(--theme);
 				}
 			}
 		}

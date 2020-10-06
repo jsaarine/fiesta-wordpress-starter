@@ -10,9 +10,11 @@
 
 		&.active {
 			.title {
-				&:after {
-					transform-origin: 50% 50%;
-					transform: rotate(180deg);
+				a {
+					&:after {
+						transform-origin: 50% 50%;
+						transform: rotate(180deg);
+					}
 				}
 			}
 
@@ -42,7 +44,7 @@
 				padding: 1em em(25px) 1em .5em;
 				padding-right: em(25px);
 				text-align: left;
-				color: var(--c-theme);
+				color: var(--theme);
 
 				&:hover {
 					text-decoration: none;
@@ -60,7 +62,7 @@
 					height: 0;
 					border-left: 10px solid transparent;
 					border-right: 10px solid transparent;
-					border-top: 10px solid var(--c-theme);
+					border-top: 10px solid var(--theme);
 				}
 			}
 		}

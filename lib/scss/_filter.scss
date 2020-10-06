@@ -5,14 +5,14 @@
 	display: flex;
 
 	button {
-		border: 1px solid var(--c-theme);
+		border: 1px solid var(--theme);
 		background: none;
 		padding: 1em;
 		margin: 0;
-		color: var(--c-theme);
+		color: var(--theme);
 
 		&.active {
-			background: var(--c-theme);
+			background: var(--theme);
 			color: #fff;
 		}
 	}

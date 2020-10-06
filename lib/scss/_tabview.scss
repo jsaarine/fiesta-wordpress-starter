@@ -25,7 +25,7 @@
 				color: #fff;
 				padding: .5em 2em;
 				display: block;
-				border: 1px solid var(--c-dark);
+				border: 1px solid var(--dark);
 				background-color: purple;
 
 				&:hover {
@@ -35,7 +35,7 @@
 				&.active {
 					background-color: #fff;
 					border-bottom-color: #fff;
-					color: var(--c-dark);
+					color: var(--dark);
 				}
 			}
 		}
@@ -45,7 +45,7 @@
 	& > .tab-content {
 		display: none;
 		padding: 2em;
-		border: 1px solid var(--c-dark);
+		border: 1px solid var(--dark);
 		margin-top: -1px;
 
 		&.active {

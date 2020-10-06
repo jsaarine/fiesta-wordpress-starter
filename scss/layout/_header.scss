@@ -53,14 +53,14 @@
 		height: var(--header-height-small);
 
 		.logo {
-			color: var(--c-dark);
+			color: var(--dark);
 
 			svg {
 				width: em(80px);
 				height: em(23px);
 
 				& > path {
-					fill: var(--c-dark);
+					fill: var(--dark);
 				}
 			}
 		}
@@ -68,11 +68,11 @@
 		.c-navigation {
 			@media (min-width: $desktop-nav) {
 				a {
-					color: var(--c-dark);
+					color: var(--dark);
 
 					& > span {
 						&::after {
-							border-bottom-color: var(--c-dark);
+							border-bottom-color: var(--dark);
 						}
 					}
 				}
@@ -80,13 +80,13 @@
 
 			.nav-button {
 				.line {
-					background: var(--c-dark);
+					background: var(--dark);
 				}
 			}
 
 			.subnav-button {
 				path {
-					fill: var(--c-dark);
+					fill: var(--dark);
 				}
 			}
 		}

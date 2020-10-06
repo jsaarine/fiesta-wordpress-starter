@@ -46,8 +46,8 @@
 	font-size: rem(16px);
 	padding: .7em 2em;
 	text-transform: uppercase;
-	background: var(--c-theme);
-	border: 1px solid var(--c-theme);
+	background: var(--theme);
+	border: 1px solid var(--theme);
 	text-decoration: none;
 	margin-bottom: 0;
 	color: #fff;
@@ -58,7 +58,7 @@
 
 	&:hover {
 		background: #fff;
-		color: var(--c-theme);
+		color: var(--theme);
 		// opacity: 1;
 		text-decoration: none;
 	}
@@ -69,7 +69,7 @@
 	line-height: 1.4;
 	text-align: center;
 	font-size: 1rem;
-	color: var(--c-dark);
+	color: var(--dark);
 	opacity: .7;
 }
 
