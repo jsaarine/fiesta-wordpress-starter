@@ -1,5 +1,6 @@
 wp.domReady(function() {
 	// Remove editor styles
+	wp.blocks.unregisterBlockStyle('core/image', 'rounded');
 	wp.blocks.unregisterBlockStyle('core/quote', 'large');
 	wp.blocks.unregisterBlockStyle('core/separator', 'dots');
 	wp.blocks.unregisterBlockStyle('core/separator', 'wide');
@@ -26,7 +27,6 @@ wp.hooks.addFilter(
 				defaultAlign = 'full';
 			break;
 			case 'core/image':
-				align = ['wide', 'full'];
 				defaultAlign = 'wide';
 			break;
 			case 'core/columns':
