@@ -27,13 +27,19 @@ See also: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
 * `dist`: Compiled css and js files
 * `js`: JavaScript source files
   * `App.js`: JavaScript entry point
-  * `Header.js`: Header component
-  * `Navigation.js`: Navigation component
-  * `vendor`: Vendor files
-* `lib`: Front end component library (JavaScript and Sass)
+  * `Header.js`: Site header
+  * `Navigation.js`: Site navigation
+  * `editor`: Gutenberg scripts
+  * `vendor`: Vendor scripts
+* `lib`: Front end component library
+  * `js`: JavaScript source files
+  * `scss`: Sass source files
 * `scss`: Sass sources files
-  * `abstracts`: Mixins and variables
-  * `base`: Base styles
-  * `components`: Components (e.g. button). Component classes have `c-`prefix
-  * `layout`: Layout components (e.g. footer). Layout classes have `c-`prefix
+  * `abstracts`: Functions, mixins and variables
+  * `base`: Base styles (e.g. typography)
+  * `components`: Components (e.g. button)
+  * `layout`: Layout components (e.g. footer)
+  * `pages`: Page-speficic styles (e.g. home)
+  * `themes`: Theme styles (e.g. dark theme)
+  * `vendor`: Vendor styles
 * `template-parts`: WordPress template partials (e.g. hero)
