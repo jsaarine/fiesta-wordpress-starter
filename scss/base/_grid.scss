@@ -1,20 +1,12 @@
 // Grid variables
 
-$default-gutter: 0;
-$default-columns: 12;
+$grid-gutter: 0;
+$grid-columns: 12;
 
 // Grid
 
-@mixin row() {
-	&::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-}
-
 @mixin column($value, $props: null) {
-	$gutter: gutter-to-pct($default-gutter);
+	$gutter: gutter-to-pct($grid-gutter);
 	$block: false;
 	$css: true;
 	$ratio: ratio-value($value);
@@ -63,30 +55,18 @@ $default-columns: 12;
 
 @mixin column-props($ratio, $gutter, $css, $block, $calc) {
 	@if($css) {
-		float: left;
-
 		@if($block == false) {
-			@include last();
+			&:last-of-type {
+				margin-right: 0;
+			}
 		}
 	}
 
-	$width: null;
+	$width: column-width($ratio, $gutter);
 
-	@if($calc) {
-		$width: column-width-calc($ratio, $gutter)
-	}
-	@else {
-		$width: column-width($ratio, $gutter)
-	}
-
-	margin-right: $gutter;
+	// flex: 0 0 $width;
 	width: $width;
-}
-
-@mixin last() {
-	&:last-of-type {
-		margin-right: 0;
-	}
+	margin-right: $gutter;
 }
 
 @mixin block($value, $props: null) {
@@ -99,56 +79,23 @@ $default-columns: 12;
 		$new-map: (blocks: $value);
 	}
 
-	@include column($default-columns / $value, $new-map);
+	@include column($grid-columns / $value, $new-map);
 }
 
 @mixin block-props($value, $gutter, $props) {
-	$start: 1;
-
-	@if(map-has-key($props, start)) {
-		$start: map-get($props, start);
-	}
-
-	$n: $default-columns / $value + ($start - 1);
-
 	&:nth-of-type(n) {
-		clear: none;
 		margin-right: $gutter;
 	}
 
-	&:nth-of-type(#{$n}n+#{$start}) {
-		clear: both;
-	}
-
-	&:nth-of-type(#{$n}n) {
+	&:nth-of-type(#{$grid-columns / $value}n) {
 		margin-right: 0;
 	}
-}
-
-@mixin unblock() {
-	&:nth-of-type(n) {
-		clear: none;
-	}
-}
-
-// Offsets
-
-@mixin offset($value, $props: null) {
-	$gutter: $default-gutter;
-
-	@if($props) {
-		@if(map-has-key($props, gutter)) {
-			$gutter: gutter-to-pct(map-get($props, gutter));
-		}
-	}
-
-	margin-left: column-ratio2($value, gutter-to-pct($gutter));
 }
 
 // Order
 
 @mixin push($value, $props: null) {
-	$gutter: $default-gutter;
+	$gutter: $grid-gutter;
 
 	@if($props) {
 		@if(map-has-key($props, gutter)) {
@@ -161,7 +108,7 @@ $default-columns: 12;
 }
 
 @mixin pull($value, $props: null) {
-	$gutter: $default-gutter;
+	$gutter: $grid-gutter;
 
 	@if($props) {
 		@if(map-has-key($props, gutter)) {
@@ -171,10 +118,4 @@ $default-columns: 12;
 
 	position: relative;
 	right: column-ratio2($value, gutter-to-pct($gutter));
-}
-
-// Grid
-
-.row {
-	@include row();
 }

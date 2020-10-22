@@ -32,7 +32,7 @@
 		@return $value;
 	}
 	@else {
-		@return $value / $default-columns;
+		@return $value / $grid-columns;
 	}
 }
 
