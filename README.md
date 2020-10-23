@@ -39,7 +39,7 @@ See also: [fiesta-blocks](https://github.com/jsaarine/fiesta-blocks) WordPress c
   * `base`: Base styles (e.g. typography)
   * `components`: Components (e.g. button)
   * `layout`: Layout components (e.g. footer)
-  * `pages`: Page-speficic styles (e.g. home)
+  * `pages`: Page-specific styles (e.g. home)
   * `themes`: Theme styles (e.g. dark theme)
   * `vendor`: Vendor styles
 * `template-parts`: WordPress template partials (e.g. hero)
