@@ -5,40 +5,52 @@
 	z-index: 10;
 	display: none;
 	box-shadow: 0 0 20px rgba(0,0,0,.3);
-	border-radius: 5px;
-
-	@media (min-width: $medium) {
-		bottom: 1.5em;
-		left: 1.5em;
-	}
+	width: 100%;
+	max-height: 100%;
+	background: #fff;
 
 	& > div {
-		background: #fff;
 		text-align: center;
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		padding: 2.5em 1.5em;
+		padding: 2.5em;
 		border-radius: 5px;
+		margin: 0 auto;
+		margin: auto auto;
 
 		@media (max-width: $small-max) {
 			flex-direction: column;
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+			border-radius: 0;
 		}
 
 		& > div {
-			max-width: em(400px);
-			margin: 0 auto;
+			max-width: em(650px);
 		}
 	}
 
 	p {
 		margin: 0 0 1.5em 0;
-		font-size: em(16px);
+		font-size: em(18px);
 		line-height: 1.4;
 	}
 
 	a {
 		text-decoration: underline;
+	}
+
+	.buttons {
+		display: flex;
+
+		@media (max-width: $small-max) {
+			flex-direction: column;
+		}
+
+		& > button {
+			flex: 1;
+		}
 	}
 
 	.c-button {
@@ -64,6 +76,48 @@
 		color: var(--theme);
 	}
 
+	// Active
+	&.active {
+		display: block;
+
+		@supports (display: flex) {
+			display: flex;
+		}
+
+		&.overlay {
+			& + div > .c-overlay {
+				background: none;
+			}
+		}
+	}
+
+	// Overlay
+	&.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background: rgba(0,0,0,.75);
+		max-height: 100%;
+		overflow-y: auto;
+		align-items: center;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		-webkit-overflow-scrolling: touch;
+
+		@media (min-width: $medium) {
+			padding: 4em 2em;
+		}
+
+		& > div {
+			background: #fff;
+			max-width: em(650px);
+		}
+	}
+
 	// Overlay
 	& + div > .c-overlay {
 		& > .inner {
@@ -76,6 +130,10 @@
 			margin-bottom: 1em;
 		}
 
+		p {
+			font-size: em(17px);
+		}
+
 		.select {
 			margin: 2em 0;
 		}
@@ -86,9 +144,8 @@
 			font-weight: 700;
 
 			& + p {
-				font-size: em(16px);
-				margin-top: .7em;
-				padding-left: 3.4em;
+				margin-top: 0;
+				padding-left: 3.4rem;
 			}
 
 			input {
@@ -147,17 +204,18 @@
 			}
 		}
 	}
+}
 
-	// Modifiers
-	/*&.overlay {
-		&::before {
-			content: "";
-			position: fixed;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0,0,0,.75);
+html.cookie-consent-open {
+	overflow: hidden;
+}
+
+html.overlay-open {
+	.c-cookie-consent {
+		&.overlay {
+			& > div {
+				display: none !important;
+			}
 		}
-	}*/
+	}
 }
