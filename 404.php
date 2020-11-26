@@ -1,4 +1,8 @@
-<?php get_header()?>
+<?php
+
+namespace Fiesta;
+
+get_header(); ?>
 
 <main id="main-content" tabindex="-1">
 	<?php get_template_part('template-parts/hero'); ?>
@@ -8,4 +12,4 @@
 	</div>
 </main>
 
-<?php get_footer()?>
+<?php get_footer();

@@ -1,3 +1,9 @@
+<?php
+
+namespace Fiesta;
+
+?>
+
 <div class="c-hero <?= $args['hero_classes'] ?>">
 	<div class="content">
 		<div>

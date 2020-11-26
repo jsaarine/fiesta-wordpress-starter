@@ -1,5 +1,7 @@
 <?php
 
+namespace Fiesta;
+
 /* Theme setup */
 
 add_action('after_setup_theme', function() {
@@ -46,6 +48,18 @@ add_action('after_setup_theme', function() {
 });
 
 
+/* Functions */
+
+function fiesta_get_pages_by_template($template) {
+	$pages = get_pages(array(
+		'meta_key' => '_wp_page_template',
+		'meta_value' => $template.'.php'
+	));
+
+	return $pages;
+}
+
+
 /* Assets */
 
 // Front-end
@@ -69,8 +83,8 @@ function fiesta_add_fonts() {
 	echo '<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">';
 }
 
-add_action('wp_head', 'fiesta_add_fonts');
-add_action('admin_head', 'fiesta_add_fonts');
+add_action('wp_head', 'Fiesta\fiesta_add_fonts');
+add_action('admin_head', 'Fiesta\fiesta_add_fonts');
 
 
 /* Menus */

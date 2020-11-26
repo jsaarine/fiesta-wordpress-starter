@@ -1,4 +1,8 @@
-<?php get_header()?>
+<?php
+
+namespace Fiesta;
+
+get_header(); ?>
 
 <main id="main-content" tabindex="-1">
 	<?php while(have_posts()) : the_post(); ?>
@@ -12,4 +16,4 @@
 	<?php endwhile; ?>
 </main>
 
-<?php get_footer()?>
+<?php get_footer();
