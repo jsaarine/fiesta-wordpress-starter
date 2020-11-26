@@ -22,6 +22,21 @@
 		align-items: center;
 		width: 100%;
 		height: 100%;
+
+		&::before {
+			@media (max-width: $mobile-nav-max) {
+				content: "";
+				position: fixed;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,.5);
+				opacity: 0;
+				visibility: hidden;
+				transition: visibility 0s .5s, left 0s .5s, opacity .5s linear;
+			}
+		}
 	}
 
 	// Logo
@@ -89,21 +104,12 @@
 					fill: var(--dark);
 				}
 			}
-		}
-	}
 
-	// Nav close
-	.nav-close {
-		@media (max-width: $mobile-nav-max) {
-			position: fixed;
-			top: 0;
-			left: -100%;
-			width: 100%;
-			height: 100%;
-			background: rgba(0,0,0,.5);
-			opacity: 0;
-			visibility: hidden;
-			transition: visibility 0s .5s, left 0s .5s, opacity .5s linear;
+			.social {
+				path {
+					fill: var(--theme);
+				}
+			}
 		}
 	}
 

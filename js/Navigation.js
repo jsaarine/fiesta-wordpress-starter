@@ -4,7 +4,6 @@ class Navigation {
 		this.el = el;
 		this.parentIsLink = true;
 		this.toggleButton = document.querySelector("#nav-button");
-		this.closeButton = document.querySelector("#nav-close");
 		this.touched = false;
 
 		this.build();
@@ -24,8 +23,10 @@ class Navigation {
 		});
 
 		// Close
-		this.closeButton.addEventListener("click", e => {
-			this.close();
+		document.body.addEventListener("click", e => {
+			if(!this.el.contains(e.target) && this.isMobileNavOpen()) {
+				this.close();
+			}
 		});
 
 		// Esc key
@@ -84,8 +85,10 @@ class Navigation {
 			});
 
 			i.addEventListener("mouseenter", e => {
-				if(!this.touched) {
-					this.checkSubNavPosition(i);
+				if(!this.isMobileNavOpen()) {
+					if(!this.touched) {
+						this.checkSubNavPosition(i);
+					}
 				}
 			});
 
@@ -105,15 +108,6 @@ class Navigation {
 		document.addEventListener("touchstart", e => {
 			if(!this.el.contains(e.target)) {
 				this.clearSubNav();
-			}
-		});
-
-		// Remove nav-open class on resize
-		window.addEventListener("resize", e => {
-			if(document.documentElement.classList.contains("nav-open")) {
-				if(!window.matchMedia("(min-width: " + Core.getVariable("desktop-nav") + ")").matches) {
-					document.documentElement.classList.remove("nav-open");
-				}
 			}
 		});
 	}

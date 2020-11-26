@@ -7,7 +7,10 @@
 	}
 
 	& > div {
-		text-align: right;
+		@media (min-width: $desktop-nav) {
+			display: flex;
+			align-items: center;
+		}
 
 		// Mobile
 		@media (max-width: $mobile-nav-max) {
@@ -202,43 +205,43 @@
 				}
 			}
 		}
-	}
 
-	a {
-		display: block;
-		padding: 1em 0;
-		transition: opacity .2s linear;
-		color: var(--dark);
-
-		@media (min-width: $desktop-nav) {
-			color: #fff;
-		}
-
-		&:hover {
-			text-decoration: none;
-			opacity: .7;
-		}
-
-		@media (max-width: $mobile-nav-max) {
-			font-size: em(20px);
+		a {
+			display: block;
 			padding: 1em 0;
-		}
+			transition: opacity .2s linear;
+			color: var(--dark);
 
-		& > span {
-			position: relative;
+			@media (min-width: $desktop-nav) {
+				color: #fff;
+			}
 
-			&::after {
-				content: "";
-				display: block;
-				width: 0;
-				border-bottom: 1px solid var(--dark);
-				position: absolute;
-				left: 0;
-				top: 1.4em;
-				transition: width .2s ease-out;
+			&:hover {
+				text-decoration: none;
+				opacity: .7;
+			}
 
-				@media (min-width: $desktop-nav) {
-					border-color: #fff;
+			@media (max-width: $mobile-nav-max) {
+				font-size: em(20px);
+				padding: 1em 0;
+			}
+
+			& > span {
+				position: relative;
+
+				&::after {
+					content: "";
+					display: block;
+					width: 0;
+					border-bottom: 1px solid var(--dark);
+					position: absolute;
+					left: 0;
+					top: 1.4em;
+					transition: width .2s ease-out;
+
+					@media (min-width: $desktop-nav) {
+						border-color: #fff;
+					}
 				}
 			}
 		}
@@ -322,6 +325,15 @@
 			}
 		}
 	}
+
+	.social {
+		margin-top: 3em;
+
+		@media (min-width: $desktop-nav) {
+			margin-top: 0;
+			margin-left: 3em;
+		}
+	}
 }
 
 // Nav open
@@ -334,14 +346,22 @@ html.nav-open {
 			transform: none;
 			visibility: visible;
 		}
+
+		.social {
+			path {
+				fill: var(--theme);
+			}
+		}
 	}
 
 	.c-header {
-		.nav-close {
-			left: 0;
-			opacity: 1;
-			visibility: visible;
-			transition: opacity .25s linear;
+		& > .inner {
+			&::before {
+				left: 0;
+				opacity: 1;
+				visibility: visible;
+				transition: opacity .25s linear;
+			}
 		}
 
 		.nav-button {
