@@ -163,12 +163,12 @@
 				}
 
 				&:disabled + span {
-					background: none;
+					background: #949494;
 					border: 2px solid #949494;
 
 					&::before {
-						background: none;
-						border: 2px solid #949494;
+						background: #fff;
+						border: 2px solid #fff;
 					}
 				}
 
