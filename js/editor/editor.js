@@ -26,9 +26,9 @@ wp.hooks.addFilter(
 				align = ['wide', 'full'];
 				defaultAlign = 'full';
 			break;
-			case 'core/image':
-				align = ['wide', 'full'];
-				defaultAlign = 'wide';
+			// case 'core/image':
+			// 	align = ['wide', 'full'];
+			// 	defaultAlign = 'wide';
 			break;
 			case 'core/columns':
 				align = ['wide', 'full'];
