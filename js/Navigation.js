@@ -172,16 +172,21 @@ class Navigation {
 	 */
 	toggleChildren(item, button) {
 		// Toggle with animation
-		Core.slideToggle(item.querySelector("ul"), () => {
-			if(item.querySelector("ul").style.visibility == "hidden") {
-				// item.classList.remove("hover");
-				button.classList.remove("active");
-			}
-			else {
-				// item.classList.add("hover");
-				button.classList.add("active");
-			}
-		});
+		if(this.isMobileNavOpen()) {
+			Core.slideToggle(item.querySelector("ul"), () => {
+				if(item.querySelector("ul").style.visibility == "hidden") {
+					// item.classList.remove("hover");
+					button.classList.remove("active");
+				}
+				else {
+					// item.classList.add("hover");
+					button.classList.add("active");
+				}
+			});
+		}
+		else {
+			item.querySelector("ul").classList.toggle("active");
+		}
 
 		// Toggle without animation
 		// item.querySelector("ul").classList.toggle("active");

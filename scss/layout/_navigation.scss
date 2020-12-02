@@ -155,11 +155,9 @@
 
 				// Active
 				&.active {
-					@media (max-width: $mobile-nav-max) {
-						display: block;
-						visibility: visible;
-						height: auto;
-					}
+					display: block;
+					visibility: visible;
+					height: auto;
 				}
 
 				// Right
