@@ -13,6 +13,8 @@ get_header(); ?>
 		<?php the_content() ?>
 	</article>
 
+	<?php get_template_part('template-parts/share'); ?>
+
 	<?php endwhile; ?>
 </main>
 
