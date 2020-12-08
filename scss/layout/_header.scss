@@ -9,6 +9,7 @@
 	z-index: 2;
 	transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
 	padding-left: 1.5em;
+	padding-right: 1.5em;
 
 	@media (min-width: $desktop-nav) {
 		padding-left: 3em;

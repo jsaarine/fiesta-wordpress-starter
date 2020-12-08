@@ -22,7 +22,7 @@
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
-			padding: em(120px) 0 0 0;
+			padding: em(100px) 0 0 0;
 			margin-right: 0;
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
@@ -89,8 +89,12 @@
 					display: block;
 					padding-left: 0;
 					padding-right: 0;
-					white-space: nowrap;
 					position: relative;
+					line-height: 1.3;
+
+					@media (min-width: $desktop-nav) {
+						white-space: nowrap;
+					}
 				}
 
 				a {
@@ -100,7 +104,6 @@
 					text-transform: none;
 
 					&:hover {
-						opacity: 1;
 						background: #eee;
 					}
 
@@ -253,12 +256,6 @@
 		width: rem(44px);
 		height: rem(44px);
 		z-index: 2;
-		transition: top .2s ease-out;
-		margin-right: 1em;
-
-		@media (min-width: $desktop-nav) {
-			top: em(25px);
-		}
 
 		@include hide($desktop-nav);
 
@@ -365,7 +362,7 @@ html.nav-open {
 		.nav-button {
 			.line {
 				width: rem(26px);
-				background: var(--theme) !important;
+				background: var(--theme);
 				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
 				&:nth-of-type(1) {
@@ -391,21 +388,15 @@ html.nav-open {
 html.nav-open-transition {
 	.c-navigation {
 		& > div {
-			transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
+			transition: transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
 		}
 	}
 
 	&.nav-open {
 		.c-navigation {
 			& > div {
-				transition: opacity .5s linear, transform .5s cubic-bezier(0.19, 1, 0.22, 1);
+				transition: transform .5s cubic-bezier(0.19, 1, 0.22, 1);
 			}
 		}
 	}
-}
-
-// Breakpoints
-
-meta.breakpoints-desktop-nav {
-	@include variable($desktop-nav);
 }
