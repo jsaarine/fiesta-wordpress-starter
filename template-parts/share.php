@@ -12,7 +12,7 @@
 		<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= $share_url; ?>" aria-label="Jaa Facebookissa" target="_blank" rel="noopener noreferrer">
 			<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg"><path d="M3.696 20v-8.945H.5V7.5h3.196V4.7c0-3.044 1.983-4.7 4.879-4.7A28.6 28.6 0 0111.5.14v3.18H9.492c-1.575 0-1.88.703-1.88 1.73V7.5h3.555l-.488 3.555H7.612V20" fill="#522dd7" fill-rule="nonzero"/></svg>
 		</a>
-		<a class="twitter" href="https://twitter.com/share?url=<?= $share_url; ?>" aria-label="Jaa Twitterissä" target="_blank" rel="noopener noreferrer">
+		<a class="twitter" href="https://twitter.com/share?url=<?= $share_url; ?>&text=<?= the_title(); ?>" aria-label="Jaa Twitterissä" target="_blank" rel="noopener noreferrer">
 			<svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><path d="M17.944 4.926c.013.178.013.356.013.533 0 5.42-4.124 11.663-11.663 11.663-2.322 0-4.48-.673-6.294-1.84.33.038.647.05.99.05 1.916 0 3.68-.647 5.089-1.75a4.106 4.106 0 01-3.833-2.843c.254.038.508.063.774.063.368 0 .736-.05 1.079-.14A4.1 4.1 0 01.812 6.64v-.051c.546.304 1.18.495 1.853.52A4.096 4.096 0 01.838 3.695c0-.761.203-1.459.558-2.068a11.651 11.651 0 008.452 4.29 4.627 4.627 0 01-.102-.94 4.097 4.097 0 014.1-4.099 4.09 4.09 0 012.994 1.295 8.07 8.07 0 002.602-.99 4.088 4.088 0 01-1.802 2.259A8.217 8.217 0 0020 2.807a8.811 8.811 0 01-2.056 2.12z" fill="#522dd7" fill-rule="nonzero"/></svg>
 		</a>
 		<a class="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $share_url; ?>" aria-label="Jaa LinkedInissä" target="_blank" rel="noopener noreferrer">
