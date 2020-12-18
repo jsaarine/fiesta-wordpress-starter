@@ -163,6 +163,14 @@
 					height: auto;
 				}
 
+				&.active-mobile {
+					@media (max-width: $mobile-nav-max) {
+						display: block;
+						visibility: visible;
+						height: auto;
+					}
+				}
+
 				// Right
 				&.right {
 					@media (min-width: $desktop-nav) {
@@ -334,49 +342,51 @@
 // Nav open
 
 html.nav-open {
-	overflow: hidden;
+	@media (max-width: $mobile-nav-max) {
+		overflow: hidden;
 
-	.c-navigation {
-		& > div {
-			transform: none;
-			visibility: visible;
-		}
-
-		.social {
-			path {
-				fill: var(--theme);
-			}
-		}
-	}
-
-	.c-header {
-		& > .inner {
-			&::before {
-				left: 0;
-				opacity: 1;
+		.c-navigation {
+			& > div {
+				transform: none;
 				visibility: visible;
-				transition: opacity .25s linear;
+			}
+
+			.social {
+				path {
+					fill: var(--theme);
+				}
 			}
 		}
 
-		.nav-button {
-			.line {
-				width: rem(26px);
-				background: var(--theme);
-				transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
-
-				&:nth-of-type(1) {
-					top: 8px;
-					transform: rotate(45deg);
+		.c-header {
+			& > .inner {
+				&::before {
+					left: 0;
+					opacity: 1;
+					visibility: visible;
+					transition: opacity .25s linear;
 				}
+			}
 
-				&:nth-of-type(2) {
-					opacity: 0;
-				}
+			.nav-button {
+				.line {
+					width: rem(26px);
+					background: var(--theme);
+					transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
-				&:nth-of-type(3) {
-					top: -8px;
-					transform: rotate(-45deg);
+					&:nth-of-type(1) {
+						top: 8px;
+						transform: rotate(45deg);
+					}
+
+					&:nth-of-type(2) {
+						opacity: 0;
+					}
+
+					&:nth-of-type(3) {
+						top: -8px;
+						transform: rotate(-45deg);
+					}
 				}
 			}
 		}

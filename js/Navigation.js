@@ -5,6 +5,7 @@ class Navigation {
 		this.parentIsLink = true;
 		this.toggleButton = document.querySelector("#nav-button");
 		this.touched = false;
+		this.navOpen = false;
 
 		this.build();
 	}
@@ -110,13 +111,19 @@ class Navigation {
 				this.clearSubNav();
 			}
 		});
+
+		// Show active menu on page load
+		this.el.querySelectorAll(".current-page-ancestor").forEach(item => {
+			item.querySelector("ul").classList.add("active-mobile");
+			item.querySelector(".subnav-button").classList.add("active");
+		});
 	}
 
 	/**
 	 * Check if mobile nav is open
 	 */
 	isMobileNavOpen() {
-		return document.documentElement.classList.contains("nav-open");
+		return document.documentElement.classList.contains("nav-open") && this.toggleButton.offsetParent;
 	}
 
 	/**
@@ -156,6 +163,7 @@ class Navigation {
 		this.el.querySelector("div").scrollTop = 0;
 		// this.el.querySelector("nav").focus();
 		this.toggleButton.setAttribute("aria-expanded", true);
+		this.navOpen = true;
 	}
 
 	/**
@@ -165,6 +173,7 @@ class Navigation {
 		document.documentElement.classList.remove("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
 		this.toggleButton.setAttribute("aria-expanded", false);
+		this.navOpen = false;
 	}
 
 	/**
