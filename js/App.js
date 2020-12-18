@@ -3,6 +3,8 @@ class App {
 	constructor(queue) {
 		this.isReady = false;
 		this.readyQueue = queue;
+
+		this.init();
 	}
 
 	/**
@@ -76,4 +78,4 @@ class App {
 }
 
 app = new App(app.queue);
-app.init();
+// app.init();
