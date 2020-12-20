@@ -113,9 +113,12 @@ class Navigation {
 		});
 
 		// Show active menu on page load
-		this.el.querySelectorAll(".current-page-ancestor").forEach(item => {
-			item.querySelector("ul").classList.add("active-mobile");
-			item.querySelector(".subnav-button").classList.add("active");
+		this.el.querySelectorAll(".current-page-ancestor > ul").forEach(item => {
+			const button = item.parentNode.querySelector(".subnav-button");
+
+			item.classList.toggle("active-mobile");
+			button.classList.add("active");
+			button.setAttribute("aria-expanded", button.classList.contains("active"));
 		});
 	}
 
