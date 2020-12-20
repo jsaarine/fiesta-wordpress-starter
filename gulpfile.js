@@ -24,7 +24,6 @@ gulp.task('babel', () => {
 	return gulp.src([
 		'./js/vendor/polyfills.js',
 		'./lib/js/Core.js',
-		'./lib/js/Component.js',
 		'./js/Header.js',
 		'./js/Navigation.js',
 		'./js/App.js',
