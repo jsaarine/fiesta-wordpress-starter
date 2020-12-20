@@ -57,9 +57,7 @@
 	transition: background .2s linear, color .2s linear;
 
 	&:hover {
-		background: #fff;
-		color: var(--theme);
-		// opacity: 1;
+		filter: brightness(120%);
 		text-decoration: none;
 	}
 }

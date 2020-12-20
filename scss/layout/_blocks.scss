@@ -38,12 +38,10 @@ figcaption {
 
 // Image
 .wp-block-image {
-	padding: 0;
-
 	@include block-margin();
 
-	img {
-		width: 100%;
+	&.alignwide, &.alignfull {
+		padding: 0;
 	}
 }
 
@@ -153,11 +151,6 @@ figcaption {
 			.wp-block-button__link {
 				background: #fff;
 				color: var(--theme);
-
-				&:hover {
-					background: var(--theme);
-					color: #fff;
-				}
 			}
 		}
 	}
@@ -216,6 +209,8 @@ figcaption {
 
 	.wp-block-file__button {
 		@include button();
+
+		opacity: 1 !important;
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;
