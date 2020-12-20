@@ -36,7 +36,7 @@ namespace Fiesta;
 					<div>
 						<?php
 							wp_nav_menu([
-								'menu' => 'main',
+								'theme_location' => 'primary',
 								'container' => '',
 								'container_class' => '',
 								'menu_class' => '',
