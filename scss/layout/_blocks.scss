@@ -2,8 +2,16 @@
 h2, h3, h4 {
 	color: var(--theme);
 	margin-top: 2em;
-	margin-bottom: .5em;
+	margin-bottom: 1em;
 	line-height: 1.2;
+
+	& + * {
+		margin-top: 1.5rem !important;
+	}
+}
+
+p {
+	@include block-margin-small();
 }
 
 p, li {
@@ -15,8 +23,8 @@ p, li {
 ul, ol {
 	line-height: 1.6;
 	font-size: rem(19px);
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+
+	@include block-margin-small();
 
 	li {
 		margin-left: 2rem;
@@ -25,6 +33,10 @@ ul, ol {
 		&::marker {
 			color: var(--theme);
 		}
+	}
+
+	ul, ol {
+		margin: .5em 0;
 	}
 }
 
@@ -39,32 +51,41 @@ figcaption {
 // Image
 .wp-block-image {
 	@include block-margin();
-
-	&.alignwide, &.alignfull {
-		padding: 0;
-	}
 }
 
-// Quote
-.wp-block-quote {
-	text-align: center;
-	border: none;
-
+// Quotes
+.wp-block-quote, .wp-block-pullquote {
 	@include block-margin();
 
 	p {
 		color: var(--theme);
-		font-size: rem(30px);
+		font-size: rem(25px);
 		margin: 1em 0;
-
-		@include container(rem(650px));
+		line-height: 1.4;
 	}
 
-	cite, .wp-block-quote__citation {
+	cite, .wp-block-quote__citation, .wp-block-pullquote__citation {
 		font-style: normal;
-		font-size: 1rem;
+		font-size: rem(19px);
 		color: var(--dark);
-		opacity: .7;
+		text-transform: none;
+	}
+}
+
+.wp-block-quote {
+	border-left: 2px solid var(--theme);
+	padding-left: 1.5rem !important;
+}
+
+.wp-block-pullquote {
+	border-top: 2px solid var(--theme);
+	border-bottom: 2px solid var(--theme);
+
+	blockquote {
+		margin: 0;
+		padding: 0 1.5rem;
+
+		@include container(var(--container));
 	}
 }
 
@@ -73,12 +94,10 @@ figcaption {
 	@include block-margin();
 
 	.wp-block-column {
-		@media (max-width: $medium-max) {
-			flex-basis: 100% !important;
+		margin-bottom: 2rem;
 
-			&:not(:last-of-type) {
-				margin-bottom: 3em;
-			}
+		&:last-child {
+			margin-bottom: 0;
 		}
 
 		& > :first-child {
@@ -94,19 +113,12 @@ figcaption {
 // Embed
 .wp-block-embed {
 	@include block-margin();
-
-	&.wp-block-embed-youtube, &.wp-block-embed-vimeo {
-		padding: 0;
-	}
 }
 
 // Table
 .wp-block-table {
 	overflow-y: hidden;
 	font-size: 1rem;
-	padding: 0;
-
-	@include container-padding();
 
 	@include block-margin();
 
@@ -143,10 +155,11 @@ figcaption {
 
 // Buttons
 .wp-block-buttons {
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	@include block-margin-small();
 
 	.wp-block-button {
+		margin-top: 0;
+
 		&.is-style-outline {
 			.wp-block-button__link {
 				background: #fff;
@@ -162,8 +175,6 @@ figcaption {
 
 // Group
 .wp-block-group {
-	padding: 0;
-
 	@include block-margin();
 
 	.wp-block-group__inner-container {
@@ -201,16 +212,20 @@ figcaption {
 
 	@include block-margin();
 
-	@include container-padding();
-
-	a {
+	a, .wp-block-file__textlink {
 		color: var(--dark);
+
+		&:first-of-type {
+			margin-right: 1.5em;
+			color: var(--theme);
+		}
 	}
 
 	.wp-block-file__button {
 		@include button();
 
 		opacity: 1 !important;
+		margin-left: 0;
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;
@@ -220,8 +235,6 @@ figcaption {
 
 // Media text
 .wp-block-media-text {
-	padding: 0;
-
 	@include block-margin();
 
 	@media (max-width: $medium-max) {
@@ -245,16 +258,10 @@ figcaption {
 			margin: 0;
 		}
 	}
-
-	h2 {
-		margin-top: 0;
-	}
 }
 
 // Gallery
 .wp-block-gallery {
-	padding: 0;
-
 	@include block-margin();
 
 	ul {
@@ -274,13 +281,15 @@ figcaption {
 
 // Cover
 .wp-block-cover {
-	padding: 0;
+	width: auto;
 
 	@include block-margin();
 
 	p {
-		font-size: rem(48px);
 		line-height: 1.4;
+		padding: 0 1.5rem;
+
+		@include container(var(--container));
 	}
 }
 
@@ -289,14 +298,14 @@ figcaption {
 	border: none;
 	background: var(--theme);
 	height: 1px;
-	max-width: rem(200px) !important;
-	padding: 0;
 
 	@include block-margin();
 }
 
 // Social links
 .wp-block-social-links {
+	@include block-margin();
+
 	li {
 		padding-left: 0;
 		margin-left: 0;
@@ -311,6 +320,16 @@ figcaption {
 			background: var(--theme);
 		}
 	}
+}
+
+// Code
+.wp-block-code {
+	padding: 1rem;
+	background: #eee;
+	border-radius: 0;
+	border: none;
+
+	@include block-margin();
 }
 
 // Sample custom block
@@ -334,10 +353,6 @@ figcaption {
 	.wp-block-button__link {
 		background: #fff;
 		color: var(--theme);
-
-		&:hover {
-			color: #fff;
-		}
 	}
 
 	& > :first-child {
