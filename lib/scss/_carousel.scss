@@ -39,10 +39,10 @@
 
 		button {
 			display: inline-block;
-			width: em(15px);
-			height: em(15px);
+			width: em(18px);
+			height: em(18px);
 			border: 1px solid #fff;
-			margin: 0 .2em;
+			margin: 0 .5em;
 			border-radius: 50%;
 			cursor: pointer;
 			padding: 0;
@@ -84,7 +84,7 @@
 					width: 14px;
 					height: 2px;
 
-					@include min($medium) {
+					@media (min-width: $medium) {
 						width: 20px;
 						height: 2px;
 					}
@@ -95,7 +95,7 @@
 					width: 2px;
 					margin-top: -2px;
 
-					@include min($medium) {
+					@media (min-width: $medium) {
 						height: 20px;
 						width: 2px;
 					}

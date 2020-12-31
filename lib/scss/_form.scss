@@ -1,6 +1,12 @@
 // Form
 
 .c-form {
+	.row {
+		@media (min-width: $medium) {
+			display: flex;
+		}
+	}
+
 	.col {
 		$options: (gutter: 2%);
 

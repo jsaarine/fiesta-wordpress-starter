@@ -95,16 +95,23 @@
 					@media (min-width: $desktop-nav) {
 						white-space: nowrap;
 					}
+
+					&.current_page_item {
+						& > a {
+							color: var(--theme);
+						}
+					}
 				}
 
 				a {
 					font-size: em(16px);
 					color: var(--dark);
-					padding: 1em 2em;
+					padding: .8em 2em;
 					text-transform: none;
 
 					&:hover {
 						background: #eee;
+						opacity: 1;
 					}
 
 					& > span {
