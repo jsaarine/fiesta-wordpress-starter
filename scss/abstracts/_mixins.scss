@@ -37,8 +37,13 @@
 // Blocks
 
 @mixin block-margin() {
-	margin-top: rem(65px);
-	margin-bottom: rem(65px);
+	margin-top: rem(55px);
+	margin-bottom: rem(55px);
+}
+
+@mixin block-margin-small() {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 @mixin button() {
@@ -107,4 +112,9 @@
 		width: 100%;
 		height: 100%;
 	}
+}
+
+@mixin clamp($min, $value, $max, $unit: "font-size") {
+	font-size: $min;
+	#{$unit}: min(max(#{$min}, #{$value}), #{$max});
 }
