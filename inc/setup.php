@@ -46,3 +46,13 @@ add_action('after_setup_theme', function() {
 	// Remove default block patterns
 	remove_theme_support('core-block-patterns');
 });
+
+add_filter('body_class', function($classes) {
+	global $post;
+
+	if(isset($post->ID) && get_the_post_thumbnail($post->ID)) {
+		$classes[] = 'has-featured-image';
+	}
+
+	return $classes;
+});
