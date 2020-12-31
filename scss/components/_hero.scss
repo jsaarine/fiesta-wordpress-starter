@@ -4,29 +4,25 @@
 	margin-bottom: em(50px);
 	position: relative;
 	text-align: center;
-	background: var(--theme);
-	height: em(300px);
-
-	@media (min-width: $medium) {
-		height: em(400px);
-	}
 
 	@media (min-width: $large) {
-		margin-bottom: em(100px);
+		margin-bottom: em(80px);
 	}
 
-	.content {
+	.text {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		padding: 0 1.5em;
 		color: #fff;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		padding: 0 1.5em;
-		z-index: 1;
+
+		& > div {
+			@include container(rem(800px));
+		}
 	}
 
 	img {
@@ -37,49 +33,43 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		filter: grayscale(100%) opacity(10%);
+		filter: grayscale(70%) opacity(12%);
 	}
 
 	h1 {
-		font-size: em(46px);
-		color: #fff;
 		margin: 0;
-
-		@include container(rem(800px));
-
-		@media (min-width: $large) {
-			font-size: em(60px);
-		}
-
-		@media (min-width: $xlarge) {
-			font-size: em(90px);
-		}
+		font-size: calc(#{em(44px)} + 2vw);
 	}
 
 	p {
-		font-size: em(20px);
 		margin: 1.2em 0 0 0;
-
-		@include container(rem(800px));
-
-		@media (min-width: $large) {
-			font-size: em(26px);
-		}
+		font-size: calc(#{em(20px)} + .5vw);
 	}
 
 	a {
-		color: #fff;
 		text-decoration: underline;
+		color: #fff;
 	}
 
-	// Large
-	&.large {
-		height: em(450px);
+	// Plain
+	&.plain {
+		padding-top: em(50px);
+		margin-top: var(--header-height-small);
 
-		@media (min-width: $medium) {
-			padding-bottom: 40%;
-			height: auto;
-			min-height: em(500px);
+		@media (min-width: $desktop-nav) {
+			margin-top: var(--header-height);
 		}
+
+		.text {
+			position: static;
+			color: var(--dark);
+		}
+	}
+
+	// Image
+	&.image {
+		background: var(--theme);
+		padding-bottom: 44%;
+		min-height: em(520px);
 	}
 }
