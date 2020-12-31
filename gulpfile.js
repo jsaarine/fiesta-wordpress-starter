@@ -6,21 +6,24 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
-const cssnano = require('cssnano');
+const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 const devUrl = "http://localhost:10017";
 
-gulp.task('sass', () => {
+// Set Sass to use Dart Sass. Remove to use Node Sass.
+sass.compiler = require('sass');
+
+const style = () => {
 	return gulp.src(['./scss/**/*.scss'])
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
 			postcssPresetEnv()
 		]))
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(browserSync.stream());
-});
+};
 
-gulp.task('babel', () => {
+const script = () => {
 	return gulp.src([
 		'./js/vendor/polyfills.js',
 		'./lib/js/Core.js',
@@ -37,9 +40,9 @@ gulp.task('babel', () => {
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(browserSync.stream({match: '**/*.js'}));
-});
+};
 
-gulp.task('watch', () => {
+const watch = () => {
 	browserSync.init({
 		files: [
 			'./**/*.php',
@@ -51,15 +54,13 @@ gulp.task('watch', () => {
 		},
 	});
 
-	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss'], gulp.series('sass'));
-	gulp.watch(['./js/**/*.js', './lib/js/**/*.js'], gulp.series(['babel']));
-});
+	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss'], gulp.series(style));
+	gulp.watch(['./js/**/*.js', './lib/js/**/*.js'], gulp.series(script));
+};
 
-gulp.task('minify', () => {
+const minify = () => {
 	gulp.src(['./dist/css/style.css'])
-		.pipe(postcss([
-			cssnano(),
-		]))
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('./dist/css'));
 
 	return gulp.src([
@@ -69,7 +70,7 @@ gulp.task('minify', () => {
 		.pipe(uglify())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/js'));
-});
+};
 
-gulp.task('default', gulp.series(['sass', 'babel', 'watch']));
-gulp.task('build', gulp.series(['sass', 'babel', 'minify']));
+exports.default = gulp.series(style, script, watch);
+exports.build = gulp.series(style, script, minify);
