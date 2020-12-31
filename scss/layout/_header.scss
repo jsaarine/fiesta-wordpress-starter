@@ -1,28 +1,27 @@
 // Header
 
 .c-header {
-	height: var(--header-height-small);
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-
-	@media (min-width: $desktop-nav) {
-		padding-left: 3em;
-		padding-right: 3em;
-		height: var(--header-height);
-	}
-
 	& > .inner {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: var(--theme);
+		height: var(--header-height-small);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		height: 100%;
+		z-index: 2;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
+
+		@media (min-width: $desktop-nav) {
+			padding-left: 3em;
+			padding-right: 3em;
+			height: var(--header-height);
+		}
 
 		&::before {
 			@media (max-width: $mobile-nav-max) {
@@ -57,59 +56,17 @@
 		}
 	}
 
-	// Hidden (header is hidden when scrolling down)
-	&.hidden {
-		// transform: translateY(-$header-height);
-	}
-
 	// Small (header is visible but smaller when scrolling)
 	&.small {
-		box-shadow: 0 0 10px rgba(0,0,0,.2);
-		background: #fff;
-		height: var(--header-height-small);
+		& > .inner {
+			background: var(--theme);
+			height: var(--header-height-small);
+		}
 
 		.logo {
-			color: var(--dark);
-
 			svg {
 				width: em(80px);
 				height: em(23px);
-
-				& > path {
-					fill: var(--dark);
-				}
-			}
-		}
-
-		.c-navigation {
-			@media (min-width: $desktop-nav) {
-				a {
-					color: var(--dark);
-
-					& > span {
-						&::after {
-							border-bottom-color: var(--dark);
-						}
-					}
-				}
-			}
-
-			.nav-button {
-				.line {
-					background: var(--dark);
-				}
-			}
-
-			.subnav-button {
-				path {
-					fill: var(--dark);
-				}
-			}
-
-			.social {
-				path {
-					fill: var(--theme);
-				}
 			}
 		}
 	}
@@ -143,6 +100,14 @@
 				overflow: visible;
 				clip: auto;
 			}
+		}
+	}
+}
+
+.has-featured-image {
+	.c-header:not(.small) {
+		& > .inner {
+			background: none;
 		}
 	}
 }
