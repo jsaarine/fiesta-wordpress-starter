@@ -87,9 +87,9 @@ figure {
 *[hidden] { display: none; }
 
 @media screen and (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0s !important;
-		transition: none !important;
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		transition: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
 }
