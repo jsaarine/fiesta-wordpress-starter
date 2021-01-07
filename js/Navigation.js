@@ -14,6 +14,7 @@ class Navigation {
 	 * Build the navigation
 	 */
 	build() {
+		// Menu button
 		this.toggleButton.addEventListener("click", e => {
 			if(!this.isMobileNavOpen()) {
 				this.open();
@@ -55,10 +56,22 @@ class Navigation {
 			// Subnav button
 			subnavButton.addEventListener("click", e => {
 				e.stopPropagation();
+
+				// if(!i.querySelector("ul").classList.contains("active")) {
+				// 	this.el.querySelectorAll(".menu-item-has-children ul").forEach(list => {
+				// 		list.classList.remove("active");
+				// 	});
+				// }
 				this.toggleChildren(i, e.currentTarget);
 
 				if(!this.isMobileNavOpen()) {
-					this.touched = true;
+					if(i.querySelector("ul").classList.contains("active")) {
+						this.touched = true;
+						this.checkSubNavPosition(i);
+					}
+					else {
+						this.touched = false;
+					}
 				}
 			});
 
@@ -163,8 +176,8 @@ class Navigation {
 	open() {
 		document.documentElement.classList.add("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
+
 		this.el.querySelector("div").scrollTop = 0;
-		// this.el.querySelector("nav").focus();
 		this.toggleButton.setAttribute("aria-expanded", true);
 		this.navOpen = true;
 	}
@@ -175,6 +188,7 @@ class Navigation {
 	close() {
 		document.documentElement.classList.remove("nav-open");
 		document.documentElement.classList.add("nav-open-transition");
+
 		this.toggleButton.setAttribute("aria-expanded", false);
 		this.navOpen = false;
 	}
