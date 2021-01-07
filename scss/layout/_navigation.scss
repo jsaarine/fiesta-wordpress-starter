@@ -152,6 +152,8 @@
 				}
 
 				.subnav-button {
+					color: var(--dark);
+
 					svg {
 						@media (min-width: $desktop-nav) {
 							transform: rotate(-90deg);
@@ -311,6 +313,7 @@
 			right: .2em;
 			top: 50%;
 			margin-top: rem(-11px);
+			color: #fff;
 		}
 
 		svg {
@@ -377,7 +380,6 @@ html.nav-open {
 
 			.nav-button {
 				.line {
-					width: rem(26px);
 					background: var(--theme);
 					transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
