@@ -2,6 +2,7 @@ wp.domReady(function() {
 	// Remove editor styles
 	wp.blocks.unregisterBlockStyle('core/image', 'rounded');
 	wp.blocks.unregisterBlockStyle('core/quote', 'large');
+	wp.blocks.unregisterBlockStyle('core/pullquote', 'solid-color');
 	wp.blocks.unregisterBlockStyle('core/separator', 'dots');
 	wp.blocks.unregisterBlockStyle('core/separator', 'wide');
 	wp.blocks.unregisterBlockStyle('core/table', 'stripes');
@@ -11,24 +12,15 @@ wp.domReady(function() {
 // Filter block alignment options
 wp.hooks.addFilter(
 	'blocks.registerBlockType',
-	'fiesta/filters',
+	'fiesta/block-alignment',
 	function(settings, name) {
 		var align;
 		var defaultAlign;
 
 		switch(name) {
-			case 'core-embed/vimeo':
-			case 'core-embed/youtube':
-				align = ['wide', 'full'];
-				defaultAlign = 'wide';
-			break;
 			case 'core/gallery':
 				align = ['wide', 'full'];
 				defaultAlign = 'full';
-			break;
-			// case 'core/image':
-			// 	align = ['wide', 'full'];
-			// 	defaultAlign = 'wide';
 			break;
 			case 'core/columns':
 				align = ['wide', 'full'];
