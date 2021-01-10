@@ -65,6 +65,10 @@
 		filter: brightness(120%);
 		text-decoration: none;
 	}
+
+	&:-moz-focusring {
+		outline-color: #000;
+	}
 }
 
 @mixin caption {
