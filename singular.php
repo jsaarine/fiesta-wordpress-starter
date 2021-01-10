@@ -2,22 +2,24 @@
 
 namespace Fiesta;
 
-get_header(); ?>
+get_header();
+
+?>
 
 <main id="main-content" tabindex="-1">
 	<?php while(have_posts()) : the_post(); ?>
 
-	<article>
-		<?php
-			get_template_part('template-parts/hero');
-		?>
+		<article>
+			<?php
+				get_template_part('template-parts/hero');
+			?>
 
-		<div class="c-article">
-			<?php the_content() ?>
-		</div>
-	</article>
+			<div class="c-article">
+				<?php the_content() ?>
+			</div>
+		</article>
 
-	<?php get_template_part('template-parts/share'); ?>
+		<?php get_template_part('template-parts/share'); ?>
 
 	<?php endwhile; ?>
 </main>
