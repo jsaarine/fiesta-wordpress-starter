@@ -16,15 +16,13 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 // Remove generator
 remove_action('wp_head', 'wp_generator');
 
-// Disable theme auto update
-add_filter('theme_auto_update_setting_template', function($template) {
-	$text = __('Auto-updates are not available for this theme.');
+// Disable theme updates
+add_filter('site_transient_update_themes', function($value) {
+	if(isset($value) && is_object($value)) {
+		unset($value->response[PREFIX]);
+	}
 
-	return "<# if ( [ 'my-theme', '".PREFIX."' ].includes( data.id ) ) { #>
-		<p>$text</p>
-		<# } else { #>
-		$template
-		<# } #>";
+	return $value;
 });
 
 
