@@ -32,8 +32,11 @@
 	}
 
 	.left {
-		margin-right: 7%;
 		flex: 1;
+
+		@media (min-width: $large) {
+			margin-right: 7%;
+		}
 	}
 
 	.right {
