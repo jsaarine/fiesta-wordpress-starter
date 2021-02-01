@@ -25,7 +25,6 @@ const style = () => {
 
 const script = () => {
 	return gulp.src([
-		'./js/vendor/polyfills.js',
 		'./lib/js/Core.js',
 		'./js/Header.js',
 		'./js/Navigation.js',
