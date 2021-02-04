@@ -44,7 +44,7 @@ add_action('admin_init', function() {
 	remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 
 	// Disable support for comments and trackbacks in post types
-	foreach (get_post_types() as $post_type) {
+	foreach(get_post_types() as $post_type) {
 		if(post_type_supports($post_type, 'comments')) {
 			remove_post_type_support($post_type, 'comments');
 			remove_post_type_support($post_type, 'trackbacks');
@@ -63,4 +63,21 @@ add_filter('comments_array', '__return_empty_array', 10, 2);
 add_action('wp_before_admin_bar_render', function() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('comments');
+});
+
+// Hide users from REST api
+add_filter('rest_endpoints', function($endpoints) {
+	if(is_user_logged_in()) {
+		return $endpoints;
+	}
+
+	if(isset($endpoints['/wp/v2/users'])) {
+		unset($endpoints['/wp/v2/users']);
+	}
+
+	if(isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+		unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+	}
+
+	return $endpoints;
 });
