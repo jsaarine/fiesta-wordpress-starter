@@ -31,11 +31,11 @@ const script = () => {
 		'./js/App.js',
 	])
 		.pipe(sourcemaps.init())
+		.pipe(concat("./script.js"))
 		.pipe(babel({
 			presets: ["@babel/preset-env"],
 			ignore: ['./js/vendor']
 		}))
-		.pipe(concat("./script.js"))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(browserSync.stream({match: '**/*.js'}));
