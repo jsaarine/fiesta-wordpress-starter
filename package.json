@@ -6,9 +6,9 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "browser-sync": "^2.26.13",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -18,7 +18,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "postcss-preset-env": "^6.7.0",
-    "sass": "^1.32.0"
+    "sass": "^1.32.8"
   },
   "browserslist": [
     "> 0.2%, last 2 versions, not dead"
