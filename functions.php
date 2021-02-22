@@ -14,7 +14,8 @@ define(__NAMESPACE__.'\PREFIX', 'fiesta');
  * Gets an array of pages by template name
  */
 function get_pages_by_template($template) {
-	$pages = get_pages(array(
+	$pages = get_posts(array(
+		'post_type' => 'page',
 		'meta_key' => '_wp_page_template',
 		'meta_value' => $template.'.php'
 	));
