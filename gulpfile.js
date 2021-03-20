@@ -8,7 +8,8 @@ const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
-const devUrl = "http://localhost:10017";
+const config = require('./config.js');
+const devUrl = config.devUrl();
 
 // Set Sass to use Dart Sass. Remove to use Node Sass.
 sass.compiler = require('sass');
@@ -45,6 +46,7 @@ const watch = () => {
 	browserSync.init({
 		files: [
 			'./**/*.php',
+			'../../plugins/fiesta-blocks/**/*.php',
 		],
 		proxy: devUrl,
 		open: false,
