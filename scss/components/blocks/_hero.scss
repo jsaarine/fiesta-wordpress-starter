@@ -47,11 +47,10 @@
 
 	// Plain
 	&.plain {
-		padding-top: rem(50px);
-		margin-top: var(--header-height-small);
+		padding-top: calc(var(--header-height-small) + #{em(50px)});
 
 		@media (min-width: $desktop-nav) {
-			margin-top: var(--header-height);
+			padding-top: calc(var(--header-height) + #{em(50px)});
 		}
 
 		.text {
