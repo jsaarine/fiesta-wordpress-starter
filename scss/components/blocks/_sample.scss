@@ -1,0 +1,35 @@
+.wp-block-fiesta-sample {
+	text-align: center;
+	background: var(--theme);
+	padding: rem(50px) 0;
+	font-size: 1rem;
+
+	@include block-margin();
+
+	h2, p {
+		color: #fff;
+
+		@include container(var(--container), true);
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+
+	.wp-block-buttons {
+		justify-content: center;
+	}
+
+	.wp-block-button__link {
+		background: #fff;
+		color: var(--theme);
+	}
+
+	& > :first-child {
+		margin-top: 0;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}

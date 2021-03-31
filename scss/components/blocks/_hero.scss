@@ -1,0 +1,69 @@
+.wp-block-fiesta-hero {
+	margin-bottom: em(50px);
+	position: relative;
+	text-align: center;
+
+	.text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 0 1.5em;
+		color: #fff;
+		display: flex;
+		align-items: center;
+
+		& > div {
+			@include container(rem(800px));
+		}
+	}
+
+	img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: grayscale(70%) opacity(12%);
+	}
+
+	h1 {
+		margin: 0;
+		font-size: calc(#{em(44px)} + 2vw);
+	}
+
+	p {
+		margin: 1.2em 0 0 0;
+		font-size: calc(#{em(20px)} + .5vw);
+	}
+
+	a {
+		text-decoration: underline;
+		color: #fff;
+	}
+
+	// Plain
+	&.plain {
+		padding-top: rem(50px);
+		margin-top: var(--header-height-small);
+
+		@media (min-width: $desktop-nav) {
+			margin-top: var(--header-height);
+		}
+
+		.text {
+			position: static;
+			color: var(--dark);
+		}
+	}
+
+	// Image
+	&.image {
+		background: var(--theme);
+		padding-bottom: 44%;
+		min-height: em(520px);
+	}
+}
