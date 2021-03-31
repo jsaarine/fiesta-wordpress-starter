@@ -1,0 +1,15 @@
+.c-page-header {
+	text-align: center;
+	margin-top: var(--header-height-small);
+	padding-top: em(50px);
+	margin-bottom: em(50px);
+
+	@media (min-width: $desktop-nav) {
+		margin-top: var(--header-height);
+	}
+
+	h1 {
+		font-size: calc(#{em(44px)} + 2vw);
+		margin: 0;
+	}
+}
