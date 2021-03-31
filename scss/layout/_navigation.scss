@@ -273,6 +273,7 @@
 		width: rem(44px);
 		height: rem(44px);
 		z-index: 2;
+		padding: 0;
 
 		@include hide($desktop-nav);
 
