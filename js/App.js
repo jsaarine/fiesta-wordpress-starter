@@ -78,4 +78,3 @@ class App {
 }
 
 app = new App(app.queue);
-// app.init();
