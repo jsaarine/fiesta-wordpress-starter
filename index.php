@@ -7,16 +7,10 @@ get_header();
 ?>
 
 <main id="main-content" tabindex="-1">
-	<?php while (have_posts()) : the_post(); ?>
+	<?php while(have_posts()) : the_post(); ?>
 
-		<?php
-			get_template_part('template-parts/hero');
-		?>
-
-		<div class="container" style="padding: 0; max-width: var(--container); margin-bottom: 80px;">
-			<div class="c-article">
-				<?php the_content(); ?>
-			</div>
+		<div class="c-article">
+			<?php the_content(); ?>
 		</div>
 
 	<?php endwhile; ?>

@@ -6,7 +6,7 @@ namespace Fiesta;
 
 add_action('widgets_init', function() {
 	register_sidebar( array(
-		'name' => __('Footer', 'footer'),
+		'name' => __('Footer'),
 		'id' => 'footer-widget',
 		'before_widget' => '',
 		'after_widget' => '',

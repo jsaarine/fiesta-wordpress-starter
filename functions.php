@@ -5,7 +5,7 @@ namespace Fiesta;
 
 /* Constants */
 
-define(__NAMESPACE__.'\PREFIX', 'fiesta');
+const PREFIX = 'fiesta';
 
 
 /* Functions */

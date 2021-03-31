@@ -28,24 +28,8 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 				'core/shortcode',
 				'core/social-links',
 				'core/table',
-				'fiesta/sample-block',
+				'fiesta/hero',
+				'fiesta/sample',
 			);
 	endswitch;
 }, 10, 2);
-
-
-/* ACF blocks */
-
-/*add_action('acf/init', function() {
-	if(function_exists('acf_register_block_type')) {
-		acf_register_block_type(array(
-			'name' => 'testing',
-			'title' => __('Testing'),
-			'description' => __('A test block.'),
-			'render_template' => 'template-parts/blocks/testing/testing.php',
-			'category' => 'common',
-			'icon' => 'admin-comments',
-			'keywords' => array('testing'),
-		));
-	}
-});*/
