@@ -82,10 +82,6 @@
 
 // Misc
 
-@mixin variable($value) {
-	font-family: "#{$value}";
-}
-
 @mixin video-embed($ratio: 56.25%) {
 	position: relative;
 	padding-bottom: $ratio;

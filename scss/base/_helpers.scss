@@ -11,32 +11,6 @@
 	}
 }
 
-// Breakpoints
-
-meta.breakpoints-small-max {
-	@include variable($small-max);
-}
-
-meta.breakpoints-medium {
-	@include variable($medium);
-}
-
-meta.breakpoints-medium-max {
-	@include variable($medium-max);
-}
-
-meta.breakpoints-large {
-	@include variable($large);
-}
-
-meta.breakpoints-large-max {
-	@include variable($large-max);
-}
-
-meta.breakpoints-xlarge {
-	@include variable($xlarge);
-}
-
 // Focus
 
 html.focus-visible {
