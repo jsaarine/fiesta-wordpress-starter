@@ -8,6 +8,7 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 	switch($post->post_type):
 		default:
 			return array(
+				'core/audio',
 				'core/button',
 				'core/buttons',
 				'core/code',
@@ -28,6 +29,7 @@ add_filter('allowed_block_types', function($allowed_block_types, $post) {
 				'core/shortcode',
 				'core/social-links',
 				'core/table',
+				'core/video',
 				'fiesta/hero',
 				'fiesta/sample',
 			);
