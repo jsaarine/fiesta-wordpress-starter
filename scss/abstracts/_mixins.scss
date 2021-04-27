@@ -37,13 +37,13 @@
 // Blocks
 
 @mixin block-margin() {
-	margin-top: rem(55px);
-	margin-bottom: rem(55px);
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 @mixin block-margin-small() {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 }
 
 @mixin button() {

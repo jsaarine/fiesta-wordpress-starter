@@ -6,7 +6,7 @@
 	--theme: #522dd7;
 	--dark: #222;
 
-	// Misc
+	// Header
 	--header-height: #{em(100px)};
 	--header-height-small: #{em(65px)};
 
@@ -15,19 +15,23 @@
 	--container: #{rem(750px)};
 	--container-wide: #{rem(1100px)};
 	--container-padding: 1.5rem;
+
+	// Blocks
+	--block-margin: #{rem(65px)};
+	--block-margin-small: #{rem(24px)};
 }
 
 // Screen size breakpoints (for min-width queries)
-$medium: em(640px);
-$large: em(980px);
-$xlarge: em(1200px);
-$xxlarge: em(1920px);
+$medium: rem(640px);
+$large: rem(980px);
+$xlarge: rem(1200px);
+$xxlarge: rem(1920px);
 
 // Screen size breakpoints (for max-width queries).
-$small-max: $medium - em(1px);
-$medium-max: $large - em(1px);
-$large-max: $xlarge - em(1px);
+$small-max: $medium - rem(1px);
+$medium-max: $large - rem(1px);
+$large-max: $xlarge - rem(1px);
 
 // Navigation breakpoints
 $desktop-nav: $medium;
-$mobile-nav-max: $desktop-nav - em(1px);
+$mobile-nav-max: $desktop-nav - rem(1px);

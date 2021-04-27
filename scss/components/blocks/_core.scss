@@ -1,18 +1,11 @@
-// h1 {
-// 	text-align: center;
-// 	max-width: rem(1000px);
-
-// 	@include block-margin();
-// }
-
 h2, h3, h4 {
 	color: var(--theme);
 	margin-top: 2em;
-	margin-bottom: 1em;
+	margin-bottom: var(--block-margin-small);
 	line-height: 1.2;
 
 	& + * {
-		margin-top: 1.5rem !important;
+		margin-top: var(--block-margin-small) !important;
 	}
 }
 
@@ -20,9 +13,8 @@ p {
 	@include block-margin-small();
 
 	&.is-style-ingress {
-		font-size: rem(24px);
+		font-size: em(24px);
 		text-align: center;
-		max-width: rem(800px);
 
 		@include block-margin();
 	}
@@ -36,11 +28,11 @@ p, li {
 
 ul, ol {
 	line-height: 1.6;
-	font-size: rem(19px);
 
 	@include block-margin-small();
 
 	li {
+		font-size: rem(19px);
 		margin-left: 2rem;
 		padding-left: .5rem;
 
@@ -50,7 +42,7 @@ ul, ol {
 	}
 
 	ul, ol {
-		margin: .5em 0;
+		margin: .5rem 0;
 	}
 }
 
@@ -73,14 +65,14 @@ figcaption {
 
 	p {
 		color: var(--theme);
-		font-size: rem(25px);
+		font-size: em(25px);
 		margin: 1em 0;
 		line-height: 1.4;
 	}
 
 	cite, .wp-block-quote__citation, .wp-block-pullquote__citation {
 		font-style: normal;
-		font-size: rem(19px);
+		font-size: em(19px);
 		color: var(--dark);
 		text-transform: none;
 	}
@@ -88,7 +80,7 @@ figcaption {
 
 .wp-block-quote {
 	border-left: 2px solid var(--theme);
-	padding-left: 1.5rem !important;
+	padding-left: 1.5em !important;
 }
 
 .wp-block-pullquote {
@@ -97,7 +89,7 @@ figcaption {
 
 	blockquote {
 		margin: 0;
-		padding: 0 1.5rem;
+		padding: 0 1.5em;
 
 		@include container(var(--container));
 	}
@@ -108,7 +100,7 @@ figcaption {
 	@include block-margin();
 
 	.wp-block-column {
-		margin-bottom: 2rem;
+		margin-bottom: 2em;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -132,7 +124,7 @@ figcaption {
 // Table
 .wp-block-table {
 	overflow-y: hidden;
-	font-size: 1rem;
+	font-size: 1em;
 
 	@include block-margin();
 
@@ -193,8 +185,8 @@ figcaption {
 
 	.wp-block-group__inner-container {
 		background: #eee;
-		padding-top: rem(50px);
-		padding-bottom: rem(50px);
+		padding-top: em(50px);
+		padding-bottom: em(50px);
 
 		@include container-padding();
 
@@ -222,7 +214,7 @@ figcaption {
 
 // File
 .wp-block-file {
-	font-size: 1rem;
+	font-size: 1em;
 
 	@include block-margin();
 
@@ -301,7 +293,7 @@ figcaption {
 
 	p {
 		line-height: 1.4;
-		padding: 0 1.5rem;
+		padding: 0 1.5em;
 
 		@include container(var(--container));
 	}
@@ -338,7 +330,7 @@ figcaption {
 
 // Code
 .wp-block-code {
-	padding: 1rem;
+	padding: 1em;
 	background: #eee;
 	border-radius: 0;
 	border: none;
