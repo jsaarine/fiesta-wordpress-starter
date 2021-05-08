@@ -10,18 +10,12 @@
 
 		&.active {
 			.title {
-				a {
+				button {
 					&:after {
 						transform-origin: 50% 50%;
 						transform: rotate(180deg);
 					}
 				}
-			}
-
-			& > div {
-				display: block;
-				// visibility: visible;
-				// transition: height .3s ease-in;
 			}
 		}
 
@@ -36,7 +30,7 @@
 			font-size: em(20px);
 			margin: 0;
 
-			a {
+			button {
 				display: block;
 				width: 100%;
 				background: none;
@@ -60,9 +54,10 @@
 					margin-top: em(-3px);
 					width: 0;
 					height: 0;
-					border-left: 10px solid transparent;
-					border-right: 10px solid transparent;
-					border-top: 10px solid var(--theme);
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-top: 8px solid var(--theme);
+					transition: transform .2s linear;
 				}
 			}
 		}
@@ -70,11 +65,10 @@
 		// Content
 		& > div {
 			padding: 0 .5em;
-			display: none;
-			// visibility: hidden;
-			// height: 0;
-			// overflow: hidden;
-			// transition: visibility 0s .3s, height .3s ease-out;
+			visibility: hidden;
+			height: 0px;
+			overflow: hidden;
+			transition: height .2s ease-out;
 
 			p:first-of-type {
 				margin-top: 0;

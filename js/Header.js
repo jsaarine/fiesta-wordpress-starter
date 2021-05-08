@@ -11,7 +11,7 @@ class Header {
 	 */
 	build() {
 		const options = {
-			rootMargin: "5px 0px 0px 0px"
+			rootMargin: "2px 0px 0px 0px"
 		};
 
 		const observer = new IntersectionObserver(entries => {
