@@ -18,7 +18,7 @@
 			top: 0;
 			right: 0;
 			z-index: 1;
-			background: #fff;
+			background: var(--light);
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
@@ -65,7 +65,7 @@
 					height: auto !important;
 					visibility: visible !important;
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
-					background: #fff;
+					background: var(--light);
 					text-align: center;
 					overflow: visible;
 				}
@@ -76,7 +76,7 @@
 					height: 0;
 					border-left: 8px solid transparent;
 					border-right: 8px solid transparent;
-					border-bottom: 8px solid #fff;
+					border-bottom: 8px solid var(--light);
 					position: absolute;
 					left: 50%;
 					top: -7px;
@@ -229,9 +229,10 @@
 			padding: 1em 0;
 			transition: opacity .2s linear;
 			color: var(--dark);
+			text-decoration: none;
 
 			@media (min-width: $desktop-nav) {
-				color: #fff;
+				color: var(--light);
 			}
 
 			&:hover {
@@ -258,7 +259,7 @@
 					transition: width .2s ease-out;
 
 					@media (min-width: $desktop-nav) {
-						border-color: #fff;
+						border-color: var(--light);
 					}
 				}
 			}
@@ -285,7 +286,7 @@
 			height: 3px;
 			margin: 0 auto;
 			margin-bottom: 5px;
-			background-color: #fff;
+			background-color: var(--light);
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
 
 			&:nth-of-type(3) {
@@ -314,7 +315,7 @@
 			right: .2em;
 			top: 50%;
 			margin-top: rem(-11px);
-			color: #fff;
+			color: var(--light);
 		}
 
 		svg {
@@ -326,7 +327,7 @@
 				fill: var(--dark);
 
 				@media (min-width: $desktop-nav) {
-					fill: #fff;
+					fill: var(--light);
 				}
 			}
 		}

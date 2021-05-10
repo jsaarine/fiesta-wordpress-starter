@@ -7,7 +7,7 @@
 	box-shadow: 0 0 20px rgba(0,0,0,.3);
 	width: 100%;
 	max-height: 100%;
-	background: #fff;
+	background: var(--light);
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 
@@ -73,7 +73,7 @@
 		}
 
 		&.decline {
-			background: #fff;
+			background: var(--light);
 			color: var(--theme);
 		}
 	}
@@ -117,7 +117,7 @@
 		}
 
 		& > div {
-			background: #fff;
+			background: var(--light);
 			max-width: em(650px);
 
 			& > div {
@@ -170,8 +170,8 @@
 					background: var(--theme);
 
 					&::before {
-						background: #fff;
-						border-color: #fff;
+						background: var(--light);
+						border-color: var(--light);
 						left: calc(100% - 1em - 3px);
 					}
 				}
@@ -181,8 +181,8 @@
 					border: 2px solid #949494;
 
 					&::before {
-						background: #fff;
-						border: 2px solid #fff;
+						background: var(--light);
+						border: 2px solid var(--light);
 					}
 				}
 

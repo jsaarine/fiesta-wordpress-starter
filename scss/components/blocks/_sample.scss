@@ -6,14 +6,14 @@
 
 	@include block-margin();
 
-	h2, p {
-		color: #fff;
-
-		@include container(var(--container), true);
-	}
-
 	h2 {
 		margin-top: 0;
+	}
+
+	h2, p {
+		color: var(--light);
+
+		@include container(var(--container), true);
 	}
 
 	.wp-block-buttons {
@@ -21,7 +21,7 @@
 	}
 
 	.wp-block-button__link {
-		background: #fff;
+		background: var(--light);
 		color: var(--theme);
 	}
 

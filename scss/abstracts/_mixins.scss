@@ -53,9 +53,8 @@
 	text-transform: uppercase;
 	background: var(--theme);
 	border: 1px solid var(--theme);
-	text-decoration: none;
 	margin-bottom: 0;
-	color: #fff;
+	color: var(--light);
 	border-radius: 3px;
 	line-height: 1.1;
 	cursor: pointer;
@@ -63,7 +62,6 @@
 
 	&:hover {
 		filter: brightness(120%);
-		text-decoration: none;
 	}
 
 	&:-moz-focusring {
@@ -91,24 +89,6 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-@mixin object-fit() {
-	object-fit: cover;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	max-width: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-
-	@supports (object-fit: cover) {
 		width: 100%;
 		height: 100%;
 	}

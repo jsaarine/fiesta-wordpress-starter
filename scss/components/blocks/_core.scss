@@ -5,24 +5,20 @@ h2, h3, h4 {
 	line-height: 1.2;
 
 	& + * {
-		margin-top: var(--block-margin-small) !important;
+		--block-margin: var(--block-margin-small);
 	}
 }
 
 p {
-	@include block-margin-small();
+	&:not(.is-style-ingress) {
+		@include block-margin-small();
+	}
 
 	&.is-style-ingress {
 		font-size: em(24px);
 		text-align: center;
 
 		@include block-margin();
-	}
-}
-
-p, li {
-	a:link, a:visited, a:hover, a:active {
-		text-decoration: underline;
 	}
 }
 
@@ -66,14 +62,13 @@ figcaption {
 	p {
 		color: var(--theme);
 		font-size: em(25px);
-		margin: 1em 0;
 		line-height: 1.4;
+		margin-top: 0;
 	}
 
 	cite, .wp-block-quote__citation, .wp-block-pullquote__citation {
 		font-style: normal;
 		font-size: em(19px);
-		color: var(--dark);
 		text-transform: none;
 	}
 }
@@ -90,8 +85,6 @@ figcaption {
 	blockquote {
 		margin: 0;
 		padding: 0 1.5em;
-
-		@include container(var(--container));
 	}
 }
 
@@ -114,11 +107,6 @@ figcaption {
 			margin-bottom: 0;
 		}
 	}
-}
-
-// Embed
-.wp-block-embed {
-	@include block-margin();
 }
 
 // Table
@@ -147,8 +135,7 @@ figcaption {
 
 	th {
 		text-align: left;
-		background: var(--theme);
-		color: #fff;
+		background: var(--gray);
 		font-weight: 400;
 	}
 
@@ -168,7 +155,7 @@ figcaption {
 
 		&.is-style-outline {
 			.wp-block-button__link {
-				background: #fff;
+				background: var(--light);
 				color: var(--theme);
 			}
 		}
@@ -184,7 +171,7 @@ figcaption {
 	@include block-margin();
 
 	.wp-block-group__inner-container {
-		background: #eee;
+		background: var(--gray);
 		padding-top: em(50px);
 		padding-bottom: em(50px);
 
@@ -220,6 +207,7 @@ figcaption {
 
 	a, .wp-block-file__textlink {
 		color: var(--dark);
+		text-decoration: none;
 
 		&:first-of-type {
 			margin-right: 1.5em;
@@ -289,11 +277,12 @@ figcaption {
 .wp-block-cover {
 	width: auto;
 
+	@include container-padding();
+
 	@include block-margin();
 
 	p {
 		line-height: 1.4;
-		padding: 0 1.5em;
 
 		@include container(var(--container));
 	}
@@ -318,7 +307,7 @@ figcaption {
 	}
 
 	a {
-		color: #fff;
+		color: var(--light);
 	}
 
 	&:not(.is-style-logos-only) {

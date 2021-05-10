@@ -20,7 +20,7 @@
 			width: $size;
 			height: $size;
 			line-height: $size;
-			background: #fff;
+			background: var(--light);
 			margin-right: $padding;
 			border: 1px solid var(--theme);
 			border-radius: 2px;

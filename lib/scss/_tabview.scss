@@ -13,7 +13,7 @@
 		& > li {
 			display: inline-block;
 			cursor: pointer;
-			color: #fff;
+			color: var(--light);
 
 			&:not(:first-of-type) {
 				a {
@@ -22,7 +22,7 @@
 			}
 
 			a {
-				color: #fff;
+				color: var(--light);
 				padding: .5em 2em;
 				display: block;
 				border: 1px solid var(--dark);
@@ -33,8 +33,8 @@
 				}
 
 				&.active {
-					background-color: #fff;
-					border-bottom-color: #fff;
+					background-color: var(--light);
+					border-bottom-color: var(--light);
 					color: var(--dark);
 				}
 			}

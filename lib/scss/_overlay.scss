@@ -32,7 +32,7 @@
 	}
 
 	& > .inner {
-		background: #fff;
+		background: var(--light);
 		padding: 2em;
 		position: relative;
 		margin: auto auto;
@@ -95,7 +95,7 @@
 			top: em(-52px);
 
 			&::before, &::after {
-				background: #fff;
+				background: var(--light);
 			}
 		}
 	}

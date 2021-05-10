@@ -4,7 +4,6 @@
 }
 
 html {
-	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -44,6 +43,7 @@ img {
 	max-width: 100%;
 	height: auto;
 	border: 0;
+	display: block;
 }
 
 button, select, input, textarea {
@@ -77,10 +77,6 @@ nav ul {
 
 figure {
 	margin: 0;
-}
-
-*[hidden] {
-	display: none;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

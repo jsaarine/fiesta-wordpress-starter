@@ -42,7 +42,7 @@
 	// Logo
 	.logo {
 		transition: top .2s ease-out;
-		color: #fff;
+		color: var(--light);
 
 		svg {
 			transition: width .2s ease-out, height .2s ease-out;
@@ -89,7 +89,7 @@
 			overflow: hidden;
 			clip: rect(0,0,0,0);
 			border: none;
-			background: #fff;
+			background: var(--light);
 			padding: 1em 3em;
 			display: inline-block;
 

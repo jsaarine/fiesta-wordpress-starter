@@ -1,5 +1,6 @@
 .wp-block-fiesta-hero {
-	margin-bottom: em(50px);
+	margin-top: 0;
+	margin-bottom: var(--block-margin);
 	position: relative;
 	text-align: center;
 
@@ -10,7 +11,7 @@
 		width: 100%;
 		height: 100%;
 		padding: 0 1.5em;
-		color: #fff;
+		color: var(--light);
 		display: flex;
 		align-items: center;
 
@@ -42,7 +43,7 @@
 
 	a {
 		text-decoration: underline;
-		color: #fff;
+		color: var(--light);
 	}
 
 	// Plain
