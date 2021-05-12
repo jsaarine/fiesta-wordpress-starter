@@ -3,10 +3,6 @@ h2, h3, h4 {
 	margin-top: 2em;
 	margin-bottom: var(--block-margin-small);
 	line-height: 1.2;
-
-	& + * {
-		margin-top: var(--block-margin-small) !important;
-	}
 }
 
 p {
@@ -324,5 +320,11 @@ figcaption {
 	border-radius: 0;
 	border: none;
 
+	@include block-margin-small();
+}
+
+// Embed
+
+.wp-block-embed {
 	@include block-margin();
 }

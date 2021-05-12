@@ -3,15 +3,14 @@
 .c-header {
 	& > .inner {
 		position: fixed;
-		width: 100%;
 		top: 0;
 		left: 0;
+		width: 100%;
 		background: var(--theme);
 		height: var(--header-height-small);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 100%;
 		z-index: 10;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
@@ -47,11 +46,9 @@
 		svg {
 			transition: width .2s ease-out, height .2s ease-out;
 			width: em(80px);
-			height: em(23px);
 
 			@media (min-width: $desktop-nav) {
-				width: em(120px);
-				height: em(34px);
+				width: em(100px);
 			}
 		}
 	}
@@ -61,13 +58,6 @@
 		& > .inner {
 			background: var(--theme);
 			height: var(--header-height-small);
-		}
-
-		.logo {
-			svg {
-				width: em(80px);
-				height: em(23px);
-			}
 		}
 	}
 
