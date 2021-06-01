@@ -11,7 +11,7 @@
 		$options: (gutter: 2%);
 
 		@media (min-width: $medium) {
-			@include column(1/2, $options);
+			@include column(50%, $options);
 		}
 	}
 

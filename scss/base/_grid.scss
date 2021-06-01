@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Grid variables
 
 $grid-gutter: 0;
@@ -79,7 +81,7 @@ $grid-columns: 12;
 		$new-map: (blocks: $value);
 	}
 
-	@include column($grid-columns / $value, $new-map);
+	@include column(math.div($grid-columns, $value), $new-map);
 }
 
 @mixin block-props($value, $gutter, $props) {
@@ -87,7 +89,7 @@ $grid-columns: 12;
 		margin-right: $gutter;
 	}
 
-	&:nth-of-type(#{$grid-columns / $value}n) {
+	&:nth-of-type(#{math.div($grid-columns, $value)}n) {
 		margin-right: 0;
 	}
 }
