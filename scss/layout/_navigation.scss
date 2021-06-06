@@ -58,12 +58,10 @@
 				background: #f2f2f3;
 
 				@media (min-width: $desktop-nav) {
-					display: none;
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
 					height: auto !important;
-					visibility: visible !important;
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
 					background: var(--light);
 					text-align: center;
@@ -206,7 +204,6 @@
 			&:hover, &.hover {
 				@media (min-width: $desktop-nav) {
 					& > ul {
-						display: block;
 						visibility: visible;
 					}
 				}
