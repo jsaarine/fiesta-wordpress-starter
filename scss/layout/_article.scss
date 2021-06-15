@@ -1,10 +1,15 @@
 .c-article {
-	margin-bottom: rem(50px);
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
 
-	& > * {
+	& > *, .wp-block-group__inner-container > * {
 		@include container(var(--container));
+
+		@include block-margin();
+
+		&:last-child {
+			margin-bottom: var(--block-margin);
+		}
 	}
 
 	.alignwide {
