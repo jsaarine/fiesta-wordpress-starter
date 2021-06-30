@@ -5,8 +5,6 @@
 	& > *, .wp-block-group__inner-container > * {
 		@include container(var(--container));
 
-		@include block-margin();
-
 		&:last-child {
 			margin-bottom: var(--block-margin);
 		}

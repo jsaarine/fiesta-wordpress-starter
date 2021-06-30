@@ -3,10 +3,6 @@ h2, h3, h4, h5, h6 {
 	margin-top: 1.5em;
 	margin-bottom: var(--block-margin-small);
 	line-height: 1.2;
-
-	& + * {
-		margin-top: 0;
-	}
 }
 
 p {
@@ -48,8 +44,15 @@ figcaption {
 	@include caption();
 }
 
+// Image
+.wp-block-image {
+	@include block-margin();
+}
+
 // Quotes
 .wp-block-quote, .wp-block-pullquote {
+	@include block-margin();
+
 	p {
 		color: var(--theme);
 		font-size: em(25px);
@@ -81,6 +84,8 @@ figcaption {
 
 // Columns
 .wp-block-columns {
+	@include block-margin();
+
 	.wp-block-column {
 		margin-bottom: 2em;
 
@@ -102,6 +107,8 @@ figcaption {
 .wp-block-table {
 	overflow-y: hidden;
 	font-size: 1em;
+
+	@include block-margin();
 
 	table {
 		width: 100%;
@@ -138,7 +145,8 @@ figcaption {
 	@include block-margin-small();
 
 	.wp-block-button {
-		margin-top: 0;
+		// margin-top: 0;
+		// margin-bottom: 0;
 
 		&.is-style-outline {
 			.wp-block-button__link {
@@ -155,6 +163,8 @@ figcaption {
 
 // Group
 .wp-block-group {
+	@include block-margin();
+
 	.wp-block-group__inner-container {
 		background: var(--gray);
 		padding-top: var(--block-margin);
@@ -180,6 +190,8 @@ figcaption {
 .wp-block-file {
 	font-size: 1em;
 
+	@include block-margin();
+
 	a, .wp-block-file__textlink {
 		color: var(--dark);
 		text-decoration: none;
@@ -204,6 +216,8 @@ figcaption {
 
 // Media text
 .wp-block-media-text {
+	@include block-margin();
+
 	@media (max-width: $medium-max) {
 		display: block;
 	}
@@ -229,6 +243,8 @@ figcaption {
 
 // Gallery
 .wp-block-gallery {
+	@include block-margin();
+
 	ul {
 		width: 100%;
 		margin: 0;
@@ -248,6 +264,8 @@ figcaption {
 .wp-block-cover {
 	width: auto;
 
+	@include block-margin();
+
 	@include container-padding();
 
 	p {
@@ -259,6 +277,8 @@ figcaption {
 
 // Separator
 .wp-block-separator {
+	@include block-margin();
+
 	border: none;
 	background: var(--theme);
 	height: 1px;
@@ -266,6 +286,8 @@ figcaption {
 
 // Social links
 .wp-block-social-links {
+	@include block-margin();
+
 	li {
 		padding-left: 0;
 		margin-left: 0;
@@ -290,4 +312,10 @@ figcaption {
 	border: none;
 
 	@include block-margin-small();
+}
+
+// Embed
+
+.wp-block-embed {
+	@include block-margin();
 }

@@ -6,6 +6,10 @@
 // Base
 @import "base/base";
 @import "base/typography";
+@import "base/grid";
+
+// Layout
+@import "layout/blocks";
 
 :root {
 	--header-height: 0;
@@ -21,14 +25,6 @@
 	&[data-align="full"] {
 		max-width: none;
 	}
-}
-
-.block-editor-block-list__layout {
-	& > * {
-		@include block-margin();
-	}
-
-	@import "layout/blocks";
 }
 
 .editor-post-title__block {
