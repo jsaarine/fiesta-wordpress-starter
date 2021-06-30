@@ -1,3 +1,21 @@
+// Body
+
+body {
+	&.admin-bar {
+		.c-header {
+			& > .inner {
+				@media (min-width: 601px) {
+					top: 46px;
+				}
+
+				@media (min-width: 783px) {
+					top: 32px;
+				}
+			}
+		}
+	}
+}
+
 // Container
 
 .container {
