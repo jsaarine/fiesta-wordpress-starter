@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
@@ -10,9 +10,6 @@ const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 const config = require('./config.js');
 const devUrl = config.devUrl();
-
-// Set Sass to use Dart Sass. Remove to use Node Sass.
-sass.compiler = require('sass');
 
 const style = () => {
 	return gulp.src(['./scss/**/*.scss'])
@@ -34,7 +31,7 @@ const script = () => {
 		.pipe(sourcemaps.init())
 		.pipe(concat("./script.js"))
 		.pipe(babel({
-			presets: ["@babel/preset-env"],
+			presets: ["@babel/preset-env"],
 			ignore: ['./js/vendor']
 		}))
 		.pipe(sourcemaps.write('.'))
@@ -55,7 +52,7 @@ const watch = () => {
 		},
 	});
 
-	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss'], gulp.series(style));
+	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss', '../../plugins/fiesta-blocks/src/**/*.scss'], gulp.series(style));
 	gulp.watch(['./js/**/*.js', './lib/js/**/*.js'], gulp.series(script));
 };
 
