@@ -4,7 +4,7 @@ namespace Fiesta;
 
 /* Allowed Block types */
 
-add_filter('allowed_block_types', function($allowed_block_types, $post) {
+add_filter('allowed_block_types_all', function($allowed_block_types, $post) {
 	switch($post->post_type):
 		default:
 			return array(
