@@ -71,11 +71,6 @@
 		@media (max-width: $small-max) {
 			width: 100%;
 		}
-
-		&.decline {
-			background: var(--light);
-			color: var(--theme);
-		}
 	}
 
 	.settings {
