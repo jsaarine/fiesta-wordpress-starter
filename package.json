@@ -1,30 +1,30 @@
 {
-  "name": "fiesta",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "main": "gulpfile.js",
-  "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "browser-sync": "^2.27.4",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "postcss-preset-env": "^6.7.0",
-    "sass": "^1.35.2"
-  },
-  "browserslist": [
-    "> 0.2%, last 2 versions, not dead"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "fiesta",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"main": "gulpfile.js",
+	"devDependencies": {
+		"@babel/core": "^7.15.0",
+		"@babel/preset-env": "^7.15.0",
+		"browser-sync": "^2.27.5",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-postcss": "^9.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"postcss-preset-env": "^6.7.0",
+		"sass": "^1.37.5"
+	},
+	"browserslist": [
+		"> 0.2%, last 2 versions, not dead"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC"
 }
