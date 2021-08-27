@@ -145,12 +145,10 @@ figcaption {
 	@include block-margin-small();
 
 	.wp-block-button {
-		// margin-top: 0;
-		// margin-bottom: 0;
-
 		&.is-style-outline {
 			.wp-block-button__link {
-				background: var(--light);
+				background: none;
+				border-color: var(--theme);
 				color: var(--theme);
 			}
 		}

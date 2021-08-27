@@ -95,7 +95,7 @@
 	}
 }
 
-body.page-template-index.has-featured-image {
+body.page-template-index.has-featured-image, body.page-template-landing.has-featured-image {
 	.c-header:not(.small) {
 		& > .inner {
 			background: none;
