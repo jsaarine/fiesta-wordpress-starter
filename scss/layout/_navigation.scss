@@ -279,10 +279,10 @@
 			display: block;
 			position: relative;
 			top: 0;
-			width: 30px;
-			height: 3px;
+			width: rem(30px);
+			height: rem(3px);
 			margin: 0 auto;
-			margin-bottom: 5px;
+			margin-bottom: rem(5px);
 			background-color: var(--light);
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
 
