@@ -36,6 +36,18 @@ class Navigation {
 			let key = e.which || e.keyCode;
 
 			if(key == 27) {
+				// Close sub nav
+				if(!this.isMobileNavOpen()) {
+					this.el.querySelectorAll(".subnav-button").forEach(item => {
+						item.classList.remove("active");
+					});
+
+					this.el.querySelectorAll("ul").forEach(item => {
+						item.classList.remove("active");
+					});
+				}
+
+				// Close mobile nav
 				this.close();
 			}
 		});
