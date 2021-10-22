@@ -1,69 +1,77 @@
 .c-scroller {
 	position: relative;
 
-	& > .inner {
-		position: relative;
-	}
+	.items {
+		display: flex;
+		overflow-x: auto;
+		scrollbar-width: none;
 
-	// Scroll
-	.scroll-area {
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		& > div {
+			min-width: 70%;
+			margin: 1rem 0;
+			text-align: center;
 			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
-			& > div {
-				min-width: 30%;
-				max-width: 30%;
-				margin-right: .5em;
-				white-space: normal;
+			&:not(:last-child) {
+				margin-right: 1em;
 			}
+
+			&:first-child {
+				margin-left: auto;
+			}
+
+			&:last-child {
+				margin-right: auto;
+			}
+		}
+
+		// Active
+		&.active {
+			user-select: none;
 		}
 	}
 
 	img {
-		display: block;
+		pointer-events: none
 	}
 
-	// Nav
-	.scroller-nav {
-		position: absolute;
-		top: 50%;
-		width: 100%;
-		margin-top: em(-12px);
-
-		@include show($medium);
-
+	.nav {
 		button {
 			position: absolute;
-			top: 0;
-		}
-
-		.prev, .next {
+			top: 50%;
 			display: none;
 		}
 
 		.prev {
-			left: em(-70px);
+			left: 1em;
 		}
 
 		.next {
-			right: em(-70px);
+			right: 1em;
 		}
 	}
 
 	// Left
 	&.left {
-		.prev {
-			display: block;
+		.nav {
+			.prev {
+				display: block;
+			}
 		}
 	}
 
 	// Right
 	&.right {
-		.next {
-			display: block;
+		.nav {
+			.next {
+				display: block;
+			}
 		}
 	}
 }
