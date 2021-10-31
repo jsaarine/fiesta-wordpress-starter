@@ -31,17 +31,16 @@
 
 	.carousel-dots {
 		text-align: center;
-		margin: 0 0 2em 0;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+		height: em(40px);
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 
 		button {
 			display: inline-block;
 			width: em(18px);
 			height: em(18px);
-			border: 1px solid var(--light);
+			border: 2px solid var(--theme);
 			margin: 0 .5em;
 			border-radius: 50%;
 			cursor: pointer;
@@ -49,7 +48,7 @@
 			background: none;
 
 			&.active {
-				background: var(--light);
+				background: var(--theme);
 			}
 		}
 	}
@@ -59,6 +58,8 @@
 		top: 50%;
 		width: 100%;
 		z-index: 1;
+		transform: translateY(-50%);
+		margin-top: em(-40px);
 
 		& > button {
 			position: absolute;
@@ -67,7 +68,6 @@
 			height: em(60px);
 			background: rgba(0,0,0,.2);
 			border-radius: 50%;
-			margin-top: em(-30px);
 			border: none;
 			cursor: pointer;
 
@@ -106,7 +106,7 @@
 	}
 
 	.carousel-next {
-		right: 2em;
+		right: 5%;
 
 		span {
 			position: relative;
@@ -116,7 +116,7 @@
 	}
 
 	.carousel-prev {
-		left: 2em;
+		left: 5%;
 
 		span {
 			position: relative;

@@ -127,16 +127,18 @@ figcaption {
 		}
 	}
 
-	th {
-		text-align: left;
-		background: var(--gray);
-		font-weight: 400;
-	}
-
 	td, th {
 		padding: 1em;
 		border: none;
-		border-bottom: 1px solid #eee;
+		border: 1px solid #ddd;
+	}
+
+	th {
+		text-align: left;
+		background: var(--theme);
+		color: #fff;
+		font-weight: 400;
+		border-color: var(--theme);
 	}
 }
 
