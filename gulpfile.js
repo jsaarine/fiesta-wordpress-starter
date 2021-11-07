@@ -43,7 +43,7 @@ const watch = () => {
 	browserSync.init({
 		files: [
 			'./**/*.php',
-			'../../plugins/fiesta-blocks/**/*.php',
+			'../../plugins/fiesta-blocks/src/**/*.php',
 		],
 		proxy: devUrl,
 		open: false,
