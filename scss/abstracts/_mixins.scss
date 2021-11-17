@@ -51,6 +51,7 @@
 	font-size: rem(16px);
 	padding: .7em 2em;
 	text-transform: uppercase;
+	text-decoration: none;
 	background: var(--theme);
 	border: 1px solid var(--theme);
 	margin-bottom: 0;
@@ -61,7 +62,8 @@
 	transition: background .2s linear, color .2s linear;
 
 	&:hover {
-		filter: brightness(120%);
+		background: var(--dark);
+		border-color: var(--dark);
 	}
 
 	&:-moz-focusring {

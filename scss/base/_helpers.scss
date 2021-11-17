@@ -1,6 +1,14 @@
 // Body
 
 body {
+	&.page-template-index.has-featured-image, &.page-template-landing.has-featured-image {
+		.c-header:not(.small) {
+			& > .inner {
+				background: none;
+			}
+		}
+	}
+
 	&.admin-bar {
 		.c-header {
 			& > .inner {

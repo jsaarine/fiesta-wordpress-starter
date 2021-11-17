@@ -152,6 +152,11 @@ figcaption {
 				background: none;
 				border-color: var(--theme);
 				color: var(--theme);
+
+				&:hover {
+					background: var(--dark);
+					color: #fff;
+				}
 			}
 		}
 	}
