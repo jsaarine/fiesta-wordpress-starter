@@ -61,13 +61,9 @@
 	cursor: pointer;
 	transition: background .2s linear, color .2s linear;
 
-	&:hover {
+	&:hover, &:focus {
 		background: var(--dark);
 		border-color: var(--dark);
-	}
-
-	&:-moz-focusring {
-		outline-color: #000;
 	}
 }
 

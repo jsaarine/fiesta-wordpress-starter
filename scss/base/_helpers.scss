@@ -37,14 +37,6 @@ body {
 	}
 }
 
-// Focus
-
-html.focus-visible {
-	:focus:not(.focus-visible):not(input):not(textarea):not(select) {
-		outline: 0;
-	}
-}
-
 // Screen reader only
 
 .sr-only {

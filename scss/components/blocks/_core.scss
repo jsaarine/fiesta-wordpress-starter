@@ -153,7 +153,7 @@ figcaption {
 				border-color: var(--theme);
 				color: var(--theme);
 
-				&:hover {
+				&:hover, &:focus {
 					background: var(--dark);
 					color: #fff;
 				}

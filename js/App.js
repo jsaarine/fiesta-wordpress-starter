@@ -42,38 +42,11 @@ class App {
 	 * App entry point
 	 */
 	start() {
-		// Focus visible
-		this.focusVisible();
-
 		// Header
 		new Header(document.querySelector("#header"));
 
 		// Navigation
 		new Navigation(document.querySelector("#navigation"));
-	}
-
-	/**
-	 * Add focus outline to buttons only when keyboard-focused
-	 */
-	focusVisible() {
-		document.documentElement.classList.add("focus-visible");
-
-		const onBlur = e => {
-			e.target.classList.remove("focus-visible");
-		};
-
-		document.body.addEventListener("keyup", e => {
-			var key = e.which || e.keyCode;
-
-			if(key === 9) {
-				const activeElement = document.activeElement;
-
-				if(!activeElement.classList.contains("focus-visible")) {
-					activeElement.classList.add("focus-visible");
-					activeElement.addEventListener("blur", onBlur);
-				}
-			}
-		});
 	}
 }
 
