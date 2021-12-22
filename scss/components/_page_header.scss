@@ -1,5 +1,6 @@
 .c-page-header {
 	text-align: center;
+	padding: 0 var(--container-padding);
 	padding-top: calc(var(--header-height-small) + #{em(50px)});
 	margin-bottom: 4em;
 

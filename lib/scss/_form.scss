@@ -3,15 +3,9 @@
 .c-form {
 	.row {
 		@media (min-width: $medium) {
-			display: flex;
-		}
-	}
-
-	.col {
-		$options: (gutter: 2%);
-
-		@media (min-width: $medium) {
-			@include column(50%, $options);
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 2%;
 		}
 	}
 
