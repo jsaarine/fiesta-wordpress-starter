@@ -6,7 +6,7 @@ get_header();
 
 ?>
 
-<main id="main-content" tabindex="-1">
+<main id="main-content">
 	<?php while(have_posts()) : the_post(); ?>
 
 		<div class="c-article">
