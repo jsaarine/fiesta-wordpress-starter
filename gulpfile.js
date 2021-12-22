@@ -15,7 +15,11 @@ const style = () => {
 	return gulp.src(['./scss/**/*.scss'])
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
-			postcssPresetEnv()
+			postcssPresetEnv({
+				features: {
+				    'focus-visible-pseudo-class': false
+				  }
+			})
 		]))
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(browserSync.stream());
