@@ -14,16 +14,18 @@ class Header {
 			rootMargin: "2px 0px 0px 0px"
 		};
 
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(item => {
-				if(item.isIntersecting) {
-					this.el.classList.remove("small");
-				} else {
-					this.el.classList.add("small");
-				}
-			});
-		}, options);
+		if("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "isIntersecting" in window.IntersectionObserverEntry.prototype) {
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(item => {
+					if(item.isIntersecting) {
+						this.el.classList.remove("small");
+					} else {
+						this.el.classList.add("small");
+					}
+				});
+			}, options);
 
-		observer.observe(this.el);
+			observer.observe(this.el);
+		}
 	}
 }
