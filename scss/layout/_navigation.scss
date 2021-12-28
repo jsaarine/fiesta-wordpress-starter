@@ -28,8 +28,6 @@
 			-webkit-overflow-scrolling: touch;
 			visibility: hidden;
 			transform: translateX(100%);
-			text-align: center;
-			margin-bottom: 2em;
 		}
 	}
 
@@ -52,7 +50,6 @@
 			& > ul {
 				position: relative;
 				height: 0px;
-				transition: height .2s ease-out;
 				overflow: hidden;
 				visibility: hidden;
 				background: #f2f2f3;
@@ -61,7 +58,6 @@
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
-					height: auto !important;
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
 					background: var(--light);
 					text-align: center;
@@ -94,7 +90,7 @@
 						white-space: nowrap;
 					}
 
-					&.current_page_item {
+					&.current_page_item, &.current_page_ancestor {
 						& > a {
 							color: var(--theme);
 						}
@@ -104,12 +100,18 @@
 				a {
 					font-size: em(16px);
 					color: var(--dark);
-					padding: .8em 2em;
+					padding: .8em 2rem;
 					text-transform: none;
 
+					@media (max-width: $mobile-nav-max) {
+						padding-left: 3rem;
+					}
+
 					&:hover {
-						background: #eee;
-						opacity: 1;
+						@media (min-width: $desktop-nav) {
+							background: #eee;
+							opacity: 1;
+						}
 					}
 
 					& > span {
@@ -131,12 +133,16 @@
 						display: none !important;
 					}
 
+					a {
+						@media (max-width: $mobile-nav-max) {
+							padding-left: 4rem;
+						}
+					}
+
 					// Right
 					&.right {
 						@media (min-width: $desktop-nav) {
-							left: auto;
 							right: 100%;
-							transform: none;
 						}
 					}
 
@@ -152,6 +158,10 @@
 				.subnav-button {
 					color: var(--dark);
 
+					@media (max-width: $mobile-nav-max) {
+						top: .1rem;
+					}
+
 					svg {
 						@media (min-width: $desktop-nav) {
 							transform: rotate(-90deg);
@@ -160,21 +170,6 @@
 
 					path {
 						fill: var(--dark);
-					}
-				}
-
-				// Active
-				&.active {
-					display: block;
-					visibility: visible;
-					height: auto;
-				}
-
-				&.active-mobile {
-					@media (max-width: $mobile-nav-max) {
-						display: block;
-						visibility: visible;
-						height: auto;
 					}
 				}
 
@@ -201,17 +196,25 @@
 				}
 			}
 
-			&:hover, &.hover {
-				@media (min-width: $desktop-nav) {
+			@media(min-width: $desktop-nav) and (hover: hover) and (pointer: fine) {
+				&:hover {
 					& > ul {
 						visibility: visible;
+						height: auto;
 					}
+				}
+			}
+
+			&.hover {
+				& > ul {
+					visibility: visible;
+					height: auto;
 				}
 			}
 		}
 
 		// Current page
-		&.current_page_item {
+		&.current_page_item, &.current_page_ancestor {
 			& > a > span {
 				position: relative;
 
@@ -227,6 +230,7 @@
 			transition: opacity .2s linear;
 			color: var(--dark);
 			text-decoration: none;
+			position: relative;
 
 			@media (min-width: $desktop-nav) {
 				color: var(--light);
@@ -238,8 +242,8 @@
 			}
 
 			@media (max-width: $mobile-nav-max) {
-				font-size: em(20px);
-				padding: 1em 0;
+				font-size: em(18px);
+				padding: 1em 2rem;
 			}
 
 			& > span {
@@ -272,6 +276,8 @@
 		height: rem(44px);
 		z-index: 2;
 		padding: 0;
+		position: relative;
+		right: em(-4px);
 
 		@include hide($desktop-nav);
 
@@ -279,7 +285,7 @@
 			display: block;
 			position: relative;
 			top: 0;
-			width: rem(30px);
+			width: rem(34px);
 			height: rem(3px);
 			margin: 0 auto;
 			margin-bottom: rem(5px);
@@ -295,10 +301,11 @@
 	// Sub nav toggle button
 	.subnav-button {
 		position: absolute;
-		right: .5em;
-		top: .3em;
+		right: 1em;
+		top: 0.2em;
 		width: rem(44px);
 		height: rem(44px);
+		// max-height: rem(60px);
 		text-align: center;
 		cursor: pointer;
 		font-size: em(26px);
@@ -329,7 +336,7 @@
 			}
 		}
 
-		&.active {
+		&[aria-expanded="true"] {
 			svg {
 				@media (max-width: $mobile-nav-max) {
 					transform: rotate(180deg);
@@ -340,10 +347,18 @@
 
 	.social {
 		margin-top: 3em;
+		text-align: center;
+		display: flex;
+		justify-content: center;
 
 		@media (min-width: $desktop-nav) {
 			margin-top: 0;
 			margin-left: 3em;
+		}
+
+		a {
+			color: #fff;
+			margin: 0 .5em;
 		}
 	}
 }

@@ -2,10 +2,8 @@ class Navigation {
 
 	constructor(el) {
 		this.el = el;
-		this.parentIsLink = true;
 		this.toggleButton = document.querySelector("#nav-button");
 		this.touched = false;
-		this.navOpen = false;
 
 		this.build();
 	}
@@ -26,7 +24,7 @@ class Navigation {
 
 		// Close
 		document.body.addEventListener("click", e => {
-			if(!this.el.contains(e.target) && this.isMobileNavOpen()) {
+			if(!this.el.contains(e.target)) {
 				this.close();
 			}
 		});
@@ -69,15 +67,10 @@ class Navigation {
 			subnavButton.addEventListener("click", e => {
 				e.stopPropagation();
 
-				// if(!i.querySelector("ul").classList.contains("active")) {
-				// 	this.el.querySelectorAll(".menu-item-has-children ul").forEach(list => {
-				// 		list.classList.remove("active");
-				// 	});
-				// }
 				this.toggleChildren(i, e.currentTarget);
 
 				if(!this.isMobileNavOpen()) {
-					if(i.querySelector("ul").classList.contains("active")) {
+					if(i.classList.contains("hover")) {
 						this.touched = true;
 						this.checkSubNavPosition(i);
 					}
@@ -104,6 +97,7 @@ class Navigation {
 
 					if(!i.classList.contains("hover")) {
 						i.classList.add("hover");
+						i.querySelector(".subnav-button").setAttribute("aria-expanded", true);
 						this.touched = true;
 						this.checkSubNavPosition(i);
 					}
@@ -112,6 +106,8 @@ class Navigation {
 
 			i.addEventListener("mouseenter", e => {
 				if(!this.isMobileNavOpen()) {
+					i.classList.add("hover");
+
 					if(!this.touched) {
 						this.checkSubNavPosition(i);
 					}
@@ -127,6 +123,8 @@ class Navigation {
 					ul.classList.remove("right");
 					ul.classList.remove("active");
 				}
+
+				this.clearSubNav(i);
 			});
 		});
 
@@ -135,15 +133,6 @@ class Navigation {
 			if(!this.el.contains(e.target)) {
 				this.clearSubNav();
 			}
-		});
-
-		// Show active menu on page load
-		this.el.querySelectorAll(".current-page-ancestor > ul").forEach(item => {
-			const button = item.parentNode.querySelector(".subnav-button");
-
-			item.classList.toggle("active-mobile");
-			button.classList.add("active");
-			button.setAttribute("aria-expanded", button.classList.contains("active"));
 		});
 	}
 
@@ -157,12 +146,17 @@ class Navigation {
 	/**
 	 * Hide the floating sub nav
 	 */
-	clearSubNav() {
-		this.el.querySelectorAll(".menu-item-has-children").forEach(item => {
-			item.classList.remove("hover");
-		});
+	clearSubNav(el) {
+		const target = el || this.el;
 
-		this.touched = false;
+		if(!this.isMobileNavOpen()) {
+			target.querySelectorAll(".menu-item-has-children").forEach(item => {
+				item.classList.remove("hover");
+				item.querySelector(".subnav-button").setAttribute("aria-expanded", false);
+			});
+
+			this.touched = false;
+		}
 	}
 
 	/**
@@ -191,46 +185,28 @@ class Navigation {
 
 		this.el.querySelector("div").scrollTop = 0;
 		this.toggleButton.setAttribute("aria-expanded", true);
-		this.navOpen = true;
 	}
 
 	/**
 	 * Close the mobile nav
 	 */
 	close() {
+		this.clearSubNav();
+
+		if(this.isMobileNavOpen()) {
+			document.documentElement.classList.add("nav-open-transition");
+		}
+
 		document.documentElement.classList.remove("nav-open");
-		document.documentElement.classList.add("nav-open-transition");
 
 		this.toggleButton.setAttribute("aria-expanded", false);
-		this.navOpen = false;
 	}
 
 	/**
 	 * Toggle the sub nav
 	 */
 	toggleChildren(item, button) {
-		// Toggle with animation
-		if(this.isMobileNavOpen()) {
-			Core.slideToggle(item.querySelector("ul"), () => {
-				if(item.querySelector("ul").style.visibility == "hidden") {
-					// item.classList.remove("hover");
-					button.classList.remove("active");
-				}
-				else {
-					// item.classList.add("hover");
-					button.classList.add("active");
-				}
-			});
-		}
-		else {
-			item.querySelector("ul").classList.toggle("active");
-		}
-
-		// Toggle without animation
-		// item.querySelector("ul").classList.toggle("active");
-
-		// item.classList.toggle("hover");
-		button.classList.toggle("active");
-		button.setAttribute("aria-expanded", button.classList.contains("active"));
+		item.classList.toggle("hover");
+		button.setAttribute("aria-expanded", item.classList.contains("hover"));
 	}
 }
