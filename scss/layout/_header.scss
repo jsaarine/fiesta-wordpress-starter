@@ -8,9 +8,7 @@
 		width: 100%;
 		background: var(--theme);
 		height: var(--header-height-small);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+
 		z-index: 10;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
@@ -36,6 +34,15 @@
 				transition: visibility 0s .5s, left 0s .5s, opacity .5s linear;
 			}
 		}
+	}
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		padding: 0;
+		max-width: em(1920px);
 	}
 
 	// Logo
