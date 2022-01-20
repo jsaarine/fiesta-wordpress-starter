@@ -44,13 +44,25 @@ figcaption {
 	@include caption();
 }
 
+// Title
+.wp-block-post-title {
+	font-size: calc(#{em(44px)} + 2vw);
+	text-align: center;
+	color: var(--dark);
+	margin-top: 3rem;
+	padding-top: var(--header-height);
+}
+
 // Image
 .wp-block-image {
 	@include block-margin();
 }
 
 // Quotes
-.wp-block-quote, .wp-block-pullquote {
+.wp-block-quote {
+	border-left: 2px solid var(--theme);
+	padding-left: 1.5em !important;
+
 	@include block-margin();
 
 	p {
@@ -60,25 +72,10 @@ figcaption {
 		margin-top: 0;
 	}
 
-	cite, .wp-block-quote__citation, .wp-block-pullquote__citation {
+	cite, .wp-block-quote__citation {
 		font-style: normal;
 		font-size: em(19px);
 		text-transform: none;
-	}
-}
-
-.wp-block-quote {
-	border-left: 2px solid var(--theme);
-	padding-left: 1.5em !important;
-}
-
-.wp-block-pullquote {
-	border-top: 2px solid var(--theme);
-	border-bottom: 2px solid var(--theme);
-
-	blockquote {
-		margin: 0;
-		padding: 0 1.5em;
 	}
 }
 

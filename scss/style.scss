@@ -1,7 +1,8 @@
 // Abstracts
 @import "abstracts/functions";
-@import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/breakpoints";
+@import "abstracts/variables";
 
 // Base
 @import "base/base";
@@ -17,7 +18,6 @@
 
 // Components
 @import "components/button";
-@import "components/page_header";
 @import "components/share";
 
 // Pages

@@ -9,11 +9,8 @@ get_header();
 <main id="main-content">
 	<?php while(have_posts()) : the_post(); ?>
 
-		<?php
-			get_template_part('template-parts/page-header');
-		?>
-
 		<article class="c-article">
+			<h1 class="wp-block-post-title"><?php the_title() ?></h1>
 			<?php the_content() ?>
 		</article>
 
