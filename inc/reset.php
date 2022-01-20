@@ -37,9 +37,6 @@ add_action('admin_init', function() {
 		exit;
 	}
 
-	// Remove comments admin page
-	remove_menu_page('edit-comments.php');
-
 	// Remove metabox from dashboard
 	remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 
@@ -50,6 +47,11 @@ add_action('admin_init', function() {
 			remove_post_type_support($post_type, 'trackbacks');
 		}
 	}
+});
+
+// Remove comments admin page
+add_action('admin_menu', function () {
+	remove_menu_page('edit-comments.php');
 });
 
 // Close comments on the front-end
