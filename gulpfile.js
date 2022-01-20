@@ -5,8 +5,9 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
-const postcssPresetEnv = require('postcss-preset-env');
 const cleanCSS = require('gulp-clean-css');
+const autoprefixer = require('autoprefixer');
+const postcssCustomProperties = require('postcss-custom-properties');
 const browserSync = require('browser-sync').create();
 const config = require('./config.js');
 const devUrl = config.devUrl();
@@ -15,11 +16,8 @@ const style = () => {
 	return gulp.src(['./scss/**/*.scss'])
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
-			postcssPresetEnv({
-				features: {
-				    'focus-visible-pseudo-class': false
-				  }
-			})
+			autoprefixer(),
+			postcssCustomProperties(),
 		]))
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(browserSync.stream());
