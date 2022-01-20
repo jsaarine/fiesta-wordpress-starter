@@ -206,6 +206,10 @@ class Navigation {
 	 * Toggle the sub nav
 	 */
 	toggleChildren(item, button) {
+		if(!this.isMobileNavOpen() && !item.closest(".hover")) {
+			this.clearSubNav();
+		}
+
 		item.classList.toggle("hover");
 		button.setAttribute("aria-expanded", item.classList.contains("hover"));
 	}
