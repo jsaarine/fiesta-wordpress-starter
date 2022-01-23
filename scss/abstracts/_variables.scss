@@ -9,31 +9,18 @@
 	--gray: #f2f2f3;
 
 	// Header
-	--header-height: #{em(80px)};
-	--header-height-small: #{em(65px)};
+	--header-height: #{rem(65px)};
+
+	@media (min-width: $desktop-nav) {
+		--header-height: #{rem(80px)};
+	}
 
 	// Container
-	--default-container: #{rem(1200px)};
-	--container: #{rem(750px)};
-	--container-wide: #{rem(1000px)};
+	--container: #{rem(800px)};
+	--container-wide: #{rem(1200px)};
 	--container-padding: 1.5rem;
 
 	// Blocks
 	--block-margin: #{rem(50px)};
 	--block-margin-small: #{rem(24px)};
 }
-
-// Screen size breakpoints (for min-width queries)
-$medium: em(640px);
-$large: em(980px);
-$xlarge: em(1200px);
-$xxlarge: em(1920px);
-
-// Screen size breakpoints (for max-width queries).
-$small-max: $medium - em(1px);
-$medium-max: $large - em(1px);
-$large-max: $xlarge - em(1px);
-
-// Navigation breakpoints
-$desktop-nav: $medium;
-$mobile-nav-max: $desktop-nav - em(1px);

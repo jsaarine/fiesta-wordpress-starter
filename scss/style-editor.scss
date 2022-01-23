@@ -1,17 +1,16 @@
 // Abstracts
 @import "abstracts/functions";
-@import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/breakpoints";
+@import "abstracts/variables";
 
 // Base
 @import "base/base";
 @import "base/typography";
 
-// Layout
-@import "layout/blocks";
-
 :root {
 	--header-height: 0;
+	--header-height-small: 0;
 }
 
 .wp-block {
@@ -28,16 +27,5 @@
 	}
 }
 
-.editor-post-title__block {
-	.editor-post-title__input {
-		font-family: var(--font-regular);
-		font-weight: 400;
-		font-size: rem(58px);
-		text-align: center;
-	}
-}
-
-.wp-block-post-title {
-	font-size: rem(58px);
-	text-align: center;
-}
+// Layout
+@import "layout/blocks";

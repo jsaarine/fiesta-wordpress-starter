@@ -3,16 +3,15 @@
 .c-header {
 	& > .inner {
 		position: fixed;
-		top: 0;
+		top: var(--wp-admin--admin-bar--height, 0);
 		left: 0;
 		width: 100%;
 		background: var(--theme);
-		height: var(--header-height-small);
-
+		height: var(--header-height);
 		z-index: 10;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
-		transition: height .2s linear, transform .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
+		transition: height .2s linear, background .2s ease-out, box-shadow .2s ease-out;
 
 		@media (min-width: $desktop-nav) {
 			padding-left: 3em;

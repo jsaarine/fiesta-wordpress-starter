@@ -1,6 +1,6 @@
 // Container
 
-@mixin container($width: var(--default-container), $padding: false) {
+@mixin container($width: var(--container-wide), $padding: false) {
 	max-width: $width;
 	margin-left: auto;
 	margin-right: auto;

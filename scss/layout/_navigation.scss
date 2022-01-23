@@ -15,7 +15,7 @@
 		// Mobile
 		@media (max-width: $mobile-nav-max) {
 			position: fixed;
-			top: 0;
+			top: var(--wp-admin--admin-bar--height, 0);
 			right: 0;
 			z-index: 1;
 			background: var(--light);
