@@ -1,0 +1,31 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": false,
+		"layout": {
+			"contentSize": "var(--container)",
+			"wideSize": "var(--container-wide)"
+		},
+		"typography": {
+			"fontSizes": [],
+            "dropCap": false,
+			"letterSpacing": false,
+			"textTransform": false,
+			"fontStyle": false,
+			"fontWeight": false
+        },
+        "color": {
+        	"custom": false,
+        	"customGradient": false,
+            "palette": [],
+            "gradients": []
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false
+                }
+            }
+        }
+	}
+}
