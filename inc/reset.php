@@ -25,6 +25,11 @@ add_filter('site_transient_update_themes', function($value) {
 	return $value;
 });
 
+// Hide site health widget
+add_action('wp_dashboard_setup', function() {
+	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+});
+
 
 /* Remove comments */
 
