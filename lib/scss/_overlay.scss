@@ -88,7 +88,9 @@
 		}
 
 		.video-embed {
-			@include video-embed();
+			height: 0;
+
+			@include aspect-ratio(56.25%);
 		}
 
 		.overlay-close {

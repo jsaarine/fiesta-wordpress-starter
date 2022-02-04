@@ -13,17 +13,13 @@
 	--header-height-small: 0;
 }
 
-.wp-block {
-	max-width: var(--container);
-	margin-left: auto;
-	margin-right: auto;
+.is-root-container {
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
 
-	&[data-align="wide"] {
-		max-width: var(--container-wide);
-	}
-
-	&[data-align="full"] {
-		max-width: none;
+	.wp-block[data-align="full"] {
+		margin-left: calc(-1 * var(--container-padding)) !important;
+		margin-right: calc(-1 * var(--container-padding)) !important;
 	}
 }
 

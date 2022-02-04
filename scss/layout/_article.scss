@@ -2,7 +2,7 @@
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
 
-	& > *, .wp-block-group__inner-container > * {
+	& > * {
 		@include container(var(--container));
 
 		&:last-child {

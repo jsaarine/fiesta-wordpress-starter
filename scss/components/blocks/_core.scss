@@ -165,26 +165,24 @@ figcaption {
 
 // Group
 .wp-block-group {
+	background: var(--gray);
+	padding-top: var(--block-margin);
+	padding-bottom: var(--block-margin);
+
 	@include block-margin();
 
-	.wp-block-group__inner-container {
-		background: var(--gray);
-		padding-top: var(--block-margin);
-		padding-bottom: var(--block-margin);
+	@include container-padding();
 
-		@include container-padding();
+	h2, h3, h4 {
+		margin-bottom: var(--block-margin-small);
+	}
 
-		h2, h3, h4 {
-			margin-bottom: var(--block-margin-small);
-		}
+	& > :first-child {
+		margin-top: 0;
+	}
 
-		& > :first-child {
-			margin-top: 0;
-		}
-
-		& > :last-child {
-			margin-bottom: 0;
-		}
+	& > :last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -270,10 +268,10 @@ figcaption {
 
 	@include container-padding();
 
-	p {
-		line-height: 1.4;
-
-		@include container(var(--container));
+	.wp-block-cover__inner-container {
+		& > * {
+			@include container(var(--container));
+		}
 	}
 }
 

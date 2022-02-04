@@ -78,21 +78,15 @@
 
 // Misc
 
-@mixin video-embed($ratio: 56.25%) {
+@mixin aspect-ratio($ratio: 100%) {
 	position: relative;
 	padding-bottom: $ratio;
-	height: 0;
 
-	iframe {
+	& > * {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 	}
-}
-
-@mixin clamp($min, $value, $max, $unit: "font-size") {
-	font-size: $min;
-	#{$unit}: min(max(#{$min}, #{$value}), #{$max});
 }

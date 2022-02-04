@@ -1,5 +1,52 @@
 @use "sass:math";
 
+// Returns width of a column
+@function column-ratio($ratio, $gutter) {
+	@return $ratio * math.div($gutter, 100%) + $ratio - math.div($gutter, 100%);
+}
+
+@function column-ratio2($value, $gutter) {
+	$ratio: ratio-value($value);
+
+	$w1: column-ratio($ratio, $gutter);
+	$w2: column-ratio(math.div($gutter, 100%), 0%);
+
+	@return percentage($w1 + $w2);
+}
+
+// Converts unitless value to pct
+@function gutter-to-pct($value) {
+	@if(unitless($value)) {
+		@return percentage(math.div($value, 100));
+	}
+	@else {
+		@return $value;
+	}
+}
+
+// Returns proper ratio depending on input format (fraction, integer or pct)
+@function ratio-value($value) {
+	@if(unit($value) == "%") {
+		@return math.div($value, 100%);
+	}
+
+	@if($value < 1) {
+		@return $value;
+	}
+	@else {
+		@return math.div($value, $grid-columns);
+	}
+}
+
+// Returns width of a column in pct
+@function column-width($ratio, $gutter) {
+	@return percentage(column-ratio($ratio, $gutter));
+}
+
+@function column-width-calc($ratio, $gutter) {
+	@return calc(#{percentage($ratio)} + #{$ratio * $gutter} - #{$gutter});
+}
+
 // Grid variables
 
 $grid-gutter: 0;

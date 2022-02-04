@@ -26,8 +26,6 @@ body {
 // Container
 
 .container {
-	@include container-padding();
-
 	@include container(var(--container-wide), true);
 
 	.container {
