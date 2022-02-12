@@ -8,24 +8,24 @@
 		},
 		"typography": {
 			"fontSizes": [],
-            "dropCap": false,
+			"dropCap": false,
 			"letterSpacing": false,
 			"textTransform": false,
 			"fontStyle": false,
 			"fontWeight": false
-        },
-        "color": {
-        	"custom": false,
-        	"customGradient": false,
-            "palette": [],
-            "gradients": []
-        },
-        "blocks": {
-            "core/button": {
-                "border": {
-                    "radius": false
-                }
-            }
-        }
+		},
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"palette": [],
+			"gradients": []
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": false
+				}
+			}
+		}
 	}
 }

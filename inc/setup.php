@@ -14,20 +14,6 @@ add_action('after_setup_theme', function() {
 	// Let WordPress manage the title tag
 	add_theme_support('title-tag');
 
-	// Disable custom colors
-	add_theme_support('disable-custom-colors');
-	add_theme_support('editor-color-palette', []);
-
-	// Disable custom gradients
-	add_theme_support('disable-custom-gradients');
-	add_theme_support('editor-gradient-presets', []);
-
-	// Disable custom colors
-	add_theme_support('disable-custom-font-sizes');
-
-	// Disable font sizes
-	add_theme_support('editor-font-sizes', []);
-
 	// Enable featured image
 	add_theme_support('post-thumbnails');
 
@@ -37,22 +23,9 @@ add_action('after_setup_theme', function() {
 	// Add html5 support
 	add_theme_support('html5', array('search-form', 'gallery', 'caption', 'script', 'style'));
 
-	// Add support for wide and full blocks
-	add_theme_support('align-wide');
-
 	// Make embeds responsive
 	add_theme_support('responsive-embeds');
 
 	// Remove default block patterns
 	remove_theme_support('core-block-patterns');
-});
-
-add_filter('body_class', function($classes) {
-	global $post;
-
-	if(isset($post->ID) && get_the_post_thumbnail($post->ID)) {
-		$classes[] = 'has-featured-image';
-	}
-
-	return $classes;
 });
