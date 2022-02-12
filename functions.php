@@ -63,6 +63,7 @@ function _e($string, $domain = null) {
 }
 
 require_once('inc/assets.php');
+require_once('inc/hooks.php');
 require_once('inc/menus.php');
 require_once('inc/post-types.php');
 require_once('inc/reset.php');
