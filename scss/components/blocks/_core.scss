@@ -166,14 +166,14 @@ figcaption {
 // Group
 .wp-block-group {
 	background: var(--gray);
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
 	padding-top: var(--block-margin);
 	padding-bottom: var(--block-margin);
 
 	@include block-margin();
 
-	@include container-padding();
-
-	h2, h3, h4 {
+	h2, h3, h4, h5, h6 {
 		margin-bottom: var(--block-margin-small);
 	}
 
@@ -277,11 +277,9 @@ figcaption {
 
 // Separator
 .wp-block-separator {
-	@include block-margin();
+	border-color: var(--theme);
 
-	border: none;
-	background: var(--theme);
-	height: 1px;
+	@include block-margin();
 }
 
 // Social links
@@ -291,16 +289,6 @@ figcaption {
 	li {
 		padding-left: 0;
 		margin-left: 0;
-	}
-
-	a {
-		color: var(--light);
-	}
-
-	&:not(.is-style-logos-only) {
-		.wp-social-link {
-			background: var(--theme);
-		}
 	}
 }
 
@@ -317,5 +305,23 @@ figcaption {
 // Embed
 
 .wp-block-embed {
+	@include block-margin();
+}
+
+// Shortcode
+
+.wp-block-shortcode {
+	@include block-margin();
+}
+
+// Video
+
+.wp-block-video {
+	@include block-margin();
+}
+
+// Audio
+
+.wp-block-audio {
 	@include block-margin();
 }

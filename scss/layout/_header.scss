@@ -11,7 +11,7 @@
 		z-index: 10;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
-		transition: height .2s linear, background .2s ease-out, box-shadow .2s ease-out;
+		transition: background .2s ease-out, box-shadow .2s ease-out;
 
 		@media (min-width: $desktop-nav) {
 			padding-left: 3em;
@@ -50,7 +50,6 @@
 		color: var(--light);
 
 		svg {
-			transition: width .2s ease-out, height .2s ease-out;
 			width: em(80px);
 
 			@media (min-width: $desktop-nav) {
