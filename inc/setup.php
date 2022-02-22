@@ -17,9 +17,6 @@ add_action('after_setup_theme', function() {
 	// Enable featured image
 	add_theme_support('post-thumbnails');
 
-	// Add hero image max size
-	add_image_size('hero', 2500, 1042);
-
 	// Add html5 support
 	add_theme_support('html5', array('search-form', 'gallery', 'caption', 'script', 'style'));
 
@@ -28,4 +25,7 @@ add_action('after_setup_theme', function() {
 
 	// Remove default block patterns
 	remove_theme_support('core-block-patterns');
+
+	// Disable block template editing
+	remove_theme_support('block-templates');
 });
