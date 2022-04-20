@@ -1,7 +1,6 @@
 {
 	"version": 2,
 	"settings": {
-		"appearanceTools": false,
 		"layout": {
 			"contentSize": "var(--container)",
 			"wideSize": "var(--container-wide)"
