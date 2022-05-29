@@ -1,10 +1,9 @@
 // Main nav
 
 .c-navigation {
-	@media (max-width: $mobile-nav-max) {
-		display: flex;
-		justify-content: flex-end;
-	}
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 
 	& > div {
 		@media (min-width: $desktop-nav) {
@@ -90,7 +89,7 @@
 						white-space: nowrap;
 					}
 
-					&.current_page_item, &.current_page_ancestor {
+					&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 						& > a {
 							color: var(--theme);
 						}
@@ -214,7 +213,7 @@
 		}
 
 		// Current page
-		&.current_page_item, &.current_page_ancestor {
+		&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 			& > a > span {
 				position: relative;
 
@@ -345,6 +344,46 @@
 		}
 	}
 
+	.search-button {
+		background: none;
+		border: none;
+		padding: 0;
+		margin-left: 1em;
+		margin-right: .5em;
+		width: em(44px);
+		height: em(44px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: $desktop-nav) {
+			position: static;
+			order: 1;
+		}
+
+		.close {
+			display: none;
+		}
+
+		&.desktop {
+			@include show($desktop-nav);
+		}
+
+		&.mobile {
+			@include hide($desktop-nav);
+		}
+
+		&.active {
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: inline;
+			}
+		}
+	}
+
 	.social {
 		margin-top: 3em;
 		text-align: center;
@@ -353,7 +392,7 @@
 
 		@media (min-width: $desktop-nav) {
 			margin-top: 0;
-			margin-left: 3em;
+			margin-left: 2em;
 		}
 
 		a {
@@ -378,6 +417,12 @@ html.nav-open {
 			.social {
 				path {
 					fill: var(--theme);
+				}
+			}
+
+			.search-button {
+				path, circle {
+					stroke: var(--theme);
 				}
 			}
 		}

@@ -47,6 +47,9 @@ class App {
 
 		// Navigation
 		new Navigation(document.querySelector("#navigation"));
+
+		// Search
+		new Search(document.querySelector("#search"));
 	}
 }
 
