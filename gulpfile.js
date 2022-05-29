@@ -7,7 +7,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('autoprefixer');
-const postcssCustomProperties = require('postcss-custom-properties');
 const browserSync = require('browser-sync').create();
 const config = require('./config.js');
 const devUrl = config.devUrl();
@@ -17,7 +16,6 @@ const style = () => {
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
 			autoprefixer(),
-			postcssCustomProperties(),
 		]))
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(browserSync.stream());
@@ -28,6 +26,7 @@ const script = () => {
 		'./lib/js/Core.js',
 		'./js/Header.js',
 		'./js/Navigation.js',
+		'./js/Search.js',
 		'./js/App.js',
 	])
 		.pipe(sourcemaps.init())
