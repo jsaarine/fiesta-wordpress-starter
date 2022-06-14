@@ -16,7 +16,7 @@ namespace Fiesta;
 			'has_archive' => false,
 			'rewrite' => array('slug' => 'examples'),
 			'show_in_rest' => true,
-			'supports' => array('title', 'editor', 'thumbnail'),
+			'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
 		)
 	);
 });*/
