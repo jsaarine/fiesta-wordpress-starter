@@ -3,7 +3,6 @@ class Search {
 	constructor(el) {
 		this.el = el;
 		this.buttons = document.querySelectorAll("[data-search-button]");
-		this.closeButton = document.querySelector(".close");
 		this.build();
 	}
 
@@ -19,12 +18,6 @@ class Search {
 				this.toggle();
 			});
 		});
-
-		// Close
-		// this.closeButton.addEventListener("click", e => {
-		// 	console.log("close2");
-		// 	this.close();
-		// });
 
 		// Close
 		document.body.addEventListener("click", e => {
@@ -72,55 +65,3 @@ class Search {
 		this.currentButton.setAttribute("aria-expanded", false);
 	}
 }
-
-
-// class Search {
-
-// 	constructor(el) {
-// 		this.el = el;
-// 		this.toggleButton = document.querySelectorAll("[data-search-button]");
-// 		this.searchOpen = false;
-// 		this.build();
-// 	}
-
-// 	/**
-// 	 * Build the search
-// 	 */
-// 	build() {
-// 		// Search button
-// 		this.toggleButton.forEach(item => {
-// 			console.log(item);
-// 			item.addEventListener("click", e => {
-// 				this.open();
-// 			});
-// 		});
-
-// 		// Close
-// 		this.el.querySelector(".close").addEventListener("click", e => {
-// 			this.close();
-// 		});
-
-// 		// Esc key
-// 		this.el.addEventListener("keydown", e => {
-// 			let key = e.which || e.keyCode;
-
-// 			if(key == 27) {
-// 				// Close search
-// 				this.close();
-// 			}
-// 		});
-// 	}
-
-// 	open() {
-// 		console.log("open");
-// 		document.documentElement.classList.add("search-open");
-// 		this.el.querySelector(".search-field").focus();
-// 	}
-
-// 	/**
-// 	 * Close the search
-// 	 */
-// 	close() {
-// 		document.documentElement.classList.remove("search-open");
-// 	}
-// }
