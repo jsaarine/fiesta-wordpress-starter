@@ -10,5 +10,5 @@ $medium-max: $large - em(1px);
 $large-max: $xlarge - em(1px);
 
 // Navigation breakpoints
-$desktop-nav: $medium;
+$desktop-nav: $large;
 $mobile-nav-max: $desktop-nav - em(1px);
