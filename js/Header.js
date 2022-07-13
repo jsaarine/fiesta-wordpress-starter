@@ -2,6 +2,7 @@ class Header {
 
 	constructor(el) {
 		this.el = el;
+		this.threshold = 0;
 
 		this.build();
 	}
@@ -10,20 +11,22 @@ class Header {
 	 * Build the header
 	 */
 	build() {
-		const options = {
-			rootMargin: "2px 0px 0px 0px"
-		};
+		window.addEventListener("scroll", e => {
+			this.update();
+		});
 
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(item => {
-				if(item.isIntersecting) {
-					this.el.classList.remove("small");
-				} else {
-					this.el.classList.add("small");
-				}
-			});
-		}, options);
+		this.update();
+	}
 
-		observer.observe(this.el);
+	update() {
+		const top = document.documentElement.scrollTop;
+
+		// Small (header is visible but smaller when scrolling)
+		if(top > this.threshold) {
+			this.el.classList.add("small");
+		}
+		else {
+			this.el.classList.remove("small");
+		}
 	}
 }
