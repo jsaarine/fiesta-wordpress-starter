@@ -17,7 +17,7 @@
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
 
-	.wp-block[data-align="full"] {
+	.wp-block.alignfull {
 		margin-left: calc(-1 * var(--container-padding)) !important;
 		margin-right: calc(-1 * var(--container-padding)) !important;
 	}
