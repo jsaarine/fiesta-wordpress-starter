@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
+const fs = require("fs");
 const config = require('./config.js');
 const devUrl = config.devUrl();
 
@@ -71,5 +72,15 @@ const minify = () => {
 		.pipe(gulp.dest('./dist/js'));
 };
 
+const version = (cb) => {
+	const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+	let css = fs.readFileSync("./style.css", "utf8");
+
+	fs.writeFileSync("./style.css", css.replace(/Version: (\d+\.)?(\d+\.)?(\*|\d+)/, "Version: " + pkg.version));
+
+	cb();
+}
+
 exports.default = gulp.series(style, script, watch);
 exports.build = gulp.series(style, script, minify);
+exports.version = version;
