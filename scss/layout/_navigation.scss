@@ -28,21 +28,26 @@
 			visibility: hidden;
 			transform: translateX(100%);
 		}
+
+		& > ul {
+			@media (min-width: $desktop-nav) {
+				display: flex;
+			}
+		}
 	}
 
 	li {
 		position: relative;
 
 		@media (min-width: $desktop-nav) {
-			display: inline-block;
-			margin-bottom: 0;
 			padding: 0 1em;
 		}
 
 		// Parent (has child pages)
 		&.menu-item-has-children {
 			@media (min-width: $desktop-nav) {
-				padding-right: 2em;
+				display: flex;
+				align-items: center;
 			}
 
 			// Second level
@@ -55,11 +60,11 @@
 
 				@media (min-width: $desktop-nav) {
 					position: absolute;
+					top: 100%;
 					left: 50%;
 					transform: translateX(-50%);
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
 					background: var(--light);
-					text-align: center;
 					overflow: visible;
 				}
 
@@ -79,7 +84,6 @@
 				}
 
 				li {
-					display: block;
 					padding-left: 0;
 					padding-right: 0;
 					position: relative;
@@ -89,9 +93,22 @@
 						white-space: nowrap;
 					}
 
+					&:hover {
+						@media (min-width: $desktop-nav) {
+							background: #eee;
+							opacity: 1;
+						}
+					}
+
 					&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 						& > a {
 							color: var(--theme);
+						}
+					}
+
+					&.menu-item-has-children {
+						& > a {
+							padding-right: .5em;
 						}
 					}
 				}
@@ -104,13 +121,6 @@
 
 					@media (max-width: $mobile-nav-max) {
 						padding-left: 3rem;
-					}
-
-					&:hover {
-						@media (min-width: $desktop-nav) {
-							background: #eee;
-							opacity: 1;
-						}
 					}
 
 					& > span {
@@ -156,6 +166,7 @@
 
 				.subnav-button {
 					color: var(--dark);
+					margin-right: .2em;
 
 					@media (max-width: $mobile-nav-max) {
 						top: .1rem;
@@ -237,7 +248,7 @@
 
 			&:hover {
 				text-decoration: none;
-				opacity: .7;
+				opacity: .8;
 			}
 
 			@media (max-width: $mobile-nav-max) {
@@ -304,7 +315,6 @@
 		top: 0.2em;
 		width: rem(44px);
 		height: rem(44px);
-		// max-height: rem(60px);
 		text-align: center;
 		cursor: pointer;
 		font-size: em(26px);
@@ -313,11 +323,10 @@
 		padding: 0;
 
 		@media (min-width: $desktop-nav) {
+			position: static;
 			width: rem(22px);
 			height: rem(22px);
-			right: .2em;
-			top: 50%;
-			margin-top: rem(-11px);
+			margin-left: .2em;
 			color: var(--light);
 		}
 
@@ -397,7 +406,7 @@
 
 		@media (min-width: $desktop-nav) {
 			margin-top: 0;
-			margin-left: 2em;
+			margin-left: 1.5em;
 		}
 
 		a {
