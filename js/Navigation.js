@@ -119,8 +119,6 @@ class Navigation {
 
 				if(!this.isMobileNavOpen()) {
 					i.classList.remove("hover");
-					ul.classList.remove("left");
-					ul.classList.remove("right");
 					ul.classList.remove("active");
 				}
 
@@ -164,13 +162,17 @@ class Navigation {
 	 */
 	checkSubNavPosition(el) {
 		const ul = el.querySelector("ul");
+		ul.classList.remove("right");
+
 		const pos = ul.getBoundingClientRect().left;
 		const margin = 10;
 
+		// Out of bounds on right side of screen
 		if(pos + ul.offsetWidth > window.innerWidth - margin) {
 			ul.classList.add("right");
 		}
 
+		// Out of bounds on left side of screen
 		if(pos < margin) {
 			ul.classList.add("left");
 		}
