@@ -20,11 +20,3 @@ add_action('enqueue_block_editor_assets', function() {
 
 	wp_enqueue_script(PREFIX.'-editor', get_stylesheet_directory_uri() . '/js/editor/editor.js', array('wp-blocks', 'wp-dom'), $theme_version, true);
 });
-
-// Fonts
-function add_custom_fonts() {
-	echo '<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">';
-}
-
-add_action('wp_head', __NAMESPACE__.'\add_custom_fonts');
-add_action('admin_head', __NAMESPACE__.'\add_custom_fonts');
