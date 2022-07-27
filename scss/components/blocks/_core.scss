@@ -164,24 +164,22 @@ figcaption {
 
 // Group
 .wp-block-group {
-	background: var(--gray);
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	padding-top: var(--block-margin);
-	padding-bottom: var(--block-margin);
-
 	@include block-margin();
 
-	h2, h3, h4, h5, h6 {
-		margin-bottom: var(--block-margin-small);
-	}
+	&.has-background {
+		& > :first-child {
+			margin-top: 0;
+		}
 
-	& > :first-child {
-		margin-top: 0;
-	}
+		& > :last-child {
+			margin-bottom: 0;
+		}
 
-	& > :last-child {
-		margin-bottom: 0;
+		background: var(--gray);
+		padding-left: var(--container-padding);
+		padding-right: var(--container-padding);
+		padding-top: var(--block-margin);
+		padding-bottom: var(--block-margin);
 	}
 }
 
@@ -209,33 +207,6 @@ figcaption {
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;
-		}
-	}
-}
-
-// Media text
-.wp-block-media-text {
-	@include block-margin();
-
-	@media (max-width: $medium-max) {
-		display: block;
-	}
-
-	.wp-block-media-text__content {
-		& > :first-child {
-			margin-top: 0;
-		}
-
-		& > :last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	.wp-block-media-text__media {
-		margin: 0 0 2em 0;
-
-		@media (min-width: $large) {
-			margin: 0;
 		}
 	}
 }
@@ -270,6 +241,16 @@ figcaption {
 	.wp-block-cover__inner-container {
 		& > * {
 			@include container(var(--container));
+		}
+
+		.alignwide {
+			max-width: var(--container-wide);
+		}
+
+		.alignfull {
+			max-width: none;
+			margin-left: calc(-1 * var(--container-padding));
+			margin-right: calc(-1 * var(--container-padding));
 		}
 	}
 }
