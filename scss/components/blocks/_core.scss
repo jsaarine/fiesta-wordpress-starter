@@ -1,19 +1,12 @@
 h2, h3, h4, h5, h6 {
 	color: var(--theme);
-	margin-top: 1.5em;
+	margin-top: var(--block-margin);
 	margin-bottom: var(--block-margin-small);
 	line-height: 1.2;
 }
 
 p {
-	&:not(.is-style-ingress) {
-		@include block-margin-small();
-	}
-
-	&.is-style-ingress {
-		font-size: em(24px);
-		text-align: center;
-	}
+	@include block-margin-small();
 }
 
 ul, ol {
@@ -262,24 +255,15 @@ figcaption {
 	@include block-margin();
 }
 
-// Social links
-.wp-block-social-links {
-	@include block-margin();
-
-	li {
-		padding-left: 0;
-		margin-left: 0;
-	}
-}
-
 // Code
 .wp-block-code {
 	padding: 1em;
 	background: #eee;
 	border-radius: 0;
 	border: none;
+	line-height: 1.2;
 
-	@include block-margin-small();
+	@include block-margin();
 }
 
 // Embed
