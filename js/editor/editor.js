@@ -8,12 +8,6 @@ wp.domReady(function() {
 	wp.blocks.unregisterBlockStyle('core/separator', 'wide');
 	wp.blocks.unregisterBlockStyle('core/table', 'stripes');
 	wp.blocks.unregisterBlockStyle('core/social-links', 'pill-shape');
-
-	// Add editor styles
-	wp.blocks.registerBlockStyle('core/paragraph', {
-		name: 'ingress',
-		label: 'Ingressi'
-	});
 });
 
 // Filter block alignment options
