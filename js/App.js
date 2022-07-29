@@ -1,41 +1,7 @@
 class App {
 
-	constructor(queue) {
-		this.isReady = false;
-		this.readyQueue = queue;
-
-		this.init();
-	}
-
-	/**
-	 * Initialize app when DOM ready
-	 */
-	init() {
-		Core.ready(() => {
-			this.isReady = true;
-			this.start();
-			this.processQueue();
-		});
-	}
-
-	/**
-	 * Add function to the ready queue
-	 */
-	ready(fn) {
-		if(this.isReady) {
-			fn();
-		} else {
-			this.readyQueue.push(fn);
-		}
-	}
-
-	/**
-	 * Process the ready queue
-	 */
-	processQueue() {
-		while(this.readyQueue.length) {
-			this.readyQueue.shift()();
-		}
+	constructor() {
+		this.start();
 	}
 
 	/**
@@ -53,4 +19,4 @@ class App {
 	}
 }
 
-app = new App(app.queue);
+const app = new App();

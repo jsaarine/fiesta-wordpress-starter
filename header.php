@@ -10,9 +10,6 @@ namespace Fiesta;
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 		<?php wp_head(); ?>
-		<script>
-			var app={queue:[],ready:function(a){this.isReady?a():this.queue.push(a)}};
-		</script>
 	</head>
 	<body <?php body_class(); ?>>
 
