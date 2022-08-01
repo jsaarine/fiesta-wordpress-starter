@@ -86,9 +86,8 @@ class Navigation {
 			i.addEventListener("touchstart", e => {
 				e.stopPropagation();
 
-				if(!i.closest(".hover")) {
-					this.clearSubNav();
-				}
+				// Close sibling menus if open
+				this.closeSiblings(i);
 
 				if(!this.isMobileNavOpen()) {
 					if(!this.touched || !i.classList.contains("hover")) {
@@ -158,6 +157,20 @@ class Navigation {
 	}
 
 	/**
+	 * Close open sibling menus when opening a new menu
+	 */
+	closeSiblings(item) {
+		if(!this.isMobileNavOpen() && !item.classList.contains("hover")) {
+			item.parentNode.querySelectorAll(":scope > li").forEach(item2 => {
+				if(item2.classList.contains("hover")) {
+					item2.classList.remove("hover");
+				}
+			});
+		}
+	}
+
+
+	/**
 	 * Check if the sub nav is out of bounds
 	 */
 	checkSubNavPosition(el) {
@@ -208,9 +221,8 @@ class Navigation {
 	 * Toggle the sub nav
 	 */
 	toggleChildren(item, button) {
-		if(!this.isMobileNavOpen() && !item.closest(".hover")) {
-			this.clearSubNav();
-		}
+		// Close sibling menus if open
+		this.closeSiblings(item);
 
 		item.classList.toggle("hover");
 		button.setAttribute("aria-expanded", item.classList.contains("hover"));
