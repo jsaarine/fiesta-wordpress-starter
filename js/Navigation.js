@@ -75,7 +75,9 @@ class Navigation {
 						this.checkSubNavPosition(i);
 					}
 					else {
-						this.touched = false;
+						if(!i.parentNode.classList.contains("sub-menu")) {
+							this.touched = false;
+						}
 					}
 				}
 			});

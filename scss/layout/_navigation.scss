@@ -166,6 +166,7 @@
 
 					@media (max-width: $mobile-nav-max) {
 						top: .1rem;
+						margin-right: 0;
 					}
 
 					svg {
@@ -208,7 +209,7 @@
 						visibility: visible;
 						height: auto;
 						opacity: 1;
-						transition: opacity .2s .1s linear;
+						transition: opacity .2s linear;
 					}
 				}
 			}
@@ -218,7 +219,7 @@
 					visibility: visible;
 					height: auto;
 					opacity: 1;
-					transition: opacity .2s .1s linear;
+					transition: opacity .2s linear;
 				}
 			}
 		}
