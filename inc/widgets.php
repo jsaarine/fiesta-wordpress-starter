@@ -5,12 +5,12 @@ namespace Fiesta;
 /* Widgets */
 
 add_action('widgets_init', function() {
-	register_sidebar( array(
+	register_sidebar([
 		'name' => __('Footer'),
 		'id' => 'footer-widget',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<p><strong>',
 		'after_title' => '</strong></p>',
-	));
+	]);
 });

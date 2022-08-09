@@ -18,7 +18,7 @@ add_action('after_setup_theme', function() {
 	add_theme_support('post-thumbnails');
 
 	// Add html5 support
-	add_theme_support('html5', array('search-form', 'gallery', 'caption', 'script', 'style'));
+	add_theme_support('html5', ['search-form', 'gallery', 'caption', 'script', 'style']);
 
 	// Make embeds responsive
 	add_theme_support('responsive-embeds');

@@ -5,7 +5,7 @@ namespace Fiesta;
 /* Taxonomies */
 
 /*add_action('init', function() {
-	register_taxonomy('examples_cat', 'examples', array(
+	register_taxonomy('examples_cat', 'examples', [
 		'label' => __('Categories'),
 		'hierarchical' => true,
 		'public' => false,
@@ -13,5 +13,5 @@ namespace Fiesta;
 		'rewrite' => false,
 		'show_admin_column' => true,
 		'show_in_rest' => true,
-	));
+	]);
 });*/

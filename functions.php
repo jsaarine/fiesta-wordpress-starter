@@ -14,11 +14,11 @@ const PREFIX = 'fiesta';
  * Gets an array of pages by template name
  */
 function get_pages_by_template($template) {
-	$pages = get_posts(array(
+	$pages = get_posts([
 		'post_type' => 'page',
 		'meta_key' => '_wp_page_template',
 		'meta_value' => $template.'.php'
-	));
+	]);
 
 	return $pages;
 }
