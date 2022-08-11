@@ -3,6 +3,8 @@ class Search {
 	constructor(el) {
 		this.el = el;
 		this.buttons = document.querySelectorAll("[data-search-button]");
+		this.searchField = this.el.querySelector(".search-field")
+
 		this.build();
 	}
 
@@ -21,7 +23,7 @@ class Search {
 
 		// Close
 		document.body.addEventListener("click", e => {
-			if(!this.el.contains(e.target) && this.currentButton && !this.currentButton.contains(e.target)) {
+			if(document.documentElement.classList.contains("search-open") && !this.el.contains(e.target) && this.currentButton && !this.currentButton.contains(e.target)) {
 				this.close();
 			}
 		});
@@ -39,8 +41,8 @@ class Search {
 
 	open() {
 		document.documentElement.classList.add("search-open");
-		this.el.querySelector(".search-field").focus();
-		this.el.querySelector(".search-field").value = "";
+		this.searchField.focus();
+		this.searchField.value = "";
 		this.currentButton.classList.add("active");
 		this.currentButton.setAttribute("aria-label", this.currentButton.querySelector(".close").getAttribute("data-label"));
 		this.currentButton.setAttribute("aria-expanded", true);
@@ -63,5 +65,6 @@ class Search {
 		this.currentButton.classList.remove("active");
 		this.currentButton.setAttribute("aria-label", this.currentButton.querySelector(".open").getAttribute("data-label"));
 		this.currentButton.setAttribute("aria-expanded", false);
+		this.searchField.blur();
 	}
 }

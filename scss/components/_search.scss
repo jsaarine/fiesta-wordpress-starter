@@ -83,6 +83,10 @@
 		svg {
 			width: em(30px);
 			height: em(30px);
+
+			path {
+				fill: var(--theme);
+			}
 		}
 	}
 }
