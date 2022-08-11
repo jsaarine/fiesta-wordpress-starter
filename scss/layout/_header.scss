@@ -42,6 +42,10 @@
 		height: 100%;
 		padding: 0;
 		max-width: em(1920px);
+
+		& > div {
+			display: flex;
+		}
 	}
 
 	// Logo
@@ -94,6 +98,52 @@
 				margin: 0;
 				overflow: visible;
 				clip: auto;
+			}
+		}
+	}
+
+	// Search button
+	.search-button {
+		background: none;
+		border: none;
+		padding: 0;
+		margin-left: 1em;
+		margin-right: .5em;
+		width: em(44px);
+		height: em(44px);
+
+		@media (min-width: $desktop-nav) {
+			position: static;
+			order: 1;
+		}
+
+		& > span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.close {
+			display: none;
+		}
+
+		&.desktop {
+			@include show($desktop-nav);
+		}
+
+		&.mobile {
+			@include hide($desktop-nav);
+		}
+
+		&.active {
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: flex;
 			}
 		}
 	}

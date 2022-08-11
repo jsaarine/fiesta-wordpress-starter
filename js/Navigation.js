@@ -133,6 +133,9 @@ class Navigation {
 				this.clearSubNav();
 			}
 		});
+
+		// Focus trapping
+		this.trapFocus();
 	}
 
 	/**
@@ -228,5 +231,38 @@ class Navigation {
 
 		item.classList.toggle("hover");
 		button.setAttribute("aria-expanded", item.classList.contains("hover"));
+	}
+
+	/**
+	 * Trap focus inside the navigation
+	 */
+	trapFocus() {
+		let focusableElements = [].slice.call(this.el.querySelectorAll("button, [href], input, select, textarea, [tabindex='0']"));
+		focusableElements = focusableElements.filter(item => item.getAttribute("tabindex") != "-1");
+
+		const firstFocusableElement = focusableElements[0];
+		const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+		this.el.addEventListener("keydown", e => {
+			if(this.isMobileNavOpen()) {
+				var key = e.which || e.keyCode;
+
+				if(key != 9) {
+					return;
+				}
+
+				if(e.shiftKey) {
+					if(document.activeElement === firstFocusableElement) {
+						lastFocusableElement.focus();
+						e.preventDefault();
+					}
+				} else {
+					if(document.activeElement === lastFocusableElement) {
+						firstFocusableElement.focus();
+						e.preventDefault();
+					}
+				}
+			}
+		});
 	}
 }
