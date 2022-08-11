@@ -24,7 +24,6 @@ const style = () => {
 
 const script = () => {
 	return gulp.src([
-		'./lib/js/Core.js',
 		'./js/Header.js',
 		'./js/Navigation.js',
 		'./js/Search.js',
@@ -79,7 +78,7 @@ const version = (cb) => {
 	fs.writeFileSync("./style.css", css.replace(/Version: (\d+\.)?(\d+\.)?(\*|\d+)/, "Version: " + pkg.version));
 
 	cb();
-}
+};
 
 exports.default = gulp.series(style, script, watch);
 exports.build = gulp.series(style, script, minify);
