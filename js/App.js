@@ -1,7 +1,9 @@
 class App {
 
 	constructor() {
-		this.start();
+		document.addEventListener("DOMContentLoaded", () => {
+			this.start();
+		});
 	}
 
 	/**
