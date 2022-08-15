@@ -2,8 +2,6 @@
 
 namespace Fiesta;
 
-/* Reset */
-
 // Remove WP embed
 add_action('wp_footer', function() {
 	wp_deregister_script('wp-embed');
@@ -25,14 +23,52 @@ add_filter('site_transient_update_themes', function($value) {
 	return $value;
 });
 
-// Hide site health widget
-add_action('wp_dashboard_setup', function() {
+// Remove dashboard metaboxes
+add_action('admin_init', function() {
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+	remove_meta_box('dashboard_primary', 'dashboard', 'normal');
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+});
+
+// Add post types to activity
+add_filter('dashboard_recent_posts_query_args', function($items) {
+	$post_types = get_post_types([
+		'_builtin' => false
+	]);
+
+	if(is_array($post_types)) {
+		$items['post_type'] = array_filter($post_types, function($var) {
+			return strpos($var, 'acf-') === false;
+		});
+	}
+
+	return $items;
+}, 15);
+
+// Add post types to add a glance
+add_action('dashboard_glance_items', function() {
+	// Custom post types counts
+	$post_types = get_post_types(array(
+		'_builtin' => false,
+	), 'objects');
+
+	foreach($post_types as $post_type) {
+		if(strpos($post_type->name, 'acf-') === false) {
+			$num_posts = wp_count_posts($post_type->name);
+			$num = number_format_i18n($num_posts->publish);
+			$text = _n($post_type->labels->singular_name, $post_type->labels->name, $num_posts->publish);
+
+			if(current_user_can('edit_posts')) {
+				$num = '<li class="post-count"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . '</a></li>';
+			}
+
+			echo $num;
+		}
+    }
 });
 
 
-/* Remove comments */
-
+// Remove comments
 add_action('admin_init', function() {
 	// Redirect users accessing the comments page
 	global $pagenow;
