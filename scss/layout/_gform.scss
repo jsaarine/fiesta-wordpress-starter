@@ -1,0 +1,39 @@
+.gform_wrapper.gravity-theme {
+	// fieldset {
+	// 	border: none;
+	// 	padding: 0;
+	// }
+
+	.gfield_label {
+		font-size: 1em !important;
+		font-weight: 400 !important;
+	}
+
+	.gform_required_legend {
+		display: none;
+	}
+
+	// Input
+	input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]), textarea {
+		border: 1px solid #ccc;
+		background: none;
+		display: block;
+		width: 100%;
+		padding: 1em;
+		height: em(50px);
+
+		&::placeholder {
+			color: var(--dark);
+			opacity: 1;
+		}
+	}
+
+	// Textarea
+	textarea {
+		height: em(180px);
+	}
+
+	.gform_button {
+		@include button();
+	}
+}
