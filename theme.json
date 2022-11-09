@@ -10,6 +10,7 @@
 			"dropCap": false,
 			"letterSpacing": false,
 			"textTransform": false,
+			"textDecoration": false,
 			"fontStyle": false,
 			"fontWeight": false
 		},
