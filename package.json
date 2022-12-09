@@ -5,9 +5,9 @@
 	"private": true,
 	"main": "gulpfile.js",
 	"devDependencies": {
-		"@babel/core": "^7.18.9",
-		"@babel/preset-env": "^7.18.9",
-		"autoprefixer": "^10.4.7",
+		"@babel/core": "^7.20.5",
+		"@babel/preset-env": "^7.20.2",
+		"autoprefixer": "^10.4.13",
 		"browser-sync": "^2.27.10",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
@@ -17,17 +17,18 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
-		"postcss": "^8.4.14",
-		"sass": "^1.53.0"
+		"postcss": "^8.4.19",
+		"sass": "^1.56.2"
 	},
 	"engines": {
 		"node": ">= 14.0.0",
 		"npm": ">=7.0.0"
 	},
 	"browserslist": [
-		"> 0.5%, not dead, not ie 11"
+		"> 0.5%, not dead"
 	],
 	"scripts": {
+		"start": "gulp",
 		"build": "gulp build && npm run --prefix ../../plugins/fiesta-blocks build",
 		"version": "npm run build && gulp version && git add -A",
 		"test": "echo \"Error: no test specified\" && exit 1"
