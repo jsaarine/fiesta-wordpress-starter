@@ -1,4 +1,4 @@
-<?php /* Template Name: Index */
+<?php
 
 namespace Fiesta;
 

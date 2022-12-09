@@ -10,7 +10,9 @@ get_header();
 	<?php while(have_posts()) : the_post(); ?>
 
 		<article class="c-article">
-			<h1 class="wp-block-post-title"><?php the_title() ?></h1>
+			<?php if(!has_block('fiesta/hero')) : ?>
+				<h1 class="wp-block-post-title"><?php the_title() ?></h1>
+			<?php endif; ?>
 			<?php the_content() ?>
 		</article>
 
