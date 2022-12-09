@@ -4,6 +4,7 @@ class Navigation {
 		this.el = el;
 		this.toggleButton = document.querySelector("#nav-button");
 		this.touched = false;
+		this.inert = false;
 
 		this.build();
 	}
@@ -31,9 +32,7 @@ class Navigation {
 
 		// Esc key
 		this.el.addEventListener("keydown", e => {
-			let key = e.which || e.keyCode;
-
-			if(key == 27) {
+			if(e.key == "Escape") {
 				// Close sub nav
 				if(!this.isMobileNavOpen()) {
 					this.el.querySelectorAll(".subnav-button").forEach(item => {
@@ -127,15 +126,19 @@ class Navigation {
 			});
 		});
 
+		window.addEventListener("resize", e => {
+			if(this.inert) {
+				this.inert = false;
+				this.setInert(false);
+			}
+		});
+
 		// Close all when touched outside
 		document.addEventListener("touchstart", e => {
 			if(!this.el.contains(e.target)) {
 				this.clearSubNav();
 			}
 		});
-
-		// Focus trapping
-		this.trapFocus();
 	}
 
 	/**
@@ -174,7 +177,6 @@ class Navigation {
 		}
 	}
 
-
 	/**
 	 * Check if the sub nav is out of bounds
 	 */
@@ -205,6 +207,10 @@ class Navigation {
 
 		this.el.querySelector("div").scrollTop = 0;
 		this.toggleButton.setAttribute("aria-expanded", true);
+
+		// Set inert
+		this.inert = true;
+		this.setInert(true);
 	}
 
 	/**
@@ -220,6 +226,12 @@ class Navigation {
 		document.documentElement.classList.remove("nav-open");
 
 		this.toggleButton.setAttribute("aria-expanded", false);
+
+		// Remove inert
+		if(this.inert) {
+			this.inert = false;
+			this.setInert(false);
+		}
 	}
 
 	/**
@@ -234,35 +246,24 @@ class Navigation {
 	}
 
 	/**
-	 * Trap focus inside the navigation
+	 * Use inert to block the rest of the page
 	 */
-	trapFocus() {
-		let focusableElements = [].slice.call(this.el.querySelectorAll("button, [href], input, select, textarea, [tabindex='0']"));
-		focusableElements = focusableElements.filter(item => item.getAttribute("tabindex") != "-1");
+	setInert(value) {
+		this.inert = value;
 
-		const firstFocusableElement = focusableElements[0];
-		const lastFocusableElement = focusableElements[focusableElements.length - 1];
+		let current = document.body;
 
-		this.el.addEventListener("keydown", e => {
-			if(this.isMobileNavOpen()) {
-				var key = e.which || e.keyCode;
+		while(current != this.el) {
+			for(const el of current.children) {
+				if(el.tagName == "STYLE" || el.tagName == "SCRIPT") continue;
 
-				if(key != 9) {
-					return;
+				if(el.contains(this.el)) {
+					current = el;
 				}
-
-				if(e.shiftKey) {
-					if(document.activeElement === firstFocusableElement) {
-						lastFocusableElement.focus();
-						e.preventDefault();
-					}
-				} else {
-					if(document.activeElement === lastFocusableElement) {
-						firstFocusableElement.focus();
-						e.preventDefault();
-					}
+				else {
+					el.inert = this.inert;
 				}
 			}
-		});
+		}
 	}
 }

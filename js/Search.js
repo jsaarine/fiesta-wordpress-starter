@@ -30,9 +30,7 @@ class Search {
 
 		// Esc key
 		this.el.addEventListener("keydown", e => {
-			let key = e.which || e.keyCode;
-
-			if(key == 27) {
+			if(e.key == "Escape") {
 				// Close search
 				this.close();
 			}
