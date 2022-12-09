@@ -124,3 +124,6 @@ add_filter('rest_endpoints', function($endpoints) {
 
 	return $endpoints;
 });
+
+// Remove svg filters
+remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
