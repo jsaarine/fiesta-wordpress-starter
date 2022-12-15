@@ -28,6 +28,7 @@ add_action('admin_init', function() {
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 	remove_meta_box('dashboard_primary', 'dashboard', 'normal');
 	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+	remove_meta_box('rg_forms_dashboard', 'dashboard', 'normal');
 });
 
 // Add post types to activity
