@@ -34,7 +34,12 @@ code {
 }
 
 figcaption {
-	@include caption();
+	margin-top: 1.5rem;
+	line-height: 1.4;
+	text-align: center;
+	font-size: 1rem;
+	color: var(--dark);
+	opacity: .7;
 }
 
 // Title
