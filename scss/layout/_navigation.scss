@@ -6,13 +6,12 @@
 	align-items: center;
 
 	& > div {
-		@media (min-width: $desktop-nav) {
-			display: flex;
-			align-items: center;
-		}
+		display: flex;
+		align-items: center;
 
 		// Mobile
 		@media (max-width: $mobile-nav-max) {
+			display: block;
 			position: fixed;
 			top: var(--wp-admin--admin-bar--height, 0);
 			right: 0;
@@ -104,7 +103,7 @@
 
 					&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 						& > a {
-							color: var(--theme);
+							text-decoration-color: var(--theme);
 						}
 					}
 
@@ -226,10 +225,13 @@
 
 		// Current page
 		&.current_page_item, &.current-menu-item, &.current_page_ancestor {
-			& > a > span {
-				position: relative;
+			& > a {
 				text-decoration: underline;
 				text-underline-offset: .4em;
+
+				@media (max-width: $mobile-nav-max) {
+					text-decoration-color: var(--theme);
+				}
 			}
 		}
 
@@ -246,7 +248,6 @@
 			}
 
 			&:hover {
-				text-decoration: none;
 				opacity: .8;
 			}
 

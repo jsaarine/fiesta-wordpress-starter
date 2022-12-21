@@ -60,5 +60,11 @@ p {
 }
 
 a {
-	color: var(--theme);
+	color: inherit;
+	text-decoration-color: var(--theme);
+	text-underline-offset: .3em;
+
+	&:hover {
+		color: var(--theme);
+	}
 }
