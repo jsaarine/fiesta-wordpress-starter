@@ -28,4 +28,7 @@ add_action('after_setup_theme', function() {
 
 	// Disable block template editing
 	remove_theme_support('block-templates');
+
+	// Enable block template parts
+	add_theme_support('block-template-parts');
 });

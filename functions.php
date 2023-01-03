@@ -70,4 +70,3 @@ require_once('inc/reset.php');
 require_once('inc/setup.php');
 require_once('inc/taxonomies.php');
 require_once('inc/translations.php');
-require_once('inc/widgets.php');
