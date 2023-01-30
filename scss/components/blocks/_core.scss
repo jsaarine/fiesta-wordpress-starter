@@ -5,6 +5,11 @@ h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 }
 
+h1 {
+	margin-top: 3rem;
+	text-align: center;
+}
+
 p {
 	@include block-margin-small();
 }
@@ -15,7 +20,7 @@ ul, ol {
 	@include block-margin-small();
 
 	li {
-		font-size: rem(19px);
+		font-size: var(--font-size-0);
 		margin-left: 2rem;
 		padding-left: .5rem;
 
@@ -44,9 +49,7 @@ figcaption {
 
 // Title
 .wp-block-post-title {
-	font-size: calc(#{em(44px)} + 2vw);
 	text-align: center;
-	color: var(--dark);
 	margin-top: 3rem;
 }
 

@@ -11,7 +11,7 @@ get_header();
 
 		<article class="c-article">
 			<?php if(!has_block('fiesta/hero')) : ?>
-				<h1 class="wp-block-post-title"><?php the_title() ?></h1>
+				<h1><?php the_title() ?></h1>
 			<?php endif; ?>
 			<?php the_content() ?>
 		</article>

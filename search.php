@@ -8,7 +8,7 @@ get_header();
 
 <main id="main-content">
 	<article class="c-article">
-		<h1 class="wp-block-post-title"><?= __('Search results') ?></h1>
+		<h1><?= __('Search results') ?></h1>
 		<div class="c-search-results">
 			<ul>
 				<?php while(have_posts()) : the_post(); ?>
