@@ -26,35 +26,35 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1;
-	margin: 0 0 .5em 0;
+	margin: 0 0 .75em 0;
 }
 
 h1 {
-	font-size: em(39px);
+	font-size: var(--font-size-8);
 }
 
 h2 {
-	font-size: em(33px);
+	font-size: var(--font-size-4);
 }
 
 h3 {
-	font-size: em(27px);
+	font-size: var(--font-size-3);
 }
 
 h4 {
-	font-size: em(23px);
+	font-size: var(--font-size-2);
 }
 
 h5 {
-	font-size: em(20px);
+	font-size: var(--font-size-1);
 }
 
 h6 {
-	font-size: em(18px);
+	font-size: var(--font-size-0);
 }
 
 p {
-	font-size: em(19px);
+	font-size: var(--font-size-0);
 	line-height: 1.6;
 	margin: 1.5em 0;
 }
