@@ -3,11 +3,10 @@
 .c-footer {
 	padding: em(30px) 0;
 	text-align: center;
-	background: var(--gray);
 
 	p {
 		margin: 0;
-		font-size: em(16px);
+		font-size: var(--font-size-0);
 
 		strong {
 			display: inline-block;

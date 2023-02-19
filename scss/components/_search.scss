@@ -9,9 +9,9 @@
 	opacity: 0;
 	text-align: center;
 	z-index: 10;
-	background: var(--light);
+	background: var(--theme);
 	display: grid;
-	box-shadow: 0 0 15px rgba(0,0,0,.2);
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
 	font-size: .6em;
 
 	@media (min-width: $medium) {
@@ -65,7 +65,8 @@
 		border-right: none;
 		width: 100%;
 		background: none;
-		-webkit-appearance: none;
+		color: var(--light);
+		appearance: none;
 
 		&:focus {
 			outline: none;

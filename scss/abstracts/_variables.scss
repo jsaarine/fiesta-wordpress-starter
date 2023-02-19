@@ -17,7 +17,7 @@
 	--theme: #522dd7;
 	--dark: #222;
 	--light: #fff;
-	--gray: #f2f2f3;
+	--gray: #f1f1f1;
 
 	// Header
 	--header-height: #{rem(65px)};
@@ -29,9 +29,9 @@
 	// Container
 	--container: #{rem(750px)};
 	--container-wide: #{rem(1200px)};
-	--container-padding: 1.5rem;
+	--container-padding: max(1.5rem, min(4vw, 5rem));
 
 	// Blocks
-	--block-margin: #{rem(50px)};
+	--block-margin: max(#{rem(50px)}, min(6vw, #{rem(75px)}));
 	--block-margin-small: #{rem(24px)};
 }

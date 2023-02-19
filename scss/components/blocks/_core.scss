@@ -8,10 +8,19 @@ h2, h3, h4, h5, h6 {
 h1 {
 	margin-top: 3rem;
 	text-align: center;
+	color: var(--theme);
 }
 
 p {
 	@include block-margin-small();
+}
+
+p, li {
+	a {
+		&:hover {
+			background: #e4e0f4;
+		}
+	}
 }
 
 ul, ol {
@@ -32,10 +41,6 @@ ul, ol {
 	ul, ol {
 		margin: .5rem 0;
 	}
-}
-
-code {
-	background: #eee;
 }
 
 figcaption {
@@ -266,7 +271,7 @@ figcaption {
 // Code
 .wp-block-code {
 	padding: 1em;
-	background: #eee;
+	background: var(--gray);
 	border-radius: 0;
 	border: none;
 	line-height: 1.2;
