@@ -8,9 +8,6 @@
 @import "base/base";
 @import "base/typography";
 
-:root {
-	--header-height: 0;
-}
 
 .is-root-container {
 	padding-left: var(--container-padding);

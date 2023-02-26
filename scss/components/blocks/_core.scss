@@ -52,18 +52,12 @@ figcaption {
 	opacity: .7;
 }
 
-// Title
-.wp-block-post-title {
-	text-align: center;
-	margin-top: 3rem;
-}
-
 // Image
 .wp-block-image {
 	@include block-margin();
 }
 
-// Quotes
+// Quote
 .wp-block-quote {
 	border-left: 2px solid var(--theme);
 	padding-left: 1.5em !important;
@@ -72,14 +66,14 @@ figcaption {
 
 	p {
 		color: var(--theme);
-		font-size: em(25px);
+		font-size: var(--font-size-2);
 		line-height: 1.4;
 		margin-top: 0;
 	}
 
 	cite, .wp-block-quote__citation {
 		font-style: normal;
-		font-size: em(19px);
+		font-size: var(--font-size-0);
 		text-transform: none;
 	}
 }
@@ -89,12 +83,6 @@ figcaption {
 	@include block-margin();
 
 	.wp-block-column {
-		margin-bottom: 2em;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
 		& > :first-child {
 			margin-top: 0;
 		}
@@ -213,25 +201,6 @@ figcaption {
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;
-		}
-	}
-}
-
-// Gallery
-.wp-block-gallery {
-	@include block-margin();
-
-	ul {
-		width: 100%;
-		margin: 0;
-
-		li {
-			padding-left: 0;
-			margin-left: 0;
-		}
-
-		& + figcaption {
-			width: 100%;
 		}
 	}
 }

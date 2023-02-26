@@ -72,6 +72,10 @@
 			outline: none;
 			border-color: var(--theme);
 		}
+
+		&::placeholder {
+			opacity: 1;
+		}
 	}
 
 	.search-submit {
