@@ -220,6 +220,13 @@
 			}
 		}
 
+		&:hover {
+			& > a {
+				text-decoration: underline;
+				text-underline-offset: .4em;
+			}
+		}
+
 		// Current page
 		&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 			& > a {
@@ -236,11 +243,6 @@
 			text-decoration: none;
 			position: relative;
 			font-size: var(--font-size-0);
-
-			&:hover {
-				text-decoration: underline;
-				text-underline-offset: .4em;
-			}
 
 			@media (max-width: $mobile-nav-max) {
 				padding: 1em 2rem;
@@ -295,9 +297,9 @@
 
 		@media (min-width: $desktop-nav) {
 			position: static;
-			width: rem(22px);
-			height: rem(22px);
-			margin-left: .2em;
+			width: rem(32px);
+			height: rem(32px);
+			margin-left: .1em;
 			color: var(--light);
 		}
 
@@ -353,12 +355,6 @@ html.nav-open {
 			& > div {
 				transform: none;
 				visibility: visible;
-			}
-
-			.social {
-				path {
-					fill: var(--theme);
-				}
 			}
 
 			.search-button {

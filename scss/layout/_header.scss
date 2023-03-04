@@ -9,15 +9,9 @@
 		background: var(--light);
 		height: var(--header-height);
 		z-index: 10;
-		padding-left: 1.5em;
-		padding-right: 1.5em;
+		padding-left: var(--container-padding);
+		padding-right: var(--container-padding);
 		transition: background .2s ease-out, box-shadow .2s ease-out;
-
-		@media (min-width: $desktop-nav) {
-			padding-left: 3em;
-			padding-right: 3em;
-			height: var(--header-height);
-		}
 
 		&::before {
 			@media (max-width: $mobile-nav-max) {

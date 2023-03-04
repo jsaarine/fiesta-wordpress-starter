@@ -2,8 +2,7 @@ class Navigation {
 
 	constructor(el) {
 		this.el = el;
-		this.toggleButton = document.querySelector("#nav-button");
-		this.touched = false;
+		this.toggleButton = this.el.querySelector(".nav-button");
 		this.inert = false;
 
 		this.build();
@@ -51,16 +50,17 @@ class Navigation {
 
 		// Remove transition when animation complete
 		this.el.addEventListener("transitionend", e => {
-			if(e.target == this.el.querySelector("div") && e.propertyName == "transform") {
+			if(e.target == this.el.querySelector(":scope > div") && e.propertyName == "transform") {
 				document.documentElement.classList.remove("nav-open-transition");
 			}
 		});
 
 		// Add events to parent items
 		this.el.querySelectorAll(".menu-item-has-children").forEach(i => {
-			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="subnav-button" aria-label="Open sub-menu"><svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"><path d="M6.748 6.748a1.052 1.052 0 01-1.496 0L.31 1.808A1.059 1.059 0 011.722.24L1.8.31 6 4.505 10.193.31a1.059 1.059 0 011.567 1.411l-.07.078" fill="#000" fill-rule="nonzero"/></svg></button>');
+			i.querySelector("a").insertAdjacentHTML("afterend", '<button class="subnav-button"><svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"><path d="M6.748 6.748a1.052 1.052 0 01-1.496 0L.31 1.808A1.059 1.059 0 011.722.24L1.8.31 6 4.505 10.193.31a1.059 1.059 0 011.567 1.411l-.07.078" fill="#000" fill-rule="nonzero"/></svg></button>');
 
 			const subnavButton = i.querySelector(".subnav-button");
+			subnavButton.setAttribute("aria-label", "Open sub navigation for " + i.querySelector("a").textContent);
 
 			// Subnav button
 			subnavButton.addEventListener("click", e => {
@@ -70,59 +70,17 @@ class Navigation {
 
 				if(!this.isMobileNavOpen()) {
 					if(i.classList.contains("hover")) {
-						this.touched = true;
 						this.checkSubNavPosition(i);
-					}
-					else {
-						if(!i.parentNode.classList.contains("sub-menu")) {
-							this.touched = false;
-						}
 					}
 				}
 			});
 
 			subnavButton.setAttribute("aria-expanded", false);
 
-			// Touch support for hover menu
-			i.addEventListener("touchstart", e => {
-				e.stopPropagation();
-
-				// Close sibling menus if open
-				this.closeSiblings(i);
-
-				if(!this.isMobileNavOpen()) {
-					if(!this.touched || !i.classList.contains("hover")) {
-						e.preventDefault();
-					}
-
-					if(!i.classList.contains("hover")) {
-						i.classList.add("hover");
-						i.querySelector(".subnav-button").setAttribute("aria-expanded", true);
-						this.touched = true;
-						this.checkSubNavPosition(i);
-					}
-				}
-			});
-
 			i.addEventListener("mouseenter", e => {
 				if(!this.isMobileNavOpen()) {
-					i.classList.add("hover");
-
-					if(!this.touched) {
-						this.checkSubNavPosition(i);
-					}
+					this.checkSubNavPosition(i);
 				}
-			});
-
-			i.addEventListener("mouseleave", e => {
-				const ul = i.querySelector("ul");
-
-				if(!this.isMobileNavOpen()) {
-					i.classList.remove("hover");
-					ul.classList.remove("active");
-				}
-
-				this.clearSubNav(i);
 			});
 		});
 
@@ -159,8 +117,6 @@ class Navigation {
 				item.classList.remove("hover");
 				item.querySelector(".subnav-button").setAttribute("aria-expanded", false);
 			});
-
-			this.touched = false;
 		}
 	}
 

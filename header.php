@@ -29,7 +29,7 @@ namespace Fiesta;
 							]);
 						?>
 						<nav class="c-navigation" id="navigation">
-							<button class="nav-button" id="nav-button" aria-expanded="false" aria-haspopup="true" aria-controls="navigation" aria-label="<?= __('Open main navigation') ?>">
+							<button class="nav-button" aria-expanded="false" aria-haspopup="true" aria-controls="navigation" aria-label="<?= __('Open main navigation') ?>">
 								<span class="line"></span>
 								<span class="line"></span>
 								<span class="line"></span>
