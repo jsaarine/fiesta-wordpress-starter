@@ -85,6 +85,7 @@
 			border-right: 6px solid transparent;
  			border-top: 6px solid var(--dark);
  			margin-top: -3px;
+ 			pointer-events: none;
 		}
 
 		select {
