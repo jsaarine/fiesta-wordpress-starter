@@ -29,7 +29,7 @@
 	],
 	"scripts": {
 		"start": "gulp",
-		"build": "gulp build && npm run --prefix ./blocks build",
+		"build": "gulp build && npm run --prefix ../../plugins/fiesta-blocks build",
 		"version": "npm run build && gulp version && git add -A",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
