@@ -24,25 +24,25 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
-	line-height: 1;
-	margin: 0 0 .75em 0;
 	font-weight: 700;
+	line-height: 1.2;
+	color: var(--theme);
+	margin: var(--block-margin) 0 var(--block-margin-small) 0;
 }
 
 h1 {
 	font-size: var(--font-size-8);
-	font-weight: 700;
+	margin-top: 3rem;
+	margin-bottom: var(--block-margin);
+	text-align: center;
 }
 
 h2 {
 	font-size: var(--font-size-4);
-	font-weight: 700;
 }
 
 h3 {
 	font-size: var(--font-size-3);
-	font-weight: 700;
 }
 
 h4 {
@@ -60,15 +60,44 @@ h6 {
 p {
 	font-size: var(--font-size-0);
 	line-height: 1.6;
-	margin: 1.5em 0;
+	margin: var(--block-margin-small) 0;
 }
+
+p, li {
+	a {
+		&:hover {
+			background: #e4e0f4;
+			color: var(--theme);
+		}
+	}
+}
+
+// Lists
+
+ul, ol {
+	line-height: 1.6;
+
+	@include block-margin-small();
+
+	li {
+		font-size: var(--font-size-0);
+		margin-left: 1.3rem;
+		padding-left: .3rem;
+
+		&::marker {
+			color: var(--theme);
+		}
+	}
+
+	ul, ol {
+		margin: .5rem 0;
+	}
+}
+
+// Links
 
 a {
 	color: inherit;
 	text-decoration-color: var(--theme);
 	text-underline-offset: .3em;
-
-	&:hover {
-		color: var(--theme);
-	}
 }

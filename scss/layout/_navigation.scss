@@ -33,8 +33,16 @@
 		}
 	}
 
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
 	li {
+		margin: 0;
+		padding: 0;
 		position: relative;
+		font-size: 1rem;
 
 		@media (min-width: $desktop-nav) {
 			padding: 0 1em;
@@ -222,6 +230,7 @@
 			& > a {
 				text-decoration: underline;
 				text-underline-offset: .4em;
+				background: none;
 			}
 		}
 

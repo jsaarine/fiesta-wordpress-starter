@@ -1,60 +1,11 @@
-h2, h3, h4, h5, h6 {
-	color: var(--theme);
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin-small);
-	line-height: 1.2;
-}
-
-h1 {
-	margin-top: 3rem;
-	text-align: center;
-	color: var(--theme);
-}
-
-p {
-	@include block-margin-small();
-}
-
-p, li {
-	a {
-		&:hover {
-			background: #e4e0f4;
-		}
-	}
-}
-
-ul, ol {
-	line-height: 1.6;
-
-	@include block-margin-small();
-
-	li {
-		font-size: var(--font-size-0);
-		margin-left: 2rem;
-		padding-left: .5rem;
-
-		&::marker {
-			color: var(--theme);
-		}
-	}
-
-	ul, ol {
-		margin: .5rem 0;
-	}
-}
-
-figcaption {
-	margin-top: 1.5rem;
-	line-height: 1.4;
-	text-align: center;
-	font-size: 1rem;
-	color: var(--dark);
-	opacity: .7;
-}
-
 // Image
 .wp-block-image {
 	@include block-margin();
+
+	figcaption {
+		margin-top: 1em;
+		text-align: center;
+	}
 }
 
 // Quote
@@ -186,6 +137,7 @@ figcaption {
 	a, .wp-block-file__textlink {
 		color: var(--dark);
 		text-decoration: none;
+		font-size: 1rem;
 
 		&:first-of-type {
 			margin-right: 1.5em;
