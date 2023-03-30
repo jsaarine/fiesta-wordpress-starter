@@ -1,19 +1,9 @@
 .c-footer {
-	padding: em(30px) 0;
-	text-align: center;
-
-	p {
-		margin: 0;
-		font-size: var(--font-size-0);
-
-		strong {
-			display: inline-block;
-			margin-bottom: 1em;
-		}
+	& > .container {
+		@include container();
 	}
 
-	a {
-		color: var(--theme);
-		text-decoration: underline;
+	p {
+		font-size: var(--font-size-0);
 	}
 }

@@ -8,6 +8,17 @@
 	}
 }
 
+// Post featured image
+.wp-block-post-featured-image {
+	@include block-margin();
+}
+
+// Date
+.wp-block-post-date {
+	font-size: var(--font-size-0);
+	font-weight: 700;
+}
+
 // Quote
 .wp-block-quote {
 	border-left: 2px solid var(--theme);
