@@ -1,9 +1,0 @@
-.c-footer {
-	& > .container {
-		@include container();
-	}
-
-	p {
-		font-size: var(--font-size-0);
-	}
-}
