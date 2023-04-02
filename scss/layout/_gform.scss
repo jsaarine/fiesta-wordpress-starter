@@ -1,9 +1,6 @@
-.gform_wrapper.gravity-theme {
-	// fieldset {
-	// 	border: none;
-	// 	padding: 0;
-	// }
+@use "abstracts" as *;
 
+.gform_wrapper.gravity-theme {
 	.gfield_label {
 		font-size: 1em !important;
 		font-weight: 400 !important;

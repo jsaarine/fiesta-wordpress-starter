@@ -1,25 +1,21 @@
-// Abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/breakpoints";
-@import "abstracts/variables";
-
 // Base
-@import "base/base";
-@import "base/helpers";
-@import "base/typography";
-@import "base/print";
+@use "base/base";
+@use "base/helpers";
+@use "base/typography";
+@use "base/print";
 
 // Layout
-@import "layout/navigation";
-@import "layout/article";
-@import "layout/gform";
+@use "layout/container";
+@use "layout/navigation";
+@use "layout/article";
+@use "layout/blocks";
+@use "layout/gform";
 
 // Components
-@import "components/button";
-@import "components/share";
-@import "components/search";
-@import "components/search_results";
+@use "components/button";
+@use "components/share";
+@use "components/search";
+@use "components/search_results";
 
 // Pages
 

@@ -1,3 +1,5 @@
+@use "abstracts" as *;
+
 // Image
 .wp-block-image {
 	@include block-margin();
@@ -99,22 +101,21 @@
 	@include block-margin-small();
 
 	.wp-block-button {
+		.wp-block-button__link {
+			@include button();
+		}
+
 		&.is-style-outline {
 			.wp-block-button__link {
 				background: none;
-				border-color: var(--theme);
 				color: var(--theme);
 
 				&:hover, &:focus {
 					background: var(--dark);
-					color: #fff;
+					color: var(--light);
 				}
 			}
 		}
-	}
-
-	.wp-block-button__link {
-		@include button();
 	}
 }
 
@@ -178,11 +179,11 @@
 
 	.wp-block-cover__inner-container {
 		& > * {
-			@include container(var(--container));
+			@include container(var(--container, var(--container-default)));
 		}
 
 		.alignwide {
-			max-width: var(--container-wide);
+			max-width: var(--container, var(--container-wide));
 		}
 
 		.alignfull {

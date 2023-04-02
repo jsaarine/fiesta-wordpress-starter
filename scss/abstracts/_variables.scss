@@ -1,3 +1,6 @@
+@use "functions" as *;
+@use "breakpoints" as *;
+
 :root {
 	// Fonts
 	--font-regular: "Source Sans Pro", sans-serif;
@@ -27,7 +30,7 @@
 	}
 
 	// Container
-	--container: #{rem(750px)};
+	--container-default: #{rem(750px)};
 	--container-wide: #{rem(1200px)};
 	--container-padding: max(1.5rem, min(4vw, 5rem));
 

@@ -1,12 +1,11 @@
-// Abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/breakpoints";
-@import "abstracts/variables";
-
 // Base
-@import "base/base";
-@import "base/typography";
+@use "base/base";
+@use "base/typography";
+
+// Layout
+@use "layout/container";
+@use "layout/blocks";
+@use "layout/gform";
 
 
 .is-root-container {
@@ -19,6 +18,3 @@
 	}
 }
 
-// Layout
-@import "layout/blocks";
-@import "layout/gform";

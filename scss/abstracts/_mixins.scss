@@ -12,8 +12,8 @@
 
 @mixin container-padding() {
 	box-sizing: content-box;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
+	padding-left: var(--container-padding, 1.5rem);
+	padding-right: var(--container-padding, 1.5rem);
 }
 
 // Visibility

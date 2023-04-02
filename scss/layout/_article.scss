@@ -1,20 +1,20 @@
+@use "abstracts" as *;
+
 .c-article {
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
+	padding-left: var(--container-padding, 1.5rem);
+	padding-right: var(--container-padding, 1.5rem);
 
 	& > * {
-		@include container(var(--container));
+		@include container(var(--container, var(--container-default)));
 	}
 
 	.alignwide {
-		max-width: var(--container-wide);
+		max-width: var(--container, var(--container-wide));
 	}
 
 	.alignfull {
 		max-width: none;
-		margin-left: calc(-1 * var(--container-padding));
-		margin-right: calc(-1 * var(--container-padding));
+		margin-left: calc(-1 * var(--container-padding, 1.5rem));
+		margin-right: calc(-1 * var(--container-padding, 1.5rem));
 	}
 }
-
-@import "blocks";

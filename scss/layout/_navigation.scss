@@ -1,3 +1,5 @@
+@use "abstracts" as *;
+
 .c-navigation {
 	display: flex;
 	justify-content: flex-end;
@@ -371,7 +373,7 @@ html.nav-open {
 			}
 		}
 
-		.c-header {
+		.wp-block-fiesta-header {
 			& > .inner {
 				&::before {
 					left: 0;

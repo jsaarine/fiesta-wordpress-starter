@@ -3,7 +3,7 @@
 	"version": 2,
 	"settings": {
 		"layout": {
-			"contentSize": "var(--container)",
+			"contentSize": "var(--container-default)",
 			"wideSize": "var(--container-wide)"
 		},
 		"typography": {
