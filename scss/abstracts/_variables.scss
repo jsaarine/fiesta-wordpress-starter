@@ -32,9 +32,9 @@
 	// Container
 	--container-default: #{rem(750px)};
 	--container-wide: #{rem(1200px)};
-	--container-padding: max(1.5rem, min(4vw, 5rem));
+	--container-padding: clamp(1.5rem, 4vw, 5rem);
 
 	// Blocks
-	--block-margin: max(#{rem(50px)}, min(6vw, #{rem(75px)}));
+	--block-margin: clamp(#{rem(50px)}, 6vw, #{rem(75px)});
 	--block-margin-small: #{rem(30px)};
 }
