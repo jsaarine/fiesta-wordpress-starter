@@ -5,10 +5,10 @@
 	"private": true,
 	"main": "gulpfile.js",
 	"devDependencies": {
-		"@babel/core": "^7.21.0",
-		"@babel/preset-env": "^7.20.2",
-		"autoprefixer": "^10.4.13",
-		"browser-sync": "^2.28.2",
+		"@babel/core": "^7.21.4",
+		"@babel/preset-env": "^7.21.4",
+		"autoprefixer": "^10.4.14",
+		"browser-sync": "^2.29.1",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "^4.3.0",
@@ -19,7 +19,7 @@
 		"gulp-uglify": "^3.0.2",
 		"postcss": "^8.4.21",
 		"postcss-clamp": "^4.1.0",
-		"sass": "^1.58.3"
+		"sass": "^1.61.0"
 	},
 	"engines": {
 		"node": ">= 14.0.0",
