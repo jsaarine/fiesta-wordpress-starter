@@ -67,7 +67,7 @@
 
 				@media (min-width: $desktop-nav) {
 					position: absolute;
-					top: 100%;
+					top: calc(100% - 1px);
 					left: 50%;
 					transform: translateX(-50%);
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
