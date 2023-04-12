@@ -6,14 +6,10 @@
 	margin-right: auto;
 
 	@if($padding) {
-		@include container-padding();
+		box-sizing: content-box;
+		padding-left: var(--container-padding);
+		padding-right: var(--container-padding);
 	}
-}
-
-@mixin container-padding() {
-	box-sizing: content-box;
-	padding-left: var(--container-padding, 1.5rem);
-	padding-right: var(--container-padding, 1.5rem);
 }
 
 // Visibility
@@ -54,7 +50,6 @@
 	text-decoration: none;
 	background: var(--theme);
 	border: 1px solid var(--theme);
-	margin-bottom: 0;
 	color: var(--light);
 	border-radius: 3px;
 	line-height: 1.1;

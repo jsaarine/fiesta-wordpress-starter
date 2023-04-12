@@ -94,6 +94,11 @@
 		font-weight: 400;
 		border-color: var(--theme);
 	}
+
+	figcaption {
+		margin-top: 1em;
+		text-align: center;
+	}
 }
 
 // Buttons
@@ -172,10 +177,10 @@
 // Cover
 .wp-block-cover {
 	width: auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
 
 	@include block-margin();
-
-	@include container-padding();
 
 	.wp-block-cover__inner-container {
 		& > * {
