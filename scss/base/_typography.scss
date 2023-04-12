@@ -18,6 +18,49 @@
 	src: url('../../fonts/source-sans-pro-v21-latin-700.woff2') format('woff2'), url('../../fonts/source-sans-pro-v21-latin-700.woff') format('woff');
 }
 
+// Scale
+
+/* @link https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=400&minRatio=1.2&maxFontSize=20&maxWidth=1280&maxRatio=1.25&steps=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7&baseStep=2&prefix=font-size&decimals=2&includeFallbacks=on&useRems=on&remValue=16&previewFont=Inter */
+
+/* Fluid font size variables, for browsers that support clamp */
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+	:root {
+		--font-size-0: clamp(1.13rem, 0.23vw + 1.07rem, 1.25rem);
+		--font-size-1: clamp(1.35rem, 0.39vw + 1.25rem, 1.56rem);
+		--font-size-2: clamp(1.62rem, 0.61vw + 1.47rem, 1.95rem);
+		--font-size-3: clamp(1.94rem, 0.9vw + 1.72rem, 2.44rem);
+		--font-size-4: clamp(2.33rem, 1.31vw + 2.01rem, 3.05rem);
+		--font-size-5: clamp(2.8rem, 1.85vw + 2.34rem, 3.81rem);
+		--font-size-6: clamp(3.36rem, 2.56vw + 2.72rem, 4.77rem);
+		--font-size-7: clamp(4.03rem, 3.51vw + 3.15rem, 5.96rem);
+  }
+}
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+	:root {
+		--font-size-0: 1.13rem;
+		--font-size-1: 1.35rem;
+		--font-size-2: 1.62rem;
+		--font-size-3: 1.94rem;
+		--font-size-4: 2.33rem;
+		--font-size-5: 2.8rem;
+		--font-size-6: 3.36rem;
+		--font-size-7: 4.03rem;
+	}
+	@media screen and (min-width: 1280px) {
+		:root {
+			--font-size-0: 1.25rem;
+			--font-size-1: 1.56rem;
+			--font-size-2: 1.95rem;
+			--font-size-3: 2.44rem;
+			--font-size-4: 3.05rem;
+			--font-size-5: 3.81rem;
+			--font-size-6: 4.77rem;
+			--font-size-7: 5.96rem;
+		}
+	}
+}
+
 // Typography
 
 body {
@@ -33,26 +76,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: var(--font-size-8);
+	font-size: var(--font-size-6);
 	margin-top: 3rem;
 	margin-bottom: var(--block-margin);
 	text-align: center;
 }
 
 h2 {
-	font-size: var(--font-size-4);
-}
-
-h3 {
 	font-size: var(--font-size-3);
 }
 
-h4 {
+h3 {
 	font-size: var(--font-size-2);
 }
 
-h5 {
+h4 {
 	font-size: var(--font-size-1);
+}
+
+h5 {
+	font-size: var(--font-size-0);
 }
 
 h6 {

@@ -1,8 +1,8 @@
 @use "abstracts" as *;
 
 .c-article {
-	padding-left: var(--container-padding, 1.5rem);
-	padding-right: var(--container-padding, 1.5rem);
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
 
 	& > * {
 		@include container(var(--container, var(--container-default)));
@@ -14,7 +14,7 @@
 
 	.alignfull {
 		max-width: none;
-		margin-left: calc(-1 * var(--container-padding, 1.5rem));
-		margin-right: calc(-1 * var(--container-padding, 1.5rem));
+		margin-left: calc(-1 * var(--container-padding));
+		margin-right: calc(-1 * var(--container-padding));
 	}
 }
