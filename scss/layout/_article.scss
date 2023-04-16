@@ -5,11 +5,11 @@
 	padding-right: var(--container-padding);
 
 	& > * {
-		@include container(var(--container, var(--container-default)));
+		@include container(var(--container));
 	}
 
 	.alignwide {
-		max-width: var(--container, var(--container-wide));
+		max-width: var(--container-wide);
 	}
 
 	.alignfull {

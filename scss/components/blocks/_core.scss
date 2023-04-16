@@ -184,7 +184,7 @@
 
 	.wp-block-cover__inner-container {
 		& > * {
-			@include container(var(--container, var(--container-default)));
+			@include container(var(--container));
 		}
 
 		.alignwide {

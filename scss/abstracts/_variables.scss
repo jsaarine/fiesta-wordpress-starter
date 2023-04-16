@@ -19,7 +19,7 @@
 	}
 
 	// Container
-	--container-default: #{rem(750px)};
+	--container: #{rem(750px)};
 	--container-wide: #{rem(1200px)};
 	--container-padding: clamp(1.5rem, 4vw, 5rem);
 
