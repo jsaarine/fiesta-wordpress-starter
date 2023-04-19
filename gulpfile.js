@@ -64,6 +64,10 @@ const minify = () => {
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('./dist/css'));
 
+	gulp.src(['./dist/css/style-editor.css'])
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('./dist/css'));
+
 	return gulp.src([
 		'./dist/js/script.js',
 	])
