@@ -82,6 +82,8 @@ class Navigation {
 					this.checkSubNavPosition(i);
 				}
 			});
+
+			this.checkSubNavPosition(i);
 		});
 
 		window.addEventListener("resize", e => {

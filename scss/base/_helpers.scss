@@ -9,8 +9,6 @@ html {
 // Body
 
 body {
-	padding-top: calc(var(--header-height));
-
 	// Admin bar
 	&.admin-bar {
 		#wpadminbar {

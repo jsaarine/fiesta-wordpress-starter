@@ -374,13 +374,11 @@ html.nav-open {
 		}
 
 		.wp-block-fiesta-header {
-			& > .inner {
-				&::before {
-					left: 0;
-					opacity: 1;
-					visibility: visible;
-					transition: opacity .25s linear;
-				}
+			&::before {
+				left: 0;
+				opacity: 1;
+				visibility: visible;
+				transition: opacity .25s linear;
 			}
 
 			.nav-button {
