@@ -2,4 +2,4 @@
 @use "../components/blocks/core";
 
 // Custom blocks
-// @import "../../plugins/fiesta-blocks/src/name/index";
+// @use "../../plugins/fiesta-blocks/src/name/index" as *;
