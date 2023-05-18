@@ -89,7 +89,9 @@
 					top: -7px;
 					margin-left: -4px;
 
-					@include show($desktop-nav);
+					@media (max-width: $mobile-nav-max) {
+						display: none;
+					}
 				}
 
 				li {
@@ -271,7 +273,9 @@
 		position: relative;
 		right: em(-4px);
 
-		@include hide($desktop-nav);
+		@media (min-width: $desktop-nav) {
+			display: none;
+		}
 
 		.line {
 			display: block;

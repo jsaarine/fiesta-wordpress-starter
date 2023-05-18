@@ -12,24 +12,6 @@
 	}
 }
 
-// Visibility
-
-@mixin hide($value) {
-	@media (min-width: $value) {
-		display: none !important;
-	}
-}
-
-@mixin show($value, $display: block) {
-	@media screen {
-		display: none;
-	}
-
-	@media (min-width: $value) {
-		display: $display !important;
-	}
-}
-
 // Blocks
 
 @mixin block-margin() {
