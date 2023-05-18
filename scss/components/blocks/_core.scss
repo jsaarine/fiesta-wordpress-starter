@@ -2,7 +2,8 @@
 
 // Image
 .wp-block-image {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	figcaption {
 		margin-top: 1em;
@@ -12,7 +13,8 @@
 
 // Post featured image
 .wp-block-post-featured-image {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Date
@@ -25,8 +27,8 @@
 .wp-block-quote {
 	border-left: 2px solid var(--theme);
 	padding-left: 1.5em !important;
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	p {
 		color: var(--theme);
@@ -44,7 +46,8 @@
 
 // Columns
 .wp-block-columns {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	.wp-block-column {
 		& > :first-child {
@@ -61,8 +64,8 @@
 .wp-block-table {
 	overflow-y: hidden;
 	font-size: 1em;
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	table {
 		width: 100%;
@@ -103,7 +106,8 @@
 
 // Buttons
 .wp-block-buttons {
-	@include block-margin-small();
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 
 	.wp-block-button {
 		.wp-block-button__link {
@@ -126,7 +130,8 @@
 
 // Group
 .wp-block-group {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	&.has-background {
 		& > :first-child {
@@ -148,8 +153,8 @@
 // File
 .wp-block-file {
 	font-size: 1em;
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	a, .wp-block-file__textlink {
 		color: var(--dark);
@@ -179,8 +184,8 @@
 	width: auto;
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 
 	.wp-block-cover__inner-container {
 		& > * {
@@ -202,8 +207,8 @@
 // Separator
 .wp-block-separator {
 	border-color: var(--theme);
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Code
@@ -213,30 +218,34 @@
 	border-radius: 0;
 	border: none;
 	line-height: 1.2;
-
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Embed
 
 .wp-block-embed {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Shortcode
 
 .wp-block-shortcode {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Video
 
 .wp-block-video {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }
 
 // Audio
 
 .wp-block-audio {
-	@include block-margin();
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 }

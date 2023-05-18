@@ -12,18 +12,6 @@
 	}
 }
 
-// Blocks
-
-@mixin block-margin() {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
-}
-
-@mixin block-margin-small() {
-	margin-top: var(--block-margin-small);
-	margin-bottom: var(--block-margin-small);
-}
-
 @mixin button() {
 	display: inline-block;
 	font-size: var(--font-size-0);
