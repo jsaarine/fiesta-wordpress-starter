@@ -1,16 +1,14 @@
-@use "functions" as *;
-
 // Screen size breakpoints (for min-width queries)
-$medium: em(640px);
-$large: em(980px);
-$xlarge: em(1200px);
-$xxlarge: em(1920px);
+$medium: 40em;
+$large: 60em;
+$xlarge: 75em;
+$xxlarge: 120em;
 
 // Screen size breakpoints (for max-width queries).
-$small-max: $medium - em(1px);
-$medium-max: $large - em(1px);
-$large-max: $xlarge - em(1px);
+$small-max: $medium - 0.0625em;
+$medium-max: $large - 0.0625em;
+$large-max: $xlarge - 0.0625em;
 
 // Navigation breakpoints
 $desktop-nav: $large;
-$mobile-nav-max: $desktop-nav - em(1px);
+$mobile-nav-max: $desktop-nav - 0.0625em;

@@ -42,15 +42,15 @@
 		padding: 2em;
 		position: relative;
 		margin: auto auto;
-		max-width: em(750px);
+		max-width: 47em;
 	}
 
 	.overlay-close {
 		position: absolute;
 		top: .5em;
 		right: .5em;
-		width: em(44px);
-		height: em(44px);
+		width: 2.75em;
+		height: 2.75em;
 		background: none;
 		border: none;
 		transition: opacity .2s linear;
@@ -61,8 +61,8 @@
 			height: 1px;
 			background: #000;
 			position: absolute;
-			top: em(21px);
-			left: em(6px);
+			top: 1.3em;
+			left: 0.4em;
 		}
 
 		&::before {
@@ -82,7 +82,7 @@
 	&.video {
 		& > .inner {
 			padding: 0;
-			max-width: em(1200px);
+			max-width: var(--container-wide);
 			width: 100%;
 			margin: auto 0;
 		}
@@ -103,7 +103,7 @@
 		}
 
 		.overlay-close {
-			top: em(-52px);
+			top: -3em;
 
 			&::before, &::after {
 				background: var(--light);

@@ -25,10 +25,10 @@
 
 // Quote
 .wp-block-quote {
-	border-left: 2px solid var(--theme);
-	padding-left: 1.5em !important;
 	margin-top: var(--block-margin);
 	margin-bottom: var(--block-margin);
+	border-left: 2px solid var(--theme);
+	padding-left: 1.5em;
 
 	p {
 		color: var(--theme);
@@ -37,7 +37,7 @@
 		margin-top: 0;
 	}
 
-	cite, .wp-block-quote__citation {
+	cite {
 		font-style: normal;
 		font-size: var(--font-size-0);
 		text-transform: none;
@@ -152,9 +152,9 @@
 
 // File
 .wp-block-file {
-	font-size: 1em;
 	margin-top: var(--block-margin);
 	margin-bottom: var(--block-margin);
+	font-size: 1em;
 
 	a, .wp-block-file__textlink {
 		color: var(--dark);
@@ -170,7 +170,6 @@
 	.wp-block-file__button {
 		@include button();
 
-		opacity: 1 !important;
 		margin-left: 0;
 
 		@media (max-width: $small-max) {
@@ -181,11 +180,11 @@
 
 // Cover
 .wp-block-cover {
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 	width: auto;
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
 
 	.wp-block-cover__inner-container {
 		& > * {
@@ -206,20 +205,20 @@
 
 // Separator
 .wp-block-separator {
-	border-color: var(--theme);
 	margin-top: var(--block-margin);
 	margin-bottom: var(--block-margin);
+	border-color: var(--theme);
 }
 
 // Code
 .wp-block-code {
+	margin-top: var(--block-margin);
+	margin-bottom: var(--block-margin);
 	padding: 1em;
 	background: var(--gray);
 	border-radius: 0;
 	border: none;
 	line-height: 1.2;
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
 }
 
 // Embed

@@ -17,7 +17,7 @@
 		display: block;
 		width: 100%;
 		padding: 1em;
-		height: em(50px);
+		height: 3em;
 
 		&::placeholder {
 			color: var(--dark);
@@ -27,7 +27,7 @@
 
 	// Textarea
 	textarea {
-		height: em(180px);
+		height: 12em;
 	}
 
 	.gform_button {

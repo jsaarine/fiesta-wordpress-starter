@@ -33,15 +33,15 @@
 
 	.carousel-dots {
 		text-align: center;
-		height: em(40px);
+		height: 2.5em;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
 
 		button {
 			display: inline-block;
-			width: em(18px);
-			height: em(18px);
+			width: 1.125em;
+			height: 1.125em;
 			border: 2px solid var(--theme);
 			margin: 0 .5em;
 			border-radius: 50%;
@@ -61,13 +61,13 @@
 		width: 100%;
 		z-index: 1;
 		transform: translateY(-50%);
-		margin-top: em(-40px);
+		margin-top: -2.5em;
 
 		& > button {
 			position: absolute;
 			top: 0;
-			width: em(60px);
-			height: em(60px);
+			width: 3.75em;
+			height: 3.75em;
 			background: rgba(0,0,0,.2);
 			border-radius: 50%;
 			border: none;
@@ -112,7 +112,7 @@
 
 		span {
 			position: relative;
-			left: em(-4px);
+			left: -0.25em;
 			transform: rotate(135deg);
 		}
 	}
@@ -122,7 +122,7 @@
 
 		span {
 			position: relative;
-			left: em(4px);
+			left: 0.25em;
 			transform: rotate(-45deg);
 		}
 	}

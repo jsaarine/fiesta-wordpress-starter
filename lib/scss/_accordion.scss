@@ -27,7 +27,7 @@
 		& > .title {
 			cursor: pointer;
 			position: relative;
-			font-size: em(20px);
+			font-size: 1.25em;
 			margin: 0;
 
 			button {
@@ -35,8 +35,8 @@
 				width: 100%;
 				background: none;
 				border: none;
-				padding: 1em em(25px) 1em .5em;
-				padding-right: em(25px);
+				padding: 1em 1.5em 1em .5em;
+				padding-right: 1.5em;
 				text-align: left;
 				color: var(--theme);
 
@@ -51,7 +51,7 @@
 					position: absolute;
 					top: 50%;
 					right: 1em;
-					margin-top: em(-3px);
+					margin-top: -0.2em;
 					width: 0;
 					height: 0;
 					border-left: 8px solid transparent;

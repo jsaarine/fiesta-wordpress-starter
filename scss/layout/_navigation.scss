@@ -20,7 +20,7 @@
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
-			padding: em(100px) 0 0 0;
+			padding: 6em 0 0 0;
 			margin-right: 0;
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
@@ -122,7 +122,7 @@
 				}
 
 				a {
-					font-size: em(16px);
+					font-size: 1em;
 					color: var(--light);
 					padding: .8em 2rem;
 					text-transform: none;
@@ -266,12 +266,12 @@
 		cursor: pointer;
 		border: none;
 		background: none;
-		width: rem(44px);
-		height: rem(44px);
+		width: 2.75em;
+		height: 2.75em;
 		z-index: 2;
 		padding: 0;
 		position: relative;
-		right: em(-4px);
+		right: -0.25em;
 
 		@media (min-width: $desktop-nav) {
 			display: none;
@@ -281,10 +281,10 @@
 			display: block;
 			position: relative;
 			top: 0;
-			width: rem(34px);
-			height: rem(3px);
+			width: 2.1rem;
+			height: 0.1875rem;
 			margin: 0 auto;
-			margin-bottom: rem(5px);
+			margin-bottom: 0.3rem;
 			background-color: var(--theme);
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
 
@@ -299,19 +299,19 @@
 		position: absolute;
 		right: 1em;
 		top: 0.5em;
-		width: rem(44px);
-		height: rem(44px);
+		width: 2.75rem;
+		height: 2.75rem;
 		text-align: center;
 		cursor: pointer;
-		font-size: em(26px);
+		font-size: 1.6em;
 		background: none;
 		border: none;
 		padding: 0;
 
 		@media (min-width: $desktop-nav) {
 			position: static;
-			width: rem(32px);
-			height: rem(32px);
+			width: 2.75rem;
+			height: 2.75rem;
 			margin-left: .1em;
 			color: var(--light);
 		}
@@ -352,7 +352,7 @@
 		}
 
 		svg {
-			width: rem(40px);
+			width: 2.5rem;
 			height: auto;
 		}
 	}
@@ -391,7 +391,7 @@ html.nav-open {
 					transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
 					&:nth-of-type(1) {
-						top: rem(8px);
+						top: 0.5rem;
 						transform: rotate(45deg);
 					}
 
@@ -400,7 +400,7 @@ html.nav-open {
 					}
 
 					&:nth-of-type(3) {
-						top: rem(-8px);
+						top: -0.5rem;
 						transform: rotate(-45deg);
 					}
 				}

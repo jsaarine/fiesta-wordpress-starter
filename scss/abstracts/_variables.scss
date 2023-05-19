@@ -1,4 +1,3 @@
-@use "functions" as *;
 @use "breakpoints" as *;
 
 :root {
@@ -12,15 +11,15 @@
 	--gray: #f1f1f1;
 
 	// Header
-	--header-height: #{rem(65px)};
+	--header-height: 4rem;
 
 	@media (min-width: $desktop-nav) {
-		--header-height: #{rem(80px)};
+		--header-height: 5rem;
 	}
 
 	// Container
-	--container: #{rem(750px)};
-	--container-wide: #{rem(1200px)};
+	--container: 47rem;
+	--container-wide: 75rem;
 	--container-padding: clamp(1.5rem, 4vw, 5rem);
 
 	@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
@@ -28,10 +27,10 @@
 	}
 
 	// Blocks
-	--block-margin: clamp(#{rem(50px)}, 6vw, #{rem(75px)});
-	--block-margin-small: #{rem(30px)};
+	--block-margin: clamp(3rem, 6vw, 4.5rem);
+	--block-margin-small: 2rem;
 
 	@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
-		--block-margin: #{rem(50px)};
+		--block-margin: 3rem;
 	}
 }

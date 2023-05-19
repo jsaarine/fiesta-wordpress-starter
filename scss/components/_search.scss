@@ -26,19 +26,19 @@
 		align-items: center;
 		width: 100%;
 
-		@include container(em(1000px));
+		@include container(62.5em);
 	}
 
 	.close {
 		background: none;
 		border: none;
-		width: em(44px);
-		height: em(44px);
+		width: 2.75em;
+		height: 2.75em;
 		border-radius: 4px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex: 1 0 em(44px);
+		flex: 1 0 2.75em;
 		position: absolute;
 		right: 2em;
 		top: 2em;
@@ -61,7 +61,7 @@
 	}
 
 	.search-field {
-		font-size: em(36px);
+		font-size: 2.25em;
 		border: none;
 		border-right: none;
 		width: 100%;
@@ -92,8 +92,8 @@
 		appearance: none;
 
 		svg {
-			width: em(30px);
-			height: em(30px);
+			width: 1.875em;
+			height: 1.875em;
 		}
 	}
 }
