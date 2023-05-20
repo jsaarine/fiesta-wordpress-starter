@@ -110,10 +110,6 @@
 	margin-bottom: var(--block-margin-small);
 
 	.wp-block-button {
-		.wp-block-button__link {
-			@include button();
-		}
-
 		&.is-style-outline {
 			.wp-block-button__link {
 				background: none;
@@ -128,12 +124,35 @@
 	}
 }
 
+// Button
+.wp-block-buttons .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+.gform_button {
+	font-size: var(--font-size-0);
+	padding: .7em 2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: var(--theme);
+	border: 1px solid var(--theme);
+	color: var(--light);
+	border-radius: 3px;
+	line-height: 1.1;
+	cursor: pointer;
+	transition: background .2s linear, color .2s linear;
+
+	&:hover, &:focus {
+		background: var(--dark);
+		border-color: var(--dark);
+		color: var(--light);
+	}
+}
+
 // Group
 .wp-block-group {
 	margin-top: var(--block-margin);
 	margin-bottom: var(--block-margin);
 
-	&.has-background {
+	&.background {
 		& > :first-child {
 			margin-top: 0;
 		}
@@ -156,21 +175,19 @@
 	margin-bottom: var(--block-margin);
 	font-size: 1em;
 
-	a, .wp-block-file__textlink {
-		color: var(--dark);
+	a {
 		text-decoration: none;
 		font-size: 1rem;
+		opacity: 1;
 
 		&:first-of-type {
 			margin-right: 1.5em;
-			color: var(--theme);
 		}
 	}
 
 	.wp-block-file__button {
-		@include button();
-
 		margin-left: 0;
+		display: inline-block;
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;

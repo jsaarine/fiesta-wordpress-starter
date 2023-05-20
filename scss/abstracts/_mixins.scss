@@ -11,24 +11,3 @@
 		padding-right: var(--container-padding);
 	}
 }
-
-@mixin button() {
-	display: inline-block;
-	font-size: var(--font-size-0);
-	padding: .7em 2em;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: var(--theme);
-	border: 1px solid var(--theme);
-	color: var(--light);
-	border-radius: 3px;
-	line-height: 1.1;
-	cursor: pointer;
-	transition: background .2s linear, color .2s linear;
-
-	&:hover, &:focus {
-		background: var(--dark);
-		border-color: var(--dark);
-		color: var(--light);
-	}
-}
