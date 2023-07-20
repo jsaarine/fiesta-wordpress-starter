@@ -336,28 +336,6 @@
 			}
 		}
 	}
-
-	.social {
-		margin-top: 3em;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-
-		@media (min-width: $desktop-nav) {
-			margin-top: 0;
-			margin-left: 1.5em;
-		}
-
-		a {
-			color: #fff;
-			margin: 0 .5em;
-		}
-
-		svg {
-			width: 2.5rem;
-			height: auto;
-		}
-	}
 }
 
 // Nav open
