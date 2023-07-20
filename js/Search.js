@@ -8,22 +8,23 @@ class Search {
 		this.build();
 	}
 
-	/**
-	 * Build the search
-	 */
 	build() {
 		// Search button
 		this.buttons.forEach(item => {
-			item.setAttribute("aria-label", item.querySelector(".open").getAttribute("data-label"));
+			item.setAttribute("aria-label", item.getAttribute("data-label-open"));
 			item.addEventListener("click", e => {
-				this.currentButton = e.currentTarget;
+				this.searchButton = e.currentTarget;
 				this.toggle();
 			});
 		});
 
 		// Close
+		this.el.querySelector(".close").addEventListener("click", e => {
+			this.close();
+		});
+
 		document.body.addEventListener("click", e => {
-			if(document.documentElement.classList.contains("search-open") && !this.el.contains(e.target) && this.currentButton && !this.currentButton.contains(e.target)) {
+			if(document.documentElement.classList.contains("search-open") && !this.el.contains(e.target) && this.searchButton && !this.searchButton.contains(e.target)) {
 				this.close();
 			}
 		});
@@ -41,9 +42,10 @@ class Search {
 		document.documentElement.classList.add("search-open");
 		this.searchField.focus();
 		this.searchField.value = "";
-		this.currentButton.classList.add("active");
-		this.currentButton.setAttribute("aria-label", this.currentButton.querySelector(".close").getAttribute("data-label"));
-		this.currentButton.setAttribute("aria-expanded", true);
+
+		this.buttons.forEach(item => {
+			item.setAttribute("aria-label", item.getAttribute("data-label-close"));
+		});
 	}
 
 	toggle() {
@@ -55,14 +57,12 @@ class Search {
 		}
 	}
 
-	/**
-	 * Close the search
-	 */
 	close() {
 		document.documentElement.classList.remove("search-open");
-		this.currentButton.classList.remove("active");
-		this.currentButton.setAttribute("aria-label", this.currentButton.querySelector(".open").getAttribute("data-label"));
-		this.currentButton.setAttribute("aria-expanded", false);
 		this.searchField.blur();
+
+		this.buttons.forEach(item => {
+			item.setAttribute("aria-label", item.getAttribute("data-label-open"));
+		});
 	}
 }

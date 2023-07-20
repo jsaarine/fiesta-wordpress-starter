@@ -10,7 +10,6 @@
 	transition: opacity .5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s .5s linear;
 	opacity: 0;
 	text-align: center;
-	z-index: 10;
 	background: var(--theme);
 	display: grid;
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
@@ -33,22 +32,11 @@
 	.close {
 		background: none;
 		border: none;
-		width: 2.75em;
-		height: 2.75em;
-		border-radius: 4px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex: 1 0 2.75em;
-		position: absolute;
-		right: 2em;
-		top: 2em;
-		display: none;
-
-		svg {
-			width: 90%;
-			height: 90%;
-		}
+		padding: 0;
+		margin-left: 0.5rem;
+		width: 2.75rem;
+		height: 2.75rem;
+		margin-right: -0.3rem;
 	}
 
 	.search-form {
@@ -62,7 +50,7 @@
 	}
 
 	.search-field {
-		font-size: 2.25em;
+		font-size: var(--font-size-1);
 		border: none;
 		border-right: none;
 		width: 100%;
@@ -93,8 +81,8 @@
 		appearance: none;
 
 		svg {
-			width: 1.875em;
-			height: 1.875em;
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
 }
