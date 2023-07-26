@@ -11,12 +11,10 @@ get_header();
 
 		<article class="c-article">
 			<?php if(!has_block('fiesta/hero')) : ?>
-				<h1><?php the_title() ?></h1>
+				<h1 class="has-text-align-center"><?php the_title() ?></h1>
 			<?php endif; ?>
 			<?php the_content() ?>
 		</article>
-
-		<?php get_template_part('template-parts/share'); ?>
 
 	<?php endwhile; ?>
 </main>
