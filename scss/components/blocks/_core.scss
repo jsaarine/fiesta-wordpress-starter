@@ -2,8 +2,8 @@
 
 // Image
 .wp-block-image {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-medium);
+	margin-bottom: var(--block-margin-medium);
 
 	figcaption {
 		margin-top: 1em;
@@ -13,8 +13,8 @@
 
 // Post featured image
 .wp-block-post-featured-image {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-medium);
+	margin-bottom: var(--block-margin-medium);
 }
 
 // Date
@@ -25,8 +25,8 @@
 
 // Quote
 .wp-block-quote {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 	border-left: 2px solid var(--theme);
 	padding-left: 1.5em;
 
@@ -64,8 +64,8 @@
 .wp-block-table {
 	overflow-y: hidden;
 	font-size: 1em;
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 
 	table {
 		width: 100%;
@@ -112,11 +112,27 @@
 	.wp-block-button {
 		&.is-style-outline {
 			.wp-block-button__link {
+				padding: .7em 2em;
+				border-width: 1px;
 				background: none;
 				color: var(--theme);
 
 				&:hover, &:focus {
 					background: var(--dark);
+					border-color: var(--dark);
+					color: var(--light);
+				}
+			}
+		}
+
+		&.is-style-dark {
+			.wp-block-button__link {
+				background-color: var(--dark);
+				border-color: var(--dark);
+
+				&:hover, &:focus {
+					background: var(--theme);
+					border-color: var(--theme);
 					color: var(--light);
 				}
 			}
@@ -125,13 +141,12 @@
 }
 
 // Button
-.wp-block-buttons .wp-block-button .wp-block-button__link,
+.wp-block-button__link,
 .wp-block-file .wp-block-file__button,
 .gform_button,
 .c-button {
 	font-size: var(--font-size-0);
 	padding: .7em 2em;
-	text-transform: uppercase;
 	text-decoration: none;
 	background: var(--theme);
 	border: 1px solid var(--theme);
@@ -139,7 +154,7 @@
 	border-radius: 3px;
 	line-height: 1.1;
 	cursor: pointer;
-	transition: background .2s linear, color .2s linear;
+	transition: background .2s linear, border .2s linear, color .2s linear;
 
 	&:hover, &:focus {
 		background: var(--dark);
@@ -172,8 +187,8 @@
 
 // File
 .wp-block-file {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 	font-size: 1em;
 
 	a {
@@ -232,13 +247,18 @@
 
 // Code
 .wp-block-code {
-	margin-top: var(--block-margin);
-	margin-bottom: var(--block-margin);
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 	padding: 1em;
 	background: var(--gray);
 	border-radius: 0;
 	border: none;
 	line-height: 1.2;
+}
+
+// Synced pattern
+.wp-block-block {
+	max-width: none !important;
 }
 
 // Embed
