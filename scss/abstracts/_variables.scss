@@ -27,10 +27,12 @@
 	}
 
 	// Blocks
-	--block-margin: clamp(3rem, 6vw, 4.5rem);
+	--block-margin: clamp(3rem, 8vw, 6rem);
+	--block-margin-medium: clamp(2.5rem, 5vw, 4rem);
 	--block-margin-small: 2rem;
 
 	@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
 		--block-margin: 3rem;
+		--block-margin-medium: 2.5rem;
 	}
 }
