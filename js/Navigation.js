@@ -86,10 +86,14 @@ class Navigation {
 			this.checkSubNavPosition(i);
 		});
 
+		// Change inert on resize
 		window.addEventListener("resize", e => {
-			if(this.inert) {
-				this.inert = false;
-				this.setInert(false);
+			if(this.isMobileNavOpen() && !this.inert) {
+				this.setInert(this.el, true);
+			}
+
+			if(!this.isMobileNavOpen() && this.inert) {
+				this.setInert(this.el, false);
 			}
 		});
 
@@ -168,7 +172,7 @@ class Navigation {
 
 		// Set inert
 		this.inert = true;
-		this.setInert(true);
+		this.setInert(this.el, true);
 	}
 
 	/**
@@ -187,8 +191,7 @@ class Navigation {
 
 		// Remove inert
 		if(this.inert) {
-			this.inert = false;
-			this.setInert(false);
+			this.setInert(this.el, false);
 		}
 	}
 
@@ -206,20 +209,20 @@ class Navigation {
 	/**
 	 * Use inert to block the rest of the page
 	 */
-	setInert(value) {
+	setInert(el, value) {
 		this.inert = value;
 
 		let current = document.body;
 
-		while(current != this.el) {
-			for(const el of current.children) {
-				if(el.tagName == "STYLE" || el.tagName == "SCRIPT") continue;
+		while(current != el) {
+			for(const item of current.children) {
+				if(item.tagName == "STYLE" || item.tagName == "SCRIPT" || item.tagName == "NOSCRIPT") continue;
 
-				if(el.contains(this.el)) {
-					current = el;
+				if(item.contains(el)) {
+					current = item;
 				}
 				else {
-					el.inert = this.inert;
+					item.inert = this.inert;
 				}
 			}
 		}
