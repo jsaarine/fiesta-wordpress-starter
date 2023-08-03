@@ -244,6 +244,7 @@
 		&.current_page_item, &.current-menu-item, &.current_page_ancestor {
 			& > a {
 				text-decoration: underline;
+				text-decoration-color: currentColor;
 				text-underline-offset: .4em;
 			}
 		}
