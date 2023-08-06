@@ -1,3 +1,5 @@
+@use "abstracts" as *;
+
 .c-search-results {
 	margin-bottom: var(--block-margin);
 
@@ -15,7 +17,12 @@
 	}
 
 	h2 {
-		margin-top: 0;
+		margin: 0;
+		font-size: var(--font-size-2);
+
+		& + p {
+			margin-top: 0.5em;
+		}
 
 		a {
 			text-decoration: none;
@@ -23,6 +30,56 @@
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+	}
+
+	.search-form {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 4em;
+
+		label {
+			width: 100%;
+		}
+	}
+
+	.search-field {
+		font-size: var(--font-size-0);
+		border: 2px solid var(--theme);
+		border-right: none;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		padding: 0.75em 1em;
+		width: 100%;
+		background: none;
+		appearance: none;
+
+		&:focus {
+			outline: none;
+			border-color: var(--theme);
+		}
+
+		&::placeholder {
+			opacity: 1;
+		}
+
+		&::-webkit-search-cancel-button {
+			display: none;
+		}
+	}
+
+	.search-submit {
+		background: var(--theme);
+		border: none;
+		padding: 0 1em;
+		appearance: none;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
 }
