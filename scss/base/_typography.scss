@@ -69,17 +69,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	--block-margin: 2em;
 	font-weight: 700;
 	line-height: 1.1;
 	color: var(--theme);
-	margin-top: var(--block-margin-medium);
-	margin-bottom: var(--block-margin-small);
+	margin-bottom: 1em;
 }
 
 h1 {
 	font-size: var(--font-size-6);
 	margin-top: 3rem;
-	margin-bottom: var(--block-margin);
 }
 
 h2 {
@@ -105,7 +104,8 @@ h6 {
 p {
 	font-size: var(--font-size-0);
 	line-height: 1.6;
-	margin: var(--block-margin-small) 0;
+	margin-top: var(--block-margin-small);
+	margin-bottom: var(--block-margin-small);
 }
 
 p, li {
@@ -120,8 +120,7 @@ p, li {
 
 ul, ol {
 	line-height: 1.6;
-	margin-top: var(--block-margin-small);
-	margin-bottom: var(--block-margin-small);
+	margin-bottom: 0;
 	font-size: var(--font-size-0);
 
 	li {

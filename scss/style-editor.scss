@@ -19,6 +19,22 @@
 		margin-left: calc(-1 * var(--container-padding));
 		margin-right: calc(-1 * var(--container-padding));
 	}
+
+	& > * {
+		&:not(:first-child) {
+			margin-top: var(--block-margin);
+		}
+	}
+
+	.alignwide, .alignfull {
+		&:not(:first-child) {
+			margin-top: var(--block-margin-large);
+		}
+
+		& + * {
+			margin-top: var(--block-margin-large);
+		}
+	}
 }
 
 .wp-block-post-title {
