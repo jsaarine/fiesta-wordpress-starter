@@ -11,13 +11,25 @@ class App {
 	 */
 	start() {
 		// Header
-		new Header(document.querySelector("#header"));
+		const header = document.querySelector("#header");
+
+		if(header) {
+			new Header(header);
+		}
 
 		// Navigation
-		new Navigation(document.querySelector("#navigation"));
+		const navigation = document.querySelector("#navigation");
+
+		if(navigation) {
+			new Navigation(navigation);
+		}
 
 		// Search
-		new Search(document.querySelector("#search"));
+		const search = document.querySelector("#search");
+
+		if(search) {
+			new Search(search);
+		}
 	}
 }
 
