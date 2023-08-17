@@ -14,13 +14,6 @@ add_action('wp_enqueue_scripts', function() {
 	wp_localize_script(PREFIX, 'themeVariables', ['themefolder' => get_stylesheet_directory_uri()]);
 });
 
-// Editor
-add_action('enqueue_block_editor_assets', function() {
-	$theme_version = wp_get_theme()->get('Version');
-
-	wp_enqueue_script(PREFIX.'-editor', get_stylesheet_directory_uri() . '/js/editor/editor.js', ['wp-blocks', 'wp-dom'], $theme_version, true);
-});
-
 // Favicon
 function add_favicon() {
 	echo '
