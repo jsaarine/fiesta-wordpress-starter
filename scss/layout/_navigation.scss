@@ -43,17 +43,22 @@
 	}
 
 	li {
+		--item-spacing: 2.5em;
 		margin: 0;
 		padding: 0;
 		position: relative;
 		font-size: 1rem;
 
-		@media (min-width: $desktop-nav) {
-			padding: 0 1em;
+		&:not(:last-child) {
+			@media (min-width: $desktop-nav) {
+				padding-right: var(--item-spacing);
+			}
 		}
 
 		// Parent (has child pages)
 		&.menu-item-has-children {
+			--item-spacing: 1.5em;
+
 			@media (min-width: $desktop-nav) {
 				display: flex;
 				align-items: center;
@@ -313,9 +318,8 @@
 
 		@media (min-width: $desktop-nav) {
 			position: static;
-			width: 2.75rem;
-			height: 2.75rem;
-			margin-left: .1em;
+			width: 1.75rem;
+			height: 1.75rem;
 			color: var(--light);
 		}
 
