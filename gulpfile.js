@@ -26,9 +26,6 @@ const style = () => {
 
 const script = () => {
 	return gulp.src([
-		'./js/Header.js',
-		'./js/Navigation.js',
-		'./js/Search.js',
 		'./js/App.js',
 	])
 		.pipe(sourcemaps.init())
@@ -56,7 +53,7 @@ const watch = () => {
 	});
 
 	gulp.watch(['./scss/**/*.scss', './lib/scss/**/*.scss', '../../plugins/fiesta-blocks/src/**/*.scss'], gulp.series(style));
-	gulp.watch(['./js/**/*.js', './lib/js/**/*.js'], gulp.series(script));
+	gulp.watch(['./js/**/*.js', './lib/js/**/*.js', '../../plugins/fiesta-blocks/src/**/*.js'], gulp.series(script));
 };
 
 const minify = () => {
