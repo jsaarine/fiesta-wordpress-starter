@@ -10,7 +10,7 @@
 	transition: opacity .5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s .5s linear;
 	opacity: 0;
 	text-align: center;
-	background: var(--theme);
+	background: var(--color-theme);
 	display: grid;
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
 	font-size: .6em;
@@ -55,17 +55,17 @@
 		border-right: none;
 		width: 100%;
 		background: none;
-		color: var(--light);
+		color: var(--color-light);
 		appearance: none;
 
 		&:focus {
 			outline: none;
-			border-color: var(--theme);
+			border-color: var(--color-theme);
 		}
 
 		&::placeholder {
 			opacity: 1;
-			color: var(--light);
+			color: var(--color-light);
 		}
 
 		&::-webkit-search-cancel-button {

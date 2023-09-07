@@ -42,7 +42,7 @@
 			display: inline-block;
 			width: 1.125em;
 			height: 1.125em;
-			border: 2px solid var(--theme);
+			border: 2px solid var(--color-theme);
 			margin: 0 .5em;
 			border-radius: 50%;
 			cursor: pointer;
@@ -50,7 +50,7 @@
 			background: none;
 
 			&.active {
-				background: var(--theme);
+				background: var(--color-theme);
 			}
 		}
 	}
@@ -78,7 +78,7 @@
 
 				&::before, &::after {
 					content: "";
-					background: var(--light);
+					background: var(--color-light);
 					display: block;
 				}
 

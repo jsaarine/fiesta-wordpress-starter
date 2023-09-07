@@ -60,7 +60,7 @@
 		height: 3em;
 
 		&::placeholder {
-			color: var(--dark);
+			color: var(--color-dark);
 			opacity: 1;
 		}
 	}
@@ -85,7 +85,7 @@
 			height: 0;
 			border-left: 6px solid transparent;
 			border-right: 6px solid transparent;
- 			border-top: 6px solid var(--dark);
+ 			border-top: 6px solid var(--color-dark);
  			margin-top: -3px;
  			pointer-events: none;
 		}
@@ -108,6 +108,6 @@
 
 	[data-fetch-error], [data-success] {
 		padding: 1em;
-		border: 1px solid var(--dark);
+		border: 1px solid var(--color-dark);
 	}
 }

@@ -5,15 +5,15 @@
 	display: flex;
 
 	button {
-		border: 1px solid var(--theme);
+		border: 1px solid var(--color-theme);
 		background: none;
 		padding: 1em;
 		margin: 0;
-		color: var(--theme);
+		color: var(--color-theme);
 
 		&.active {
-			background: var(--theme);
-			color: var(--light);
+			background: var(--color-theme);
+			color: var(--color-light);
 		}
 	}
 }

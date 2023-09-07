@@ -11,7 +11,7 @@
 
 	p {
 		text-transform: uppercase;
-		color: var(--theme);
+		color: var(--color-theme);
 		font-size: 1em;
 		position: relative;
 		top: .2em;
@@ -25,12 +25,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 2px solid var(--theme);
+		border: 2px solid var(--color-theme);
 		border-radius: 50%;
 		margin: 0 .3em;
 
 		&:hover, &:focus {
-			background: var(--theme);
+			background: var(--color-theme);
 
 			path {
 				fill: #fff;

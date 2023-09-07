@@ -18,7 +18,7 @@
 			top: var(--wp-admin--admin-bar--height, 0);
 			right: 0;
 			z-index: 1;
-			background: var(--light);
+			background: var(--color-light);
 			width: 100%;
 			max-width: 90%;
 			height: 100%;
@@ -70,7 +70,7 @@
 				height: 0px;
 				overflow: hidden;
 				visibility: hidden;
-				background: var(--theme);
+				background: var(--color-theme);
 
 				@media (min-width: $desktop-nav) {
 					position: absolute;
@@ -78,7 +78,7 @@
 					left: 50%;
 					transform: translateX(-50%);
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
-					background: var(--theme);
+					background: var(--color-theme);
 					overflow: visible;
 					transition: opacity 0s 0s linear, visibility 0s 0s linear;
 					opacity: 0;
@@ -90,7 +90,7 @@
 					height: 0;
 					border-left: 8px solid transparent;
 					border-right: 8px solid transparent;
-					border-bottom: 8px solid var(--theme);
+					border-bottom: 8px solid var(--color-theme);
 					position: absolute;
 					left: 50%;
 					top: -7px;
@@ -113,7 +113,7 @@
 
 					&:hover {
 						@media (min-width: $desktop-nav) {
-							background: var(--dark);
+							background: var(--color-dark);
 
 							a {
 								text-decoration: none;
@@ -130,7 +130,7 @@
 
 				a {
 					font-size: 1em;
-					color: var(--light);
+					color: var(--color-light);
 					padding: .8em 2rem;
 					text-transform: none;
 
@@ -174,7 +174,7 @@
 				}
 
 				.subnav-button {
-					color: var(--dark);
+					color: var(--color-dark);
 					margin-right: .2em;
 
 					@media (max-width: $mobile-nav-max) {
@@ -189,7 +189,7 @@
 					}
 
 					path {
-						fill: var(--light);
+						fill: var(--color-light);
 					}
 				}
 
@@ -258,7 +258,7 @@
 			display: block;
 			padding: 1em 0;
 			transition: opacity .2s linear;
-			color: var(--theme);
+			color: var(--color-theme);
 			text-decoration: none;
 			position: relative;
 			font-size: var(--font-size-0);
@@ -293,7 +293,7 @@
 			height: 0.1875rem;
 			margin: 0 auto;
 			margin-bottom: 0.3rem;
-			background-color: var(--theme);
+			background-color: var(--color-theme);
 			transition: top .2s ease-in-out .2s, width .2s ease-in-out, opacity 0s .2s, transform .2s ease-in-out, background .2s ease-in-out;
 
 			&:nth-of-type(3) {
@@ -320,7 +320,7 @@
 			position: static;
 			width: 1.75rem;
 			height: 1.75rem;
-			color: var(--light);
+			color: var(--color-light);
 		}
 
 		svg {
@@ -329,7 +329,7 @@
 			transition: transform .2s ease-out;
 
 			path {
-				fill: var(--theme);
+				fill: var(--color-theme);
 			}
 		}
 
@@ -357,7 +357,7 @@ html.nav-open {
 
 			.search-button {
 				path, circle {
-					stroke: var(--theme);
+					stroke: var(--color-theme);
 				}
 			}
 		}
@@ -372,7 +372,7 @@ html.nav-open {
 
 			.nav-button {
 				.line {
-					background: var(--theme);
+					background: var(--color-theme);
 					transition: top .2s ease-in-out, width .2s ease-in-out .2s, opacity 0s .2s, transform .2s ease-in-out .2s;
 
 					&:nth-of-type(1) {

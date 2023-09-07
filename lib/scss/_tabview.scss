@@ -13,7 +13,7 @@
 		& > li {
 			display: inline-block;
 			cursor: pointer;
-			color: var(--light);
+			color: var(--color-light);
 			margin-left: 0;
 			padding-left: 0;
 
@@ -24,10 +24,10 @@
 			}
 
 			a {
-				color: var(--light);
+				color: var(--color-light);
 				padding: .5em 2em;
 				display: block;
-				border: 1px solid var(--dark);
+				border: 1px solid var(--color-dark);
 				background-color: purple;
 
 				&:hover {
@@ -35,9 +35,9 @@
 				}
 
 				&.active {
-					background-color: var(--light);
-					border-bottom-color: var(--light);
-					color: var(--dark);
+					background-color: var(--color-light);
+					border-bottom-color: var(--color-light);
+					color: var(--color-dark);
 				}
 			}
 		}
@@ -47,7 +47,7 @@
 	& > .tab-content {
 		display: none;
 		padding: 2em;
-		border: 1px solid var(--dark);
+		border: 1px solid var(--color-dark);
 		margin-top: -1px;
 
 		&.active {

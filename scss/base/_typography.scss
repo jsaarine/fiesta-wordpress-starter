@@ -65,14 +65,14 @@
 
 body {
 	font-family: var(--font-regular);
-	color: var(--dark);
+	color: var(--color-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	--block-margin: 2em;
 	font-weight: 700;
 	line-height: 1.1;
-	color: var(--theme);
+	color: var(--color-theme);
 	margin-bottom: 1em;
 }
 
@@ -111,7 +111,7 @@ p {
 p, li {
 	a {
 		&:hover {
-			color: var(--theme);
+			color: var(--color-theme);
 		}
 	}
 }
@@ -129,7 +129,7 @@ ul, ol {
 		padding-left: .3rem;
 
 		&::marker {
-			color: var(--theme);
+			color: var(--color-theme);
 		}
 	}
 
@@ -142,6 +142,6 @@ ul, ol {
 
 a {
 	color: inherit;
-	text-decoration-color: var(--theme);
+	text-decoration-color: var(--color-theme);
 	text-underline-offset: .3em;
 }

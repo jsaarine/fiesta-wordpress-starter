@@ -46,7 +46,7 @@
 
 	.search-field {
 		font-size: var(--font-size-0);
-		border: 2px solid var(--theme);
+		border: 2px solid var(--color-theme);
 		border-right: none;
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
@@ -57,7 +57,7 @@
 
 		&:focus {
 			outline: none;
-			border-color: var(--theme);
+			border-color: var(--color-theme);
 		}
 
 		&::placeholder {
@@ -70,7 +70,7 @@
 	}
 
 	.search-submit {
-		background: var(--theme);
+		background: var(--color-theme);
 		border: none;
 		padding: 0 1em;
 		appearance: none;
