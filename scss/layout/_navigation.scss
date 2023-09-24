@@ -80,8 +80,10 @@
 					box-shadow: 0 0 15px rgba(0,0,0,.2);
 					background: var(--color-theme);
 					overflow: visible;
-					transition: opacity 0s 0s linear, visibility 0s 0s linear;
+					transition: opacity .1s 0s linear, visibility 0s .1s linear, scale 0s .1s linear;
 					opacity: 0;
+					height: auto;
+					scale: 0;
 				}
 
 				&::before {
@@ -222,7 +224,8 @@
 						visibility: visible;
 						height: auto;
 						opacity: 1;
-						transition: opacity .2s linear;
+						scale: none;
+						transition: opacity .15s linear;
 					}
 				}
 			}
@@ -232,7 +235,8 @@
 					visibility: visible;
 					height: auto;
 					opacity: 1;
-					transition: opacity .2s linear;
+					scale: none;
+					transition: opacity .15s linear;
 				}
 			}
 		}
@@ -397,16 +401,18 @@ html.nav-open {
 // Transition
 
 html.nav-open-transition {
+	--transition-duration: 0.5s;
+
 	.c-navigation {
 		& > div {
-			transition: transform .5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s .5s;
+			transition: transform var(--transition-duration) cubic-bezier(0.19, 1, 0.22, 1), visibility 0s var(--transition-duration);
 		}
 	}
 
 	&.nav-open {
 		.c-navigation {
 			& > div {
-				transition: transform .5s cubic-bezier(0.19, 1, 0.22, 1);
+				transition: transform var(--transition-duration) cubic-bezier(0.19, 1, 0.22, 1);
 			}
 		}
 	}
