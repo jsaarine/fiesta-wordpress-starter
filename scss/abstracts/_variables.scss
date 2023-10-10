@@ -20,7 +20,7 @@
 	// Container
 	--container: 47rem;
 	--container-wide: 75rem;
-	--container-padding: clamp(1.5rem, 4vw, 5rem);
+	--container-padding: clamp(1.35rem, 3vw, 3rem);
 
 	@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
 		--container-padding: 1.5rem;
