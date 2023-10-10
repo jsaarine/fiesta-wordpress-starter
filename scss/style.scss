@@ -9,14 +9,12 @@
 
 // Layout
 @use "layout/container";
-@use "layout/navigation";
 @use "layout/article";
 @use "layout/blocks";
 @use "layout/gform";
 
 // Components
 @use "components/share";
-@use "components/search";
 @use "components/search_results";
 
 // Pages
