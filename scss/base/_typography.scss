@@ -20,11 +20,12 @@
 
 // Scale
 
-/* @link https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=400&minRatio=1.2&maxFontSize=20&maxWidth=1280&maxRatio=1.25&steps=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7&baseStep=2&prefix=font-size&decimals=2&includeFallbacks=on&useRems=on&remValue=16&previewFont=Inter */
+/* @link https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=400&minRatio=1.2&maxFontSize=20&maxWidth=1280&maxRatio=1.25&steps=-1%2C0%2C1%2C2%2C3%2C4%2C5%2C6%2C7&baseStep=0&prefix=font-size&decimals=2&includeFallbacks=on&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1280 */
 
 /* Fluid font size variables, for browsers that support clamp */
 @supports (font-size: clamp(1rem, 1vw, 1rem)) {
 	:root {
+		--font-size--1: clamp(0.94rem, 0.11vw + 0.91rem, 1rem);
 		--font-size-0: clamp(1.13rem, 0.23vw + 1.07rem, 1.25rem);
 		--font-size-1: clamp(1.35rem, 0.39vw + 1.25rem, 1.56rem);
 		--font-size-2: clamp(1.62rem, 0.61vw + 1.47rem, 1.95rem);
@@ -38,6 +39,7 @@
 /* Fallback variables for browsers that don't support clamp */
 @supports not (font-size: clamp(1rem, 1vw, 1rem)) {
 	:root {
+		--font-size--1: 0.94rem;
 		--font-size-0: 1.13rem;
 		--font-size-1: 1.35rem;
 		--font-size-2: 1.62rem;
@@ -49,6 +51,7 @@
 	}
 	@media screen and (min-width: 1280px) {
 		:root {
+			--font-size--1: 1rem;
 			--font-size-0: 1.25rem;
 			--font-size-1: 1.56rem;
 			--font-size-2: 1.95rem;
@@ -74,6 +77,12 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.1;
 	color: var(--color-theme);
 	margin-bottom: 1em;
+}
+
+h2, h3, h4, h5, h6 {
+	& + .alignwide, & + .alignfull {
+		margin-top: var(--block-margin-medium) !important;
+	}
 }
 
 h1 {
