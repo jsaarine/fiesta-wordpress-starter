@@ -1,0 +1,24 @@
+.c-pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 2em;
+
+	a, span {
+		margin: 0 .25em;
+	}
+
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.page-numbers {
+		padding: .5em .7em;
+
+		&.current {
+			background: var(--color-theme);
+			color: #fff;
+		}
+	}
+}
