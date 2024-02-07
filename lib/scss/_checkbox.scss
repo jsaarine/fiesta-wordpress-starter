@@ -43,7 +43,7 @@
 		margin: 0 auto;
 	}
 
-	input:focus.focus-visible + span > span {
+	input:focus-visible + span > span {
 		outline: 2px solid #85b3fa;
 		outline: 2px solid -webkit-focus-ring-color;
 	}

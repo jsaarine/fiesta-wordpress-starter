@@ -101,7 +101,7 @@
 				background: none;
 				color: var(--color-theme);
 
-				&:hover, &:focus {
+				&:hover, &:focus-visible {
 					background: var(--color-dark);
 					border-color: var(--color-dark);
 					color: var(--color-light);
@@ -114,7 +114,7 @@
 				background-color: var(--color-dark);
 				border-color: var(--color-dark);
 
-				&:hover, &:focus {
+				&:hover, &:focus-visible {
 					background: var(--color-theme);
 					border-color: var(--color-theme);
 					color: var(--color-light);
@@ -140,7 +140,7 @@
 	cursor: pointer;
 	transition: background .2s linear, border .2s linear, color .2s linear;
 
-	&:hover, &:focus {
+	&:hover, &:focus-visible {
 		background: var(--color-dark);
 		border-color: var(--color-dark);
 		color: var(--color-light);

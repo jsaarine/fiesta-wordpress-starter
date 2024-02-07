@@ -183,7 +183,7 @@
 					}
 				}
 
-				&:focus.focus-visible + span {
+				&:focus-visible + span {
 					outline: 2px solid #85b3fa;
 					outline: 2px solid -webkit-focus-ring-color;
 				}

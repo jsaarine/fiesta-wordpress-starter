@@ -55,7 +55,7 @@
 		background: none;
 		appearance: none;
 
-		&:focus {
+		&:focus-visible {
 			outline: none;
 			border-color: var(--color-theme);
 		}

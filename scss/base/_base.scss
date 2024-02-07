@@ -19,10 +19,6 @@ p {
 	overflow-wrap: break-word;
 }
 
-:focus:not(:focus-visible) {
-	outline: none;
-}
-
 button {
 	cursor: pointer;
 }
