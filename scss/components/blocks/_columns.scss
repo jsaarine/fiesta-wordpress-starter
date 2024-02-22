@@ -1,0 +1,17 @@
+@use "abstracts" as *;
+
+.wp-block-columns {
+	.wp-block-column {
+		& > * {
+			margin-top: var(--block-margin);
+		}
+
+		& > :first-child {
+			margin-top: 0;
+		}
+
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

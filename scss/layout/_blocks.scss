@@ -1,5 +1,16 @@
 // Core blocks
-@use "../components/blocks/core";
+@use "../components/blocks/buttons";
+@use "../components/blocks/code";
+@use "../components/blocks/columns";
+@use "../components/blocks/cover";
+@use "../components/blocks/date";
+@use "../components/blocks/file";
+@use "../components/blocks/group";
+@use "../components/blocks/image";
+@use "../components/blocks/quote";
+@use "../components/blocks/section";
+@use "../components/blocks/separator";
+@use "../components/blocks/table";
 
 // Custom blocks
 // @use "../../plugins/fiesta-blocks/src/accordion/index" as *;

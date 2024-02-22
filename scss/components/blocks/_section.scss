@@ -1,0 +1,17 @@
+@use "abstracts" as *;
+
+.wp-block-group-section {
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    background: var(--color-gray);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding-top: var(--block-margin-medium);
+    padding-bottom: var(--block-margin-medium);
+}

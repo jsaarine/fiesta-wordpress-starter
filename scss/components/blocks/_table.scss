@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+
+.wp-block-table {
+	overflow-y: hidden;
+	font-size: 1em;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	thead {
+		border-bottom: none;
+	}
+
+	tfoot {
+		border-top: none;
+
+		td {
+			border-top: 1px solid var(--color-dark);
+		}
+	}
+
+	td, th {
+		padding: 1em;
+		border: none;
+		border: 1px solid #ddd;
+	}
+
+	th {
+		text-align: left;
+		background: var(--color-theme);
+		color: #fff;
+		font-weight: 400;
+		border-color: var(--color-theme);
+	}
+
+	figcaption {
+		margin-top: 1em;
+		text-align: center;
+	}
+}

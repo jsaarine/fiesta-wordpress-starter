@@ -1,0 +1,25 @@
+@use "abstracts" as *;
+
+.wp-block-cover {
+	width: auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+
+	.wp-block-cover__inner-container {
+		& > * {
+			max-width: var(--container);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.alignwide {
+			max-width: var(--container, var(--container-wide));
+		}
+
+		.alignfull {
+			max-width: none;
+			margin-left: calc(-1 * var(--container-padding));
+			margin-right: calc(-1 * var(--container-padding));
+		}
+	}
+}

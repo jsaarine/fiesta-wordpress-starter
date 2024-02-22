@@ -1,0 +1,8 @@
+@use "abstracts" as *;
+
+.wp-block-image {
+	figcaption {
+		margin-top: 1em;
+		text-align: center;
+	}
+}
