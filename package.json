@@ -5,33 +5,33 @@
 	"private": true,
 	"main": "gulpfile.js",
 	"devDependencies": {
-		"@babel/core": "^7.23.9",
-		"@babel/preset-env": "^7.23.9",
+		"@babel/core": "^7.24.0",
+		"@babel/preset-env": "^7.24.0",
 		"autoprefixer": "^10.4.17",
 		"browser-sync": "^3.0.2",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-postcss": "^9.1.0",
+		"gulp-postcss": "^10.0.0",
 		"gulp-sass": "^5.1.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
-		"postcss": "^8.4.33",
+		"postcss": "^8.4.35",
 		"postcss-clamp": "^4.1.0",
-		"sass": "^1.70.0"
+		"sass": "^1.71.1"
 	},
 	"engines": {
 		"node": ">= 14.0.0",
-		"npm": ">=7.0.0"
+		"pnpm": ">=8.0.0"
 	},
 	"browserslist": [
 		"> 0.5%, not dead"
 	],
 	"scripts": {
 		"start": "gulp",
-		"build": "gulp build && npm run --prefix ../../plugins/fiesta-blocks build",
-		"version": "npm run build && gulp version && git add -A",
+		"build": "gulp build && pnpm run --prefix ../../plugins/fiesta-blocks build",
+		"version": "pnpm run build && gulp version && git add -A",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
