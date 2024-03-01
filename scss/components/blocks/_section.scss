@@ -1,17 +1,36 @@
 @use "abstracts" as *;
 
-.wp-block-group-section {
-    & > :first-child {
-        margin-top: 0;
-    }
+.wp-block-group.section {
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	padding-top: var(--block-margin-medium);
+	padding-bottom: var(--block-margin-medium);
 
-    p:last-of-type {
-        margin-bottom: 0;
-    }
+	& > :first-child {
+		margin-top: 0;
+	}
 
-    background: var(--color-gray);
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
-    padding-top: var(--block-margin-medium);
-    padding-bottom: var(--block-margin-medium);
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&:not(.is-style-default) + .wp-block-group.section:not(.is-style-default) {
+		margin-top: 0;
+	}
+
+	&.is-style-default {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&.is-style-gray {
+		background: var(--color-gray);
+	}
+
+	&.is-style-dark {
+		--color-heading: var(--color-light);
+		--color-text: var(--color-light);
+		--color-accent: var(--color-light);
+		background: var(--color-theme);
+	}
 }

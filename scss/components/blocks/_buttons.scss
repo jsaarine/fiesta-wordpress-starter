@@ -2,31 +2,20 @@
 
 .wp-block-buttons {
 	.wp-block-button {
-		&.is-style-outline {
+		&.is-style-dark {
 			.wp-block-button__link {
-				padding: .7em 2em;
-				border-width: 1px;
-				background: none;
-				color: var(--color-theme);
-
-				&:hover, &:focus-visible {
-					background: var(--color-dark);
-					border-color: var(--color-dark);
-					color: var(--color-light);
-				}
+				--color-button-background: var(--color-dark);
+				--color-button-border: var(--color-dark);
+				--color-button-hover-background: var(--color-theme);
+				--color-button-hover-border: var(--color-theme);
 			}
 		}
 
-		&.is-style-dark {
+		&.is-style-border {
 			.wp-block-button__link {
-				background-color: var(--color-dark);
-				border-color: var(--color-dark);
-
-				&:hover, &:focus-visible {
-					background: var(--color-theme);
-					border-color: var(--color-theme);
-					color: var(--color-light);
-				}
+				--color-button-text: var(--color-theme);
+				--color-button-background: none;
+				--color-button-hover-border: var(--color-dark);
 			}
 		}
 	}
@@ -40,17 +29,17 @@
 	font-size: var(--font-size-0);
 	padding: .7em 2em;
 	text-decoration: none;
-	background: var(--color-theme);
-	border: 1px solid var(--color-theme);
-	color: var(--color-light);
+	background: var(--color-button-background);
+	border: 2px solid var(--color-button-border);
+	color: var(--color-button-text);
 	border-radius: 3px;
 	line-height: 1.1;
 	cursor: pointer;
 	transition: background .2s linear, border .2s linear, color .2s linear;
 
 	&:hover, &:focus-visible {
-		background: var(--color-dark);
-		border-color: var(--color-dark);
-		color: var(--color-light);
+		background: var(--color-button-hover-background);
+		border-color: var(--color-button-hover-border);
+		color: var(--color-button-hover-text);
 	}
 }
