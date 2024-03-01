@@ -6,14 +6,14 @@
 			.wp-block-button__link {
 				--color-button-background: var(--color-dark);
 				--color-button-border: var(--color-dark);
-				--color-button-hover-background: var(--color-theme);
-				--color-button-hover-border: var(--color-theme);
+				--color-button-hover-background: var(--color-primary);
+				--color-button-hover-border: var(--color-primary);
 			}
 		}
 
 		&.is-style-border {
 			.wp-block-button__link {
-				--color-button-text: var(--color-theme);
+				--color-button-text: var(--color-primary);
 				--color-button-background: none;
 				--color-button-hover-border: var(--color-dark);
 			}

@@ -5,20 +5,20 @@
 	--font-regular: "Source Sans Pro", sans-serif;
 
 	// Color values
-	--color-theme: var(--color-purple);
+	--color-primary: var(--color-purple);
 	--color-purple: #694cd4;
 	--color-dark: #222;
 	--color-light: #fff;
 	--color-gray: #f1f1f1;
 
 	// Color defaults
-	--color-heading: var(--color-theme);
+	--color-heading: var(--color-primary);
 	--color-text: var(--color-dark);
-	--color-link: var(--color-theme);
-	--color-accent: var(--color-theme);
+	--color-link: var(--color-primary);
+	--color-accent: var(--color-primary);
 	--color-button-text: var(--color-light);
-	--color-button-background: var(--color-theme);
-	--color-button-border: var(--color-theme);
+	--color-button-background: var(--color-primary);
+	--color-button-border: var(--color-primary);
 	--color-button-hover-text: var(--color-light);
 	--color-button-hover-background: var(--color-dark);
 	--color-button-hover-border: var(--color-dark);

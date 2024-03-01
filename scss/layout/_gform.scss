@@ -79,7 +79,7 @@ body {
 		.gfield_html {
 			a {
 				&:hover {
-					color: var(--color-theme);
+					color: var(--color-primary);
 				}
 			}
 		}
@@ -92,7 +92,7 @@ body {
 			}
 
 			input {
-				accent-color: var(--color-theme);
+				accent-color: var(--color-primary);
 				margin: 0;
 			}
 		}
