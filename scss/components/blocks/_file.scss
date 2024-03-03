@@ -15,7 +15,8 @@
 
 	.wp-block-file__button {
 		margin-left: 0;
-		display: inline-block;
+
+		@include button();
 
 		@media (max-width: $small-max) {
 			margin-top: 1em;

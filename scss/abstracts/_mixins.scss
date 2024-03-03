@@ -1,0 +1,18 @@
+@mixin button() {
+	font-size: var(--font-size-0);
+	padding: .7em 2em;
+	text-decoration: none;
+	background: var(--color-button-background);
+	border: 2px solid var(--color-button-border);
+	color: var(--color-button-text);
+	border-radius: 3px;
+	line-height: 1.1;
+	cursor: pointer;
+	transition: background .2s linear, border .2s linear, color .2s linear;
+
+	&:hover, &:focus-visible {
+		background: var(--color-button-hover-background);
+		border-color: var(--color-button-hover-border);
+		color: var(--color-button-hover-text);
+	}
+}

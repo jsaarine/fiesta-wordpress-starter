@@ -5,13 +5,13 @@
 	--font-regular: "Source Sans Pro", sans-serif;
 
 	// Color values
-	--color-primary: var(--color-purple);
 	--color-purple: #694cd4;
 	--color-dark: #222;
 	--color-light: #fff;
 	--color-gray: #f1f1f1;
 
 	// Color defaults
+	--color-primary: var(--color-purple);
 	--color-heading: var(--color-primary);
 	--color-text: var(--color-dark);
 	--color-link: var(--color-primary);

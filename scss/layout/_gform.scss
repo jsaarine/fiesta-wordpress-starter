@@ -101,6 +101,8 @@ body {
 			appearance: none;
 			min-height: 0 !important;
 			line-height: normal !important;
+
+			@include button();
 		}
 
 		.gform_validation_errors {
