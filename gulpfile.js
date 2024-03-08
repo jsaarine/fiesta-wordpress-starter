@@ -5,7 +5,6 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
-const postcssClamp = require('postcss-clamp');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
@@ -17,7 +16,6 @@ const style = () => {
 	return gulp.src(['./scss/**/*.scss'])
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
-			postcssClamp(),
 			autoprefixer(),
 		]))
 		.pipe(gulp.dest('./dist/css'))

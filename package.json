@@ -1,13 +1,13 @@
 {
 	"name": "fiesta",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A starter theme for WordPress",
 	"private": true,
 	"main": "gulpfile.js",
 	"devDependencies": {
 		"@babel/core": "^7.24.0",
 		"@babel/preset-env": "^7.24.0",
-		"autoprefixer": "^10.4.17",
+		"autoprefixer": "^10.4.18",
 		"browser-sync": "^3.0.2",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
@@ -18,7 +18,6 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"postcss": "^8.4.35",
-		"postcss-clamp": "^4.1.0",
 		"sass": "^1.71.1"
 	},
 	"engines": {
