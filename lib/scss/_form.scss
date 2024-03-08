@@ -20,7 +20,7 @@
 		margin-bottom: 2em;
 		display: block;
 
-		span, legend {
+		& > span, legend {
 			display: block;
 			margin-bottom: .5em;
 		}
@@ -34,12 +34,13 @@
 		}
 
 		&.error {
-			input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]), textarea, select {
+			[aria-invalid="true"]:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
 				border-color: red;
 			}
 
 			.error-text {
 				display: block;
+				margin-top: 1em;
 			}
 
 			.c-checkbox {
@@ -47,6 +48,31 @@
 					border-color: red;
 				}
 			}
+		}
+
+		.instructions {
+			p {
+				margin-top: 0.5em;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.error-container {
+		display: none;
+		margin-bottom: 2em;
+
+		h2 {
+			font-size: var(--font-size-0);
+			color: var(--color-dark);
+
+			&:focus {
+				border: 1px solid red;
+			}
+		}
+
+		li {
+			font-size: var(--font-size-0);
 		}
 	}
 
@@ -58,6 +84,7 @@
 		width: 100%;
 		padding: 1em;
 		height: 3em;
+		font-size: var(--font-size-0);
 
 		&::placeholder {
 			color: var(--color-dark);
@@ -74,6 +101,7 @@
 	.select {
 		position: relative;
 		height: 3em;
+		font-size: var(--font-size-0);
 
 		&::before {
 			content: "";
