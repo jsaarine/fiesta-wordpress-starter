@@ -15,4 +15,4 @@ namespace Fiesta;
 
 		<?php wp_body_open(); ?>
 
-		<?php block_template_part('header'); ?>
+		<?php block_template_part('header');

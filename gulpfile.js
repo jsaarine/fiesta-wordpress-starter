@@ -8,7 +8,7 @@ const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
-const fs = require("fs");
+const fs = require('fs');
 const config = require('./config.js');
 const devUrl = config.devUrl();
 
@@ -27,9 +27,9 @@ const script = () => {
 		'./js/App.js',
 	])
 		.pipe(sourcemaps.init())
-		.pipe(concat("./script.js"))
+		.pipe(concat('./script.js'))
 		.pipe(babel({
-			presets: ["@babel/preset-env"],
+			presets: ['@babel/preset-env'],
 			ignore: ['./js/vendor']
 		}))
 		.pipe(sourcemaps.write('.'))
@@ -73,10 +73,10 @@ const minify = () => {
 };
 
 const version = (cb) => {
-	const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
-	let css = fs.readFileSync("./style.css", "utf8");
+	const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+	let css = fs.readFileSync('./style.css', 'utf8');
 
-	fs.writeFileSync("./style.css", css.replace(/Version: (\d+\.)?(\d+\.)?(\*|\d+)/, "Version: " + pkg.version));
+	fs.writeFileSync('./style.css', css.replace(/Version: (\d+\.)?(\d+\.)?(\*|\d+)/, 'Version: ' + pkg.version));
 
 	cb();
 };
