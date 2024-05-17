@@ -75,7 +75,7 @@ p {
 p, li {
 	a {
 		&:hover {
-			color: var(--color-dark);
+			color: var(--color-link-hover);
 		}
 	}
 }
